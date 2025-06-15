@@ -137,8 +137,10 @@ class MainWindow(QMainWindow):
             if self.__init_help.info.isVisible(): self.__init_help.load_info(self.current_lang)
 
     def __box_dialog(self, title:str = '', text:str = '', buttons_cancel_ok:dict | None = None, icon:QIcon | None = None) -> QMessageBox:
+        """Create a box dialog"""
         __icon: QIcon = icon if icon is not None else self.__icon_window
         __dialog: QMessageBox = QMessageBox()
+        # Standard dialog buttons
         __dialog.setStandardButtons(__dialog.StandardButton.Ok | __dialog.StandardButton.Cancel)
         __buttons_txt:list[str] = ['Ok', 'Cancel']
         __dialog.setWindowIcon(__icon)
