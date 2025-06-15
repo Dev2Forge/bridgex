@@ -15,7 +15,7 @@ from . import resources_rc
 
 # Feature: Change focus order (the exit dialog focus is "ok", should be "cancel")
 
-db = Database('./database/config.db', False)
+db = Database('./db_manager/config.db', False)
 log:Log = Log('./logs/log_interface')
 
 app = QApplication(sys.argv)
@@ -29,8 +29,8 @@ class MainWindow(QMainWindow):
         super().__init__(parent)
         self.__closed_ui:bool = False
         self.current_lang = lang_manager.lang_code
-        lang_manager.set_super_parent(self)
         self.ui: Ui_MainWindow = Ui_MainWindow()
+        lang_manager.set_super_parent(self)
         self.ui.setupUi(self)
         self.__listeners()
         # Hide views temporally (to Show initial help)
@@ -71,10 +71,12 @@ class MainWindow(QMainWindow):
             # Save last directory
             print(self.__filename.absolute().parent.__str__())
             db.insert_data(['last_directory_open', self.__filename.absolute().parent.__str__()], ['name', 'value'], 'config_ui')
+
             # Feature: Show progress bar
             # => Can be a Label image (hide initialHelp if all ok, continue else show initialHelp again)
             __converter:Converter = Converter(self.__filename.absolute().__str__())
             __content:str | None = __converter.convert_file().data_str
+
             if __content is not None:
                 self.__init_help.hide()
                 self.ui.frame_views.show()
@@ -113,7 +115,7 @@ class MainWindow(QMainWindow):
 
     def __exit(self, event_target: QCloseEvent | None = None):
         __result:int = self.__box_dialog(self.tr('Close Program'),self.tr('Do you want to close this program?'),{'ok': self.tr('Accept')}).exec()
-        print(__result)
+
         if __result == 1024:
             self.__closed_ui = True
             self.close()
@@ -129,11 +131,15 @@ class MainWindow(QMainWindow):
         if self.ui.text_preview_mode.isVisible():
             # Show a warning dialog before change language
             __result = self.__box_dialog(self.tr('Warning'), self.tr('Extracted content will be deleted once you change the language (unless you have already saved it)'),{'ok': self.tr('Accept')}).exec()
+
         if not self.ui.text_preview_mode.isVisible() or __result == 1024:
             #Feature: Save content in a temporal file (The content is removed when language change)
             lang_manager.show_dialog()
-            #Update UI language
+
+            #Update UI language (MainWindow > childs and Language Dialog)
             self.ui.retranslateUi(self)
+            lang_manager.lang_dialog.retranslateUi(self)
+
             self.current_lang = lang_manager.lang_code
             # When initial info screen is visible
             if self.__init_help.info.isVisible(): self.__init_help.load_info(self.current_lang)
@@ -149,10 +155,12 @@ class MainWindow(QMainWindow):
         __dialog.setWindowIcon(__icon)
         __dialog.setWindowTitle(title)
         __dialog.setText(text)
+
         # Has been received a dict with buttons
         if buttons_cancel_ok is not None and type(buttons_cancel_ok) is dict:
             if 'ok' in buttons_cancel_ok: __buttons_txt[0] = buttons_cancel_ok['ok']
             if 'cancel' in buttons_cancel_ok: __buttons_txt[1] = buttons_cancel_ok['cancel']
+
         # Set visible text for each button
         __dialog.button(__dialog.StandardButton.Ok).setText(__buttons_txt[0])
         __dialog.button(__dialog.StandardButton.Cancel).setText(__buttons_txt[1])

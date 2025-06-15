@@ -1,10 +1,10 @@
 from PySide6.QtCore import Qt, QTranslator, QLocale
-from PySide6.QtWidgets import QApplication
+from PySide6.QtWidgets import QApplication, QMainWindow
 from .ui_dialog_language import Ui_Lang_Dialog
 from PySide6.QtWidgets import QDialog
 from sqlazo import Database
 
-db = Database('./database/config.db', False)
+db = Database('./db_manager/config.db', False)
 
 class LanguageManager(QDialog):
     def __init__(self, app:QApplication=None):
@@ -14,19 +14,23 @@ class LanguageManager(QDialog):
         self.lang_file:str = ''
         self.__translator:QTranslator = QTranslator(app)
         self.__app:QApplication = app
-        self.parent = None
-        self.__lang_dialog = None
+        self.parent:QMainWindow | None = None
+        self.lang_dialog:Ui_Lang_Dialog | None = None
 
     def set_super_parent(self, parent):
         self.parent = parent
         super().__init__(self.parent)
-        self.__lang_dialog = Ui_Lang_Dialog()
-        self.__lang_dialog.setupUi(self)
+        self.lang_dialog = Ui_Lang_Dialog()
+        self.lang_dialog.setupUi(self)
 
     def show_dialog(self):
+        __buttons_dialog = self.lang_dialog.dialog_btn
+        __buttons_dialog.setStandardButtons(__buttons_dialog.StandardButton.Ok | __buttons_dialog.StandardButton.Cancel)
+        __buttons_dialog.button(__buttons_dialog.StandardButton.Ok).setText(self.tr('Save'))
+        __buttons_dialog.button(__buttons_dialog.StandardButton.Cancel).setText(self.tr('Cancel'))
         self.exec()
-        if self.result() == 1 and self.__lang_dialog.languages.currentItem() is not None:
-                self.lang_code:str = self.__lang_dialog.languages.currentItem().toolTip()
+        if self.result() == 1 and self.lang_dialog.languages.currentItem() is not None:
+                self.lang_code:str = self.lang_dialog.languages.currentItem().toolTip()
                 # Pending improvement (when 'update_data' is added to 'sqlazo')
                 db.delete_data('config_ui', 'name == "current_lang_code"')
                 db.insert_data(['current_lang_code', self.lang_code], ['name', 'value'], 'config_ui')
