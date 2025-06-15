@@ -1,9 +1,5 @@
-from ._converter import Converter
-from ._files_manager import FileManager
+from .db_manager import db_manage
 from chromologger import Logger as Log
-from .interface import run
-import sys
-
 
 log:Log = Log('./logs/log_pymd')
 
@@ -13,4 +9,6 @@ output:str = '../../converted/'
 class Pymd:
     @staticmethod
     def run_app():
+        db_manage.database_config()
+        from .interface import run
         run()
