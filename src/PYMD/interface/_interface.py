@@ -127,13 +127,15 @@ class MainWindow(QMainWindow):
         """Change UI language"""
         __result: int = 0
         if self.ui.text_preview_mode.isVisible():
-            __result = self.__box_dialog(self.tr('Warning'),self.tr('Extracted content will be deleted once you change the language (unless you have already saved it)'),{'ok': self.tr('Accept')}).exec()
+            # Show a warning dialog before change language
+            __result = self.__box_dialog(self.tr('Warning'), self.tr('Extracted content will be deleted once you change the language (unless you have already saved it)'),{'ok': self.tr('Accept')}).exec()
         if not self.ui.text_preview_mode.isVisible() or __result == 1024:
             #Feature: Save content in a temporal file (The content is removed when language change)
             lang_manager.show_dialog()
             #Update UI language
             self.ui.retranslateUi(self)
             self.current_lang = lang_manager.lang_code
+            # When initial info screen is visible
             if self.__init_help.info.isVisible(): self.__init_help.load_info(self.current_lang)
 
     def __box_dialog(self, title:str = '', text:str = '', buttons_cancel_ok:dict | None = None, icon:QIcon | None = None) -> QMessageBox:
@@ -142,13 +144,16 @@ class MainWindow(QMainWindow):
         __dialog: QMessageBox = QMessageBox()
         # Standard dialog buttons
         __dialog.setStandardButtons(__dialog.StandardButton.Ok | __dialog.StandardButton.Cancel)
-        __buttons_txt:list[str] = ['Ok', 'Cancel']
+        # If not give buttons labels
+        __buttons_txt:list[str] = [self.tr('Ok'), self.tr('Cancel')]
         __dialog.setWindowIcon(__icon)
         __dialog.setWindowTitle(title)
         __dialog.setText(text)
+        # Has been received a dict with buttons
         if buttons_cancel_ok is not None and type(buttons_cancel_ok) is dict:
             if 'ok' in buttons_cancel_ok: __buttons_txt[0] = buttons_cancel_ok['ok']
             if 'cancel' in buttons_cancel_ok: __buttons_txt[1] = buttons_cancel_ok['cancel']
+        # Set visible text for each button
         __dialog.button(__dialog.StandardButton.Ok).setText(__buttons_txt[0])
         __dialog.button(__dialog.StandardButton.Cancel).setText(__buttons_txt[1])
         return __dialog
@@ -160,6 +165,7 @@ class MainWindow(QMainWindow):
         pass
 
     def __osl(self):
+        """Load Open Source Licenses (Information - OSL)"""
         OSL(self, lang_manager)
 
 def run():
