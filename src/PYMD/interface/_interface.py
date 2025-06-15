@@ -138,7 +138,7 @@ class MainWindow(QMainWindow):
 
             #Update UI language (MainWindow > childs and Language Dialog)
             self.ui.retranslateUi(self)
-            lang_manager.lang_dialog.retranslateUi(self)
+            lang_manager.lang_dialog.retranslateUi(lang_manager)
 
             self.current_lang = lang_manager.lang_code
             # When initial info screen is visible
