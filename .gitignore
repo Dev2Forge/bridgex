@@ -4,3 +4,12 @@ converted
 **/*.log
 **/logs
 tests/
+**/__pycache__
+**/*.ui
+**/*.ts
+**/*.pyproject
+**/*.pyproject.user
+**/*.qrc
+**/*.db
+.idea
+.vscode
