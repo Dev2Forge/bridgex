@@ -61,7 +61,7 @@ class MainWindow(QMainWindow):
         self.ui.convert_btn.clicked.connect(self.__convert)
         self.ui.text_file_selected.textChanged.connect(self.__update)
 
-    def __open_file(self):
+    def __open_file(self) -> None:
         __msg:str = self.tr('Select a file')
         __last_dir:str = db.get_data_where('config_ui', 'name == "last_directory_open"').fetchone()[2]
         __file: tuple[str, str] = self.__file_dialog.getOpenFileName(self, self.tr("Open File"), __last_dir, f"{__msg} ({self.__extensions})")
@@ -77,7 +77,9 @@ class MainWindow(QMainWindow):
             __converter:Converter = Converter(self.__filename.absolute().__str__())
             __content: Optional[str] = __converter.convert_file().data_str
 
+            # File is NOT empty
             if __content is not None:
+                # Hide initial "screen" and show file content
                 self.__init_help.hide()
                 self.ui.frame_views.show()
                 self.ui.text_file_selected.setPlainText(__content)
@@ -86,24 +88,37 @@ class MainWindow(QMainWindow):
                 #self.__progress_bar().close()
                 self.__box_dialog(self.tr("Warning"), self.tr('The file does not contain plain text (make sure the file content is not just images)')).exec()
 
-    def __update(self):
-        # Update real-time MarkDown preview
+    def __update(self) -> None:
+        """Update real-time MarkDown preview"""
         self.ui.text_preview_mode.setMarkdown(self.ui.text_file_selected.toPlainText())
 
-    def __convert(self):
+    def __convert(self) -> None:
+        """Manage file converter, call methods to convert, open files..."""
         # Feature: New dialog to rename the file (file to save as .md)
+
+        # Before save, validate not empty content
+        if self.ui.text_file_selected.toPlainText().strip() == '':
+            self.__box_dialog(self.tr('Warning'), self.tr('The file is empty'), {'ok': self.tr('Accept')}).exec()
+            return
+
+        # Get the last output directory
         __last_dir:str = db.get_data_where('config_ui', 'name == "last_directory_output"').fetchone()[2]
-        self.__dir_output:str = self.__file_dialog.getExistingDirectory(self, self.tr("Select a directory"), "C:/")
-        print('DIR-OUTPUT => ', self.__dir_output)
+
+        # Ask the user for output directory (Remember the previous directory)
+        self.__dir_output:str = self.__file_dialog.getExistingDirectory(self, self.tr("Select a directory"), __last_dir)
+
         try:
+            # Output directory was selected
             if self.__dir_output.strip() != '':
+                # Update output directory in DB
                 db.delete_data('config_ui', 'name == "last_directory_output"')
                 db.insert_data(['last_directory_output', self.__dir_output], ['name', 'value'], 'config_ui')
+
+                # Use the same filename input for the output file (Just change the directory)
                 __file_manager:FileManager = FileManager(self.__filename.absolute().__str__(), self.__dir_output)
-                if self.ui.text_file_selected.toPlainText().strip() == '':
-                    self.__box_dialog(self.tr('Warning'), self.tr('The file is empty'), {'ok': self.tr('Accept')}).exec()
-                else:
-                    __file_manager.save_md(self.ui.text_file_selected.toPlainText())
+
+                # Save converted file
+                __file_manager.save_md(self.ui.text_file_selected.toPlainText())
         except Exception as e:
             log.log_e(e)
 
@@ -113,7 +128,12 @@ class MainWindow(QMainWindow):
         for ex in FileManager.extensions(): __allow_extensions += f'*{ex} '
         return __allow_extensions.strip()
 
-    def __exit(self, event_target: Optional[QCloseEvent] = None):
+    def __exit(self, event_target: Optional[QCloseEvent] = None) -> None:
+        """When event "close" is caught or user press `CTRL + W` shortcut
+
+        Args:
+            event_target (Optional[QCloseEvent]): When this method is called from "Title bar" Event (Press title "X")
+        """
         __result:int = self.__box_dialog(self.tr('Close Program'),self.tr('Do you want to close this program?'),{'ok': self.tr('Accept')}).exec()
 
         if __result == 1024:
@@ -158,6 +178,21 @@ class MainWindow(QMainWindow):
             if self.__init_help.info.isVisible(): self.__init_help.load_info(self.current_lang)
 
     def __box_dialog(self, title:str = '', text:str = '', buttons_cancel_ok: Optional[dict] = None, icon: Optional[QIcon] = None) -> QMessageBox:
+        """Create a Box Dialog (To show warnings, confirms, e.t.c.)
+
+        Args:
+            title (str): Dialog title (Example: Warning file size)
+            text (str): Dialog message, text
+            buttons_cancel_ok (Optional[dict]): Custom text to standard buttons (Cancel | Ok)
+            icon (Optional[QIcon]): To set window icon
+
+        Returns:
+            QMessageBox: A dialog object ready to use
+
+        Note:
+            `show()` method should be executed to use this, not show by default...
+
+        """
         __icon: QIcon = icon if icon is not None else self.__icon_window
         __dialog: QMessageBox = QMessageBox()
 

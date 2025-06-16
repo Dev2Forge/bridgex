@@ -18,3 +18,4 @@ def database_config():
         db.insert_data(['current_lang_code', 'es_CO'], ['name', 'value'], 'config_ui')
         db.insert_data(['last_directory_open', 'C:/'], ['name', 'value'], 'config_ui')
         db.insert_data(['last_directory_output', 'C:/'], ['name', 'value'], 'config_ui')
+        db.insert_data(['max_file_size', 10*1024*1024], ['name', 'value'], 'config_ui')
