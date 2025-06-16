@@ -1,12 +1,17 @@
+from sqlite3 import Cursor
+from typing import Optional
 from sqlazo import Database
 from chromologger import Logger as Log
 
-log = Log('./log.log')
+log: Log = Log('./log.log')
 
 def database_config():
-    db = Database('./db_manager/config.db', False)
+    db: Database = Database('./database/config.db', False)
     # Query to validate that the table exists
-    validate_query = db.get_data_where('config_ui', 'id == 1')
+    validate_query: Optional[Cursor] = db.get_data_where('config_ui', 'id == 1')
+
+    # Means that database don't have configs
+    # Create initial configs
     if validate_query is None:
         cols_config: list[str] = ['id INTEGER PRIMARY KEY', 'name TEXT NOT NULL', 'value TEXT NOT NULL']
         db.create_table('config_ui', cols_config)

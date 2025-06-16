@@ -1,10 +1,12 @@
+from typing import Optional
+
 from PySide6.QtCore import Qt, QTranslator, QLocale
 from PySide6.QtWidgets import QApplication, QMainWindow
 from .ui_dialog_language import Ui_Lang_Dialog
 from PySide6.QtWidgets import QDialog
 from sqlazo import Database
 
-db = Database('./db_manager/config.db', False)
+db = Database('./database/config.db', False)
 
 class LanguageManager(QDialog):
     def __init__(self, app:QApplication=None):
@@ -14,8 +16,8 @@ class LanguageManager(QDialog):
         self.lang_file:str = ''
         self.__translator:QTranslator = QTranslator(app)
         self.__app:QApplication = app
-        self.parent:QMainWindow | None = None
-        self.lang_dialog:Ui_Lang_Dialog | None = None
+        self.parent: Optional[QMainWindow] = None
+        self.lang_dialog: Optional[Ui_Lang_Dialog] = None
 
     def set_super_parent(self, parent):
         self.parent = parent

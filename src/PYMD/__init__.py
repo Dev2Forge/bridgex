@@ -1,5 +1,5 @@
-from ._files_manager import FileManager
-from ._converter import Converter
+from src.PYMD.utils.FilesManager import FileManager
+from src.PYMD.logic.Converter import Converter
 from ._pymd import Pymd
 #from ._interface import Interface
 
