@@ -8,7 +8,7 @@ from ._lang import LanguageManager
 from ._initialHelp import InitialHelp
 from ._osl import OSL
 from ._about import About
-from src.PYMD import FileManager, Converter
+from .. import FileManager, Converter
 from .ui_main_window import Ui_MainWindow
 from chromologger import Logger as Log
 from sqlazo import Database
