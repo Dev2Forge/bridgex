@@ -1,4 +1,6 @@
 import sys
+from typing import Optional
+
 from PySide6.QtWidgets import QApplication, QMainWindow, QFileDialog, QLabel, QMessageBox
 from PySide6.QtGui import QIcon, QCloseEvent
 from PySide6.QtCore import Qt, QLocale, QSize
@@ -15,7 +17,7 @@ from . import resources_rc
 
 # Feature: Change focus order (the exit dialog focus is "ok", should be "cancel")
 
-db = Database('./db_manager/config.db', False)
+db = Database('./database/config.db', False)
 log:Log = Log('./logs/log_interface')
 
 app = QApplication(sys.argv)
@@ -45,9 +47,6 @@ class MainWindow(QMainWindow):
     @property
     def get_app(self) -> QApplication: return app
 
-    def closeEvent(self, event: QCloseEvent) -> None:
-        if not self.__closed_ui: self.__exit(event)
-
     def __listeners(self):
         """Catch events and set an action"""
         self.ui.explorer_btn.clicked.connect(self.__open_file)
@@ -55,6 +54,7 @@ class MainWindow(QMainWindow):
         self.ui.action_open_file.triggered.connect(self.__open_file)
         self.ui.action_exit.triggered.connect(self.__exit)
         self.ui.action_about.triggered.connect(self.__about)
+
         self.ui.action_language.triggered.connect(self.__language)
         self.ui.action_theme.triggered.connect(self.__theme)
         self.ui.action_OSL.triggered.connect(self.__osl)
@@ -75,7 +75,7 @@ class MainWindow(QMainWindow):
             # Feature: Show progress bar
             # => Can be a Label image (hide initialHelp if all ok, continue else show initialHelp again)
             __converter:Converter = Converter(self.__filename.absolute().__str__())
-            __content:str | None = __converter.convert_file().data_str
+            __content: Optional[str] = __converter.convert_file().data_str
 
             if __content is not None:
                 self.__init_help.hide()
@@ -113,16 +113,27 @@ class MainWindow(QMainWindow):
         for ex in FileManager.extensions(): __allow_extensions += f'*{ex} '
         return __allow_extensions.strip()
 
-    def __exit(self, event_target: QCloseEvent | None = None):
+    def __exit(self, event_target: Optional[QCloseEvent] = None):
         __result:int = self.__box_dialog(self.tr('Close Program'),self.tr('Do you want to close this program?'),{'ok': self.tr('Accept')}).exec()
 
         if __result == 1024:
+            # Close via "Dialog" (CTRL + W)
             self.__closed_ui = True
             self.close()
         else:
+            # When close via "Window" (Title bar "X")
             if type(event_target) is QCloseEvent: event_target.ignore()
 
+    def closeEvent(self, event: QCloseEvent) -> None:
+        """Catch Close Event (Title bar "X")
+
+        Args:
+            event (QCloseEvent): Close Event from title bar "X"
+        """
+        if not self.__closed_ui: self.__exit(event)
+
     def __about(self):
+        """Show about dialog"""
         About(self, self.current_lang)
 
     def __language(self):
@@ -140,18 +151,23 @@ class MainWindow(QMainWindow):
             self.ui.retranslateUi(self)
             lang_manager.lang_dialog.retranslateUi(lang_manager)
 
+            # Update lang UI var
             self.current_lang = lang_manager.lang_code
+
             # When initial info screen is visible
             if self.__init_help.info.isVisible(): self.__init_help.load_info(self.current_lang)
 
-    def __box_dialog(self, title:str = '', text:str = '', buttons_cancel_ok:dict | None = None, icon:QIcon | None = None) -> QMessageBox:
-        """Create a box dialog"""
+    def __box_dialog(self, title:str = '', text:str = '', buttons_cancel_ok: Optional[dict] = None, icon: Optional[QIcon] = None) -> QMessageBox:
         __icon: QIcon = icon if icon is not None else self.__icon_window
         __dialog: QMessageBox = QMessageBox()
+
         # Standard dialog buttons
         __dialog.setStandardButtons(__dialog.StandardButton.Ok | __dialog.StandardButton.Cancel)
+
         # If not give buttons labels
         __buttons_txt:list[str] = [self.tr('Ok'), self.tr('Cancel')]
+
+        # Show and set window configs
         __dialog.setWindowIcon(__icon)
         __dialog.setWindowTitle(title)
         __dialog.setText(text)

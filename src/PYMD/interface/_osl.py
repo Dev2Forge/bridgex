@@ -7,7 +7,7 @@ class OSL(QDialog):
     def __init__(self, parent=None, lang_manager=None):
         super().__init__(parent)
         self.__lang = lang_manager
-        self.__osl = Ui_dialog_osl()
+        self.__osl: Ui_dialog_osl = Ui_dialog_osl()
         self.__osl.setupUi(self)
         self.__load_initial_content()
         self.show()

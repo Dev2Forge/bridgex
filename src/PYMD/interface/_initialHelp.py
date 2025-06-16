@@ -17,7 +17,7 @@ class InitialHelp:
         self.load_info()
 
     def load_info(self, lang_code: str=None):
-        __lang = self.__lang.lang_code if lang_code == None else lang_code
+        __lang = self.__lang.lang_code if lang_code is None else lang_code
         __info_md: str = ""
         # This is not a translator, just a file
         with open(f"./interface/translations/others/IH_{__lang}.srm", "r", encoding="utf-8") as lang:

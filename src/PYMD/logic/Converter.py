@@ -1,5 +1,6 @@
+from typing import Optional
+from ..models.Returning import Returning
 from markitdown import MarkItDown, DocumentConverterResult
-from src.PYMD._returning import Returning
 from chromologger import Logger as Log
 from threading import Thread
 import asyncio
@@ -7,7 +8,7 @@ import asyncio
 log = Log('./logs/log_converter') # Initialize logger
 
 class Converter(MarkItDown):
-    def __init__(self,filename:str,ep:bool|None=None,eb:bool|None=None) -> None:
+    def __init__(self, filename:str, ep: Optional[bool] =None, eb: Optional[bool] =None) -> None:
         super().__init__(enable_plugins=ep, enable_builtins=eb)
         self.__fn:str = filename # Path to file + extension
         self.content:str = ''
