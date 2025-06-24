@@ -2,7 +2,7 @@ from chromologger import Logger
 from chromolog import Print as Log
 from pathlib import Path
 
-log = Logger('./logs/log_file_manager')
+log = Logger('./logs/log_file_manager.log')
 p:Log = Log()
 
 class FileManager:
@@ -53,7 +53,7 @@ class FileManager:
 
     @staticmethod
     def extensions() -> list[str]: return  [".pdf", ".docx", ".pptx", ".xlsx", ".xls", ".msg", ".csv", ".txt", ".text",
-                                  ".md", ".markdown", ".json", ".jsonl", ".xml", ".rss", ".atom", ".html",
+                                  ".md", ".markdown", ".json", ".jsonl", ".xml", ".rss", ".atom", ".html", ".mhtml",
                                   ".htm", ".epub", ".zip", ".ipynb"]
 
     @staticmethod

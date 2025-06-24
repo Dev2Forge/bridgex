@@ -18,7 +18,7 @@ from . import resources_rc
 # Feature: Change focus order (the exit dialog focus is "ok", should be "cancel")
 
 db = Database('./database/config.db', False)
-log:Log = Log('./logs/log_interface')
+log:Log = Log('./logs/log_interface.log')
 
 app = QApplication(sys.argv)
 lang_manager:LanguageManager = LanguageManager(app)
@@ -69,7 +69,6 @@ class MainWindow(QMainWindow):
             self.__filename = Path(__file[0])
             db.delete_data('config_ui', 'name == "last_directory_open"')
             # Save last directory
-            print(self.__filename.absolute().parent.__str__())
             db.insert_data(['last_directory_open', self.__filename.absolute().parent.__str__()], ['name', 'value'], 'config_ui')
 
             # Feature: Show progress bar
