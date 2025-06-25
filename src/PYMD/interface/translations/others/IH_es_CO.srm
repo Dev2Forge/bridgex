@@ -10,9 +10,10 @@
 
 <ul>
     <h2>Atajos de teclado:</h2>
-    <li>- <strong>Ctrl + O</strong> seleccionar un archivo</li>
-    <li>- <strong>Ctrl + L</strong> seleccionar lenguaje</li>
-    <li>- <strong>Ctrl + T</strong> seleccionar tema</li>
-    <li>- <strong>Ctrl + T</strong> acerca de</li>
-    <li>- <strong>Ctrl + W</strong> cerrar programa</li>
+    <li>- <strong>Ctrl + O</strong> Seleccionar un archivo</li>
+    <li>- <strong>Ctrl + L</strong> Seleccionar idioma</li>
+    <!-- <li>- <strong>Ctrl + T</strong> Seleccionar tema</li> -->
+    <li>- <strong>Ctrl + N</strong> Licencias de código abierto</li>
+    <li>- <strong>Ctrl + M</strong> Acerca de</li>
+    <li>- <strong>Ctrl + W</strong> Cerrar programa</li>
 </ul>

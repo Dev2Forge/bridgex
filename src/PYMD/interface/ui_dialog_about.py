@@ -24,6 +24,8 @@ class Ui_about_dialog(object):
         if not about_dialog.objectName():
             about_dialog.setObjectName(u"about_dialog")
         about_dialog.resize(578, 640)
+        about_dialog.setMinimumSize(QSize(578, 640))
+        about_dialog.setMaximumSize(QSize(578, 640))
         font = QFont()
         font.setFamilies([u"Gabriola"])
         font.setPointSize(20)

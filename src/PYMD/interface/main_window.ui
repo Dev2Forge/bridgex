@@ -678,7 +678,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
           <string/>
          </property>
          <property name="text">
-          <string extracomment="Copyright Notice - Footer">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;© 2025 Tutos Rive. Licensed under the &lt;a href=&quot;https://github.com/tutosrive/pymd/blob/main/LICENSE&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#27bf73;&quot;&gt;MIT License&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string extracomment="Copyright Notice - Footer">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;©2025 &lt;a href=&quot;https://www.dev2forge.software&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#27bf73;&quot;&gt;Dev2Forge&lt;/span&gt;&lt;/a&gt;. Licensed under the &lt;a href=&quot;https://github.com/tutosrive/pymd/blob/main/LICENSE&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#27bf73;&quot;&gt;MIT License&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="textFormat">
           <enum>Qt::TextFormat::RichText</enum>
@@ -1469,6 +1469,9 @@ li.checked::marker { content: &quot;\2612&quot;; }
    <property name="checkable">
     <bool>false</bool>
    </property>
+   <property name="icon">
+    <iconset theme="QIcon::ThemeIcon::DocumentOpen"/>
+   </property>
    <property name="text">
     <string>Open File</string>
    </property>
@@ -1486,6 +1489,9 @@ li.checked::marker { content: &quot;\2612&quot;; }
    </property>
   </action>
   <action name="action_exit">
+   <property name="icon">
+    <iconset theme="QIcon::ThemeIcon::ApplicationExit"/>
+   </property>
    <property name="text">
     <string>Exit</string>
    </property>
@@ -1504,7 +1510,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
   </action>
   <action name="action_about">
    <property name="icon">
-    <iconset theme="QIcon::ThemeIcon::HelpAbout"/>
+    <iconset resource="resources.qrc">
+     <normaloff>:/img/logo-pymd-1</normaloff>:/img/logo-pymd-1</iconset>
    </property>
    <property name="text">
     <string>About</string>
@@ -1520,6 +1527,9 @@ li.checked::marker { content: &quot;\2612&quot;; }
    </property>
   </action>
   <action name="action_language">
+   <property name="icon">
+    <iconset theme="accessories-character-map"/>
+   </property>
    <property name="text">
     <string>Language</string>
    </property>
@@ -1528,8 +1538,14 @@ li.checked::marker { content: &quot;\2612&quot;; }
    </property>
   </action>
   <action name="action_theme">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset theme="weather-clear"/>
+   </property>
    <property name="text">
-    <string>Theme</string>
+    <string>Theme (Soon)</string>
    </property>
    <property name="font">
     <font>
@@ -1542,8 +1558,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
   </action>
   <action name="action_OSL">
    <property name="icon">
-    <iconset>
-     <normaloff>assets/img/opl.webp</normaloff>assets/img/opl.webp</iconset>
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/osl_icon</normaloff>:/icons/osl_icon</iconset>
    </property>
    <property name="text">
     <string>Open Source Licences</string>
@@ -1553,6 +1569,9 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <family>Gabriola</family>
      <pointsize>12</pointsize>
     </font>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
    </property>
   </action>
  </widget>
