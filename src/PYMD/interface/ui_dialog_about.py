@@ -19,8 +19,6 @@ from PySide6.QtWidgets import (QAbstractButton, QApplication, QDialog, QDialogBu
     QFormLayout, QGridLayout, QLabel, QScrollArea,
     QSizePolicy, QWidget)
 
-from . import resources_rc
-
 class Ui_about_dialog(object):
     def setupUi(self, about_dialog):
         if not about_dialog.objectName():
@@ -88,10 +86,10 @@ class Ui_about_dialog(object):
         self.text_about.setObjectName(u"text_about")
         self.text_about.setMaximumSize(QSize(540, 16777215))
         self.text_about.setLocale(QLocale(QLocale.English, QLocale.UnitedKingdom))
-        self.text_about.setTextFormat(Qt.TextFormat.MarkdownText)
+        self.text_about.setTextFormat(Qt.TextFormat.RichText)
         self.text_about.setWordWrap(True)
         self.text_about.setOpenExternalLinks(True)
-        self.text_about.setTextInteractionFlags(Qt.TextInteractionFlag.LinksAccessibleByMouse|Qt.TextInteractionFlag.TextSelectableByKeyboard|Qt.TextInteractionFlag.TextSelectableByMouse)
+        self.text_about.setTextInteractionFlags(Qt.TextInteractionFlag.LinksAccessibleByKeyboard|Qt.TextInteractionFlag.LinksAccessibleByMouse)
 
         self.formLayout.setWidget(0, QFormLayout.ItemRole.SpanningRole, self.text_about)
 
