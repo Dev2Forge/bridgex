@@ -66,6 +66,12 @@ pre{line-height: 1 !important; font-size: 15px;}
     <hr>
     <div>
         <pre class="center"  style="line-height: 0.7 !important">PYMD V0.1.0 - Beta</pre>
-        <pre class="center"><a href="https://pymd.dev2forge.software">Sitio Web</a></pre>
+        <table style="margin-top: 10px" align="center" width="60%">
+            <tr>
+                <td><pre class="center"><a href="https://pymd.dev2forge.software">Sitio Web</a></pre></td>
+                <td><pre class="center"><a href="https://github.com/Dev2Forge/pymd/issues">Reportar Insidencias</a></pre></td>
+            </tr>
+        </table>
+        <pre class="center">Soporte <a href="mailto:pymd@dev2forge.software">pymd@dev2forge.software</a></pre>
     </div>
 </div>
