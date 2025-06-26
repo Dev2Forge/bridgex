@@ -17,8 +17,8 @@ from . import resources_rc
 
 # Feature: Change focus order (the exit dialog focus is "ok", should be "cancel")
 
-db = Database('./database/config.db', False)
-log:Log = Log('./logs/log_interface.log')
+db = Database(f'{Path(__file__).parent.parent}/database/config.db', False)
+log:Log = Log(f'{Path(__file__).parent.parent}/logs/log_interface.log')
 
 app = QApplication(sys.argv)
 lang_manager:LanguageManager = LanguageManager(app)

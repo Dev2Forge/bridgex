@@ -1,8 +1,9 @@
+from pathlib import Path
 from .database import Manager
 from chromologger import Logger as Log
 
 # Initial paths to files
-log:Log = Log('./logs/log_pymd.log')
+log:Log = Log(f'{Path(__file__).parent}/logs/log_pymd.log')
 
 class Pymd:
     @staticmethod

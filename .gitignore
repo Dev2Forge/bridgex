@@ -7,3 +7,6 @@ tests/
 **/*.db
 .idea
 .vscode
+**/dist/
+**/build/
+**/*.egg-info

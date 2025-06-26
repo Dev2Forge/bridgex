@@ -2,7 +2,7 @@ from chromologger import Logger
 from chromolog import Print as Log
 from pathlib import Path
 
-log = Logger('./logs/log_file_manager.log')
+log = Logger(f'{Path(__file__).parent.parent}/logs/log_file_manager.log')
 p:Log = Log()
 
 class FileManager:
