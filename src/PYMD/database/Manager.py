@@ -1,12 +1,13 @@
+from pathlib import Path
 from sqlite3 import Cursor
 from typing import Optional
 from sqlazo import Database
 from chromologger import Logger as Log
 
-log: Log = Log('./log.log')
+log: Log = Log(f'{Path(__file__).parent.parent}/log.log')
 
 def database_config():
-    db: Database = Database('./database/config.db', False)
+    db: Database = Database(f'{Path(__file__).parent.parent}/database/config.db', False)
     # Query to validate that the table exists
     validate_query: Optional[Cursor] = db.get_data_where('config_ui', 'id == 1')
 

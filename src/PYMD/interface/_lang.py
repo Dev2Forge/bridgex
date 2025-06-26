@@ -1,4 +1,5 @@
 from typing import Optional
+from pathlib import Path
 
 from PySide6.QtCore import Qt, QTranslator, QLocale
 from PySide6.QtWidgets import QApplication, QMainWindow
@@ -6,13 +7,13 @@ from .ui_dialog_language import Ui_Lang_Dialog
 from PySide6.QtWidgets import QDialog
 from sqlazo import Database
 
-db = Database('./database/config.db', False)
+db = Database(f'{Path(__file__).parent.parent}/database/config.db', False)
 
 class LanguageManager(QDialog):
     def __init__(self, app:QApplication=None):
         # es_CO is default
         self.lang_code: str = db.get_data_where('config_ui', 'name == "current_lang_code"').fetchone()[2]
-        self.__dir:str = './interface/translations/locale'
+        self.__dir:str = f'{Path(__file__).parent.parent}/interface/translations/locale'
         self.lang_file:str = ''
         self.__translator:QTranslator = QTranslator(app)
         self.__app:QApplication = app

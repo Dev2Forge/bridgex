@@ -1,11 +1,12 @@
 from typing import Optional
+from pathlib import Path
 from ..models.Returning import Returning
 from markitdown import MarkItDown, DocumentConverterResult
 from chromologger import Logger as Log
 from threading import Thread
 import asyncio
 
-log = Log('./logs/log_converter.log') # Initialize logger
+log = Log(f'{Path(__file__).parent.parent}/logs/log_converter.log') # Initialize logger
 
 class Converter(MarkItDown):
     def __init__(self, filename:str, ep: Optional[bool] =None, eb: Optional[bool] =None) -> None:
