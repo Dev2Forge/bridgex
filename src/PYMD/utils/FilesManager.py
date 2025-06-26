@@ -10,23 +10,18 @@ class FileManager:
         self.__fn:Path = Path(filename) # Path to file + extension
         self.__ot:Path = Path(output) # Path to file output + extension
         self.__en:str = encoding # Encoding to write a file .md
-        p.inf(f'FILE => {self.file}\nDIRECTORIO => {self.dir_output}')
         self.__validate()
 
     def __validate(self) -> bool | None:
         """Validate an extension file, and output existing"""
         __allowed:bool = self.__fn.suffix.lower() in self.extensions()
-        p.suc(self.__fn.absolute().suffix)
         __exists:bool = self.__fn.is_file()
         __exists_dir:bool = self.__ot.is_dir()
         if not __allowed:
-            p.err(f'File extension ("{self.__fn.suffix.lower()}") not allowed')
             raise TypeError(f'File extension ("{self.__fn.suffix.lower()}") not allowed')
         if not __exists:
-            p.err(f'File "{self.__fn.name}" not found')
             raise FileNotFoundError(f'File "{self.__fn.name}" not found')
         if not __exists_dir:
-            p.err(f'"{self.__ot.absolute()}" not found')
             raise NotADirectoryError(f'"{self.__ot.absolute()}" not found')
         return True
 
@@ -40,7 +35,6 @@ class FileManager:
         __file_md:str = f'{self.dir_output}/{self.__fn.stem}.md'
         try:
             if type(content) is not str:
-                p.err('Content must be a string')
                 raise TypeError('The content must be a string')
             with open(__file_md, 'w', encoding=self.__en) as __file:
                 __file.write(content)
@@ -48,7 +42,6 @@ class FileManager:
             __return = True
         except Exception as Error:
             log.log_e(Error)
-            p.err('An error occurred while writing the file.')
         return __return
 
     @staticmethod
