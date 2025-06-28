@@ -1,6 +1,6 @@
 from pathlib import Path
-from PySide6.QtCore import Qt, QRect
-from PySide6.QtWidgets import QLabel, QTextEdit, QGridLayout, QFrame, QSizePolicy
+from PySide6.QtCore import Qt
+from PySide6.QtWidgets import QLabel
 from ._lang import LanguageManager
 
 class InitialHelp:

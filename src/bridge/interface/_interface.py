@@ -1,9 +1,9 @@
 import sys
 from typing import Optional
 
-from PySide6.QtWidgets import QApplication, QMainWindow, QFileDialog, QLabel, QMessageBox
+from PySide6.QtWidgets import QApplication, QMainWindow, QFileDialog, QMessageBox
 from PySide6.QtGui import QIcon, QCloseEvent
-from PySide6.QtCore import Qt, QLocale, QSize
+from PySide6.QtCore import QSize
 from ._lang import LanguageManager
 from ._initialHelp import InitialHelp
 from ._osl import OSL

@@ -1,7 +1,7 @@
 from typing import Optional
 from pathlib import Path
 
-from PySide6.QtCore import Qt, QTranslator, QLocale
+from PySide6.QtCore import Qt, QTranslator
 from PySide6.QtWidgets import QApplication, QMainWindow
 from .ui_dialog_language import Ui_Lang_Dialog
 from PySide6.QtWidgets import QDialog
