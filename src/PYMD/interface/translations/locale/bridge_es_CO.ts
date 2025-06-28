@@ -88,7 +88,7 @@
     <message>
         <location filename="../../_interface.py" line="163"/>
         <source>Extracted content will be deleted once you change the language (unless you have already saved it)</source>
-        <translation type="unfinished">El contenido extraído se eliminará una vez cambie el idioma (A menos que ya lo haya convertido)</translation>
+        <translation>El contenido extraído se eliminará una vez cambie el idioma (A menos que ya lo haya convertido)</translation>
     </message>
     <message>
         <location filename="../../_interface.py" line="202"/>
