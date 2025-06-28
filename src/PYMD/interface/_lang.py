@@ -41,6 +41,6 @@ class LanguageManager(QDialog):
 
     def load_lang(self, lang_code:str=None):
         __code = lang_code if lang_code is not None else self.lang_code
-        self.lang_file = f'pymd_{__code}.qm'
+        self.lang_file = f'bridge_{__code}.qm'
         if self.__translator.load(self.lang_file, self.__dir):
             self.__app.installTranslator(self.__translator)
