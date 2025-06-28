@@ -1,5 +1,5 @@
-markitdown[all]==0.1.1
+markitdown[pdf,docx,pptx,xls,xlsx,outlook]==0.1.1
 chromologger==0.1.8
-Pyside6==6.9.0
+PySide6-Essentials==6.9.0
 sqlazo==0.1.5
 chromolog==0.2.4
