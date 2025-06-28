@@ -66,7 +66,6 @@ class Ui_about_dialog(object):
 "color: #84CD4F;\n"
 "border-radius: 5px;")
         self.about_label.setLocale(QLocale(QLocale.English, QLocale.UnitedKingdom))
-        self.about_label.setInputMethodHints(Qt.InputMethodHint.ImhLowercaseOnly)
         self.about_label.setText(u"<code>pip install bridge</code>")
         self.about_label.setTextFormat(Qt.TextFormat.RichText)
         self.about_label.setScaledContents(False)
