@@ -39,7 +39,7 @@
   </property>
   <property name="windowIcon">
    <iconset resource="resources.qrc">
-    <normaloff>:/img/logo-pymd-2</normaloff>:/img/logo-pymd-2</iconset>
+    <normaloff>:/img/logo-bridge-2</normaloff>:/img/logo-bridge-2</iconset>
   </property>
   <property name="locale">
    <locale language="English" country="UnitedKingdom"/>

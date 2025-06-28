@@ -97,7 +97,7 @@ border-radius: 5px;</string>
         <locale language="English" country="UnitedKingdom"/>
        </property>
        <property name="text">
-        <string>&lt;code&gt;pip install pymd&lt;/code&gt;</string>
+        <string notr="true">&lt;code&gt;pip install bridge&lt;/code&gt;</string>
        </property>
        <property name="textFormat">
         <enum>Qt::TextFormat::RichText</enum>

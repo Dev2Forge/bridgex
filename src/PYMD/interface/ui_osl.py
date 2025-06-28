@@ -34,7 +34,7 @@ class Ui_dialog_osl(object):
         dialog_osl.setFont(font)
         dialog_osl.setAcceptDrops(False)
         icon = QIcon()
-        icon.addFile(u":/img/logo-pymd-2", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon.addFile(u":/img/logo-bridge-2", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         dialog_osl.setWindowIcon(icon)
         dialog_osl.setLocale(QLocale(QLocale.English, QLocale.UnitedKingdom))
         dialog_osl.setSizeGripEnabled(False)

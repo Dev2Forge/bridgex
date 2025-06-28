@@ -11,7 +11,7 @@ class InitialHelp:
         self.__logo.setMinimumSize(500, 500)
         self.__logo.setTextFormat(Qt.TextFormat.RichText)
         self.__logo.setText('<style>img{max-width: 100%;max-height: 100%;}</style>'+
-        f'<img src="{Path(__file__).parent.parent}/interface/assets/img/logo-pymd/logo-pymd-2.1.png"/>')
+        f'<img src="{Path(__file__).parent.parent}/interface/assets/img/logo-bridge/logo-bridge-2.1.png"/>')
         self.info: QLabel= QLabel()
         self._w.ui.container_body.addWidget(self.__logo, 0, 0, 1, 1, alignment=Qt.AlignAbsolute)
         self._w.ui.container_body.addWidget(self.info, 0, 0, 1, 1, alignment=Qt.AlignHCenter)
