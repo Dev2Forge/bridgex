@@ -27,14 +27,14 @@ pre{line-height: 1 !important; font-size: 15px;}
 </style>
 <div class="main">
     <section id="main-about">
-        <h1 id="header">PYMD</h1>
+        <h1 id="header">Bridge</h1>
         <div class="logo center">
-            <img src=":/img/logo-pymd-2" width="200" class="center logo-pymd"/>
-    <pre>&copy;2025 <a href="https://github.com/Dev2Forge">Dev2Forge</a> - <a href="https://github.com/Dev2Forge/pymd/blob/main/LICENSE">MIT</a></pre>
+            <img src=":/img/logo-bridge-2" width="200" class="center logo-bridge"/>
+    <pre>&copy;2025 <a href="https://github.com/Dev2Forge">Dev2Forge</a> - <a href="https://github.com/Dev2Forge/bridge/blob/main/LICENSE">MIT</a></pre>
         </div>
         <div id="content-about">
             <p>
-            PYMD provides a simple graphical interface for automatically converting documents to Markdown format.
+            Bridge provides a simple graphical interface for automatically converting documents to Markdown format.
           </p>
           <p><strong>Currently supports these extensions:</strong></p>
           <pre>
@@ -42,7 +42,7 @@ pre{line-height: 1 !important; font-size: 15px;}
     ".zip", ".mhtml",".htm", ".epub", ".html"</pre>
         <p><strong>And Many More!</strong></p>
           <p>
-            When loading a file, PYMD extracts plain text and transforms it into Markdown while maintaining the structure whenever possible.
+            When loading a file, Bridge extracts plain text and transforms it into Markdown while maintaining the structure whenever possible.
             Ideal for developers and content creators looking for an agile and hassle-free workflow.
           </p>
         </div>
@@ -65,13 +65,13 @@ pre{line-height: 1 !important; font-size: 15px;}
     </div>
     <hr>
     <div>
-        <pre class="center"  style="line-height: 0.7 !important">PYMD V0.1.0 - Beta</pre>
+        <pre class="center"  style="line-height: 0.7 !important">Bridge V0.1.0 - Beta</pre>
         <table style="margin-top: 10px" align="center" width="60%">
             <tr>
-                <td><pre class="center"><a href="https://pymd.dev2forge.software">Website</a></pre></td>
-                <td><pre class="center"><a href="https://github.com/Dev2Forge/pymd/issues">Report Issues</a></pre></td>
+                <td><pre class="center"><a href="https://bridge.dev2forge.software">Website</a></pre></td>
+                <td><pre class="center"><a href="https://github.com/Dev2Forge/bridge/issues">Report Issues</a></pre></td>
             </tr>
         </table>
-        <pre class="center">Support <a href="mailto:pymd@dev2forge.software">pymd@dev2forge.software</a></pre>
+        <pre class="center">Support <a href="mailto:bridge@dev2forge.software">bridge@dev2forge.software</a></pre>
     </div>
 </div>

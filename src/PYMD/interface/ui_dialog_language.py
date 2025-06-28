@@ -33,7 +33,7 @@ class Ui_Lang_Dialog(object):
         font.setPointSize(12)
         Lang_Dialog.setFont(font)
         icon = QIcon()
-        icon.addFile(u":/img/logo-pymd-2", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon.addFile(u":/img/logo-bridge-2", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         Lang_Dialog.setWindowIcon(icon)
         Lang_Dialog.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
         Lang_Dialog.setAutoFillBackground(False)
@@ -83,7 +83,7 @@ class Ui_Lang_Dialog(object):
         self.languages.setMaximumSize(QSize(16777215, 272))
         self.languages.setAutoFillBackground(False)
         self.languages.setStyleSheet(u"QDialog > QListWidget{\n"
-"background-image: url(:/img/logo-pymd-2.2);\n"
+"background-image: url(:/img/logo-bridge-2.2);\n"
 "background-position: center;\n"
 "background-repeat: no-repeat;\n"
 "background-attachment: fixed;}")

@@ -1,7 +1,7 @@
-from ._pymd import Pymd
+from ._bridge import Bridge
 
 def main():
-    Pymd.run_app()
+    Bridge.run_app()
 
 if __name__ == '__main__':
     main()

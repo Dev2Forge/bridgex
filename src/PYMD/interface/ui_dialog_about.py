@@ -66,6 +66,7 @@ class Ui_about_dialog(object):
 "color: #84CD4F;\n"
 "border-radius: 5px;")
         self.about_label.setLocale(QLocale(QLocale.English, QLocale.UnitedKingdom))
+        self.about_label.setText(u"<code>pip install bridge</code>")
         self.about_label.setTextFormat(Qt.TextFormat.RichText)
         self.about_label.setScaledContents(False)
         self.about_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
@@ -109,6 +110,5 @@ class Ui_about_dialog(object):
 
     def retranslateUi(self, about_dialog):
         about_dialog.setWindowTitle(QCoreApplication.translate("about_dialog", u"About", None))
-        self.about_label.setText(QCoreApplication.translate("about_dialog", u"<code>pip install pymd</code>", None))
     # retranslateUi
 

@@ -243,11 +243,11 @@
    </font>
   </property>
   <property name="windowTitle">
-   <string>PYMD - SRM &amp; TRG</string>
+   <string>Bridge - Dev2Forge</string>
   </property>
   <property name="windowIcon">
    <iconset resource="resources.qrc">
-    <normaloff>:/img/logo-pymd-2</normaloff>:/img/logo-pymd-2</iconset>
+    <normaloff>:/img/logo-bridge-2</normaloff>:/img/logo-bridge-2</iconset>
   </property>
   <property name="toolTip">
    <string/>
@@ -678,7 +678,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
           <string/>
          </property>
          <property name="text">
-          <string extracomment="Copyright Notice - Footer">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;©2025 &lt;a href=&quot;https://www.dev2forge.software&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#27bf73;&quot;&gt;Dev2Forge&lt;/span&gt;&lt;/a&gt;. Licensed under the &lt;a href=&quot;https://github.com/tutosrive/pymd/blob/main/LICENSE&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#27bf73;&quot;&gt;MIT License&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string extracomment="Copyright Notice - Footer">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;©2025 &lt;a href=&quot;https://www.dev2forge.software&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#27bf73;&quot;&gt;Dev2Forge&lt;/span&gt;&lt;/a&gt;. Licensed under the &lt;a href=&quot;https://github.com/Dev2Forge/bridge/blob/main/LICENSE&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#27bf73;&quot;&gt;MIT License&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="textFormat">
           <enum>Qt::TextFormat::RichText</enum>
@@ -1511,7 +1511,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
   <action name="action_about">
    <property name="icon">
     <iconset resource="resources.qrc">
-     <normaloff>:/img/logo-pymd-1</normaloff>:/img/logo-pymd-1</iconset>
+     <normaloff>:/img/logo-bridge-2</normaloff>:/img/logo-bridge-2</iconset>
    </property>
    <property name="text">
     <string>About</string>

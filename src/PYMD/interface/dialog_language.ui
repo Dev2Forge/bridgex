@@ -33,7 +33,7 @@
   </property>
   <property name="windowIcon">
    <iconset resource="resources.qrc">
-    <normaloff>:/img/logo-pymd-2</normaloff>:/img/logo-pymd-2</iconset>
+    <normaloff>:/img/logo-bridge-2</normaloff>:/img/logo-bridge-2</iconset>
   </property>
   <property name="layoutDirection">
    <enum>Qt::LayoutDirection::LeftToRight</enum>
@@ -98,7 +98,7 @@
      </property>
      <property name="styleSheet">
       <string notr="true">QDialog &gt; QListWidget{
-background-image: url(:/img/logo-pymd-2.2);
+background-image: url(:/img/logo-bridge-2.2);
 background-position: center;
 background-repeat: no-repeat;
 background-attachment: fixed;}</string>

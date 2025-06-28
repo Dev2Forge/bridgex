@@ -39,7 +39,7 @@ class MainWindow(QMainWindow):
         self.ui.frame_views.hide()
         self.__init_help: InitialHelp = InitialHelp(self, app)
         self.__icon_window = QIcon()
-        self.__icon_window.addFile(u":/img/logo-pymd-2", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.__icon_window.addFile(u":/img/logo-bridge-2", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.__file_dialog:QFileDialog = QFileDialog()
         self.__filename:Path = Path('')
         self.__dir_output:str = ''

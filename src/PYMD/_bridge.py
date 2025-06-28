@@ -3,9 +3,9 @@ from .database import Manager
 from chromologger import Logger as Log
 
 # Initial paths to files
-log:Log = Log(f'{Path(__file__).parent}/logs/log_pymd.log')
+log:Log = Log(f'{Path(__file__).parent}/logs/log_bridge.log')
 
-class Pymd:
+class Bridge:
     @staticmethod
     def run_app():
         try:
