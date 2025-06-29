@@ -3,7 +3,7 @@ from .database import Manager
 from chromologger import Logger as Log
 
 # Initial paths to files
-log:Log = Log(f'{Path(__file__).parent}/logs/log_bridge.log')
+log:Log = Log(f'{Path(__file__).parent}/logs/log_bridgex.log')
 
 class Bridgex:
     @staticmethod

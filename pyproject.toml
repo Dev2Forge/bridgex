@@ -77,7 +77,9 @@ packages = { find = { where = ["src"] } }
 bridgex = [
     "NOTICE",
     "OSL/*",
-    "interface/assets/*",
+    "interface/assets/**/*",
     "logs/*",
-    "interface/translations/*"
+    "interface/translations/locale/**/*.qm",
+    "interface/translations/others/**/*.trg",
+    "interface/translations/others/**/*.srm"
 ]
