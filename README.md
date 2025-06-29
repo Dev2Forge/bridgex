@@ -1,18 +1,21 @@
 # Bridge 🌉🐍
 
 > [!NOTE]
+> - Use external libraries to run, yo can see the Licenses for each
 > - Is ready to use as module project (Relative paths)
 > - The interface was made with [Pyside6 | Qt6 v6.9.0](https://doc.qt.io/qtforpython-6/), so, yo can modify the [.ui](https://doc.qt.io/qtforpython-6/tutorials/basictutorial/uifiles.html) files
-> - Installable via [pip](https://pypi.org/project/pip/): `pip install bridge` 
+> - Installable via [pip](https://pypi.org/project/pip/) 
 > - If you only need to convert one file type, yo can modify the [`requirements` file](./requirements.txt) adn put you file type (If [markitdown](https://github.com/microsoft/markitdown) provide it file type)
 
 > [!WARNING]
 > - Isn't a IDE, is a Converter Program
 > - The installation time can be slow, keep in mind that you can convert a great variety of files
 
-<made>Algo</made> 
-
 **Bridge** is a 'Visual _Bridge_' between the [`general-users 🙆🏻‍♂️🙆🏻‍♀️`, `devs 👩🏻‍💻`] and the [**Markitdown**](https://github.com/microsoft/markitdown) library that allows convert a great variety of files to markdown format, which is very used around world, is so easy understand it and is very easy to write it!
+
+```shell
+pip install bridge
+```
 
 ## Why Bridge
 
@@ -29,6 +32,12 @@ Because is easy to remember, easy to pronounce and because the program idea is b
 ## What isn't Bridge?
 
 **Bridge** isn't a _IDE_, text editor, _markdown editor_, document viewer. The interface provided is just a **Lite Preview** where you can **edit** the incorrect formats before save the **Markdown File**.
+
+---
+
+## Third-Party Libraries
+
+This project utilises third-party libraries, each with its own licence. Detailed information regarding these licences can be found in the [third-party](./third-party/) folder.
 
 ---
 
