@@ -30,7 +30,7 @@ SOFTWARE
 
 # Pyside6
 
-This project uses the [Pyside6](https://github.com/qtproject/pyside-pyside-setup/blob/dev/LICENSES/LGPL-3.0-only.txt) library for its GUI components. The Pyside6 library is licensed under the LGPL-3.0-only License.
+This project uses the [Pyside6](https://doc.qt.io/qtforpython-6/) library for its GUI components. The Pyside6 library is licensed under the [LGPL-3.0-only License](https://github.com/qtproject/pyside-pyside-setup/blob/dev/LICENSES/LGPL-3.0-only.txt).
 
 ```LICENSE
                    GNU LESSER GENERAL PUBLIC LICENSE

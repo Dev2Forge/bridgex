@@ -37,7 +37,7 @@ Because is easy to remember, easy to pronounce and because the program idea is b
 
 ## Third-Party Libraries
 
-This project utilises third-party libraries, each with its own licence. Detailed information regarding these licences can be found in the [third-party](./third-party/) folder.
+This project uses third-party libraries, each with its own licence. Detailed information regarding these licences can be found in the [third-party](./third-party/) folder.
 
 ---
 
