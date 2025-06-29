@@ -1,6 +1,6 @@
 # Bridgex 🌉🐍
 
-[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
+[![Read inglés](https://img.shields.io/badge/read%20in-EN-red?logo=github)](https://github.com/Dev2Forge/bridgex/blob/main/README.md) [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
 [![PyPI version](https://img.shields.io/pypi/v/bridgex-md.svg)](https://pypi.org/project/bridgex-md/)
 [![Python Version](https://img.shields.io/badge/python-3.9%20|%203.10%20|%203.11%20|%203.12%20|%203.13-blue.svg)](https://www.python.org/downloads/)
 [![Issues](https://img.shields.io/github/issues/Dev2Forge/bridgex)](https://github.com/Dev2Forge/bridgex/issues)
@@ -72,7 +72,7 @@ Instalación vía pip:
 pip install bridgex
 ```
 
-Se recomienda el uso de un entorno virtual. Para personalizar los formatos soportados, edite el archivo [`requirements.txt`](../requirements.txt) según sus necesidades.
+Se recomienda el uso de un entorno virtual. Para personalizar los formatos soportados, edite el archivo [`requirements.txt`](https://github.com/Dev2Forge/bridgex/blob/main/requirements.txt) según sus necesidades.
 
 ---
 
@@ -137,7 +137,7 @@ Consulta las versiones publicadas y notas de lanzamiento en la sección [Release
 
 ## Dependencias y licencias 📚
 
-Este proyecto utiliza librerías de terceros, cada una con su propia licencia. Consulte la carpeta [third-party](../third-party/) para más información.
+Este proyecto utiliza librerías de terceros, cada una con su propia licencia. Consulte la carpeta [third-party](https://github.com/Dev2Forge/bridgex/tree/main/third-party/) para más información.
 
 ---
 
@@ -149,6 +149,6 @@ Las contribuciones son bienvenidas. Por favor, abra un issue o pull request sigu
 
 ## Licencia 📄
 
-Distribuido bajo la [Licencia MIT](./LICENSE).
+Distribuido bajo la [Licencia MIT](https://github.com/Dev2Forge/bridgex/blob/main/LICENSE).
 
 ©2025 Dev2Forge

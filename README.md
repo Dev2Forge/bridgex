@@ -1,6 +1,8 @@
 # Bridgex 🌉🐍
 
+[![Read in Spanish](https://img.shields.io/badge/read%20in-ES-red?logo=github)](https://github.com/Dev2Forge/bridgex/blob/main/translations/README_ES.md)
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
+![Pepy Total Downloads](https://img.shields.io/pepy/dt/bridgex)
 [![PyPI version](https://img.shields.io/pypi/v/bridgex?label=bridgex)](https://pypi.org/project/bridgex/)
 [![Python Version](https://img.shields.io/badge/python-3.9%20|%203.10%20|%203.11%20|%203.12%20|%203.13-blue.svg)](https://www.python.org/downloads/)
 [![Issues](https://img.shields.io/github/issues/Dev2Forge/bridgex)](https://github.com/Dev2Forge/bridgex/issues)
@@ -70,7 +72,13 @@ Install via pip:
 pip install bridgex
 ```
 
-It is recommended to use a virtual environment. To customise supported formats, edit the [`requirements.txt`](./requirements.txt) file as needed.
+Start Bridgex from the terminal:
+
+```sh
+bridgex
+```
+
+It is recommended to use a virtual environment. To customise supported formats, edit the [`requirements.txt`](https://github.com/Dev2Forge/bridgex/blob/main/requirements.txt) file as needed.
 
 ---
 
@@ -135,7 +143,7 @@ Check the published versions and release notes in the [Releases](https://github.
 
 ## Dependencies and Licences
 
-This project uses third‑party libraries, each with its own licence. See the [third‑party](./third-party/) folder for more information.
+This project uses third‑party libraries, each with its own licence. See the [third‑party](https://github.com/Dev2Forge/bridgex/tree/main/third-party/) folder for more information.
 
 ---
 
@@ -147,6 +155,6 @@ Contributions are welcome. Please open an issue or pull request following the co
 
 ## Licence
 
-Distributed under the [MIT Licence](./LICENSE).
+Distributed under the [MIT Licence](https://github.com/Dev2Forge/bridgex/blob/main/LICENSE).
 
 ©2025 Dev2Forge
