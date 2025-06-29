@@ -1,17 +1,17 @@
-# Bridge 🌉🐍
+# Bridgex 🌉🐍
 
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
-[![PyPI version](https://img.shields.io/pypi/v/bridge-md.svg)](https://pypi.org/project/bridge-md/)
+[![PyPI version](https://img.shields.io/pypi/v/bridgex-md.svg)](https://pypi.org/project/bridgex-md/)
 [![Python Version](https://img.shields.io/badge/python-3.9%20|%203.10%20|%203.11%20|%203.12%20|%203.13-blue.svg)](https://www.python.org/downloads/)
-[![Issues](https://img.shields.io/github/issues/Dev2Forge/bridge)](https://github.com/Dev2Forge/bridge/issues)
+[![Issues](https://img.shields.io/github/issues/Dev2Forge/bridgex)](https://github.com/Dev2Forge/bridgex/issues)
 
-Bridge es una interfaz gráfica de código abierto para la conversión de archivos a formato Markdown, construida en Python y basada en [Pyside6 (Qt for Python)](https://doc.qt.io/qtforpython-6/). Su objetivo es facilitar el acceso a la biblioteca [Markitdown](https://github.com/microsoft/markitdown) mediante una experiencia visual sencilla y modular.
+Bridgex es una interfaz gráfica de código abierto para la conversión de archivos a formato Markdown, construida en Python y basada en [Pyside6 (Qt for Python)](https://doc.qt.io/qtforpython-6/). Su objetivo es facilitar el acceso a la biblioteca [Markitdown](https://github.com/microsoft/markitdown) mediante una experiencia visual sencilla y modular.
 
 ---
 
 ## Tabla de Contenidos
 
-- [Bridge 🌉🐍](#bridge-)
+- [Bridgex 🌉🐍](#bridgex-)
   - [Tabla de Contenidos](#tabla-de-contenidos)
   - [Características ✨](#características-)
   - [Capturas de Pantalla 🖼️](#capturas-de-pantalla-️)
@@ -39,8 +39,8 @@ Bridge es una interfaz gráfica de código abierto para la conversión de archiv
 
 ## Capturas de Pantalla 🖼️
 
-![img](https://cdn.jsdelivr.net/gh/tutosrive/images-projects-srm-trg@main/dev2forge/pymd/bridge/preview-1-main.png)
-_Ejemplo de la ventana principal de Bridge._
+![img](https://cdn.jsdelivr.net/gh/tutosrive/images-projects-srm-trg@main/dev2forge/pymd/bridgex/preview-1-main.png)
+_Ejemplo de la ventana principal de Bridgex._
 
 <details>
 <summary><strong>Ver previsualizaciones de interfaz</strong></summary>
@@ -49,10 +49,10 @@ _Ejemplo de la ventana principal de Bridge._
 
 |      Nombre    |     Vista Previa      |
 |:----------------:|:---------------------:|
-| Abrir Archivo | ![img](https://cdn.jsdelivr.net/gh/tutosrive/images-projects-srm-trg@main/dev2forge/pymd/bridge/preview-2-openfile.png) |
-| Mini Editor | ![img](https://cdn.jsdelivr.net/gh/tutosrive/images-projects-srm-trg@main/dev2forge/pymd/bridge/preview-3-minieditor.png) |
-| Convertir | ![img](https://cdn.jsdelivr.net/gh/tutosrive/images-projects-srm-trg@main/dev2forge/pymd/bridge/preview-4-convert.png) |
-| Cambiar Idioma | ![img](https://cdn.jsdelivr.net/gh/tutosrive/images-projects-srm-trg@main/dev2forge/pymd/bridge/preview-5-languagechange.png) |
+| Abrir Archivo | ![img](https://cdn.jsdelivr.net/gh/tutosrive/images-projects-srm-trg@main/dev2forge/pymd/bridgex/preview-2-openfile.png) |
+| Mini Editor | ![img](https://cdn.jsdelivr.net/gh/tutosrive/images-projects-srm-trg@main/dev2forge/pymd/bridgex/preview-3-minieditor.png) |
+| Convertir | ![img](https://cdn.jsdelivr.net/gh/tutosrive/images-projects-srm-trg@main/dev2forge/pymd/bridgex/preview-4-convert.png) |
+| Cambiar Idioma | ![img](https://cdn.jsdelivr.net/gh/tutosrive/images-projects-srm-trg@main/dev2forge/pymd/bridgex/preview-5-languagechange.png) |
 
 </details>
 
@@ -69,7 +69,7 @@ Requisitos:
 Instalación vía pip:
 
 ```sh
-pip install bridge
+pip install bridgex
 ```
 
 Se recomienda el uso de un entorno virtual. Para personalizar los formatos soportados, edite el archivo [`requirements.txt`](../requirements.txt) según sus necesidades.
@@ -78,16 +78,16 @@ Se recomienda el uso de un entorno virtual. Para personalizar los formatos sopor
 
 ## Clonación y Ejecución Local 💻
 
-Clona el repositorio y ejecuta Bridge localmente:
+Clona el repositorio y ejecuta Bridgex localmente:
 
 ```sh
-git clone https://github.com/Dev2Forge/bridge.git
-cd bridge
+git clone https://github.com/Dev2Forge/bridgex.git
+cd bridgex
 python -m venv .venv
 .venv\Scripts\activate  # En Windows
 # source .venv/bin/activate  # En Linux/MacOS
 pip install -r requirements.txt
-python -m src.bridge
+python -m src.bridgex
 ```
 
 ---
@@ -103,7 +103,7 @@ python -m src.bridge
 
 ## Formatos Soportados 📂
 
-Bridge admite la conversión de los siguientes formatos de archivo:
+Bridgex admite la conversión de los siguientes formatos de archivo:
 
 - PDF (`.pdf`)
 - Word (`.docx`)
@@ -125,13 +125,13 @@ Bridge admite la conversión de los siguientes formatos de archivo:
 
 ## Limitaciones ⚠️
 
-Bridge no es un IDE, editor de texto, editor de Markdown ni visor de documentos. Su propósito es servir como puente entre el usuario y la conversión a Markdown, ofreciendo una edición ligera y sin funcionalidades de edición avanzada.
+Bridgex no es un IDE, editor de texto, editor de Markdown ni visor de documentos. Su propósito es servir como puente entre el usuario y la conversión a Markdown, ofreciendo una edición ligera y sin funcionalidades de edición avanzada.
 
 ---
 
 ## Releases 🏷️
 
-Consulta las versiones publicadas y notas de lanzamiento en la sección [Releases](https://github.com/Dev2Forge/bridge/releases) del repositorio.
+Consulta las versiones publicadas y notas de lanzamiento en la sección [Releases](https://github.com/Dev2Forge/bridgex/releases) del repositorio.
 
 ---
 
