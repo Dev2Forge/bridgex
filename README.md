@@ -39,7 +39,7 @@ Bridgex is an open‑source graphical interface for converting files to Markdown
 
 ## Screenshots
 
-![img](https://cdn.jsdelivr.net/gh/tutosrive/images-projects-srm-trg@main/dev2forge/pymd/bridge/preview-1-main.png)
+![img](https://cdn.jsdelivr.net/gh/tutosrive/images-projects-srm-trg@main/dev2forge/pymd/bridgex/preview-1-main.png)
 *Example of Bridgex’s main window.*
 
 <details>
