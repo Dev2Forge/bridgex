@@ -1,44 +1,152 @@
 # Bridge 🌉🐍
 
-> [!NOTE]
-> - Use external libraries to run, yo can see the Licenses for each
-> - Is ready to use as module project (Relative paths)
-> - The interface was made with [Pyside6 | Qt6 v6.9.0](https://doc.qt.io/qtforpython-6/), so, yo can modify the [.ui](https://doc.qt.io/qtforpython-6/tutorials/basictutorial/uifiles.html) files
-> - Installable via [pip](https://pypi.org/project/pip/) 
-> - If you only need to convert one file type, yo can modify the [`requirements` file](./requirements.txt) adn put you file type (If [markitdown](https://github.com/microsoft/markitdown) provide it file type)
+[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
+[![PyPI version](https://img.shields.io/pypi/v/bridge-md.svg)](https://pypi.org/project/bridge-md/)
+[![Python Version](https://img.shields.io/badge/python-3.9%20|%203.10%20|%203.11%20|%203.12%20|%203.13-blue.svg)](https://www.python.org/downloads/)
+[![Issues](https://img.shields.io/github/issues/Dev2Forge/bridge)](https://github.com/Dev2Forge/bridge/issues)
 
-> [!WARNING]
-> - Isn't a IDE, is a Converter Program
-> - The installation time can be slow, keep in mind that you can convert a great variety of files
+Bridge is an open‑source graphical interface for converting files to Markdown, built in Python and based on [Pyside6 (Qt for Python)](https://doc.qt.io/qtforpython-6/). Its objective is to simplify access to the [Markitdown](https://github.com/microsoft/markitdown) library through a straightforward, modular visual experience.
 
-**Bridge** is a 'Visual _Bridge_' between the [`general-users 🙆🏻‍♂️🙆🏻‍♀️`, `devs 👩🏻‍💻`] and the [**Markitdown**](https://github.com/microsoft/markitdown) library that allows convert a great variety of files to markdown format, which is very used around world, is so easy understand it and is very easy to write it!
+---
 
-```shell
+## Table of Contents
+
+- [Bridge 🌉🐍](#bridge-)
+  - [Table of Contents](#table-of-contents)
+  - [Features](#features)
+  - [Screenshots](#screenshots)
+  - [Installation](#installation)
+  - [Local Cloning and Execution 💻](#local-cloning-and-execution-)
+  - [Basic Usage](#basic-usage)
+  - [Supported Formats](#supported-formats)
+  - [Limitations](#limitations)
+  - [Releases](#releases)
+  - [Dependencies and Licences](#dependencies-and-licences)
+  - [Contribute](#contribute)
+  - [Licence](#licence)
+
+---
+
+## Features
+
+* Cross‑platform graphical interface.
+* Efficient file‑to‑Markdown conversion.
+* Modularity: easy to adapt and extend.
+* Support for multiple input formats.
+* Lightweight editing prior to saving.
+
+---
+
+## Screenshots
+
+![img](https://cdn.jsdelivr.net/gh/tutosrive/images-projects-srm-trg@main/dev2forge/pymd/bridge/preview-1-main.png)
+*Example of Bridge’s main window.*
+
+<details>
+<summary><strong>View interface previews</strong></summary>
+
+<br>
+
+|     Name     | Preview |
+| :-----: |:---: |
+|  Open File | ![img](https://cdn.jsdelivr.net/gh/tutosrive/images-projects-srm-trg@main/dev2forge/pymd/bridge/preview-2-openfile.png) |
+| Mini Editor | ![img](https://cdn.jsdelivr.net/gh/tutosrive/images-projects-srm-trg@main/dev2forge/pymd/bridge/preview-3-minieditor.png) |
+| Convert | ![img](https://cdn.jsdelivr.net/gh/tutosrive/images-projects-srm-trg@main/dev2forge/pymd/bridge/preview-4-convert.png) |
+| Change Language | ![img](https://cdn.jsdelivr.net/gh/tutosrive/images-projects-srm-trg@main/dev2forge/pymd/bridge/preview-5-languagechange.png) |
+
+</details>
+
+---
+
+## Installation
+
+Requirements:
+
+* Python ≥ **3.9** and ≤ **3.13**
+
+Install via pip:
+
+```sh
 pip install bridge
 ```
 
-## Why Bridge
-
-Because is easy to use, is a Python GUI (Thanks to [Pyside6(Qt For Python)](https://doc.qt.io/qtforpython-6/))
-
-## Why this name (Bridge)?
-
-Because is easy to remember, easy to pronounce and because the program idea is based in a "Bridge" between the users and the [**Markitdown**](https://github.com/microsoft/markitdown) library for python, easy to use, with graphic interface, just that 😁.
-
-## What's Bridge?
-
-**Bridge** is a **File Converter**, allow a great variety of files such as Power Point (**.pptx**), Word (**.docx**), PDF, Electronics Publications (**.epub**), Compressed files (**.zip**) and other files are allowed to convert.
-
-## What isn't Bridge?
-
-**Bridge** isn't a _IDE_, text editor, _markdown editor_, document viewer. The interface provided is just a **Lite Preview** where you can **edit** the incorrect formats before save the **Markdown File**.
+It is recommended to use a virtual environment. To customise supported formats, edit the [`requirements.txt`](./requirements.txt) file as needed.
 
 ---
 
-## Third-Party Libraries
+## Local Cloning and Execution 💻
 
-This project utilises third-party libraries, each with its own licence. Detailed information regarding these licences can be found in the [third-party](./third-party/) folder.
+Clone the repository and run Bridge locally:
+
+```sh
+git clone https://github.com/Dev2Forge/bridge.git
+cd bridge
+python -m venv .venv
+.venv\Scripts\activate  # On Windows
+# source .venv/bin/activate  # On Linux/MacOS
+pip install -r requirements.txt
+python -m src.bridge
+```
 
 ---
 
-[&copy;2025 Dev2Forge - MIT License](./LICENSE)
+## Basic Usage
+
+1. Run the application from the terminal or GUI.
+2. Select the file to convert.
+3. Review and edit the result if necessary.
+4. Save the file in Markdown format.
+
+---
+
+## Supported Formats
+
+Bridge supports conversion of the following file formats:
+
+* PDF (`.pdf`)
+* Word (`.docx`)
+* PowerPoint (`.pptx`)
+* Excel (`.xlsx`, `.xls`, `.csv`)
+* Outlook Messages (`.msg`)
+* Text (`.txt`, `.text`)
+* Markdown (`.md`, `.markdown`)
+* JSON (`.json`, `.jsonl`)
+* XML (`.xml`)
+* RSS/Atom (`.rss`, `.atom`)
+* HTML/MHTML (`.html`, `.htm`, `.mhtml`)
+* ePub (`.epub`)
+* Compressed files (`.zip`)
+* Jupyter Notebooks (`.ipynb`)
+* Other formats supported by Markitdown
+
+---
+
+## Limitations
+
+Bridge is not an IDE, text editor, Markdown editor, or document viewer. Its purpose is to serve as a bridge between the user and Markdown conversion, offering lightweight editing without advanced editing features.
+
+---
+
+## Releases
+
+Check the published versions and release notes in the [Releases](https://github.com/Dev2Forge/bridge/releases) section of the repository.
+
+---
+
+## Dependencies and Licences
+
+This project uses third‑party libraries, each with its own licence. See the [third‑party](./third-party/) folder for more information.
+
+---
+
+## Contribute
+
+Contributions are welcome. Please open an issue or pull request following the community’s best practices.
+
+---
+
+## Licence
+
+Distributed under the [MIT Licence](./LICENSE).
+
+©2025 Dev2Forge
