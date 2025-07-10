@@ -80,13 +80,41 @@ Se recomienda el uso de un entorno virtual. Para personalizar los formatos sopor
 
 Clona el repositorio y ejecuta Bridgex localmente:
 
+1. Clona el repositorio.
+
 ```sh
 git clone https://github.com/Dev2Forge/bridgex.git
+```
+
+2. Navega al directorio del proyecto y configura un entorno virtual.
+
+```sh
 cd bridgex
+```
+
+3. Crea un entorno virtual.
+
+```sh
 python -m venv .venv
-.venv\Scripts\activate  # En Windows
+```
+
+4. Activa el entorno virtual.
+
+```sh
+# En Windows
+.venv\Scripts\activate
 # source .venv/bin/activate  # En Linux/MacOS
+```
+
+5. Instala las dependencias requeridas.
+
+```sh
 pip install -r requirements.txt
+```
+
+6. Ejecuta la aplicación.
+
+```sh
 python -m src.bridgex
 ```
 

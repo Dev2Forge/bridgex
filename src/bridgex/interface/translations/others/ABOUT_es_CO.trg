@@ -65,7 +65,7 @@ pre{line-height: 1 !important; font-size: 15px;}
     </div>
     <hr>
     <div>
-        <pre class="center"  style="line-height: 0.7 !important">Bridgex V0.1.0 - Beta</pre>
+        <pre class="center"  style="line-height: 0.7 !important">Bridgex V0.0.3-dev</pre>
         <table style="margin-top: 10px" align="center" width="60%">
             <tr>
                 <td><pre class="center"><a href="https://github.com/Dev2Forge/bridgex">Sitio Web</a></pre></td>

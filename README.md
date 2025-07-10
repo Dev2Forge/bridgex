@@ -11,25 +11,7 @@ Bridgex is an open‑source graphical interface for converting files to Markdown
 
 ---
 
-## Table of Contents
-
-- [Bridgex 🌉🐍](#bridgex-)
-  - [Table of Contents](#table-of-contents)
-  - [Features](#features)
-  - [Screenshots](#screenshots)
-  - [Installation](#installation)
-  - [Local Cloning and Execution 💻](#local-cloning-and-execution-)
-  - [Basic Usage](#basic-usage)
-  - [Supported Formats](#supported-formats)
-  - [Limitations](#limitations)
-  - [Releases](#releases)
-  - [Dependencies and Licences](#dependencies-and-licences)
-  - [Contribute](#contribute)
-  - [Licence](#licence)
-
----
-
-## Features
+## Features ✨
 
 * Cross‑platform graphical interface.
 * Efficient file‑to‑Markdown conversion.
@@ -39,7 +21,7 @@ Bridgex is an open‑source graphical interface for converting files to Markdown
 
 ---
 
-## Screenshots
+## Screenshots 🖼️
 
 ![img](https://cdn.jsdelivr.net/gh/tutosrive/images-projects-srm-trg@main/dev2forge/pymd/bridgex/preview-1-main.png)
 *Example of Bridgex’s main window.*
@@ -60,7 +42,7 @@ Bridgex is an open‑source graphical interface for converting files to Markdown
 
 ---
 
-## Installation
+## Installation 📦
 
 Requirements:
 
@@ -86,19 +68,45 @@ It is recommended to use a virtual environment. To customise supported formats, 
 
 Clone the repository and run Bridgex locally:
 
+1. Clone the repository.
+
 ```sh
 git clone https://github.com/Dev2Forge/bridgex.git
+```
+
+2. Navigate to the project directory and set up a virtual environment.
+```sh
 cd bridgex
+```
+3. Create a virtual environment.
+
+```sh
 python -m venv .venv
-.venv\Scripts\activate  # On Windows
+```
+
+4. Activate the virtual environment.
+
+```sh
+# On Windows
+.venv\Scripts\activate
 # source .venv/bin/activate  # On Linux/MacOS
+```
+
+5. Install the required dependencies.
+
+```sh
 pip install -r requirements.txt
+```
+
+6. Run the application.
+
+```sh
 python -m src.bridgex
 ```
 
 ---
 
-## Basic Usage
+## Basic Usage 🚀
 
 1. Run the application from the terminal or GUI.
 2. Select the file to convert.
@@ -107,7 +115,7 @@ python -m src.bridgex
 
 ---
 
-## Supported Formats
+## Supported Formats 📂
 
 Bridgex supports conversion of the following file formats:
 
@@ -129,31 +137,31 @@ Bridgex supports conversion of the following file formats:
 
 ---
 
-## Limitations
+## Limitations ⚠️
 
 Bridgex is not an IDE, text editor, Markdown editor, or document viewer. Its purpose is to serve as a bridgex between the user and Markdown conversion, offering lightweight editing without advanced editing features.
 
 ---
 
-## Releases
+## Releases 🏷️
 
 Check the published versions and release notes in the [Releases](https://github.com/Dev2Forge/bridgex/releases) section of the repository.
 
 ---
 
-## Dependencies and Licences
+## Dependencies and Licences 📚
 
 This project uses third‑party libraries, each with its own licence. See the [third‑party](https://github.com/Dev2Forge/bridgex/tree/main/third-party/) folder for more information.
 
 ---
 
-## Contribute
+## Contribute 🤝
 
 Contributions are welcome. Please open an issue or pull request following the community’s best practices.
 
 ---
 
-## Licence
+## Licence 📄
 
 Distributed under the [MIT Licence](https://github.com/Dev2Forge/bridgex/blob/main/LICENSE).
 

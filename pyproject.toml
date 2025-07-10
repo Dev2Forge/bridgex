@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "bridgex"
-version = "0.0.1-dev"
-description = "graphical interface for converting files to Markdown, built in Python and based on PySide6 and Markitdown"
+version = "0.0.3-dev"
+description = "Graphical interface for converting files to Markdown, built in Python and based on PySide6 and Markitdown."
 readme = { file = "README.md", content-type = "text/markdown", charset = "utf-8" }
 license = "MIT"
 authors = [{ name = "dev2forge", email = "bridgex@dev2forge.software" }]
@@ -46,7 +46,7 @@ dependencies = [
 requires-python = ">=3.9,<=3.13"
 
 classifiers = [
-    "Development Status :: 3 - Alpha",
+    "Development Status :: 4 - Beta",
     "Intended Audience :: End Users/Desktop",
     "Intended Audience :: Developers",
     "Topic :: Utilities",
