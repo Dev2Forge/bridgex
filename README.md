@@ -1,11 +1,6 @@
 # Bridgex 🌉🐍
 
-[![Read in Spanish](https://img.shields.io/badge/read%20in-ES-red?logo=github)](https://github.com/Dev2Forge/bridgex/blob/main/translations/README_ES.md)
-[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
-![Pepy Total Downloads](https://img.shields.io/pepy/dt/bridgex)
-[![PyPI version](https://img.shields.io/pypi/v/bridgex?label=bridgex)](https://pypi.org/project/bridgex/)
-[![Python Version](https://img.shields.io/badge/python-3.9%20|%203.10%20|%203.11%20|%203.12%20|%203.13-blue.svg)](https://www.python.org/downloads/)
-[![Issues](https://img.shields.io/github/issues/Dev2Forge/bridgex)](https://github.com/Dev2Forge/bridgex/issues)
+[![Read in Spanish](https://img.shields.io/badge/read%20in-ES-red?logo=github)](https://github.com/Dev2Forge/bridgex/blob/main/translations/README_ES.md) [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE) ![Pepy Total Downloads](https://img.shields.io/pepy/dt/bridgex?label=pypi-downloads) ![SourceForge Downloads](https://img.shields.io/sourceforge/dt/bridgex?label=sourceforfe-downloads) [![PyPI version](https://img.shields.io/pypi/v/bridgex?label=bridgex)](https://pypi.org/project/bridgex/) ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/bridgex) [![Issues](https://img.shields.io/github/issues/Dev2Forge/bridgex)](https://github.com/Dev2Forge/bridgex/issues)
 
 Bridgex is an open‑source graphical interface for converting files to Markdown, built in Python and based on [Pyside6 (Qt for Python)](https://doc.qt.io/qtforpython-6/). Its objective is to simplify access to the [Markitdown](https://github.com/microsoft/markitdown) library through a straightforward, modular visual experience.
 
