@@ -3,7 +3,7 @@ name: "\U0001F40D Bug Report"
 about: Create a report to help us improve
 title: ''
 labels: bug
-assignees: tutosrive, JuManoel
+assignees: JuManoel, tutosrive
 
 ---
 
@@ -36,9 +36,9 @@ _Attach your files here._
 
 Please provide details about your setup:
 
-- *+Operating System**: (Windows, macOS, Linux, etc.)
+- **Operating System**: (Windows, macOS, Linux)
 - **Bridgex version**: (e.g., 0.1.0)
-- **Python version**:
+- **Python version**: (e.g., 3.12.8)
 - **Other relevant information**:
 
 
