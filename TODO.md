@@ -1,0 +1,2 @@
+- Fix program "freeze" when converting.
+- Make a historial of converted files (Inside program)
