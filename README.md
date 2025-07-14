@@ -1,4 +1,4 @@
-# Bridgex 🌉🐍
+# Bridgex 🌉<img width="64" src="https://cdn.jsdelivr.net/gh/tutosrive/images-projects-srm-trg@main/dev2forge/logos/bridgex-v0.1.0.webp">
 
 [![Read in Spanish](https://img.shields.io/badge/read%20in-ES-red?logo=github)](https://github.com/Dev2Forge/bridgex/blob/main/translations/README_ES.md) [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE) ![Pepy Total Downloads](https://img.shields.io/pepy/dt/bridgex?label=pypi-downloads) ![SourceForge Downloads](https://img.shields.io/sourceforge/dt/bridgex?label=sourceforfe-downloads) [![PyPI version](https://img.shields.io/pypi/v/bridgex?label=bridgex)](https://pypi.org/project/bridgex/) ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/bridgex) [![Issues](https://img.shields.io/github/issues/Dev2Forge/bridgex)](https://github.com/Dev2Forge/bridgex/issues)
 
