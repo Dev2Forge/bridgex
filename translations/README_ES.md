@@ -1,8 +1,8 @@
-# Bridgex 🌉🐍
+# Bridgex 🌉<img width="64" src="https://cdn.jsdelivr.net/gh/tutosrive/images-projects-srm-trg@main/dev2forge/logos/bridgex-v0.1.0.webp">
 
 [![Read inglés](https://img.shields.io/badge/read%20in-EN-red?logo=github)](https://github.com/Dev2Forge/bridgex/blob/main/README.md) [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
-[![PyPI version](https://img.shields.io/pypi/v/bridgex-md.svg)](https://pypi.org/project/bridgex-md/)
-[![Python Version](https://img.shields.io/badge/python-3.9%20|%203.10%20|%203.11%20|%203.12%20|%203.13-blue.svg)](https://www.python.org/downloads/)
+[![PyPI version](https://img.shields.io/pypi/v/bridgex)](https://pypi.org/project/bridgex/)
+[![Python Version](https://img.shields.io/pypi/pyversions/bridgex)](https://www.python.org/downloads/)
 [![Issues](https://img.shields.io/github/issues/Dev2Forge/bridgex)](https://github.com/Dev2Forge/bridgex/issues)
 
 Bridgex es una interfaz gráfica de código abierto para la conversión de archivos a formato Markdown, construida en Python y basada en [Pyside6 (Qt for Python)](https://doc.qt.io/qtforpython-6/). Su objetivo es facilitar el acceso a la biblioteca [Markitdown](https://github.com/microsoft/markitdown) mediante una experiencia visual sencilla y modular.
