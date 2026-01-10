@@ -1,0 +1,249 @@
+{
+  "nav": {
+    "home": "Главная",
+    "downloads": "Загрузки",
+    "documentation": "Документация",
+    "about": "О проекте",
+    "licenses": "Лицензии"
+  },
+  "hero": {
+    "title": "BridgeX",
+    "subtitle": "Ваш мост к Markdown",
+    "description": "Открытый графический интерфейс для конвертации файлов в Markdown, построенный на Python с PySide6. Упростите свой рабочий процесс с помощью Markitdown.",
+    "cta": {
+      "download": "Скачать сейчас",
+      "documentation": "Открыть документацию"
+    }
+  },
+  "features": {
+    "title": "Возможности",
+    "crossPlatform": {
+      "title": "Кроссплатформенность",
+      "description": "Работает в Windows, macOS и Linux. Используйте GUI на любой системе."
+    },
+    "multiFormat": {
+      "title": "Поддержка множества форматов",
+      "description": "Конвертируйте PDF, DOCX, PPTX, XLSX, HTML, ePub и многие другие форматы в Markdown."
+    },
+    "openSource": {
+      "title": "Открытый код",
+      "description": "Полностью открыто под лицензией MIT. Изучайте, модифицируйте и распространяйте свободно."
+    },
+    "lightEditor": {
+      "title": "Лёгкий редактор",
+      "description": "Встроенный легковесный редактор для проверки и правки Markdown перед сохранением."
+    },
+    "multilingual": {
+      "title": "Многоязычность",
+      "description": "Интерфейс доступен на нескольких языках: английский, испанский и другие."
+    },
+    "modular": {
+      "title": "Модульный дизайн",
+      "description": "Легко адаптировать и расширять. Вся UI создана в Qt Designer."
+    }
+  },
+  "downloads": {
+    "title": "Загрузки",
+    "subtitle": "Получите BridgeX для своей платформы",
+    "windows": {
+      "title": "Windows",
+      "description": "Скачайте установщик (.exe) для Windows 64-бит. Включает все зависимости.",
+      "button": "Скачать для Windows",
+      "note": "Требуется Windows 10/11 64-бит. Не рекомендуется для 32-битных систем."
+    },
+    "linux": {
+      "title": "Linux / macOS",
+      "description": "Установите через pip из PyPI. Требуется Python 3.9-3.13.",
+      "button": "pip install bridgex",
+      "note": "Используйте виртуальное окружение для лучших результатов."
+    },
+    "sourceforge": {
+      "title": "SourceForge",
+      "description": "Альтернативная загрузка с SourceForge.",
+      "button": "Скачать с SourceForge"
+    },
+    "requirements": {
+      "title": "Системные требования",
+      "python": "Python 3.9 - 3.13",
+      "os": "Windows 10/11, macOS, Linux",
+      "memory": "Минимум 2 ГБ ОЗУ",
+      "disk": "500 МБ свободного места"
+    }
+  },
+  "documentation": {
+    "title": "Документация",
+    "subtitle": "Узнайте, как пользоваться BridgeX",
+    "installation": {
+      "title": "Установка",
+      "pip": {
+        "title": "Установка через pip",
+        "step1": "Убедитесь, что установлен Python 3.9-3.13",
+        "step2": "Создайте и активируйте виртуальное окружение (рекомендуется):",
+        "step3": "Установите BridgeX:",
+        "step4": "Запустите BridgeX:"
+      },
+      "windows": {
+        "title": "Установка в Windows",
+        "step1": "Скачайте установщик со страницы Загрузки",
+        "step2": "Запустите установщик от имени администратора",
+        "step3": "Следуйте мастеру установки",
+        "step4": "BridgeX будет установлен в Program Files"
+      }
+    },
+    "troubleshooting": {
+      "title": "Устранение неполадок",
+      "vcredist": {
+        "title": "Ошибка VC++ Runtime (Windows)",
+        "description": "Если появляется ошибка об отсутствующей Visual C++ Runtime, установщик автоматически поставит VC_Redist x64. Если проблемы сохраняются, скачайте вручную с сайта Microsoft."
+      },
+      "permissions": {
+        "title": "Доступ запрещён (Windows)",
+        "description": "Запускайте установщик и приложение от имени администратора. Программе нужен доступ на запись к некоторым папкам."
+      },
+      "pyside": {
+        "title": "Проблемы установки PySide6 (Linux)",
+        "description": "В некоторых дистрибутивах Linux может потребоваться установить дополнительные зависимости Qt. Выполните: sudo apt-get install libxcb-xinerama0 libxcb-cursor0"
+      },
+      "display": {
+        "title": "Проблемы отображения (Linux)",
+        "description": "Если GUI не появляется или выглядит некорректно, убедитесь, что запущен сервер отображения (X11 или Wayland). Для WSL установите X-сервер, например VcXsrv."
+      }
+    },
+    "usage": {
+      "title": "Базовое использование",
+      "step1": "Запустите BridgeX из терминала или ярлыка",
+      "step2": "Нажмите кнопку загрузки, чтобы выбрать файл для конвертации",
+      "step3": "Файл будет автоматически конвертирован в Markdown",
+      "step4": "Просмотрите и отредактируйте результат во встроенном редакторе",
+      "step5": "Нажмите сохранить, чтобы экспортировать файл Markdown"
+    },
+    "formats": {
+      "title": "Поддерживаемые форматы",
+      "list": [
+        "PDF (.pdf) - Извлечение обычного текста",
+        "Word (.docx)",
+        "PowerPoint (.pptx)",
+        "Excel (.xlsx, .xls, .csv)",
+        "Письма Outlook (.msg)",
+        "Текст (.txt, .text)",
+        "Markdown (.md, .markdown)",
+        "JSON (.json, .jsonl)",
+        "XML (.xml)",
+        "RSS/Atom (.rss, .atom)",
+        "HTML/MHTML (.html, .htm, .mhtml)",
+        "ePub (.epub)",
+        "Архивы (.zip)",
+        "Jupyter Notebooks (.ipynb)"
+      ]
+    }
+  },
+  "about": {
+    "title": "О BridgeX",
+    "subtitle": "Визуальный мост к конвертации в Markdown",
+    "description": "BridgeX — это открытый графический интерфейс, упрощающий конвертацию файлов в Markdown. Создан на основе библиотеки Markitdown от Microsoft и предлагает интуитивный визуальный опыт для тех, кто не хочет работать в консоли.",
+    "whatItDoes": {
+      "title": "Что умеет BridgeX",
+      "items": [
+        "Конвертирует различные форматы файлов в чистый Markdown",
+        "Предоставляет графический интерфейс для Markitdown",
+        "Предлагает лёгкий редактор для быстрых правок",
+        "Поддерживает несколько языков интерфейса",
+        "Работает в Windows, macOS и Linux"
+      ]
+    },
+    "whatItDoesNot": {
+      "title": "Чего BridgeX НЕ делает",
+      "items": [
+        "Не является IDE или продвинутым текстовым редактором",
+        "Не является Markdown-редактором с предпросмотром",
+        "Не является просмотрщиком документов или PDF",
+        "Не выполняет OCR на PDF с изображениями",
+        "Не предназначен для тяжёлого редактирования документов"
+      ]
+    },
+    "whyLarge": {
+      "title": "Почему BridgeX большой?",
+      "description": "BridgeX имеет существенный размер (90–120 МБ для установщика), потому что включает:",
+      "items": [
+        "PySide6 (Qt for Python) — полноценный GUI-фреймворк",
+        "Markitdown с плагинами форматов — разбор документов",
+        "Библиотеки Python runtime — необходимы для выполнения",
+        "VC++ Runtime (Windows) — требуемые зависимости"
+      ]
+    },
+    "team": {
+      "title": "Команда",
+      "developer": "Разработано Dev2Forge",
+      "maintained": "Сопровождается tutosrive"
+    },
+    "links": {
+      "github": "Репозиторий GitHub",
+      "pypi": "Пакет PyPI",
+      "sourceforge": "SourceForge"
+    }
+  },
+  "licenses": {
+    "title": "Сторонние лицензии",
+    "subtitle": "BridgeX использует следующие библиотеки с открытым исходным кодом",
+    "bridgex": {
+      "title": "BridgeX",
+      "license": "Лицензия MIT",
+      "copyright": "© 2025 Dev2Forge"
+    },
+    "markitdown": {
+      "title": "Markitdown",
+      "description": "Библиотека Microsoft для конвертации документов в Markdown",
+      "license": "Лицензия MIT",
+      "copyright": "© Microsoft Corporation"
+    },
+    "pyside6": {
+      "title": "PySide6",
+      "description": "Qt for Python — GUI-фреймворк",
+      "license": "LGPL-3.0-only",
+      "copyright": "© The Qt Company"
+    },
+    "chromologger": {
+      "title": "ChromoLogger",
+      "description": "Цветное логирование для Python",
+      "license": "Лицензия MIT"
+    },
+    "sqlazo": {
+      "title": "Sqlazo",
+      "description": "Утилиты для базы данных SQLite",
+      "license": "Лицензия MIT"
+    },
+    "chromolog": {
+      "title": "ChromoLog",
+      "description": "Логирование в стиле Chrome",
+      "license": "Лицензия MIT"
+    }
+  },
+  "footer": {
+    "copyright": "© 2025 Dev2Forge. Все права защищены.",
+    "license": "Лицензия MIT",
+    "madeWith": "Сделано с",
+    "and": "и",
+    "links": {
+      "github": "GitHub",
+      "pypi": "PyPI",
+      "docs": "Документация"
+    }
+  },
+  "theme": {
+    "light": "Светлая",
+    "dark": "Тёмная",
+    "system": "Системная"
+  },
+  "language": {
+    "en": "Английский",
+    "es": "Испанский",
+    "pt": "Португальский",
+    "zh": "Китайский (мандарин)",
+    "hi": "Хинди",
+    "fr": "Французский",
+    "ar": "Арабский",
+    "ru": "Русский",
+    "de": "Немецкий",
+    "ja": "Японский"
+  }
+}

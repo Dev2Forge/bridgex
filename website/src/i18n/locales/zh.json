@@ -1,0 +1,249 @@
+{
+  "nav": {
+    "home": "首页",
+    "downloads": "下载",
+    "documentation": "文档",
+    "about": "关于",
+    "licenses": "许可"
+  },
+  "hero": {
+    "title": "BridgeX",
+    "subtitle": "通往 Markdown 的桥梁",
+    "description": "一个开源的图形界面，用于将文件转换为 Markdown，基于 Python 与 PySide6 构建。借助 Markitdown 的能力简化你的工作流程。",
+    "cta": {
+      "download": "立即下载",
+      "documentation": "查看文档"
+    }
+  },
+  "features": {
+    "title": "功能",
+    "crossPlatform": {
+      "title": "跨平台",
+      "description": "可在 Windows、macOS、Linux 上运行。在任何系统上都能使用 GUI。"
+    },
+    "multiFormat": {
+      "title": "多格式支持",
+      "description": "将 PDF、DOCX、PPTX、XLSX、HTML、ePub 等更多格式转换为 Markdown。"
+    },
+    "openSource": {
+      "title": "开源",
+      "description": "完全开源，遵循 MIT 许可。自由查看、修改与分发。"
+    },
+    "lightEditor": {
+      "title": "轻量编辑器",
+      "description": "内置轻量编辑器，可在保存前审阅并微调转换后的 Markdown。"
+    },
+    "multilingual": {
+      "title": "多语言",
+      "description": "界面提供多种语言：英语、西班牙语等。"
+    },
+    "modular": {
+      "title": "模块化设计",
+      "description": "易于适配与扩展。整个 UI 基于 Qt Designer 文件。"
+    }
+  },
+  "downloads": {
+    "title": "下载",
+    "subtitle": "为你的平台获取 BridgeX",
+    "windows": {
+      "title": "Windows",
+      "description": "下载适用于 Windows 64 位的安装程序 (.exe)，包含所有依赖。",
+      "button": "下载 Windows 版本",
+      "note": "需要 Windows 10/11 64 位。不建议 32 位系统使用。"
+    },
+    "linux": {
+      "title": "Linux / macOS",
+      "description": "通过 pip 从 PyPI 安装。需要 Python 3.9-3.13。",
+      "button": "pip install bridgex",
+      "note": "建议使用虚拟环境以获得最佳效果。"
+    },
+    "sourceforge": {
+      "title": "SourceForge",
+      "description": "来自 SourceForge 的备用下载。",
+      "button": "从 SourceForge 下载"
+    },
+    "requirements": {
+      "title": "系统要求",
+      "python": "Python 3.9 - 3.13",
+      "os": "Windows 10/11，macOS，Linux",
+      "memory": "至少 2GB 内存",
+      "disk": "500MB 可用磁盘空间"
+    }
+  },
+  "documentation": {
+    "title": "文档",
+    "subtitle": "了解如何使用 BridgeX",
+    "installation": {
+      "title": "安装",
+      "pip": {
+        "title": "通过 pip 安装",
+        "step1": "确保已安装 Python 3.9-3.13",
+        "step2": "创建并激活虚拟环境（推荐）：",
+        "step3": "安装 BridgeX：",
+        "step4": "运行 BridgeX："
+      },
+      "windows": {
+        "title": "Windows 安装",
+        "step1": "从下载页获取安装程序",
+        "step2": "以管理员身份运行安装程序",
+        "step3": "按照安装向导完成步骤",
+        "step4": "BridgeX 将安装在 Program Files"
+      }
+    },
+    "troubleshooting": {
+      "title": "故障排除",
+      "vcredist": {
+        "title": "VC++ 运行库错误（Windows）",
+        "description": "如果提示缺少 Visual C++ 运行库，安装程序会自动安装 VC_Redist x64。若仍有问题，请从微软手动下载。"
+      },
+      "permissions": {
+        "title": "权限被拒绝（Windows）",
+        "description": "请以管理员身份运行安装程序和应用。程序需要对某些文件夹的写入权限。"
+      },
+      "pyside": {
+        "title": "PySide6 安装问题（Linux）",
+        "description": "部分 Linux 发行版可能需要额外的 Qt 依赖。执行：sudo apt-get install libxcb-xinerama0 libxcb-cursor0"
+      },
+      "display": {
+        "title": "显示问题（Linux）",
+        "description": "如果界面未出现或显示异常，请确保有显示服务器（X11 或 Wayland）在运行。WSL 用户可安装 VcXsrv 等 X 服务器。"
+      }
+    },
+    "usage": {
+      "title": "基础用法",
+      "step1": "从终端或快捷方式启动 BridgeX",
+      "step2": "点击上传按钮选择要转换的文件",
+      "step3": "文件将自动转换为 Markdown",
+      "step4": "在内置编辑器中审阅并编辑结果",
+      "step5": "点击保存以导出 Markdown 文件"
+    },
+    "formats": {
+      "title": "支持的格式",
+      "list": [
+        "PDF (.pdf) - 纯文本提取",
+        "Word (.docx)",
+        "PowerPoint (.pptx)",
+        "Excel (.xlsx, .xls, .csv)",
+        "Outlook 邮件 (.msg)",
+        "文本 (.txt, .text)",
+        "Markdown (.md, .markdown)",
+        "JSON (.json, .jsonl)",
+        "XML (.xml)",
+        "RSS/Atom (.rss, .atom)",
+        "HTML/MHTML (.html, .htm, .mhtml)",
+        "ePub (.epub)",
+        "压缩文件 (.zip)",
+        "Jupyter Notebooks (.ipynb)"
+      ]
+    }
+  },
+  "about": {
+    "title": "关于 BridgeX",
+    "subtitle": "通往 Markdown 转换的可视化桥梁",
+    "description": "BridgeX 是一个开源图形界面，简化了文件到 Markdown 的转换。基于微软的 Markitdown 库，为不想使用命令行的用户提供直观的视觉体验。",
+    "whatItDoes": {
+      "title": "BridgeX 能做什么",
+      "items": [
+        "将多种文件格式转换为干净的 Markdown",
+        "提供 Markitdown 的图形界面",
+        "提供轻量编辑器进行快速修改",
+        "界面支持多语言",
+        "跨 Windows、macOS 与 Linux 运行"
+      ]
+    },
+    "whatItDoesNot": {
+      "title": "BridgeX 不能做什么",
+      "items": [
+        "不是 IDE 或高级文本编辑器",
+        "不是带实时预览的 Markdown 编辑器",
+        "不是文档或 PDF 查看器",
+        "不对图片型 PDF 做 OCR",
+        "不适合重度文档编辑"
+      ]
+    },
+    "whyLarge": {
+      "title": "BridgeX 为什么体积大？",
+      "description": "BridgeX 体积较大（安装包 90-120MB），因为包含：",
+      "items": [
+        "PySide6 (Qt for Python) - 完整 GUI 框架",
+        "带格式插件的 Markitdown - 文档解析",
+        "Python 运行时库 - 运行所需",
+        "VC++ Runtime (Windows) - 必需依赖"
+      ]
+    },
+    "team": {
+      "title": "团队",
+      "developer": "由 Dev2Forge 开发",
+      "maintained": "由 tutosrive 维护"
+    },
+    "links": {
+      "github": "GitHub 仓库",
+      "pypi": "PyPI 包",
+      "sourceforge": "SourceForge"
+    }
+  },
+  "licenses": {
+    "title": "第三方许可证",
+    "subtitle": "BridgeX 使用以下开源库",
+    "bridgex": {
+      "title": "BridgeX",
+      "license": "MIT 许可证",
+      "copyright": "© 2025 Dev2Forge"
+    },
+    "markitdown": {
+      "title": "Markitdown",
+      "description": "微软的文档转 Markdown 库",
+      "license": "MIT 许可证",
+      "copyright": "© Microsoft Corporation"
+    },
+    "pyside6": {
+      "title": "PySide6",
+      "description": "Qt for Python - 图形界面框架",
+      "license": "LGPL-3.0-only",
+      "copyright": "© The Qt Company"
+    },
+    "chromologger": {
+      "title": "ChromoLogger",
+      "description": "Python 彩色日志",
+      "license": "MIT 许可证"
+    },
+    "sqlazo": {
+      "title": "Sqlazo",
+      "description": "SQLite 数据库工具",
+      "license": "MIT 许可证"
+    },
+    "chromolog": {
+      "title": "ChromoLog",
+      "description": "Chrome 风格日志",
+      "license": "MIT 许可证"
+    }
+  },
+  "footer": {
+    "copyright": "© 2025 Dev2Forge. 保留所有权利。",
+    "license": "MIT 许可证",
+    "madeWith": "基于",
+    "and": "和",
+    "links": {
+      "github": "GitHub",
+      "pypi": "PyPI",
+      "docs": "文档"
+    }
+  },
+  "theme": {
+    "light": "浅色",
+    "dark": "深色",
+    "system": "系统"
+  },
+  "language": {
+    "en": "英语",
+    "es": "西班牙语",
+    "pt": "葡萄牙语",
+    "zh": "中文（普通话）",
+    "hi": "印地语",
+    "fr": "法语",
+    "ar": "阿拉伯语",
+    "ru": "俄语",
+    "de": "德语",
+    "ja": "日语"
+  }
+}

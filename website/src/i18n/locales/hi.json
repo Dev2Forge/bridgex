@@ -1,0 +1,249 @@
+{
+  "nav": {
+    "home": "होम",
+    "downloads": "डाउनलोड्स",
+    "documentation": "प्रलेखन",
+    "about": "परिचय",
+    "licenses": "लाइसेंस"
+  },
+  "hero": {
+    "title": "BridgeX",
+    "subtitle": "Markdown तक आपका पुल",
+    "description": "फाइलों को Markdown में बदलने के लिए एक ओपन-सोर्स ग्राफ़िकल इंटरफ़ेस, Python और PySide6 पर बना। Markitdown की शक्ति से अपना वर्कफ़्लो सरल करें।",
+    "cta": {
+      "download": "अभी डाउनलोड करें",
+      "documentation": "दस्तावेज़ देखें"
+    }
+  },
+  "features": {
+    "title": "विशेषताएँ",
+    "crossPlatform": {
+      "title": "मल्टी-प्लेटफ़ॉर्म",
+      "description": "Windows, macOS और Linux पर काम करता है। किसी भी सिस्टम पर GUI का उपयोग करें।"
+    },
+    "multiFormat": {
+      "title": "मल्टी-फ़ॉर्मेट समर्थन",
+      "description": "PDF, DOCX, PPTX, XLSX, HTML, ePub और कई अन्य फ़ॉर्मेट को Markdown में कनवर्ट करें।"
+    },
+    "openSource": {
+      "title": "ओपन सोर्स",
+      "description": "MIT लाइसेंस के तहत पूर्ण ओपन सोर्स। जाँचें, संशोधित करें, और स्वतंत्र रूप से वितरित करें।"
+    },
+    "lightEditor": {
+      "title": "हल्का संपादक",
+      "description": "सेव करने से पहले बदले गए Markdown की समीक्षा और सुधार के लिए अंतर्निहित हल्का संपादक।"
+    },
+    "multilingual": {
+      "title": "बहुभाषी",
+      "description": "इंटरफ़ेस कई भाषाओं में उपलब्ध है: अंग्रेज़ी, स्पैनिश और अन्य।"
+    },
+    "modular": {
+      "title": "मॉड्यूलर डिज़ाइन",
+      "description": "अनुकूलित और विस्तारित करना आसान। पूरी UI Qt Designer फ़ाइलों से बनी है।"
+    }
+  },
+  "downloads": {
+    "title": "डाउनलोड्स",
+    "subtitle": "अपनी प्लेटफ़ॉर्म के लिए BridgeX प्राप्त करें",
+    "windows": {
+      "title": "Windows",
+      "description": "Windows 64-बिट के लिए इंस्टॉलर (.exe) डाउनलोड करें। सभी डिपेंडेंसी शामिल हैं।",
+      "button": "Windows के लिए डाउनलोड",
+      "note": "Windows 10/11 64-बिट आवश्यक। 32-बिट सिस्टम के लिए अनुशंसित नहीं।"
+    },
+    "linux": {
+      "title": "Linux / macOS",
+      "description": "PyPI से pip द्वारा इंस्टॉल करें। Python 3.9-3.13 आवश्यक।",
+      "button": "pip install bridgex",
+      "note": "बेहतर परिणाम के लिए वर्चुअल एन्वायरनमेंट का उपयोग करें।"
+    },
+    "sourceforge": {
+      "title": "SourceForge",
+      "description": "SourceForge से वैकल्पिक डाउनलोड।",
+      "button": "SourceForge से डाउनलोड करें"
+    },
+    "requirements": {
+      "title": "सिस्टम आवश्यकताएँ",
+      "python": "Python 3.9 - 3.13",
+      "os": "Windows 10/11, macOS, Linux",
+      "memory": "न्यूनतम 2GB RAM",
+      "disk": "500MB खाली डिस्क स्थान"
+    }
+  },
+  "documentation": {
+    "title": "प्रलेखन",
+    "subtitle": "BridgeX का उपयोग करना सीखें",
+    "installation": {
+      "title": "इंस्टॉलेशन",
+      "pip": {
+        "title": "pip के माध्यम से इंस्टॉलेशन",
+        "step1": "सुनिश्चित करें कि Python 3.9-3.13 स्थापित है",
+        "step2": "एक वर्चुअल एन्वायरनमेंट बनाएं और सक्रिय करें (अनुशंसित):",
+        "step3": "BridgeX इंस्टॉल करें:",
+        "step4": "BridgeX चलाएँ:"
+      },
+      "windows": {
+        "title": "Windows इंस्टॉलेशन",
+        "step1": "डाउनलोड पेज से इंस्टॉलर डाउनलोड करें",
+        "step2": "इंस्टॉलर को व्यवस्थापक के रूप में चलाएँ",
+        "step3": "इंस्टॉलेशन विज़ार्ड का पालन करें",
+        "step4": "BridgeX Program Files में स्थापित होगा"
+      }
+    },
+    "troubleshooting": {
+      "title": "समस्या निवारण",
+      "vcredist": {
+        "title": "VC++ रनटाइम त्रुटि (Windows)",
+        "description": "यदि Visual C++ Runtime की कमी की त्रुटि दिखे, तो इंस्टॉलर स्वचालित रूप से VC_Redist x64 स्थापित करेगा। समस्या बनी रहे तो Microsoft से मैन्युअली डाउनलोड करें।"
+      },
+      "permissions": {
+        "title": "अनुमति अस्वीकृत (Windows)",
+        "description": "इंस्टॉलर और एप्लिकेशन को व्यवस्थापक के रूप में चलाएँ। प्रोग्राम को कुछ फ़ोल्डर्स में लिखने की अनुमति चाहिए।"
+      },
+      "pyside": {
+        "title": "PySide6 इंस्टॉलेशन समस्याएँ (Linux)",
+        "description": "कुछ Linux वितरणों में अतिरिक्त Qt डिपेंडेंसी इंस्टॉल करनी पड़ सकती हैं। चलाएँ: sudo apt-get install libxcb-xinerama0 libxcb-cursor0"
+      },
+      "display": {
+        "title": "डिस्प्ले समस्याएँ (Linux)",
+        "description": "यदि GUI नहीं दिखता या टूटता हुआ लगे, तो सुनिश्चित करें कि एक डिस्प्ले सर्वर (X11 या Wayland) चल रहा है। WSL के लिए VcXsrv जैसे X सर्वर इंस्टॉल करें।"
+      }
+    },
+    "usage": {
+      "title": "मूल उपयोग",
+      "step1": "टर्मिनल या शॉर्टकट से BridgeX लॉन्च करें",
+      "step2": "कनवर्ट करने के लिए फ़ाइल चुनने हेतु अपलोड बटन क्लिक करें",
+      "step3": "फ़ाइल स्वतः Markdown में कनवर्ट हो जाएगी",
+      "step4": "इन-बिल्ट एडिटर में परिणाम की समीक्षा करें और संपादित करें",
+      "step5": "Markdown फ़ाइल निर्यात करने के लिए सेव पर क्लिक करें"
+    },
+    "formats": {
+      "title": "समर्थित फ़ॉर्मेट",
+      "list": [
+        "PDF (.pdf) - सादा पाठ निष्कर्षण",
+        "Word (.docx)",
+        "PowerPoint (.pptx)",
+        "Excel (.xlsx, .xls, .csv)",
+        "Outlook संदेश (.msg)",
+        "पाठ (.txt, .text)",
+        "Markdown (.md, .markdown)",
+        "JSON (.json, .jsonl)",
+        "XML (.xml)",
+        "RSS/Atom (.rss, .atom)",
+        "HTML/MHTML (.html, .htm, .mhtml)",
+        "ePub (.epub)",
+        "संपीड़ित फ़ाइलें (.zip)",
+        "Jupyter Notebooks (.ipynb)"
+      ]
+    }
+  },
+  "about": {
+    "title": "BridgeX के बारे में",
+    "subtitle": "Markdown रूपांतरण के लिए एक दृश्य पुल",
+    "description": "BridgeX एक ओपन-सोर्स ग्राफ़िकल इंटरफ़ेस है जो फ़ाइलों को Markdown में बदलना आसान बनाता है। Microsoft की Markitdown लाइब्रेरी पर आधारित, यह उन उपयोगकर्ताओं के लिए सहज दृश्य अनुभव देता है जो कमांड लाइन पसंद नहीं करते।",
+    "whatItDoes": {
+      "title": "BridgeX क्या करता है",
+      "items": [
+        "विभिन्न फ़ाइल फ़ॉर्मेट को साफ Markdown में कनवर्ट करता है",
+        "Markitdown के लिए ग्राफ़िकल इंटरफ़ेस प्रदान करता है",
+        "त्वरित संपादन के लिए हल्का एडिटर देता है",
+        "इंटरफ़ेस में कई भाषाओं का समर्थन करता है",
+        "Windows, macOS और Linux पर काम करता है"
+      ]
+    },
+    "whatItDoesNot": {
+      "title": "BridgeX क्या नहीं करता",
+      "items": [
+        "यह IDE या उन्नत टेक्स्ट एडिटर नहीं है",
+        "लाइव प्रीव्यू वाला Markdown एडिटर नहीं है",
+        "दस्तावेज़ या PDF व्यूअर नहीं है",
+        "चित्र-आधारित PDF पर OCR नहीं करता",
+        "भारी दस्तावेज़ संपादन के लिए डिज़ाइन नहीं किया गया"
+      ]
+    },
+    "whyLarge": {
+      "title": "BridgeX बड़ा क्यों है?",
+      "description": "BridgeX का आकार (इंस्टॉलर 90-120MB) बड़ा है क्योंकि इसमें शामिल हैं:",
+      "items": [
+        "PySide6 (Qt for Python) - पूर्ण GUI फ़्रेमवर्क",
+        "Markitdown फॉर्मेट प्लगइन्स के साथ - दस्तावेज़ पार्सिंग",
+        "Python रनटाइम लाइब्रेरीज़ - निष्पादन के लिए आवश्यक",
+        "VC++ Runtime (Windows) - आवश्यक डिपेंडेंसी"
+      ]
+    },
+    "team": {
+      "title": "टीम",
+      "developer": "Dev2Forge द्वारा विकसित",
+      "maintained": "tutosrive द्वारा अनुरक्षित"
+    },
+    "links": {
+      "github": "GitHub रिपोजिटरी",
+      "pypi": "PyPI पैकेज",
+      "sourceforge": "SourceForge"
+    }
+  },
+  "licenses": {
+    "title": "थर्ड-पार्टी लाइसेंस",
+    "subtitle": "BridgeX निम्नलिखित ओपन-सोर्स लाइब्रेरीज़ उपयोग करता है",
+    "bridgex": {
+      "title": "BridgeX",
+      "license": "MIT लाइसेंस",
+      "copyright": "© 2025 Dev2Forge"
+    },
+    "markitdown": {
+      "title": "Markitdown",
+      "description": "Microsoft द्वारा दस्तावेज़ से Markdown कनवर्ज़न लाइब्रेरी",
+      "license": "MIT लाइसेंस",
+      "copyright": "© Microsoft Corporation"
+    },
+    "pyside6": {
+      "title": "PySide6",
+      "description": "Qt for Python - GUI फ़्रेमवर्क",
+      "license": "LGPL-3.0-only",
+      "copyright": "© The Qt Company"
+    },
+    "chromologger": {
+      "title": "ChromoLogger",
+      "description": "Python के लिए रंगीन लॉगिंग",
+      "license": "MIT लाइसेंस"
+    },
+    "sqlazo": {
+      "title": "Sqlazo",
+      "description": "SQLite डेटाबेस यूटिलिटीज",
+      "license": "MIT लाइसेंस"
+    },
+    "chromolog": {
+      "title": "ChromoLog",
+      "description": "Chrome-स्टाइल लॉगिंग",
+      "license": "MIT लाइसेंस"
+    }
+  },
+  "footer": {
+    "copyright": "© 2025 Dev2Forge. सर्वाधिकार सुरक्षित.",
+    "license": "MIT लाइसेंस",
+    "madeWith": "इसके साथ बनाया",
+    "and": "और",
+    "links": {
+      "github": "GitHub",
+      "pypi": "PyPI",
+      "docs": "प्रलेखन"
+    }
+  },
+  "theme": {
+    "light": "लाइट",
+    "dark": "डार्क",
+    "system": "सिस्टम"
+  },
+  "language": {
+    "en": "अंग्रेज़ी",
+    "es": "स्पैनिश",
+    "pt": "पुर्तगाली",
+    "zh": "चीनी (मंदारिन)",
+    "hi": "हिन्दी",
+    "fr": "फ़्रेंच",
+    "ar": "अरबी",
+    "ru": "रूसी",
+    "de": "जर्मन",
+    "ja": "जापानी"
+  }
+}

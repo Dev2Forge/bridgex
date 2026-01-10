@@ -1,0 +1,249 @@
+{
+  "nav": {
+    "home": "Home",
+    "downloads": "Downloads",
+    "documentation": "Documentation",
+    "about": "About",
+    "licenses": "Licenses"
+  },
+  "hero": {
+    "title": "BridgeX",
+    "subtitle": "Your Bridge to Markdown",
+    "description": "An open-source graphical interface for converting files to Markdown, built in Python with PySide6. Simplify your workflow with the power of Markitdown.",
+    "cta": {
+      "download": "Download Now",
+      "documentation": "View Documentation"
+    }
+  },
+  "features": {
+    "title": "Features",
+    "crossPlatform": {
+      "title": "Cross-Platform",
+      "description": "Works on Windows, macOS, and Linux. Use the GUI on any system."
+    },
+    "multiFormat": {
+      "title": "Multi-Format Support",
+      "description": "Convert PDF, DOCX, PPTX, XLSX, HTML, ePub, and many more formats to Markdown."
+    },
+    "openSource": {
+      "title": "Open Source",
+      "description": "Fully open source under MIT license. Inspect, modify, and redistribute freely."
+    },
+    "lightEditor": {
+      "title": "Light Editor",
+      "description": "Built-in lightweight editor to review and tweak your converted Markdown before saving."
+    },
+    "multilingual": {
+      "title": "Multilingual",
+      "description": "Interface available in multiple languages: English, Spanish, and more."
+    },
+    "modular": {
+      "title": "Modular Design",
+      "description": "Easy to adapt and extend. The entire UI is built with Qt Designer files."
+    }
+  },
+  "downloads": {
+    "title": "Downloads",
+    "subtitle": "Get BridgeX for your platform",
+    "windows": {
+      "title": "Windows",
+      "description": "Download the installer (.exe) for Windows 64-bit. Includes all dependencies.",
+      "button": "Download for Windows",
+      "note": "Windows 10/11 64-bit required. Not recommended for 32-bit systems."
+    },
+    "linux": {
+      "title": "Linux / macOS",
+      "description": "Install via pip from PyPI. Python 3.9-3.13 required.",
+      "button": "pip install bridgex",
+      "note": "Use a virtual environment for best results."
+    },
+    "sourceforge": {
+      "title": "SourceForge",
+      "description": "Alternative download from SourceForge.",
+      "button": "Download from SourceForge"
+    },
+    "requirements": {
+      "title": "System Requirements",
+      "python": "Python 3.9 - 3.13",
+      "os": "Windows 10/11, macOS, Linux",
+      "memory": "2GB RAM minimum",
+      "disk": "500MB free disk space"
+    }
+  },
+  "documentation": {
+    "title": "Documentation",
+    "subtitle": "Learn how to use BridgeX",
+    "installation": {
+      "title": "Installation",
+      "pip": {
+        "title": "Installation via pip",
+        "step1": "Ensure you have Python 3.9-3.13 installed",
+        "step2": "Create and activate a virtual environment (recommended):",
+        "step3": "Install BridgeX:",
+        "step4": "Run BridgeX:"
+      },
+      "windows": {
+        "title": "Windows Installation",
+        "step1": "Download the installer from the Downloads page",
+        "step2": "Run the installer as Administrator",
+        "step3": "Follow the installation wizard",
+        "step4": "BridgeX will be installed in Program Files"
+      }
+    },
+    "troubleshooting": {
+      "title": "Troubleshooting",
+      "vcredist": {
+        "title": "VC++ Runtime Error (Windows)",
+        "description": "If you see an error about missing Visual C++ Runtime, the installer will automatically install VC_Redist x64. If issues persist, download it manually from Microsoft."
+      },
+      "permissions": {
+        "title": "Permission Denied (Windows)",
+        "description": "Run the installer and application as Administrator. The program needs write access to certain folders."
+      },
+      "pyside": {
+        "title": "PySide6 Installation Issues (Linux)",
+        "description": "On some Linux distributions, you may need to install additional Qt dependencies. Run: sudo apt-get install libxcb-xinerama0 libxcb-cursor0"
+      },
+      "display": {
+        "title": "Display Issues (Linux)",
+        "description": "If the GUI doesn't appear or looks broken, ensure you have a display server running (X11 or Wayland). For WSL, install an X server like VcXsrv."
+      }
+    },
+    "usage": {
+      "title": "Basic Usage",
+      "step1": "Launch BridgeX from terminal or the installed shortcut",
+      "step2": "Click the upload button to select a file to convert",
+      "step3": "The file will be automatically converted to Markdown",
+      "step4": "Review and edit the result in the built-in editor",
+      "step5": "Click save to export your Markdown file"
+    },
+    "formats": {
+      "title": "Supported Formats",
+      "list": [
+        "PDF (.pdf) - Plain text extraction",
+        "Word (.docx)",
+        "PowerPoint (.pptx)",
+        "Excel (.xlsx, .xls, .csv)",
+        "Outlook Messages (.msg)",
+        "Text (.txt, .text)",
+        "Markdown (.md, .markdown)",
+        "JSON (.json, .jsonl)",
+        "XML (.xml)",
+        "RSS/Atom (.rss, .atom)",
+        "HTML/MHTML (.html, .htm, .mhtml)",
+        "ePub (.epub)",
+        "Compressed files (.zip)",
+        "Jupyter Notebooks (.ipynb)"
+      ]
+    }
+  },
+  "about": {
+    "title": "About BridgeX",
+    "subtitle": "A visual bridge to Markdown conversion",
+    "description": "BridgeX is an open-source graphical interface that simplifies file-to-Markdown conversion. Built on top of Microsoft's Markitdown library, it provides an intuitive visual experience for users who prefer not to use the command line.",
+    "whatItDoes": {
+      "title": "What BridgeX Does",
+      "items": [
+        "Converts various file formats to clean Markdown",
+        "Provides a graphical interface for Markitdown",
+        "Offers a lightweight editor for quick edits",
+        "Supports multiple languages in the interface",
+        "Works across Windows, macOS, and Linux"
+      ]
+    },
+    "whatItDoesNot": {
+      "title": "What BridgeX Does NOT Do",
+      "items": [
+        "Not an IDE or advanced text editor",
+        "Not a Markdown editor with live preview",
+        "Not a document viewer or PDF reader",
+        "Does not perform OCR on image-based PDFs",
+        "Not designed for heavy document editing"
+      ]
+    },
+    "whyLarge": {
+      "title": "Why is BridgeX Large?",
+      "description": "BridgeX has a significant file size (90-120MB for the installer) because it bundles:",
+      "items": [
+        "PySide6 (Qt for Python) - Full GUI framework",
+        "Markitdown with format plugins - Document parsing",
+        "Python runtime libraries - Required for execution",
+        "VC++ Runtime (Windows) - Required dependencies"
+      ]
+    },
+    "team": {
+      "title": "Team",
+      "developer": "Developed by Dev2Forge",
+      "maintained": "Maintained by tutosrive"
+    },
+    "links": {
+      "github": "GitHub Repository",
+      "pypi": "PyPI Package",
+      "sourceforge": "SourceForge"
+    }
+  },
+  "licenses": {
+    "title": "Third-Party Licenses",
+    "subtitle": "BridgeX uses the following open-source libraries",
+    "bridgex": {
+      "title": "BridgeX",
+      "license": "MIT License",
+      "copyright": "© 2025 Dev2Forge"
+    },
+    "markitdown": {
+      "title": "Markitdown",
+      "description": "Document to Markdown conversion library by Microsoft",
+      "license": "MIT License",
+      "copyright": "© Microsoft Corporation"
+    },
+    "pyside6": {
+      "title": "PySide6",
+      "description": "Qt for Python - GUI framework",
+      "license": "LGPL-3.0-only",
+      "copyright": "© The Qt Company"
+    },
+    "chromologger": {
+      "title": "ChromoLogger",
+      "description": "Colorful logging for Python",
+      "license": "MIT License"
+    },
+    "sqlazo": {
+      "title": "Sqlazo",
+      "description": "SQLite database utilities",
+      "license": "MIT License"
+    },
+    "chromolog": {
+      "title": "ChromoLog",
+      "description": "Chrome-style logging",
+      "license": "MIT License"
+    }
+  },
+  "footer": {
+    "copyright": "© 2025 Dev2Forge. All rights reserved.",
+    "license": "MIT License",
+    "madeWith": "Made with",
+    "and": "and",
+    "links": {
+      "github": "GitHub",
+      "pypi": "PyPI",
+      "docs": "Documentation"
+    }
+  },
+  "theme": {
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System"
+  },
+  "language": {
+    "en": "English",
+    "es": "Español",
+    "pt": "Português",
+    "zh": "Chinese (Mandarin)",
+    "hi": "Hindi",
+    "fr": "Français",
+    "ar": "Arabic",
+    "ru": "Русский",
+    "de": "Deutsch",
+    "ja": "日本語"
+  }
+}

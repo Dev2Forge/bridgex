@@ -1,0 +1,249 @@
+{
+  "nav": {
+    "home": "الرئيسية",
+    "downloads": "التنزيلات",
+    "documentation": "التوثيق",
+    "about": "حول",
+    "licenses": "التراخيص"
+  },
+  "hero": {
+    "title": "BridgeX",
+    "subtitle": "جسرك إلى Markdown",
+    "description": "واجهة رسومية مفتوحة المصدر لتحويل الملفات إلى Markdown، مبنية ببايثون و PySide6. بسِّط سير عملك بقوة Markitdown.",
+    "cta": {
+      "download": "تنزيل الآن",
+      "documentation": "عرض التوثيق"
+    }
+  },
+  "features": {
+    "title": "الميزات",
+    "crossPlatform": {
+      "title": "متعدد المنصات",
+      "description": "يعمل على Windows وmacOS وLinux. استخدم الواجهة الرسومية على أي نظام."
+    },
+    "multiFormat": {
+      "title": "دعم متعدد الصيغ",
+      "description": "حوِّل PDF وDOCX وPPTX وXLSX وHTML وePub والعديد من الصيغ الأخرى إلى Markdown."
+    },
+    "openSource": {
+      "title": "مفتوح المصدر",
+      "description": "مفتوح تمامًا بترخيص MIT. افحص، عدّل، ووزّع بحرية."
+    },
+    "lightEditor": {
+      "title": "محرر خفيف",
+      "description": "محرر مدمج وخفيف لمراجعة Markdown المعدَّل قبل الحفظ."
+    },
+    "multilingual": {
+      "title": "متعدد اللغات",
+      "description": "واجهة متاحة بعدة لغات: الإنجليزية، الإسبانية، وغيرها."
+    },
+    "modular": {
+      "title": "تصميم معياري",
+      "description": "سهل التكييف والتوسعة. الواجهة مبنية بملفات Qt Designer."
+    }
+  },
+  "downloads": {
+    "title": "التنزيلات",
+    "subtitle": "احصل على BridgeX لمنصتك",
+    "windows": {
+      "title": "Windows",
+      "description": "نزّل المُثبّت (.exe) لـ Windows 64-بت. يشمل جميع الاعتمادات.",
+      "button": "تنزيل لـ Windows",
+      "note": "يتطلب Windows 10/11 بنظام 64-بت. غير موصى به للأنظمة 32-بت."
+    },
+    "linux": {
+      "title": "Linux / macOS",
+      "description": "ثبّت عبر pip من PyPI. يتطلب Python 3.9-3.13.",
+      "button": "pip install bridgex",
+      "note": "يُفضّل استخدام بيئة افتراضية لتحقيق أفضل النتائج."
+    },
+    "sourceforge": {
+      "title": "SourceForge",
+      "description": "تنزيل بديل من SourceForge.",
+      "button": "تنزيل من SourceForge"
+    },
+    "requirements": {
+      "title": "متطلبات النظام",
+      "python": "Python 3.9 - 3.13",
+      "os": "Windows 10/11 وmacOS وLinux",
+      "memory": "2 جيجابايت RAM كحد أدنى",
+      "disk": "500 ميجابايت مساحة قرص حرة"
+    }
+  },
+  "documentation": {
+    "title": "التوثيق",
+    "subtitle": "تعلّم كيفية استخدام BridgeX",
+    "installation": {
+      "title": "التثبيت",
+      "pip": {
+        "title": "التثبيت عبر pip",
+        "step1": "تأكّد من تثبيت Python 3.9-3.13",
+        "step2": "أنشئ وفعّل بيئة افتراضية (موصى بها):",
+        "step3": "ثبّت BridgeX:",
+        "step4": "شغّل BridgeX:"
+      },
+      "windows": {
+        "title": "التثبيت على Windows",
+        "step1": "نزّل المُثبّت من صفحة التنزيلات",
+        "step2": "شغّل المُثبّت كمسؤول",
+        "step3": "اتبع معالج التثبيت",
+        "step4": "سيتم تثبيت BridgeX في Program Files"
+      }
+    },
+    "troubleshooting": {
+      "title": "استكشاف الأخطاء",
+      "vcredist": {
+        "title": "خطأ VC++ Runtime (Windows)",
+        "description": "إذا رأيت خطأ حول نقص Visual C++ Runtime، سيقوم المُثبّت بتثبيت VC_Redist x64 تلقائيًا. إن استمرّت المشكلة، نزّله يدويًا من Microsoft."
+      },
+      "permissions": {
+        "title": "تم رفض الإذن (Windows)",
+        "description": "شغّل المُثبّت والتطبيق كمسؤول. يحتاج البرنامج صلاحية كتابة لبعض المجلدات."
+      },
+      "pyside": {
+        "title": "مشاكل تثبيت PySide6 (Linux)",
+        "description": "في بعض توزيعات Linux قد تحتاج لتثبيت اعتمادات Qt إضافية. نفّذ: sudo apt-get install libxcb-xinerama0 libxcb-cursor0"
+      },
+      "display": {
+        "title": "مشاكل العرض (Linux)",
+        "description": "إذا لم تظهر الواجهة أو كانت مكسورة، تأكّد من وجود خادم عرض (X11 أو Wayland). في WSL ثبّت خادم X مثل VcXsrv."
+      }
+    },
+    "usage": {
+      "title": "الاستخدام الأساسي",
+      "step1": "شغّل BridgeX من الطرفية أو الاختصار المثبّت",
+      "step2": "انقر زر الرفع لاختيار ملف للتحويل",
+      "step3": "سيتم تحويل الملف تلقائيًا إلى Markdown",
+      "step4": "راجع النتيجة وعدّلها في المحرر المدمج",
+      "step5": "انقر حفظ لتصدير ملف Markdown"
+    },
+    "formats": {
+      "title": "الصيغ المدعومة",
+      "list": [
+        "PDF (.pdf) - استخراج نص عادي",
+        "Word (.docx)",
+        "PowerPoint (.pptx)",
+        "Excel (.xlsx, .xls, .csv)",
+        "رسائل Outlook (.msg)",
+        "نص (.txt, .text)",
+        "Markdown (.md, .markdown)",
+        "JSON (.json, .jsonl)",
+        "XML (.xml)",
+        "RSS/Atom (.rss, .atom)",
+        "HTML/MHTML (.html, .htm, .mhtml)",
+        "ePub (.epub)",
+        "ملفات مضغوطة (.zip)",
+        "Jupyter Notebooks (.ipynb)"
+      ]
+    }
+  },
+  "about": {
+    "title": "حول BridgeX",
+    "subtitle": "جسر بصري للتحويل إلى Markdown",
+    "description": "BridgeX هو واجهة رسومية مفتوحة المصدر تُبسط تحويل الملفات إلى Markdown. مبني على مكتبة Markitdown من Microsoft ويقدم تجربة بصرية بديهية لمن لا يفضّلون سطر الأوامر.",
+    "whatItDoes": {
+      "title": "ما يفعله BridgeX",
+      "items": [
+        "يحوّل صيغ ملفات مختلفة إلى Markdown نظيف",
+        "يوفر واجهة رسومية لـ Markitdown",
+        "يقدم محررًا خفيفًا لتعديلات سريعة",
+        "يدعم عدة لغات في الواجهة",
+        "يعمل على Windows وmacOS وLinux"
+      ]
+    },
+    "whatItDoesNot": {
+      "title": "ما لا يفعله BridgeX",
+      "items": [
+        "ليس IDE أو محرر نصوص متقدم",
+        "ليس محرر Markdown مع معاينة حية",
+        "ليس عارض مستندات أو قارئ PDF",
+        "لا يجري OCR على ملفات PDF الصورية",
+        "غير مخصص لتحرير المستندات الثقيلة"
+      ]
+    },
+    "whyLarge": {
+      "title": "لماذا حجم BridgeX كبير؟",
+      "description": "يبلغ حجم BridgeX (90-120 ميجابايت للمُثبّت) لأنه يضم:",
+      "items": [
+        "PySide6 (Qt for Python) - إطار GUI كامل",
+        "Markitdown مع إضافات الصيغ - تحليل المستندات",
+        "مكتبات تشغيل بايثون - مطلوبة للتنفيذ",
+        "VC++ Runtime (Windows) - الاعتمادات المطلوبة"
+      ]
+    },
+    "team": {
+      "title": "الفريق",
+      "developer": "مطوَّر بواسطة Dev2Forge",
+      "maintained": "يُصان بواسطة tutosrive"
+    },
+    "links": {
+      "github": "مستودع GitHub",
+      "pypi": "حزمة PyPI",
+      "sourceforge": "SourceForge"
+    }
+  },
+  "licenses": {
+    "title": "تراخيص الجهات الأخرى",
+    "subtitle": "BridgeX يستخدم المكتبات مفتوحة المصدر التالية",
+    "bridgex": {
+      "title": "BridgeX",
+      "license": "ترخيص MIT",
+      "copyright": "© 2025 Dev2Forge"
+    },
+    "markitdown": {
+      "title": "Markitdown",
+      "description": "مكتبة من Microsoft لتحويل المستندات إلى Markdown",
+      "license": "ترخيص MIT",
+      "copyright": "© Microsoft Corporation"
+    },
+    "pyside6": {
+      "title": "PySide6",
+      "description": "Qt for Python - إطار عمل GUI",
+      "license": "LGPL-3.0-only",
+      "copyright": "© The Qt Company"
+    },
+    "chromologger": {
+      "title": "ChromoLogger",
+      "description": "تسجيل ملوّن لبايثون",
+      "license": "ترخيص MIT"
+    },
+    "sqlazo": {
+      "title": "Sqlazo",
+      "description": "أدوات قاعدة بيانات SQLite",
+      "license": "ترخيص MIT"
+    },
+    "chromolog": {
+      "title": "ChromoLog",
+      "description": "تسجيل بأسلوب Chrome",
+      "license": "ترخيص MIT"
+    }
+  },
+  "footer": {
+    "copyright": "© 2025 Dev2Forge. جميع الحقوق محفوظة.",
+    "license": "ترخيص MIT",
+    "madeWith": "صُنع بـ",
+    "and": "و",
+    "links": {
+      "github": "GitHub",
+      "pypi": "PyPI",
+      "docs": "التوثيق"
+    }
+  },
+  "theme": {
+    "light": "فاتح",
+    "dark": "داكن",
+    "system": "النظام"
+  },
+  "language": {
+    "en": "الإنجليزية",
+    "es": "الإسبانية",
+    "pt": "البرتغالية",
+    "zh": "الصينية (الماندرين)",
+    "hi": "الهندية",
+    "fr": "الفرنسية",
+    "ar": "العربية",
+    "ru": "الروسية",
+    "de": "الألمانية",
+    "ja": "اليابانية"
+  }
+}
