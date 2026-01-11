@@ -41,12 +41,26 @@ export default function Navbar() {
   }, [location]);
 
   const languages = useMemo(
-    () => ['en', 'es', 'pt', 'zh', 'hi', 'fr', 'ar', 'ru', 'de', 'ja'].map(code => ({
-      code,
-      name: t(`language.${code}`),
-      flag: code.toUpperCase()
-    })),
-    [t]
+    () => {
+      const flags: Record<string, string> = {
+        en: '🇺🇸',
+        es: '🇪🇸',
+        pt: '🇵🇹',
+        zh: '🇨🇳',
+        hi: '🇮🇳',
+        fr: '🇫🇷',
+        ar: '🇸🇦',
+        ru: '🇷🇺',
+        de: '🇩🇪',
+        ja: '🇯🇵'
+      };
+      return ['en', 'es', 'pt', 'zh', 'hi', 'fr', 'ar', 'ru', 'de', 'ja'].map(code => ({
+        code,
+        name: flags[code],
+        flag: code.toUpperCase()
+      }));
+    },
+    []
   );
 
   // Close language dropdown when clicking outside
