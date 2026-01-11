@@ -8,7 +8,7 @@
   },
   "hero": {
     "title": "Bridgex",
-    "subtitle": "Your Bridge to Markdown",
+    "subtitle": "Your Bridge to <0>markitdown</0>",
     "description": "An open-source graphical interface for converting files to Markdown, built in Python with PySide6. Simplify your workflow with the power of Markitdown.",
     "cta": {
       "download": "Download Now",
@@ -185,6 +185,7 @@
   "licenses": {
     "title": "Third-Party Licenses",
     "subtitle": "Bridgex uses the following open-source libraries",
+    "intro": "Bridgex is open source software distributed under the MIT License. It depends on several third-party libraries, each with their own licensing terms. This page lists all major dependencies and their respective licenses.",
     "bridgex": {
       "title": "Bridgex",
       "license": "MIT License",
@@ -219,6 +220,9 @@
     }
   },
   "footer": {
+    "description": "Your bridge to Markitdown",
+    "navigation": "Navigation",
+    "resources": "Resources",
     "copyright": "© 2025 Dev2Forge. All rights reserved.",
     "license": "MIT License",
     "madeWith": "Made with",

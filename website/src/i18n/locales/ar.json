@@ -8,7 +8,7 @@
   },
   "hero": {
     "title": "Bridgex",
-    "subtitle": "جسرك إلى Markdown",
+    "subtitle": "جسرك إلى <0>markitdown</0>",
     "description": "واجهة رسومية مفتوحة المصدر لتحويل الملفات إلى Markdown، مبنية ببايثون و PySide6. بسِّط سير عملك بقوة Markitdown.",
     "cta": {
       "download": "تنزيل الآن",
@@ -185,6 +185,7 @@
   "licenses": {
     "title": "تراخيص الجهات الأخرى",
     "subtitle": "Bridgex يستخدم المكتبات مفتوحة المصدر التالية",
+    "intro": "Bridgex هو برنامج مفتوح المصدر يتم توزيعه تحت ترخيص MIT. يعتمد على عدة مكتبات خارجية لكل منها شروط الترخيص الخاصة بها. تسرد هذه الصفحة أهم الاعتمادات وتراخيصها المقابلة.",
     "bridgex": {
       "title": "Bridgex",
       "license": "ترخيص MIT",
@@ -219,6 +220,9 @@
     }
   },
   "footer": {
+    "description": "جسرك إلى Markitdown",
+    "navigation": "التنقل",
+    "resources": "الموارد",
     "copyright": "© 2025 Dev2Forge. جميع الحقوق محفوظة.",
     "license": "ترخيص MIT",
     "madeWith": "صُنع بـ",

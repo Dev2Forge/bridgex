@@ -74,9 +74,23 @@ export default function DocumentationPage() {
                         <p>{t('documentation.installation.pip.step2')}</p>
                         <div className="code-block">
                           <code>python -m venv .venv</code>
+                          <button className="copy-button" onClick={() => navigator.clipboard.writeText('python -m venv .venv')}>
+                            Copy
+                          </button>
                         </div>
                         <div className="code-block">
-                          <code># Windows{'\n'}.venv\Scripts\activate{'\n'}{'\n'}# Linux/macOS{'\n'}source .venv/bin/activate</code>
+                          <p>Windows</p>
+                          <code>.venv\Scripts\activate</code>
+                          <button className="copy-button" onClick={() => navigator.clipboard.writeText('.venv\\Scripts\\activate')}>
+                            Copy
+                          </button>
+                        </div>
+                        <div className="code-block">
+                          <p>Linux/macOS</p>
+                          <code>source .venv/bin/activate</code>
+                          <button className="copy-button" onClick={() => navigator.clipboard.writeText('source .venv/bin/activate')}>
+                            Copy
+                          </button>
                         </div>
                       </div>
                     </li>
@@ -86,6 +100,9 @@ export default function DocumentationPage() {
                         <p>{t('documentation.installation.pip.step3')}</p>
                         <div className="code-block">
                           <code>pip install bridgex</code>
+                          <button className="copy-button" onClick={() => navigator.clipboard.writeText('pip install bridgex')}>
+                            Copy
+                          </button>
                         </div>
                       </div>
                     </li>
@@ -95,6 +112,9 @@ export default function DocumentationPage() {
                         <p>{t('documentation.installation.pip.step4')}</p>
                         <div className="code-block">
                           <code>bridgex</code>
+                          <button className="copy-button" onClick={() => navigator.clipboard.writeText('bridgex')}>
+                            Copy
+                          </button>
                         </div>
                       </div>
                     </li>

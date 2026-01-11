@@ -8,7 +8,7 @@
   },
   "hero": {
     "title": "Bridgex",
-    "subtitle": "Markdown への架け橋",
+    "subtitle": "<0>markitdown</0> への架け橋",
     "description": "ファイルを Markdown に変換するためのオープンソース GUI。Python と PySide6 で構築され、Markitdown の力でワークフローをシンプルにします。",
     "cta": {
       "download": "今すぐダウンロード",
@@ -185,6 +185,7 @@
   "licenses": {
     "title": "サードパーティライセンス",
     "subtitle": "Bridgex は以下のオープンソースライブラリを使用しています",
+    "intro": "BridgexはMITライセンスの下で配布されているオープンソースソフトウェアです。いくつかのサードパーティライブラリに依存しており、それぞれ独自のライセンス条件があります。このページでは、すべての主要な依存関係とそれぞれのライセンスを一覧表示します。",
     "bridgex": {
       "title": "Bridgex",
       "license": "MIT ライセンス",
@@ -219,6 +220,9 @@
     }
   },
   "footer": {
+    "description": "Markitdown への架け橋",
+    "navigation": "ナビゲーション",
+    "resources": "リソース",
     "copyright": "© 2025 Dev2Forge. 無断転載を禁じます。",
     "license": "MIT ライセンス",
     "madeWith": "使用技術",

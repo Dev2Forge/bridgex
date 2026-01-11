@@ -185,6 +185,7 @@
   "licenses": {
     "title": "Licencias de Terceros",
     "subtitle": "Bridgex utiliza las siguientes bibliotecas de código abierto",
+    "intro": "Bridgex es un software de código abierto distribuido bajo la licencia MIT. Depende de varias bibliotecas de terceros, cada una con sus propios términos de licencia. Esta página enumera todas las dependencias principales y sus respectivas licencias.",
     "bridgex": {
       "title": "Bridgex",
       "license": "Licencia MIT",
@@ -219,6 +220,9 @@
     }
   },
   "footer": {
+    "description": "Tu puente hacia Markitdown",
+    "navigation": "Navegación",
+    "resources": "Recursos",
     "copyright": "© 2025 Dev2Forge. Todos los derechos reservados.",
     "license": "Licencia MIT",
     "madeWith": "Hecho con",

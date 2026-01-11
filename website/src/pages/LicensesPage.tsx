@@ -22,9 +22,7 @@ export default function LicensesPage() {
         <div className="container">
           <div className="licenses-intro glass-card">
             <p>
-              Bridgex is open source software distributed under the MIT License. 
-              It depends on several third-party libraries, each with their own licensing terms. 
-              This page lists all major dependencies and their respective licenses.
+              {t('licenses.intro')}
             </p>
           </div>
 

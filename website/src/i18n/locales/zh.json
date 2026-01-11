@@ -8,7 +8,7 @@
   },
   "hero": {
     "title": "Bridgex",
-    "subtitle": "通往 Markdown 的桥梁",
+    "subtitle": "通往 <0>markitdown</0> 的桥梁",
     "description": "一个开源的图形界面，用于将文件转换为 Markdown，基于 Python 与 PySide6 构建。借助 Markitdown 的能力简化你的工作流程。",
     "cta": {
       "download": "立即下载",
@@ -129,7 +129,7 @@
         "Markdown (.md, .markdown)",
         "JSON (.json, .jsonl)",
         "XML (.xml)",
-        "RSS/Atom (.rss, .atom)",
+       
         "HTML/MHTML (.html, .htm, .mhtml)",
         "ePub (.epub)",
         "压缩文件 (.zip)",
@@ -185,6 +185,7 @@
   "licenses": {
     "title": "第三方许可证",
     "subtitle": "Bridgex 使用以下开源库",
+    "intro": "Bridgex 是一个开源软件，按照 MIT 许可证分发。它依赖于几个第三方库，每个库都有自己的许可条款。本页面列出了所有主要依赖项及其各自的许可证。",
     "bridgex": {
       "title": "Bridgex",
       "license": "MIT 许可证",
@@ -219,6 +220,9 @@
     }
   },
   "footer": {
+    "description": "通往 Markitdown 的桥梁",
+    "navigation": "导航",
+    "resources": "资源",
     "copyright": "© 2025 Dev2Forge. 保留所有权利。",
     "license": "MIT 许可证",
     "madeWith": "基于",

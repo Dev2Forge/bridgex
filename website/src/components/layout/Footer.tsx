@@ -19,12 +19,12 @@ export default function Footer() {
               <span className="footer-title">Bridgex</span>
             </Link>
             <p className="footer-description">
-              Tu Puente hacia markitdown
+              {t('footer.description')}
             </p>
           </div>
 
           <div className="footer-links-section">
-            <h4>Navigation</h4>
+            <h4>{t('footer.navigation')}</h4>
             <nav className="footer-nav">
               <Link to="/">{t('nav.home')}</Link>
               <Link to="/downloads">{t('nav.downloads')}</Link>
@@ -35,7 +35,7 @@ export default function Footer() {
           </div>
 
           <div className="footer-links-section">
-            <h4>Resources</h4>
+            <h4>{t('footer.resources')}</h4>
             <nav className="footer-nav">
               <a 
                 href="https://github.com/Dev2Forge/bridgex" 
@@ -59,7 +59,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
               >
                 <BookOpen size={16} />
-                Markitdown
+                {t('footer.links.docs')}
               </a>
             </nav>
           </div>
@@ -70,10 +70,10 @@ export default function Footer() {
             © {currentYear} Dev2Forge. {t('footer.license')}
           </p>
           <p className="footer-made-with">
-            Hecho con 
+            {t('footer.madeWith')} 
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-heart heart-icon" aria-hidden="true">
               <path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"></path>
-            </svg> y 
+            </svg> {t('footer.and')} 
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-coffee" aria-hidden="true">
               <path d="M10 2v2"></path>
               <path d="M14 2v2"></path>
