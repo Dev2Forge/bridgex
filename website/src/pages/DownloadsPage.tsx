@@ -1,6 +1,4 @@
 import { useTranslation } from 'react-i18next';
-import { useState, useEffect } from 'react';
-import axios from 'axios';
 import { 
   Download, 
   Monitor, 
@@ -13,50 +11,8 @@ import {
 } from 'lucide-react';
 import './DownloadsPage.css';
 
-interface ReleaseAsset {
-  name: string;
-  browser_download_url: string;
-  size: number;
-}
-
-interface Release {
-  tag_name: string;
-  name: string;
-  html_url: string;
-  assets: ReleaseAsset[];
-}
-
 export default function DownloadsPage() {
   const { t } = useTranslation();
-  const [latestRelease, setLatestRelease] = useState<Release | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(false);
-
-  useEffect(() => {
-    const fetchRelease = async () => {
-      try {
-        const response = await axios.get(
-          'https://api.github.com/repos/Dev2Forge/bridgex/releases/latest'
-        );
-        setLatestRelease(response.data);
-        setError(false);
-      } catch {
-        console.error('Failed to fetch release');
-        setError(true);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchRelease();
-  }, []);
-
-  const formatSize = (bytes: number) => {
-    const mb = bytes / (1024 * 1024);
-    return `${mb.toFixed(1)} MB`;
-  };
-
-  const windowsAsset = latestRelease?.assets.find(a => a.name.endsWith('.exe'));
 
   return (
     <div className="downloads-page">
@@ -82,33 +38,13 @@ export default function DownloadsPage() {
                 {t('downloads.windows.description')}
               </p>
               
-              {loading ? (
-                <div className="loading-btn">Loading...</div>
-              ) : error || !windowsAsset ? (
-                <a 
-                  href="https://github.com/Dev2Forge/bridgex/releases"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-primary download-btn"
-                >
-                  <Download size={20} />
-                  {t('downloads.windows.button')}
-                </a>
-              ) : (
-                <a 
-                  href={windowsAsset.browser_download_url}
-                  className="btn btn-primary download-btn"
-                >
-                  <Download size={20} />
-                  {t('downloads.windows.button')}
-                </a>
-              )}
-
-              {windowsAsset && !error && (
-                <span className="download-size">
-                  {formatSize(windowsAsset.size)}
-                </span>
-              )}
+              <a 
+                href="https://sourceforge.net/projects/bridgex/files/latest/download"
+                className="btn btn-primary download-btn"
+              >
+                <Download size={20} />
+                {t('downloads.windows.button')}
+              </a>
 
               <p className="download-note">{t('downloads.windows.note')}</p>
             </div>
