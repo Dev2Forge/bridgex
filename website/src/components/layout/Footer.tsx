@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import { Github, Package, BookOpen, Heart, Coffee } from 'lucide-react';
+import { Github, Package, BookOpen } from 'lucide-react';
 import './Footer.css';
 
 const LOGO_URL = 'https://cdn.jsdelivr.net/gh/tutosrive/images-projects-srm-trg@main/dev2forge/logos/bridgex-v0.1.0.webp';
