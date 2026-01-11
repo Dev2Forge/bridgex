@@ -8,7 +8,7 @@
   },
   "hero": {
     "title": "Bridgex",
-    "subtitle": "Tu Puente hacia Markdown",
+    "subtitle": "Tu Puente hacia <0>markitdown</0>",
     "description": "Una interfaz gráfica de código abierto para convertir archivos a Markdown, construida en Python con PySide6. Simplifica tu flujo de trabajo con el poder de Markitdown.",
     "cta": {
       "download": "Descargar Ahora",

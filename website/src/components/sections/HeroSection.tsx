@@ -1,9 +1,27 @@
-import { useTranslation } from 'react-i18next';
+import { useTranslation, Trans } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { Download, BookOpen, ArrowRight } from 'lucide-react';
 import './HeroSection.css';
 
 const LOGO_URL = 'https://cdn.jsdelivr.net/gh/tutosrive/images-projects-srm-trg@main/dev2forge/logos/bridgex-v0.1.0.webp';
+
+const MarkitdownPreview = (
+  <a 
+    href="https://github.com/microsoft/markitdown" 
+    target="_blank" 
+    rel="noopener noreferrer" 
+    className="preview-link"
+  >
+    markitdown
+    <span className="preview-tooltip">
+      <span className="tooltip-content">
+        <span className="tooltip-title">microsoft/markitdown</span>
+        <span className="tooltip-desc">Python tool for converting various files to Markdown (e.g., for LLM use)</span>
+        <span className="tooltip-url">github.com/microsoft/markitdown</span>
+      </span>
+    </span>
+  </a>
+);
 
 export default function HeroSection() {
   const { t } = useTranslation();
@@ -26,7 +44,9 @@ export default function HeroSection() {
             <span className="gradient-text">{t('hero.title')}</span>
           </h1>
           
-          <p className="hero-subtitle">{t('hero.subtitle')}</p>
+          <p className="hero-subtitle">
+            <Trans i18nKey="hero.subtitle" components={[MarkitdownPreview]} />
+          </p>
           
           <p className="hero-description">{t('hero.description')}</p>
           

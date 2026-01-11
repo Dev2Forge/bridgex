@@ -42,22 +42,22 @@ export default function Navbar() {
 
   const languages = useMemo(
     () => {
-      const flags: Record<string, string> = {
-        en: '🇺🇸',
-        es: '🇪🇸',
-        pt: '🇵🇹',
-        zh: '🇨🇳',
-        hi: '🇮🇳',
-        fr: '🇫🇷',
-        ar: '🇸🇦',
-        ru: '🇷🇺',
-        de: '🇩🇪',
-        ja: '🇯🇵'
+      const countryCodes: Record<string, string> = {
+        en: 'us',
+        es: 'co', 
+        pt: 'pt',
+        zh: 'cn',
+        hi: 'in',
+        fr: 'fr',
+        ar: 'sa',
+        ru: 'ru',
+        de: 'de',
+        ja: 'jp'
       };
       return ['en', 'es', 'pt', 'zh', 'hi', 'fr', 'ar', 'ru', 'de', 'ja'].map(code => ({
         code,
-        name: flags[code],
-        flag: code.toUpperCase()
+        flagUrl: `https://flagcdn.com/${countryCodes[code]}.svg`,
+        label: code.toUpperCase()
       }));
     },
     []
@@ -156,8 +156,8 @@ export default function Navbar() {
                       className={`lang-option ${i18n.language === lang.code ? 'active' : ''}`}
                       onClick={() => changeLanguage(lang.code)}
                     >
-                      <span className="lang-flag">{lang.flag}</span>
-                      <span>{lang.name}</span>
+                      <span className="lang-text">{lang.label}</span>
+                      <img src={lang.flagUrl} alt={lang.label} className="lang-flag-icon" />
                     </button>
                   ))}
                 </div>
