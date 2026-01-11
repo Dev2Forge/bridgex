@@ -7,7 +7,7 @@
     "licenses": "Lizenzen"
   },
   "hero": {
-    "title": "BridgeX",
+    "title": "Bridgex",
     "subtitle": "Ihre Brücke zu Markdown",
     "description": "Eine Open-Source-Oberfläche zur Konvertierung von Dateien in Markdown, gebaut in Python mit PySide6. Vereinfachen Sie Ihren Workflow mit der Leistung von Markitdown.",
     "cta": {
@@ -44,7 +44,7 @@
   },
   "downloads": {
     "title": "Downloads",
-    "subtitle": "Holen Sie sich BridgeX für Ihre Plattform",
+    "subtitle": "Holen Sie sich Bridgex für Ihre Plattform",
     "windows": {
       "title": "Windows",
       "description": "Laden Sie den Installer (.exe) für Windows 64-Bit herunter. Enthält alle Abhängigkeiten.",
@@ -72,22 +72,22 @@
   },
   "documentation": {
     "title": "Dokumentation",
-    "subtitle": "Erfahren Sie, wie Sie BridgeX nutzen",
+    "subtitle": "Erfahren Sie, wie Sie Bridgex nutzen",
     "installation": {
       "title": "Installation",
       "pip": {
         "title": "Installation über pip",
         "step1": "Stellen Sie sicher, dass Python 3.9-3.13 installiert ist",
         "step2": "Erstellen und aktivieren Sie ein virtuelles Environment (empfohlen):",
-        "step3": "Installieren Sie BridgeX:",
-        "step4": "Starten Sie BridgeX:"
+        "step3": "Installieren Sie Bridgex:",
+        "step4": "Starten Sie Bridgex:"
       },
       "windows": {
         "title": "Installation unter Windows",
         "step1": "Laden Sie den Installer von der Downloads-Seite herunter",
         "step2": "Führen Sie den Installer als Administrator aus",
         "step3": "Folgen Sie dem Installationsassistenten",
-        "step4": "BridgeX wird in Program Files installiert"
+        "step4": "Bridgex wird in Program Files installiert"
       }
     },
     "troubleshooting": {
@@ -111,7 +111,7 @@
     },
     "usage": {
       "title": "Grundlegende Nutzung",
-      "step1": "Starten Sie BridgeX über das Terminal oder die installierte Verknüpfung",
+      "step1": "Starten Sie Bridgex über das Terminal oder die installierte Verknüpfung",
       "step2": "Klicken Sie auf den Upload-Button, um eine Datei zur Konvertierung auszuwählen",
       "step3": "Die Datei wird automatisch in Markdown konvertiert",
       "step4": "Prüfen und bearbeiten Sie das Ergebnis im integrierten Editor",
@@ -138,11 +138,11 @@
     }
   },
   "about": {
-    "title": "Über BridgeX",
+    "title": "Über Bridgex",
     "subtitle": "Eine visuelle Brücke zur Markdown-Konvertierung",
-    "description": "BridgeX ist eine Open-Source-Oberfläche, die die Konvertierung von Dateien in Markdown vereinfacht. Basierend auf Microsofts Markitdown-Bibliothek bietet sie eine intuitive visuelle Erfahrung für Nutzer, die keine Befehlszeile nutzen möchten.",
+    "description": "Bridgex ist eine Open-Source-Oberfläche, die die Konvertierung von Dateien in Markdown vereinfacht. Basierend auf Microsofts Markitdown-Bibliothek bietet sie eine intuitive visuelle Erfahrung für Nutzer, die keine Befehlszeile nutzen möchten.",
     "whatItDoes": {
-      "title": "Was BridgeX macht",
+      "title": "Was Bridgex macht",
       "items": [
         "Konvertiert verschiedene Dateiformate in sauberes Markdown",
         "Bietet eine grafische Oberfläche für Markitdown",
@@ -152,7 +152,7 @@
       ]
     },
     "whatItDoesNot": {
-      "title": "Was BridgeX NICHT macht",
+      "title": "Was Bridgex NICHT macht",
       "items": [
         "Kein IDE oder fortgeschrittener Texteditor",
         "Kein Markdown-Editor mit Live-Vorschau",
@@ -162,8 +162,8 @@
       ]
     },
     "whyLarge": {
-      "title": "Warum ist BridgeX groß?",
-      "description": "BridgeX hat eine beträchtliche Größe (90-120 MB für den Installer), weil es bündelt:",
+      "title": "Warum ist Bridgex groß?",
+      "description": "Bridgex hat eine beträchtliche Größe (90-120 MB für den Installer), weil es bündelt:",
       "items": [
         "PySide6 (Qt for Python) - Vollständiges GUI-Framework",
         "Markitdown mit Format-Plugins - Dokumentenverarbeitung",
@@ -184,9 +184,9 @@
   },
   "licenses": {
     "title": "Lizenzen von Drittanbietern",
-    "subtitle": "BridgeX nutzt folgende Open-Source-Bibliotheken",
+    "subtitle": "Bridgex nutzt folgende Open-Source-Bibliotheken",
     "bridgex": {
-      "title": "BridgeX",
+      "title": "Bridgex",
       "license": "MIT-Lizenz",
       "copyright": "© 2025 Dev2Forge"
     },

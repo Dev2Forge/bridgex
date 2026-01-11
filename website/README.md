@@ -1,6 +1,6 @@
-# BridgeX Website
+# Bridgex Website
 
-The official website for BridgeX - an open-source graphical interface for converting files to Markdown.
+The official website for Bridgex - an open-source graphical interface for converting files to Markdown.
 
 ## Features
 
@@ -15,7 +15,7 @@ The official website for BridgeX - an open-source graphical interface for conver
 - **Home**: Landing page with features, screenshots, and CTA
 - **Downloads**: Platform-specific download options (Windows .exe, pip install)
 - **Documentation**: Installation guides, usage instructions, troubleshooting
-- **About**: Project information, what BridgeX does and doesn't do
+- **About**: Project information, what Bridgex does and doesn't do
 - **Licenses**: Third-party license information (Markitdown, PySide6, etc.)
 
 ## Tech Stack
@@ -129,7 +129,7 @@ website/
 
 ## Color Palette
 
-Colors extracted from the BridgeX logo:
+Colors extracted from the Bridgex logo:
 
 | Color | Hex | Usage |
 |-------|-----|-------|

@@ -7,7 +7,7 @@
     "licenses": "ライセンス"
   },
   "hero": {
-    "title": "BridgeX",
+    "title": "Bridgex",
     "subtitle": "Markdown への架け橋",
     "description": "ファイルを Markdown に変換するためのオープンソース GUI。Python と PySide6 で構築され、Markitdown の力でワークフローをシンプルにします。",
     "cta": {
@@ -44,7 +44,7 @@
   },
   "downloads": {
     "title": "ダウンロード",
-    "subtitle": "お使いのプラットフォーム向け BridgeX を入手",
+    "subtitle": "お使いのプラットフォーム向け Bridgex を入手",
     "windows": {
       "title": "Windows",
       "description": "Windows 64bit 用インストーラー (.exe) をダウンロード。依存関係をすべて含みます。",
@@ -72,22 +72,22 @@
   },
   "documentation": {
     "title": "ドキュメント",
-    "subtitle": "BridgeX の使い方",
+    "subtitle": "Bridgex の使い方",
     "installation": {
       "title": "インストール",
       "pip": {
         "title": "pip でのインストール",
         "step1": "Python 3.9-3.13 がインストールされていることを確認",
         "step2": "仮想環境を作成し有効化（推奨）：",
-        "step3": "BridgeX をインストール：",
-        "step4": "BridgeX を起動："
+        "step3": "Bridgex をインストール：",
+        "step4": "Bridgex を起動："
       },
       "windows": {
         "title": "Windows でのインストール",
         "step1": "ダウンロードページからインストーラーを取得",
         "step2": "管理者としてインストーラーを実行",
         "step3": "セットアップウィザードに従う",
-        "step4": "BridgeX は Program Files にインストールされます"
+        "step4": "Bridgex は Program Files にインストールされます"
       }
     },
     "troubleshooting": {
@@ -111,7 +111,7 @@
     },
     "usage": {
       "title": "基本的な使い方",
-      "step1": "ターミナルまたはショートカットから BridgeX を起動",
+      "step1": "ターミナルまたはショートカットから Bridgex を起動",
       "step2": "アップロードボタンで変換するファイルを選択",
       "step3": "ファイルは自動で Markdown に変換されます",
       "step4": "内蔵エディタで結果を確認・編集",
@@ -138,11 +138,11 @@
     }
   },
   "about": {
-    "title": "BridgeX について",
+    "title": "Bridgex について",
     "subtitle": "Markdown 変換へのビジュアルブリッジ",
-    "description": "BridgeX はファイルを Markdown に変換するオープンソースの GUI です。Microsoft の Markitdown ライブラリを基盤に、コマンドラインを使いたくないユーザーにも直感的な体験を提供します。",
+    "description": "Bridgex はファイルを Markdown に変換するオープンソースの GUI です。Microsoft の Markitdown ライブラリを基盤に、コマンドラインを使いたくないユーザーにも直感的な体験を提供します。",
     "whatItDoes": {
-      "title": "BridgeX ができること",
+      "title": "Bridgex ができること",
       "items": [
         "さまざまな形式のファイルをクリーンな Markdown に変換",
         "Markitdown 用のグラフィカルインターフェースを提供",
@@ -152,7 +152,7 @@
       ]
     },
     "whatItDoesNot": {
-      "title": "BridgeX がしないこと",
+      "title": "Bridgex がしないこと",
       "items": [
         "IDE や高機能テキストエディタではない",
         "ライブプレビュー付きの Markdown エディタではない",
@@ -162,8 +162,8 @@
       ]
     },
     "whyLarge": {
-      "title": "BridgeX のサイズが大きい理由",
-      "description": "BridgeX のインストーラーが大きい（90–120MB）理由は、以下を同梱しているためです：",
+      "title": "Bridgex のサイズが大きい理由",
+      "description": "Bridgex のインストーラーが大きい（90–120MB）理由は、以下を同梱しているためです：",
       "items": [
         "PySide6 (Qt for Python) - フル機能の GUI フレームワーク",
         "形式プラグイン付き Markitdown - ドキュメント解析",
@@ -184,9 +184,9 @@
   },
   "licenses": {
     "title": "サードパーティライセンス",
-    "subtitle": "BridgeX は以下のオープンソースライブラリを使用しています",
+    "subtitle": "Bridgex は以下のオープンソースライブラリを使用しています",
     "bridgex": {
-      "title": "BridgeX",
+      "title": "Bridgex",
       "license": "MIT ライセンス",
       "copyright": "© 2025 Dev2Forge"
     },

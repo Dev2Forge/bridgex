@@ -103,8 +103,8 @@ export default function Navbar() {
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <div className="navbar-container">
         <NavLink to="/" className="navbar-brand">
-          <img src={LOGO_URL} alt="BridgeX Logo" className="navbar-logo" />
-          <span className="navbar-title">BridgeX</span>
+          <img src={LOGO_URL} alt="Bridgex Logo" className="navbar-logo" />
+          <span className="navbar-title">Bridgex</span>
         </NavLink>
 
         <div className={`navbar-menu ${isMenuOpen ? 'open' : ''}`}>

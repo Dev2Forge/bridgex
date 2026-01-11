@@ -64,7 +64,7 @@ export default function HeroSection() {
           <div className="hero-logo-container">
             <img 
               src={LOGO_URL} 
-              alt="BridgeX Logo" 
+              alt="Bridgex Logo" 
               className="hero-logo animate-float"
             />
             <div className="hero-glow" />

@@ -1,5 +1,5 @@
 /**
- * Third-party licenses configuration for BridgeX
+ * Third-party licenses configuration for Bridgex
  * This file contains all license information for dependencies used in the project
  */
 
@@ -16,7 +16,7 @@ export interface License {
 export const licenses: License[] = [
   {
     key: 'bridgex',
-    name: 'BridgeX',
+    name: 'Bridgex',
     version: '0.1.0',
     license: 'MIT License',
     copyright: '© 2025 Dev2Forge',

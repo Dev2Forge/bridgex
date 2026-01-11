@@ -7,7 +7,7 @@
     "licenses": "التراخيص"
   },
   "hero": {
-    "title": "BridgeX",
+    "title": "Bridgex",
     "subtitle": "جسرك إلى Markdown",
     "description": "واجهة رسومية مفتوحة المصدر لتحويل الملفات إلى Markdown، مبنية ببايثون و PySide6. بسِّط سير عملك بقوة Markitdown.",
     "cta": {
@@ -44,7 +44,7 @@
   },
   "downloads": {
     "title": "التنزيلات",
-    "subtitle": "احصل على BridgeX لمنصتك",
+    "subtitle": "احصل على Bridgex لمنصتك",
     "windows": {
       "title": "Windows",
       "description": "نزّل المُثبّت (.exe) لـ Windows 64-بت. يشمل جميع الاعتمادات.",
@@ -72,22 +72,22 @@
   },
   "documentation": {
     "title": "التوثيق",
-    "subtitle": "تعلّم كيفية استخدام BridgeX",
+    "subtitle": "تعلّم كيفية استخدام Bridgex",
     "installation": {
       "title": "التثبيت",
       "pip": {
         "title": "التثبيت عبر pip",
         "step1": "تأكّد من تثبيت Python 3.9-3.13",
         "step2": "أنشئ وفعّل بيئة افتراضية (موصى بها):",
-        "step3": "ثبّت BridgeX:",
-        "step4": "شغّل BridgeX:"
+        "step3": "ثبّت Bridgex:",
+        "step4": "شغّل Bridgex:"
       },
       "windows": {
         "title": "التثبيت على Windows",
         "step1": "نزّل المُثبّت من صفحة التنزيلات",
         "step2": "شغّل المُثبّت كمسؤول",
         "step3": "اتبع معالج التثبيت",
-        "step4": "سيتم تثبيت BridgeX في Program Files"
+        "step4": "سيتم تثبيت Bridgex في Program Files"
       }
     },
     "troubleshooting": {
@@ -111,7 +111,7 @@
     },
     "usage": {
       "title": "الاستخدام الأساسي",
-      "step1": "شغّل BridgeX من الطرفية أو الاختصار المثبّت",
+      "step1": "شغّل Bridgex من الطرفية أو الاختصار المثبّت",
       "step2": "انقر زر الرفع لاختيار ملف للتحويل",
       "step3": "سيتم تحويل الملف تلقائيًا إلى Markdown",
       "step4": "راجع النتيجة وعدّلها في المحرر المدمج",
@@ -138,11 +138,11 @@
     }
   },
   "about": {
-    "title": "حول BridgeX",
+    "title": "حول Bridgex",
     "subtitle": "جسر بصري للتحويل إلى Markdown",
-    "description": "BridgeX هو واجهة رسومية مفتوحة المصدر تُبسط تحويل الملفات إلى Markdown. مبني على مكتبة Markitdown من Microsoft ويقدم تجربة بصرية بديهية لمن لا يفضّلون سطر الأوامر.",
+    "description": "Bridgex هو واجهة رسومية مفتوحة المصدر تُبسط تحويل الملفات إلى Markdown. مبني على مكتبة Markitdown من Microsoft ويقدم تجربة بصرية بديهية لمن لا يفضّلون سطر الأوامر.",
     "whatItDoes": {
-      "title": "ما يفعله BridgeX",
+      "title": "ما يفعله Bridgex",
       "items": [
         "يحوّل صيغ ملفات مختلفة إلى Markdown نظيف",
         "يوفر واجهة رسومية لـ Markitdown",
@@ -152,7 +152,7 @@
       ]
     },
     "whatItDoesNot": {
-      "title": "ما لا يفعله BridgeX",
+      "title": "ما لا يفعله Bridgex",
       "items": [
         "ليس IDE أو محرر نصوص متقدم",
         "ليس محرر Markdown مع معاينة حية",
@@ -162,8 +162,8 @@
       ]
     },
     "whyLarge": {
-      "title": "لماذا حجم BridgeX كبير؟",
-      "description": "يبلغ حجم BridgeX (90-120 ميجابايت للمُثبّت) لأنه يضم:",
+      "title": "لماذا حجم Bridgex كبير؟",
+      "description": "يبلغ حجم Bridgex (90-120 ميجابايت للمُثبّت) لأنه يضم:",
       "items": [
         "PySide6 (Qt for Python) - إطار GUI كامل",
         "Markitdown مع إضافات الصيغ - تحليل المستندات",
@@ -184,9 +184,9 @@
   },
   "licenses": {
     "title": "تراخيص الجهات الأخرى",
-    "subtitle": "BridgeX يستخدم المكتبات مفتوحة المصدر التالية",
+    "subtitle": "Bridgex يستخدم المكتبات مفتوحة المصدر التالية",
     "bridgex": {
-      "title": "BridgeX",
+      "title": "Bridgex",
       "license": "ترخيص MIT",
       "copyright": "© 2025 Dev2Forge"
     },

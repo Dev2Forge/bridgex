@@ -41,7 +41,7 @@ export default function ScreenshotsSection() {
       <div className="container">
         <div className="section-title">
           <h2>Screenshots</h2>
-          <p>See BridgeX in action</p>
+          <p>See Bridgex in action</p>
         </div>
 
         <div className="screenshots-carousel">

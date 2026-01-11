@@ -24,7 +24,7 @@ export default function AboutPage() {
       <section className="about-hero">
         <div className="container">
           <div className="about-hero-content">
-            <img src={LOGO_URL} alt="BridgeX Logo" className="about-logo" />
+            <img src={LOGO_URL} alt="Bridgex Logo" className="about-logo" />
             <div className="about-hero-text">
               <h1>{t('about.title')}</h1>
               <p className="about-subtitle">{t('about.subtitle')}</p>

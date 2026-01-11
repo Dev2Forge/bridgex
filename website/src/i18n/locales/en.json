@@ -7,7 +7,7 @@
     "licenses": "Licenses"
   },
   "hero": {
-    "title": "BridgeX",
+    "title": "Bridgex",
     "subtitle": "Your Bridge to Markdown",
     "description": "An open-source graphical interface for converting files to Markdown, built in Python with PySide6. Simplify your workflow with the power of Markitdown.",
     "cta": {
@@ -44,7 +44,7 @@
   },
   "downloads": {
     "title": "Downloads",
-    "subtitle": "Get BridgeX for your platform",
+    "subtitle": "Get Bridgex for your platform",
     "windows": {
       "title": "Windows",
       "description": "Download the installer (.exe) for Windows 64-bit. Includes all dependencies.",
@@ -72,22 +72,22 @@
   },
   "documentation": {
     "title": "Documentation",
-    "subtitle": "Learn how to use BridgeX",
+    "subtitle": "Learn how to use Bridgex",
     "installation": {
       "title": "Installation",
       "pip": {
         "title": "Installation via pip",
         "step1": "Ensure you have Python 3.9-3.13 installed",
         "step2": "Create and activate a virtual environment (recommended):",
-        "step3": "Install BridgeX:",
-        "step4": "Run BridgeX:"
+        "step3": "Install Bridgex:",
+        "step4": "Run Bridgex:"
       },
       "windows": {
         "title": "Windows Installation",
         "step1": "Download the installer from the Downloads page",
         "step2": "Run the installer as Administrator",
         "step3": "Follow the installation wizard",
-        "step4": "BridgeX will be installed in Program Files"
+        "step4": "Bridgex will be installed in Program Files"
       }
     },
     "troubleshooting": {
@@ -111,7 +111,7 @@
     },
     "usage": {
       "title": "Basic Usage",
-      "step1": "Launch BridgeX from terminal or the installed shortcut",
+      "step1": "Launch Bridgex from terminal or the installed shortcut",
       "step2": "Click the upload button to select a file to convert",
       "step3": "The file will be automatically converted to Markdown",
       "step4": "Review and edit the result in the built-in editor",
@@ -138,11 +138,11 @@
     }
   },
   "about": {
-    "title": "About BridgeX",
+    "title": "About Bridgex",
     "subtitle": "A visual bridge to Markdown conversion",
-    "description": "BridgeX is an open-source graphical interface that simplifies file-to-Markdown conversion. Built on top of Microsoft's Markitdown library, it provides an intuitive visual experience for users who prefer not to use the command line.",
+    "description": "Bridgex is an open-source graphical interface that simplifies file-to-Markdown conversion. Built on top of Microsoft's Markitdown library, it provides an intuitive visual experience for users who prefer not to use the command line.",
     "whatItDoes": {
-      "title": "What BridgeX Does",
+      "title": "What Bridgex Does",
       "items": [
         "Converts various file formats to clean Markdown",
         "Provides a graphical interface for Markitdown",
@@ -152,7 +152,7 @@
       ]
     },
     "whatItDoesNot": {
-      "title": "What BridgeX Does NOT Do",
+      "title": "What Bridgex Does NOT Do",
       "items": [
         "Not an IDE or advanced text editor",
         "Not a Markdown editor with live preview",
@@ -162,8 +162,8 @@
       ]
     },
     "whyLarge": {
-      "title": "Why is BridgeX Large?",
-      "description": "BridgeX has a significant file size (90-120MB for the installer) because it bundles:",
+      "title": "Why is Bridgex Large?",
+      "description": "Bridgex has a significant file size (90-120MB for the installer) because it bundles:",
       "items": [
         "PySide6 (Qt for Python) - Full GUI framework",
         "Markitdown with format plugins - Document parsing",
@@ -184,9 +184,9 @@
   },
   "licenses": {
     "title": "Third-Party Licenses",
-    "subtitle": "BridgeX uses the following open-source libraries",
+    "subtitle": "Bridgex uses the following open-source libraries",
     "bridgex": {
-      "title": "BridgeX",
+      "title": "Bridgex",
       "license": "MIT License",
       "copyright": "© 2025 Dev2Forge"
     },

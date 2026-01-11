@@ -13,7 +13,7 @@ export default function CTASection() {
           <div className="cta-content">
             <h2 className="cta-title">Ready to convert your files?</h2>
             <p className="cta-description">
-              Download BridgeX today and start converting your documents to Markdown with ease.
+              Download Bridgex today and start converting your documents to Markdown with ease.
             </p>
             <div className="cta-buttons">
               <Link to="/downloads" className="btn btn-primary">

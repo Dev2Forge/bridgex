@@ -7,7 +7,7 @@
     "licenses": "许可"
   },
   "hero": {
-    "title": "BridgeX",
+    "title": "Bridgex",
     "subtitle": "通往 Markdown 的桥梁",
     "description": "一个开源的图形界面，用于将文件转换为 Markdown，基于 Python 与 PySide6 构建。借助 Markitdown 的能力简化你的工作流程。",
     "cta": {
@@ -44,7 +44,7 @@
   },
   "downloads": {
     "title": "下载",
-    "subtitle": "为你的平台获取 BridgeX",
+    "subtitle": "为你的平台获取 Bridgex",
     "windows": {
       "title": "Windows",
       "description": "下载适用于 Windows 64 位的安装程序 (.exe)，包含所有依赖。",
@@ -72,22 +72,22 @@
   },
   "documentation": {
     "title": "文档",
-    "subtitle": "了解如何使用 BridgeX",
+    "subtitle": "了解如何使用 Bridgex",
     "installation": {
       "title": "安装",
       "pip": {
         "title": "通过 pip 安装",
         "step1": "确保已安装 Python 3.9-3.13",
         "step2": "创建并激活虚拟环境（推荐）：",
-        "step3": "安装 BridgeX：",
-        "step4": "运行 BridgeX："
+        "step3": "安装 Bridgex：",
+        "step4": "运行 Bridgex："
       },
       "windows": {
         "title": "Windows 安装",
         "step1": "从下载页获取安装程序",
         "step2": "以管理员身份运行安装程序",
         "step3": "按照安装向导完成步骤",
-        "step4": "BridgeX 将安装在 Program Files"
+        "step4": "Bridgex 将安装在 Program Files"
       }
     },
     "troubleshooting": {
@@ -111,7 +111,7 @@
     },
     "usage": {
       "title": "基础用法",
-      "step1": "从终端或快捷方式启动 BridgeX",
+      "step1": "从终端或快捷方式启动 Bridgex",
       "step2": "点击上传按钮选择要转换的文件",
       "step3": "文件将自动转换为 Markdown",
       "step4": "在内置编辑器中审阅并编辑结果",
@@ -138,11 +138,11 @@
     }
   },
   "about": {
-    "title": "关于 BridgeX",
+    "title": "关于 Bridgex",
     "subtitle": "通往 Markdown 转换的可视化桥梁",
-    "description": "BridgeX 是一个开源图形界面，简化了文件到 Markdown 的转换。基于微软的 Markitdown 库，为不想使用命令行的用户提供直观的视觉体验。",
+    "description": "Bridgex 是一个开源图形界面，简化了文件到 Markdown 的转换。基于微软的 Markitdown 库，为不想使用命令行的用户提供直观的视觉体验。",
     "whatItDoes": {
-      "title": "BridgeX 能做什么",
+      "title": "Bridgex 能做什么",
       "items": [
         "将多种文件格式转换为干净的 Markdown",
         "提供 Markitdown 的图形界面",
@@ -152,7 +152,7 @@
       ]
     },
     "whatItDoesNot": {
-      "title": "BridgeX 不能做什么",
+      "title": "Bridgex 不能做什么",
       "items": [
         "不是 IDE 或高级文本编辑器",
         "不是带实时预览的 Markdown 编辑器",
@@ -162,8 +162,8 @@
       ]
     },
     "whyLarge": {
-      "title": "BridgeX 为什么体积大？",
-      "description": "BridgeX 体积较大（安装包 90-120MB），因为包含：",
+      "title": "Bridgex 为什么体积大？",
+      "description": "Bridgex 体积较大（安装包 90-120MB），因为包含：",
       "items": [
         "PySide6 (Qt for Python) - 完整 GUI 框架",
         "带格式插件的 Markitdown - 文档解析",
@@ -184,9 +184,9 @@
   },
   "licenses": {
     "title": "第三方许可证",
-    "subtitle": "BridgeX 使用以下开源库",
+    "subtitle": "Bridgex 使用以下开源库",
     "bridgex": {
-      "title": "BridgeX",
+      "title": "Bridgex",
       "license": "MIT 许可证",
       "copyright": "© 2025 Dev2Forge"
     },

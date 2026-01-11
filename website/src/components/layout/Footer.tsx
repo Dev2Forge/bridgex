@@ -15,8 +15,8 @@ export default function Footer() {
         <div className="footer-content">
           <div className="footer-brand">
             <Link to="/" className="footer-logo-link">
-              <img src={LOGO_URL} alt="BridgeX" className="footer-logo" />
-              <span className="footer-title">BridgeX</span>
+              <img src={LOGO_URL} alt="Bridgex" className="footer-logo" />
+              <span className="footer-title">Bridgex</span>
             </Link>
             <p className="footer-description">
               {t('hero.subtitle')}
