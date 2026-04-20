@@ -1,4 +1,8 @@
-To-Do
+# Upgrades
+
+- Advanced Editor view (Monaco Editor)
+
+# To-Do
 
 - [ ] Make Issue inside of the same program (Without exit from the program - Bridgex)
 - [ ] Make a system to see the future "features" of program...

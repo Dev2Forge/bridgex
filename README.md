@@ -2,35 +2,35 @@
 
 [![Read in Spanish](https://img.shields.io/badge/read%20in-ES-red?logo=github)](https://github.com/Dev2Forge/bridgex/blob/main/translations/README_ES.md) [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE) ![Pepy Total Downloads](https://img.shields.io/pepy/dt/bridgex?label=pypi-downloads) ![SourceForge Downloads](https://img.shields.io/sourceforge/dt/bridgex?label=sourceforfe-downloads) [![PyPI version](https://img.shields.io/pypi/v/bridgex?label=bridgex)](https://pypi.org/project/bridgex/) ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/bridgex) [![Issues](https://img.shields.io/github/issues/Dev2Forge/bridgex)](https://github.com/Dev2Forge/bridgex/issues)
 
-Bridgex is an open‑source graphical interface for converting files to Markdown, built in Python and based on [Pyside6 (Qt for Python)](https://doc.qt.io/qtforpython-6/). Its objective is to simplify access to the [Markitdown](https://github.com/microsoft/markitdown) library through a straightforward, modular visual experience.
+Bridgex is an open‑source graphical interface for converting files to Markdown, built in [Tauri](https://github.com/tauri-apps/tauri) + [React](https://github.com/facebook/react). Its objective is to simplify access to the [Markitdown](https://github.com/microsoft/markitdown) library through a straightforward, modular visual experience.
 
 ---
 
 ## Features ✨
 
-* Cross‑platform graphical interface.
-* Efficient file‑to‑Markdown conversion.
-* Modularity: easy to adapt and extend.
-* Support for multiple input formats.
-* Lightweight editing prior to saving.
+- Cross‑platform graphical interface.
+- Efficient file‑to‑Markdown conversion.
+- Modularity: easy to adapt and extend.
+- Support for multiple input formats.
+- Lightweight editing prior to saving.
 
 ---
 
 ## Screenshots 🖼️
 
 ![img](https://cdn.jsdelivr.net/gh/tutosrive/images-projects-srm-trg@main/dev2forge/pymd/bridgex/preview-1-main.png)
-*Example of Bridgex’s main window.*
+_Example of Bridgex’s main window._
 
 <details>
 <summary><strong>View interface previews</strong></summary>
 
 <br>
 
-|     Name     | Preview |
-|:----------------:|:---------------------:|
-| Open File | ![img](https://cdn.jsdelivr.net/gh/tutosrive/images-projects-srm-trg@main/dev2forge/pymd/bridgex/preview-2-openfile.png) |
-| Mini Editor | ![img](https://cdn.jsdelivr.net/gh/tutosrive/images-projects-srm-trg@main/dev2forge/pymd/bridgex/preview-3-minieditor.png) |
-| Convert | ![img](https://cdn.jsdelivr.net/gh/tutosrive/images-projects-srm-trg@main/dev2forge/pymd/bridgex/preview-4-convert.png) |
+|      Name       |                                                            Preview                                                             |
+| :-------------: | :----------------------------------------------------------------------------------------------------------------------------: |
+|    Open File    |    ![img](https://cdn.jsdelivr.net/gh/tutosrive/images-projects-srm-trg@main/dev2forge/pymd/bridgex/preview-2-openfile.png)    |
+|   Mini Editor   |   ![img](https://cdn.jsdelivr.net/gh/tutosrive/images-projects-srm-trg@main/dev2forge/pymd/bridgex/preview-3-minieditor.png)   |
+|     Convert     |    ![img](https://cdn.jsdelivr.net/gh/tutosrive/images-projects-srm-trg@main/dev2forge/pymd/bridgex/preview-4-convert.png)     |
 | Change Language | ![img](https://cdn.jsdelivr.net/gh/tutosrive/images-projects-srm-trg@main/dev2forge/pymd/bridgex/preview-5-languagechange.png) |
 
 </details>
@@ -38,10 +38,6 @@ Bridgex is an open‑source graphical interface for converting files to Markdown
 ---
 
 ## Installation 📦
-
-Requirements:
-
-* Python ≥ **3.9** and ≤ **3.13**
 
 Install via pip:
 
@@ -70,33 +66,21 @@ git clone https://github.com/Dev2Forge/bridgex.git
 ```
 
 2. Navigate to the project directory and set up a virtual environment.
+
 ```sh
 cd bridgex
 ```
-3. Create a virtual environment.
+
+3. Install the required dependencies.
 
 ```sh
-python -m venv .venv
+pnpm i
 ```
 
-4. Activate the virtual environment.
+6. Run the application (DevMode).
 
 ```sh
-# On Windows
-.venv\Scripts\activate
-# source .venv/bin/activate  # On Linux/MacOS
-```
-
-5. Install the required dependencies.
-
-```sh
-pip install -r requirements.txt
-```
-
-6. Run the application.
-
-```sh
-python -m src.bridgex
+pnpm tauri dev
 ```
 
 ---
@@ -114,21 +98,21 @@ python -m src.bridgex
 
 Bridgex supports conversion of the following file formats:
 
-* PDF (`.pdf`)
-* Word (`.docx`)
-* PowerPoint (`.pptx`)
-* Excel (`.xlsx`, `.xls`, `.csv`)
-* Outlook Messages (`.msg`)
-* Text (`.txt`, `.text`)
-* Markdown (`.md`, `.markdown`)
-* JSON (`.json`, `.jsonl`)
-* XML (`.xml`)
-* RSS/Atom (`.rss`, `.atom`)
-* HTML/MHTML (`.html`, `.htm`, `.mhtml`)
-* ePub (`.epub`)
-* Compressed files (`.zip`)
-* Jupyter Notebooks (`.ipynb`)
-* Other formats supported by Markitdown
+- PDF (`.pdf`)
+- Word (`.docx`)
+- PowerPoint (`.pptx`)
+- Excel (`.xlsx`, `.xls`, `.csv`)
+- Outlook Messages (`.msg`)
+- Text (`.txt`, `.text`)
+- Markdown (`.md`, `.markdown`)
+- JSON (`.json`, `.jsonl`)
+- XML (`.xml`)
+- RSS/Atom (`.rss`, `.atom`)
+- HTML/MHTML (`.html`, `.htm`, `.mhtml`)
+- ePub (`.epub`)
+- Compressed files (`.zip`)
+- Jupyter Notebooks (`.ipynb`)
+- Other formats supported by Markitdown
 
 ---
 
@@ -160,4 +144,4 @@ Contributions are welcome. Please open an issue or pull request following the co
 
 Distributed under the [MIT Licence](https://github.com/Dev2Forge/bridgex/blob/main/LICENSE).
 
-©2025 Dev2Forge
+©2026 Dev2Forge
