@@ -4,19 +4,22 @@
  * Licence: GPL-3
  * More information: https://github.com/Dev2Forge/bridgex/blob/main/LICENSE
  * Author: tutosrive (tutosrive@Dev2Forge.software)
- * 
+ *
  * File: \src\App.tsx
  * Created: Monday, 20th April 2026 7:16:28 am
  * -----
- * Last Modified: Monday, 20th April 2026 9:52:45 am
+ * Last Modified: Monday, 20th April 2026 11:29:29 am
  * Modified By: tutosrive (tutosrive@Dev2Forge.software)
  * -----
  */
 
 import { useState } from 'react';
-import reactLogo from './assets/react.svg';
 import { invoke } from '@tauri-apps/api/core';
 import './App.css';
+import DefaultLayout from './layouts/Default';
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+import Home from './pages/Home';
+import About from './pages/About';
 
 function App() {
   const [greetMsg, setGreetMsg] = useState('');
@@ -28,34 +31,12 @@ function App() {
   }
 
   return (
-    <main className="container">
-      <h1>Welcome to Tauri + React</h1>
-
-      <div className="row">
-        <a href="https://vite.dev" target="_blank">
-          <img src="/vite.svg" className="logo vite" alt="Vite logo" />
-        </a>
-        <a href="https://tauri.app" target="_blank">
-          <img src="/tauri.svg" className="logo tauri" alt="Tauri logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <p>Click on the Tauri, Vite, and React logos to learn more.</p>
-
-      <form
-        className="row"
-        onSubmit={(e) => {
-          e.preventDefault();
-          greet();
-        }}
-      >
-        <input id="greet-input" onChange={(e) => setName(e.currentTarget.value)} placeholder="Enter a name..." />
-        <button type="submit">Greet</button>
-      </form>
-      <p>{greetMsg}</p>
-    </main>
+    <Routes>
+      <Route element={<DefaultLayout />}>
+        <Route index path="/" element={<Home />} />
+        <Route path="about" element={<About />} />
+      </Route>
+    </Routes>
   );
 }
 

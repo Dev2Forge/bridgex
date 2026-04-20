@@ -1,0 +1,33 @@
+/*
+ * bridgex - Graphical interface for converting files to Markdown
+ * Copyright 2026 - 2026 Dev2Forge
+ * Licence: GPL-3
+ * More information: https://github.com/Dev2Forge/bridgex/blob/main/LICENSE
+ * Author: tutosrive (tutosrive@Dev2Forge.software)
+ * 
+ * File: \src\assets\css\NavBar.css
+ * Created: Monday, 20th April 2026 11:37:05 am
+ * -----
+ * Last Modified: Monday, 20th April 2026 1:00:53 pm
+ * Modified By: tutosrive (tutosrive@Dev2Forge.software)
+ * -----
+ */
+
+.menubar {
+  padding: 1px;
+  margin-bottom: 10px;
+  width: 100vw;
+  height: 20px;
+  background-color: black;
+  align-items: center;
+  display: flex;
+}
+
+.item-menubar {
+  display: inline-block;
+  align-items: center;
+  font-size: 14px;
+  padding: 5px;
+  text-decoration: none;
+  color: var(--menubar-text-color);
+}
