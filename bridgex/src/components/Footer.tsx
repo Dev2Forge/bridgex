@@ -8,11 +8,10 @@
  * File: \src\components\Footer.tsx
  * Created: Monday, 20th April 2026 10:09:06 am
  * -----
- * Last Modified: Monday, 20th April 2026 10:59:05 am
+ * Last Modified: Monday, 20th April 2026 6:34:08 pm
  * Modified By: tutosrive (tutosrive@Dev2Forge.software)
  * -----
  */
-import { compareAsc, format } from 'date-fns';
 
 interface FooterProps {
   data?: any;

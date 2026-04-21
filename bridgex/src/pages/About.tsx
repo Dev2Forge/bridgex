@@ -8,7 +8,7 @@
  * File: \src\pages\About.tsx
  * Created: Monday, 20th April 2026 9:58:42 am
  * -----
- * Last Modified: Monday, 20th April 2026 11:35:43 am
+ * Last Modified: Monday, 20th April 2026 6:04:37 pm
  * Modified By: tutosrive (tutosrive@Dev2Forge.software)
  * -----
  */
@@ -16,8 +16,15 @@ interface AboutProps {
   data?: any;
 }
 
+const APP_VERSION: string = import.meta.env.VITE_APP_VERSION;
+
 const About: React.FC<AboutProps> = ({ data }) => {
-  return <>About</>;
+  return (
+    <div>
+      <pre>{APP_VERSION}</pre>
+      <kbd>ctrl</kbd> + <kbd>s</kbd>
+    </div>
+  );
 };
 
 export default About;
