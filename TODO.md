@@ -1,4 +1,4 @@
-# Refactoring Upgrades (with Tauri)
+# Refactoringgit Upgrades (with Tauri)
 
 - [x] Check if it is feasible to rewrite the program with Tauri (using Rust and React)
 - [ ] Create a list of functional and non-functional requirements (with Tauri)
