@@ -3,7 +3,7 @@
 ## Feasibility and Requirements
 
 - [x] Check if it is feasible to rewrite the program with Tauri (using Rust and React)
-- [ ] Create a list of functional and non-functional requirements (with Tauri)
+- [x] Create a list of functional and non-functional requirements (with Tauri)
 
 ## Design and Interface
 
