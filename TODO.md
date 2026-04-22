@@ -1,15 +1,26 @@
 # Refactoringgit Upgrades (with Tauri)
 
+## Feasibility and Requirements
+
 - [x] Check if it is feasible to rewrite the program with Tauri (using Rust and React)
 - [ ] Create a list of functional and non-functional requirements (with Tauri)
+
+## Design and Interface
+
 - [ ] Establish styles and design the interface
 - [ ] Design the options menu
 - [ ] Add a SideBar to the defaultLayout
 - [ ] Design the Home Page
+
+## Functionality
+
 - [ ] Add drag-and-drop file functionality
 - [ ] Add functionality to open files from the menu
 - [ ] Add a text editor to display the file content (Monaco Editor or another)
 - [ ] Add functionality to save files (with Tauri)
+
+## Additional Features
+
 - [ ] Add an about page with programme information and links to social media
 - [ ] Add i18n (internationalisation) to support multiple languages
 - [ ] Add a theme system (light/dark)
@@ -22,17 +33,28 @@
 
 # To-Do (Future Upgrades)
 
+## Feature Enhancements
+
 - [ ] Make Issue inside of the same program (Without exit from the program - Bridgex)
 - [ ] Make a system to see the future "features" of program...
 - [ ] Make a history of converted files (Inside program)
 - [ ] Limit the file size
+
+## User Experience Improvements
+
 - [ ] When the file is ok, but not have a content, show again the initial Help (Logo with shortcuts, initial screen)
 - [ ] Make a temporary file or inside database, to save the content extracted
   > Notes: This because when language is changed, the UI is reinitialised and the content extracted is deleted (from the square inside program...).
 - [ ] Fix program "freeze", when converting, the program is frozen to can convert the file
 - [ ] Add a dialogue to show the shortcuts available
+
+## Code and Database Updates
+
 - [ ] Update the manager and its use inside the program
   > Notes: The database isn't used correctly, bad practices are here
+
+## Miscellaneous
+
 - [ ] Remove focus of links clicked
   > Notes: When links are clicked, these not remove the focus in, because same cause, when link is clicked, and return inside the program, if "enter" is key down, the "link" is actioned again!
 - [ ] Save the size when close/exit (when reopen, the size is equal to last size configured)
