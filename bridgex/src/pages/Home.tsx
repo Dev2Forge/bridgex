@@ -8,7 +8,7 @@
  * File: \src\pages\Home.tsx
  * Created: Monday, 20th April 2026 9:55:14 am
  * -----
- * Last Modified: Wednesday, 22nd April 2026 1:46:46 pm
+ * Last Modified: Wednesday, 22nd April 2026 2:13:12 pm
  * Modified By: tutosrive (tutosrive@Dev2Forge.software)
  * -----
  */
@@ -16,7 +16,7 @@
 import { invoke } from '@tauri-apps/api/core';
 import { DialogFilter, open } from '@tauri-apps/plugin-dialog';
 import { useState } from 'react';
-import { FILE_TYPES_ALLOWED_JSON } from '../ts/constants';
+import { FILE_TYPES_ALLOWED_JSON } from '../ts/Constants';
 
 interface HomeProps {
   data?: any;
