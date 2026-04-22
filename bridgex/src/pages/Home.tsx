@@ -8,17 +8,33 @@
  * File: \src\pages\Home.tsx
  * Created: Monday, 20th April 2026 9:55:14 am
  * -----
- * Last Modified: Tuesday, 21st April 2026 11:36:29 pm
+ * Last Modified: Wednesday, 22nd April 2026 1:46:46 pm
  * Modified By: tutosrive (tutosrive@Dev2Forge.software)
  * -----
  */
 
 import { invoke } from '@tauri-apps/api/core';
-import { open, message } from '@tauri-apps/plugin-dialog';
+import { DialogFilter, open } from '@tauri-apps/plugin-dialog';
 import { useState } from 'react';
+import { FILE_TYPES_ALLOWED_JSON } from '../ts/constants';
 
 interface HomeProps {
   data?: any;
+}
+
+function applyFilters(): DialogFilter[] {
+  const filters: Array<DialogFilter> = [];
+
+  for (let docs_key in FILE_TYPES_ALLOWED_JSON) {
+    const key = docs_key as keyof typeof FILE_TYPES_ALLOWED_JSON;
+    const filter = {
+      name: FILE_TYPES_ALLOWED_JSON[key]['name'],
+      extensions: FILE_TYPES_ALLOWED_JSON[key]['ext'],
+    };
+    filters.push(filter);
+  }
+
+  return filters;
 }
 
 const Home: React.FC<HomeProps> = () => {
@@ -33,19 +49,8 @@ const Home: React.FC<HomeProps> = () => {
       canCreateDirectories: false,
       pickerMode: 'document',
       title: 'Select a file to convert',
-      filters: [
-        {
-          name: 'Documents',
-          extensions: ['docx', 'pdf', 'html', 'txt'],
-        },
-      ],
+      filters: applyFilters(),
     });
-
-    // if (__filename?.replace(' ', '') != __filename || __filename.includes('ñ')) {
-    //   await message('The file name is not correct (Contains white spaces or non ascii characters)');
-    // } else {
-    //   await message(__filename);
-    // }
 
     if (__filename != null) {
       setFileName(__filename);
