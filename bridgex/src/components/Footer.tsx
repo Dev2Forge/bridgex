@@ -17,7 +17,7 @@ interface FooterProps {
   data?: any;
 }
 
-const Footer: React.FC<FooterProps> = ({ data }) => {
+const Footer: React.FC<FooterProps> = () => {
   const currentYear = new Date().getFullYear().toString();
 
   return (

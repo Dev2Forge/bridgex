@@ -13,23 +13,13 @@
  * -----
  */
 
-import { useState } from 'react';
-import { invoke } from '@tauri-apps/api/core';
 import './App.css';
 import DefaultLayout from './layouts/Default';
-import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import About from './pages/About';
 
 function App() {
-  const [greetMsg, setGreetMsg] = useState('');
-  const [name, setName] = useState('');
-
-  async function greet() {
-    // Learn more about Tauri commands at https://tauri.app/develop/calling-rust/
-    setGreetMsg(await invoke('greet', { name }));
-  }
-
   return (
     <Routes>
       <Route element={<DefaultLayout />}>

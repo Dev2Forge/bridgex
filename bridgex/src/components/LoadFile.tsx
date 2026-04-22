@@ -20,7 +20,7 @@ interface LoadFileProps {
   handleChange: (e: ChangeEvent<HTMLInputElement, HTMLInputElement>) => void;
 }
 
-const LoadFile: React.FC<LoadFileProps> = ({ data, handleChange }) => {
+const LoadFile: React.FC<LoadFileProps> = ({ handleChange }) => {
   return (
     <div>
       <label htmlFor="loadFile">Load File:</label>

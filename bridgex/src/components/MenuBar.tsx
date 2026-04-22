@@ -20,7 +20,7 @@ interface MenuProps {
   data?: any;
 }
 
-const MenuBar: React.FC<MenuProps> = ({ data }) => {
+const MenuBar: React.FC<MenuProps> = () => {
   return (
     <nav className="menubar">
       <NavLink className="item-menubar" to={'/'}>

@@ -18,7 +18,7 @@ interface AboutProps {
 
 const APP_VERSION: string = import.meta.env.VITE_APP_VERSION;
 
-const About: React.FC<AboutProps> = ({ data }) => {
+const About: React.FC<AboutProps> = () => {
   return (
     <div>
       <pre>{APP_VERSION}</pre>

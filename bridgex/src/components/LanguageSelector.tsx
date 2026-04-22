@@ -17,7 +17,7 @@ interface LanguageSelectorProps {
   data?: any;
 }
 
-const LanguageSelector: React.FC<LanguageSelectorProps> = ({ data }) => {
+const LanguageSelector: React.FC<LanguageSelectorProps> = () => {
   return <></>;
 };
 

@@ -8,40 +8,63 @@
  * File: \src\pages\Home.tsx
  * Created: Monday, 20th April 2026 9:55:14 am
  * -----
- * Last Modified: Monday, 20th April 2026 10:26:20 pm
+ * Last Modified: Tuesday, 21st April 2026 11:36:29 pm
  * Modified By: tutosrive (tutosrive@Dev2Forge.software)
  * -----
  */
 
-import { ChangeEvent, useState } from 'react';
-import LoadFile from '../components/LoadFile';
 import { invoke } from '@tauri-apps/api/core';
+import { open, message } from '@tauri-apps/plugin-dialog';
+import { useState } from 'react';
 
 interface HomeProps {
   data?: any;
 }
 
-const Home: React.FC<HomeProps> = ({ data }) => {
-  const [file, setFile] = useState<File>();
+const Home: React.FC<HomeProps> = () => {
+  const [filename, setFileName] = useState<string>('');
   const [markdown, setMarkdown] = useState<string>('');
+  const [msg, setMsg] = useState<string>();
 
-  const handleChangeFile = async (e: ChangeEvent<HTMLInputElement, HTMLInputElement>) => {
-    if (e.target.files) {
-      setFile(e.target.files[0]);
+  const loadFile = async () => {
+    const __filename = await open({
+      multiple: false,
+      directory: false,
+      canCreateDirectories: false,
+      pickerMode: 'document',
+      title: 'Select a file to convert',
+      filters: [
+        {
+          name: 'Documents',
+          extensions: ['docx', 'pdf', 'html', 'txt'],
+        },
+      ],
+    });
+
+    // if (__filename?.replace(' ', '') != __filename || __filename.includes('ñ')) {
+    //   await message('The file name is not correct (Contains white spaces or non ascii characters)');
+    // } else {
+    //   await message(__filename);
+    // }
+
+    if (__filename != null) {
+      setFileName(__filename);
       await convert();
+    } else {
+      setFileName('Sure that select a file!');
     }
   };
 
   const convert = async () => {
-    const filename = 'D:/UNIVERSIDAD/SEMESTRE_5/materias/Género/reflexion-sobre-las-sufrajistas.pdf';
-    const res: string = await invoke('convert_file', { filename });
+    let res: string = await invoke('convert_from_path', { filename });
     setMarkdown(res);
   };
 
   return (
     <div>
-      <LoadFile handleChange={handleChangeFile} />
-      <p>{file && `Filename: ${file.name}`}</p>
+      <button onClick={loadFile}>LoadFile</button>
+      {/* <LoadFile handleChange={handleChangeFile} /> */}
+      <p>{filename && `Filename: ${filename}`}</p>
       <pre>{markdown && `Content:\n${markdown}`}</pre>
     </div>
   );

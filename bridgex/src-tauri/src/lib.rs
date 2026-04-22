@@ -22,11 +22,11 @@ fn greet(name: &str) -> String {
 }
 
 #[tauri::command]
-fn convert_file(filename: &str) -> String {
+fn convert_from_path(filename: &str) -> String {
     let mark = MarkItDown::new();
     let res = mark.convert(filename, None);
 
-    if let Some(conversion_result) = res {
+    if let Ok(Some(conversion_result)) = res {
         conversion_result.text_content
     } else {
         "Unsupported File".to_string()
@@ -37,8 +37,9 @@ fn convert_file(filename: &str) -> String {
 pub fn run() {
     tauri::Builder
         ::default()
+        .plugin(tauri_plugin_dialog::init())
         .plugin(tauri_plugin_opener::init())
-        .invoke_handler(tauri::generate_handler![greet, convert_file])
+        .invoke_handler(tauri::generate_handler![greet, convert_from_path])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }
