@@ -3,13 +3,13 @@
  * Copyright 2026 - 2026 Dev2Forge
  * Licence: GPL-3
  * More information: https://github.com/Dev2Forge/bridgex/blob/main/LICENSE
- * Author: tutosrive (tutosrive@Dev2Forge.software)
+ * Author: tutosrive (tutosriveorg@gmail.com)
  *
  * File: \src\ts\Utils.ts
  * Created: Wednesday, 22nd April 2026 2:15:55 pm
  * -----
- * Last Modified: Wednesday, 22nd April 2026 2:17:31 pm
- * Modified By: tutosrive (tutosrive@Dev2Forge.software)
+ * Last Modified: Friday, 24th April 2026 2:34:55 pm
+ * Modified By: tutosrive (tutosriveorg@gmail.com)
  * -----
  */
 

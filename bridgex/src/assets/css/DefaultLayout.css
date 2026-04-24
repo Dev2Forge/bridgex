@@ -3,13 +3,13 @@
  * Copyright 2026 - 2026 Dev2Forge
  * Licence: GPL-3
  * More information: https://github.com/Dev2Forge/bridgex/blob/main/LICENSE
- * Author: tutosrive (tutosrive@Dev2Forge.software)
+ * Author: tutosrive (tutosriveorg@gmail.com)
  * 
  * File: \src\assets\css\DefaultLayout.css
  * Created: Monday, 20th April 2026 1:03:01 pm
  * -----
- * Last Modified: Monday, 20th April 2026 1:03:20 pm
- * Modified By: tutosrive (tutosrive@Dev2Forge.software)
+ * Last Modified: Friday, 24th April 2026 2:35:01 pm
+ * Modified By: tutosrive (tutosriveorg@gmail.com)
  * -----
  */
 
@@ -17,4 +17,8 @@
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+}
+
+main {
+  margin: 10px;
 }

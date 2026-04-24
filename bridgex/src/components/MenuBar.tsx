@@ -3,13 +3,13 @@
  * Copyright 2026 - 2026 Dev2Forge
  * Licence: GPL-3
  * More information: https://github.com/Dev2Forge/bridgex/blob/main/LICENSE
- * Author: tutosrive (tutosrive@Dev2Forge.software)
+ * Author: tutosrive (tutosriveorg@gmail.com)
  *
  * File: \src\components\NavBar.tsx
  * Created: Monday, 20th April 2026 10:04:01 am
  * -----
- * Last Modified: Monday, 20th April 2026 11:44:55 am
- * Modified By: tutosrive (tutosrive@Dev2Forge.software)
+ * Last Modified: Friday, 24th April 2026 2:34:59 pm
+ * Modified By: tutosrive (tutosriveorg@gmail.com)
  * -----
  */
 
