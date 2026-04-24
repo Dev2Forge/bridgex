@@ -8,22 +8,18 @@
  * File: \src\App.css
  * Created: Monday, 20th April 2026 7:16:28 am
  * -----
- * Last Modified: Friday, 24th April 2026 2:34:54 pm
+ * Last Modified: Friday, 24th April 2026 3:06:47 pm
  * Modified By: tutosrive (tutosriveorg@gmail.com)
  * -----
  */
+
+@import 'tailwindcss';
 
 :root {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 400;
-
-  color: #0f0f0f;
-  background-color: #f6f6f6;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -31,7 +27,19 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 
-  --menubar-text-color: #ffffff;
+  --menubar-text-color: var(--color-taupe-100);
+  --menubar-bg: var(--color-taupe-950);
+  --menubar-y-padding: 15px;
+  --menubar-item-x-padding: 5px;
+  --menubar-item-x-margin: 4px;
+  --menubar-item-border-color: var(--color-taupe-500);
+  --menubar-hover-bg: var(--color-taupe-900);
+  --menubar-item-hover-outline-color: var(--color-taupe-300);
+  --menubar-item-active-bg: var(--color-taupe-800);
+  --menubar-item-active-color: var(--color-taupe-50);
+  --menubar-margin-bottom: 10px;
+  --menubar-w: 100vw;
+  --menubar-h: 15px;
 }
 
 body {
