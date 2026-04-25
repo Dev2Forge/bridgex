@@ -8,17 +8,14 @@
  * File: \src\pages\About.tsx
  * Created: Monday, 20th April 2026 9:58:42 am
  * -----
- * Last Modified: Friday, 24th April 2026 2:34:59 pm
+ * Last Modified: Friday, 24th April 2026 11:01:01 pm
  * Modified By: tutosrive (tutosriveorg@gmail.com)
  * -----
  */
-interface AboutProps {
-  data?: any;
-}
 
 const APP_VERSION: string = import.meta.env.VITE_APP_VERSION;
 
-const About: React.FC<AboutProps> = () => {
+const About = () => {
   return (
     <div>
       <pre>{APP_VERSION}</pre>

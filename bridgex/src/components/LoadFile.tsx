@@ -8,7 +8,7 @@
  * File: \src\components\LoadFile.tsx
  * Created: Monday, 20th April 2026 9:59:59 am
  * -----
- * Last Modified: Friday, 24th April 2026 2:34:59 pm
+ * Last Modified: Friday, 24th April 2026 11:01:22 pm
  * Modified By: tutosrive (tutosriveorg@gmail.com)
  * -----
  */
@@ -16,7 +16,6 @@
 import { ChangeEvent } from 'react';
 
 interface LoadFileProps {
-  data?: any;
   handleChange: (e: ChangeEvent<HTMLInputElement, HTMLInputElement>) => void;
 }
 

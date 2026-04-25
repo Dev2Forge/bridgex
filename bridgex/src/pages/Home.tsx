@@ -8,7 +8,7 @@
  * File: \src\pages\Home.tsx
  * Created: Monday, 20th April 2026 9:55:14 am
  * -----
- * Last Modified: Friday, 24th April 2026 2:34:58 pm
+ * Last Modified: Friday, 24th April 2026 11:00:50 pm
  * Modified By: tutosrive (tutosriveorg@gmail.com)
  * -----
  */
@@ -18,11 +18,7 @@ import { open } from '@tauri-apps/plugin-dialog';
 import { useState } from 'react';
 import * as utils from '../ts/Utils';
 
-interface HomeProps {
-  data?: any;
-}
-
-const Home: React.FC<HomeProps> = () => {
+const Home = () => {
   const [filename, setFileName] = useState<string>('');
   const [markdown, setMarkdown] = useState<string>('');
 
@@ -52,7 +48,6 @@ const Home: React.FC<HomeProps> = () => {
   return (
     <div>
       <button onClick={loadFile}>LoadFile</button>
-      {/* <LoadFile handleChange={handleChangeFile} /> */}
       <p>{filename && `Filename: ${filename}`}</p>
       <pre>{markdown && `Content:\n${markdown}`}</pre>
     </div>

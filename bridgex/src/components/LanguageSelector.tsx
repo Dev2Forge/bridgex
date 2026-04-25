@@ -8,16 +8,12 @@
  * File: \src\components\LanguageSelector.tsx
  * Created: Monday, 20th April 2026 10:00:14 am
  * -----
- * Last Modified: Friday, 24th April 2026 2:35:00 pm
+ * Last Modified: Friday, 24th April 2026 11:01:44 pm
  * Modified By: tutosrive (tutosriveorg@gmail.com)
  * -----
  */
 
-interface LanguageSelectorProps {
-  data?: any;
-}
-
-const LanguageSelector: React.FC<LanguageSelectorProps> = () => {
+const LanguageSelector = () => {
   return <></>;
 };
 

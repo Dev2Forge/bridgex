@@ -8,22 +8,17 @@
  * File: \src\components\NavBar.tsx
  * Created: Monday, 20th April 2026 10:04:01 am
  * -----
- * Last Modified: Friday, 24th April 2026 10:52:29 pm
+ * Last Modified: Friday, 24th April 2026 10:59:51 pm
  * Modified By: tutosrive (tutosriveorg@gmail.com)
  * -----
  */
 
-import { useState, MouseEvent } from 'react';
 import '../assets/css/MenuBar.css';
 import FileOptions from './MenuBarDialogs/FileOptions';
 import SettingsOptions from './MenuBarDialogs/SettingsOptions';
 import HelpOptions from './MenuBarDialogs/HelpOptions';
 
-interface MenuProps {
-  data?: any;
-}
-
-const MenuBar: React.FC<MenuProps> = () => {
+const MenuBar = () => {
   const handleOpenFile = () => {
     console.log('Open File');
   };
