@@ -8,20 +8,39 @@
  * File: \src\components\MenuBarDialogs\HelpOptions.tsx
  * Created: Friday, 24th April 2026 4:01:18 pm
  * -----
- * Last Modified: Friday, 24th April 2026 4:02:20 pm
+ * Last Modified: Friday, 24th April 2026 10:46:08 pm
  * Modified By: tutosrive (tutosriveorg@gmail.com)
  * -----
  */
 
-export default function FileOptions() {
+import { FC } from 'react';
+
+interface HelpOptionsProps {
+  onAbout: () => void;
+  onLicences: () => void;
+}
+
+const HelpOptions: FC<HelpOptionsProps> = ({ onAbout, onLicences }) => {
   return (
-    <div className="fixed bg-taupe-950 p-2 ms-1 mt-1 text-taupe-50 rounded-b-sm">
-      <div>
-        <button className="item-menubar">About</button>
+    <div className="left-24 menubar-dropdown bg-taupe-950 p-2 ms-1 text-taupe-50 rounded-b-sm" popover="auto" id="menubar-help">
+      <div className="menubar-dropdown-item flex items-center w-50 px-2">
+        <button className="me-2" onClick={onAbout}>
+          About
+        </button>
+        <span className="text-xs opacity-30 text-right">
+          <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>A</kbd>
+        </span>
       </div>
-      <div>
-        <button className="item-menubar">Licences</button>
+      <div className="menubar-dropdown-item flex items-center w-50 px-2">
+        <button className="me-2" onClick={onLicences}>
+          Licences
+        </button>
+        <span className="text-xs opacity-30 text-right">
+          <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>L</kbd>
+        </span>
       </div>
     </div>
   );
-}
+};
+
+export default HelpOptions;

@@ -8,7 +8,7 @@
  * File: \src\assets\css\NavBar.css
  * Created: Monday, 20th April 2026 11:37:05 am
  * -----
- * Last Modified: Friday, 24th April 2026 3:11:40 pm
+ * Last Modified: Friday, 24th April 2026 10:31:54 pm
  * Modified By: tutosrive (tutosriveorg@gmail.com)
  * -----
  */
@@ -21,25 +21,25 @@
   background-color: var(--menubar-bg);
   align-items: center;
   display: flex;
-}
-
-.item-menubar {
-  cursor: pointer;
-  display: inline-block;
-  align-items: center;
-  font-size: 14px;
-  margin: 0 var(--menubar-item-x-margin);
-  padding: 0px var(--menubar-item-x-padding);
-  text-decoration: none;
   color: var(--menubar-text-color);
 }
 
-.item-menubar:hover {
-  background-color: var(--menubar-hover-bg);
-  outline: 1px solid var(--menubar-item-hover-outline-color);
+.item-menubar {
+  margin: 0 var(--menubar-item-x-margin);
 }
 
-.item-menubar:active {
-  background-color: var(--menubar-item-active-bg);
-  color: var(--menubar-item-active-color);
+.item-menubar * {
+  cursor: pointer;
+}
+
+.menubar-dropdown {
+  top: var(--menubar-dropdown-top);
+}
+
+.menubar-dropdown-item * {
+  width: 100%;
+}
+
+.menubar-dropdown-item:hover {
+  background-color: var(--menubar-hover-bg);
 }

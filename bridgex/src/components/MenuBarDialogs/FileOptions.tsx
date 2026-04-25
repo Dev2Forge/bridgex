@@ -8,20 +8,39 @@
  * File: \src\components\FileOptions.tsx
  * Created: Friday, 24th April 2026 3:20:11 pm
  * -----
- * Last Modified: Friday, 24th April 2026 3:33:55 pm
+ * Last Modified: Friday, 24th April 2026 10:42:32 pm
  * Modified By: tutosrive (tutosriveorg@gmail.com)
  * -----
  */
 
-export default function FileOptions() {
+import { FC } from 'react';
+
+interface FileOptionsProps {
+  onOpenFile: () => void;
+  onSaveFile: () => void;
+}
+
+const FileOptions: FC<FileOptionsProps> = ({ onOpenFile, onSaveFile }) => {
   return (
-    <div className="fixed bg-taupe-950 p-2 ms-1 mt-1 text-taupe-50 rounded-b-sm">
-      <div>
-        <button className="item-menubar">Open File</button>
+    <div className="left-0 menubar-dropdown bg-taupe-950 p-2 ms-1 text-taupe-50 rounded-b-sm" popover="auto" id="menubar-file">
+      <div className="menubar-dropdown-item flex items-center w-50 px-2">
+        <button className="me-2" onClick={onOpenFile}>
+          Open File
+        </button>
+        <span className="text-xs opacity-30 text-right">
+          <kbd>Ctrl</kbd>+<kbd>O</kbd>
+        </span>
       </div>
-      <div>
-        <button className="item-menubar">Save File</button>
+      <div className="menubar-dropdown-item flex items-center w-50 px-2">
+        <button className="me-2" onClick={onSaveFile}>
+          Save File
+        </button>
+        <span className="text-xs opacity-30 text-right">
+          <kbd>Ctrl</kbd>+<kbd>S</kbd>
+        </span>
       </div>
     </div>
   );
-}
+};
+
+export default FileOptions;

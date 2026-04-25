@@ -8,7 +8,7 @@
  * File: \src\components\NavBar.tsx
  * Created: Monday, 20th April 2026 10:04:01 am
  * -----
- * Last Modified: Friday, 24th April 2026 4:03:13 pm
+ * Last Modified: Friday, 24th April 2026 10:34:49 pm
  * Modified By: tutosrive (tutosriveorg@gmail.com)
  * -----
  */
@@ -30,25 +30,44 @@ const MenuBar: React.FC<MenuProps> = () => {
     setItemActive(e.currentTarget.id);
   };
 
+  const handleOpenFile = () => {
+    console.log('Open File');
+  };
+  const handleSaveFile = () => {
+    console.log('Save File');
+  };
+  const handleOnTheme = () => {
+    console.log('Theme');
+  };
+  const handleOnLanguage = () => {
+    console.log('Language');
+  };
+  const handleOnAbout = () => {
+    console.log('About');
+  };
+  const handleOnLicences = () => {
+    console.log('Licences');
+  };
+
   return (
     <nav className="menubar">
-      <div>
-        <button id="menuitem-file" className="item-menubar" onClick={handleItemMenuClick}>
+      <div className="item-menubar">
+        <button id="menuitem-file" onClick={handleItemMenuClick} popoverTarget="menubar-file">
           File
         </button>
-        {itemActive === 'menuitem-file' && <FileOptions />}
+        <FileOptions onOpenFile={handleOpenFile} onSaveFile={handleSaveFile} />
       </div>
-      <div>
-        <button id="menuitem-settings" className="item-menubar" onClick={handleItemMenuClick}>
+      <div className="item-menubar">
+        <button id="menuitem-settings" onClick={handleItemMenuClick} popoverTarget="menubar-settings">
           Settings
         </button>
-        {itemActive === 'menuitem-settings' && <SettingsOptions />}
+        <SettingsOptions onTheme={handleOnTheme} onLanguage={handleOnLanguage} />
       </div>
-      <div>
-        <button id="menuitem-help" className="item-menubar" onClick={handleItemMenuClick}>
+      <div className="item-menubar">
+        <button id="menuitem-help" onClick={handleItemMenuClick} popoverTarget="menubar-help">
           Help
         </button>
-        {itemActive === 'menuitem-help' && <HelpOptions />}
+        <HelpOptions onAbout={handleOnAbout} onLicences={handleOnLicences} />
       </div>
     </nav>
   );

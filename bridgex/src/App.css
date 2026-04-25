@@ -8,7 +8,7 @@
  * File: \src\App.css
  * Created: Monday, 20th April 2026 7:16:28 am
  * -----
- * Last Modified: Friday, 24th April 2026 3:06:47 pm
+ * Last Modified: Friday, 24th April 2026 10:04:43 pm
  * Modified By: tutosrive (tutosriveorg@gmail.com)
  * -----
  */
@@ -40,6 +40,7 @@
   --menubar-margin-bottom: 10px;
   --menubar-w: 100vw;
   --menubar-h: 15px;
+  --menubar-dropdown-top: 30.5px;
 }
 
 body {
