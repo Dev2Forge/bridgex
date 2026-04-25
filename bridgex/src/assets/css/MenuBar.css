@@ -8,7 +8,7 @@
  * File: \src\assets\css\NavBar.css
  * Created: Monday, 20th April 2026 11:37:05 am
  * -----
- * Last Modified: Friday, 24th April 2026 10:31:54 pm
+ * Last Modified: Friday, 24th April 2026 10:57:31 pm
  * Modified By: tutosrive (tutosriveorg@gmail.com)
  * -----
  */
@@ -26,6 +26,7 @@
 
 .item-menubar {
   margin: 0 var(--menubar-item-x-margin);
+  padding: 0 var(--menubar-item-x-padding);
 }
 
 .item-menubar * {
@@ -40,6 +41,7 @@
   width: 100%;
 }
 
-.menubar-dropdown-item:hover {
+.menubar-dropdown-item:hover,
+.item-menubar:hover {
   background-color: var(--menubar-hover-bg);
 }
