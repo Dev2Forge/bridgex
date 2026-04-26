@@ -8,7 +8,7 @@
  * File: \src\components\FileOptions.tsx
  * Created: Friday, 24th April 2026 3:20:11 pm
  * -----
- * Last Modified: Friday, 24th April 2026 10:42:32 pm
+ * Last Modified: Saturday, 25th April 2026 7:25:23 pm
  * Modified By: tutosrive (tutosriveorg@gmail.com)
  * -----
  */
@@ -22,20 +22,16 @@ interface FileOptionsProps {
 
 const FileOptions: FC<FileOptionsProps> = ({ onOpenFile, onSaveFile }) => {
   return (
-    <div className="left-0 menubar-dropdown bg-taupe-950 p-2 ms-1 text-taupe-50 rounded-b-sm" popover="auto" id="menubar-file">
-      <div className="menubar-dropdown-item flex items-center w-50 px-2">
-        <button className="me-2" onClick={onOpenFile}>
-          Open File
-        </button>
-        <span className="text-xs opacity-30 text-right">
+    <div className="menubar-dropdown fileoptions" popover="auto" id="menubar-file">
+      <div className="menubar-dropdown-item">
+        <button onClick={onOpenFile}>Open File</button>
+        <span>
           <kbd>Ctrl</kbd>+<kbd>O</kbd>
         </span>
       </div>
-      <div className="menubar-dropdown-item flex items-center w-50 px-2">
-        <button className="me-2" onClick={onSaveFile}>
-          Save File
-        </button>
-        <span className="text-xs opacity-30 text-right">
+      <div className="menubar-dropdown-item">
+        <button onClick={onSaveFile}>Save File</button>
+        <span>
           <kbd>Ctrl</kbd>+<kbd>S</kbd>
         </span>
       </div>

@@ -8,7 +8,7 @@
  * File: \src\components\MenuBarDialogs\SettingsOptions.tsx
  * Created: Friday, 24th April 2026 4:00:41 pm
  * -----
- * Last Modified: Friday, 24th April 2026 10:46:44 pm
+ * Last Modified: Saturday, 25th April 2026 7:33:10 pm
  * Modified By: tutosrive (tutosriveorg@gmail.com)
  * -----
  */
@@ -22,20 +22,16 @@ interface SettingsOptionsProps {
 
 const SettingsOptions: FC<SettingsOptionsProps> = ({ onTheme, onLanguage }) => {
   return (
-    <div className="left-7 menubar-dropdown bg-taupe-950 p-2 ms-1 text-taupe-50 rounded-b-sm" popover="auto" id="menubar-settings">
-      <div className="menubar-dropdown-item flex items-center w-50 px-2">
-        <button className="me-2" onClick={onTheme}>
-          Theme
-        </button>
-        <span className="text-xs opacity-30 text-right">
+    <div className="menubar-dropdown settingsoptions" popover="auto" id="menubar-settings">
+      <div className="menubar-dropdown-item">
+        <button onClick={onTheme}>Theme</button>
+        <span>
           <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>T</kbd>
         </span>
       </div>
-      <div className="menubar-dropdown-item flex items-center w-50 px-2">
-        <button className="me-2" onClick={onLanguage}>
-          Language
-        </button>
-        <span className="text-xs opacity-30 text-right">
+      <div className="menubar-dropdown-item">
+        <button onClick={onLanguage}>Language</button>
+        <span>
           <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>I</kbd>
         </span>
       </div>

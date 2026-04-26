@@ -8,12 +8,10 @@
  * File: \src\App.css
  * Created: Monday, 20th April 2026 7:16:28 am
  * -----
- * Last Modified: Friday, 24th April 2026 10:04:43 pm
+ * Last Modified: Saturday, 25th April 2026 7:20:42 pm
  * Modified By: tutosrive (tutosriveorg@gmail.com)
  * -----
  */
-
-@import 'tailwindcss';
 
 :root {
   margin: 0;
@@ -27,23 +25,31 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 
-  --menubar-text-color: var(--color-taupe-100);
-  --menubar-bg: var(--color-taupe-950);
-  --menubar-y-padding: 15px;
+  --spacing: 1px;
+  --menubar-text-color: oklch(96% 0.002 17.2);
+  --menubar-bg: oklch(14.7% 0.004 49.3);
+  --menubar-y-padding: 10px;
   --menubar-item-x-padding: 5px;
   --menubar-item-x-margin: 4px;
-  --menubar-item-border-color: var(--color-taupe-500);
-  --menubar-hover-bg: var(--color-taupe-900);
-  --menubar-item-hover-outline-color: var(--color-taupe-300);
-  --menubar-item-active-bg: var(--color-taupe-800);
-  --menubar-item-active-color: var(--color-taupe-50);
+  --menubar-item-border-color: oklch(54.7% 0.021 43.1);
+  --menubar-hover-bg: oklch(21.4% 0.009 43.1);
+  --menubar-item-hover-outline-color: oklch(86.8% 0.007 39.5);
+  --menubar-item-active-bg: oklch(26.8% 0.011 36.5);
+  --menubar-item-active-color: oklch(98.6% 0.002 67.8);
   --menubar-margin-bottom: 10px;
   --menubar-w: 100vw;
-  --menubar-h: 15px;
-  --menubar-dropdown-top: 30.5px;
+  --menubar-h: 10px;
+  --menubar-dropdown-top: 0;
 }
 
 body {
   margin: 0;
   padding: 0;
+}
+
+button {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  color: var(--menubar-text-color);
 }

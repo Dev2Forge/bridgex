@@ -4,25 +4,24 @@
  * Licence: GPL-3
  * More information: https://github.com/Dev2Forge/bridgex/blob/main/LICENSE
  * Author: tutosrive (tutosriveorg@gmail.com)
- * 
+ *
  * File: \vite.config.ts
  * Created: Monday, 20th April 2026 7:16:28 am
  * -----
- * Last Modified: Friday, 24th April 2026 2:34:21 pm
+ * Last Modified: Saturday, 25th April 2026 6:42:49 pm
  * Modified By: tutosrive (tutosriveorg@gmail.com)
  * -----
  */
 
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-import tailwindcss from '@tailwindcss/vite';
 
 // @ts-expect-error process is a nodejs global
 const host = process.env.TAURI_DEV_HOST;
 
 // https://vite.dev/config/
 export default defineConfig(async () => ({
-  plugins: [tailwindcss(), react()],
+  plugins: [react()],
 
   // Vite options tailored for Tauri development and only applied in `tauri dev` or `tauri build`
   //

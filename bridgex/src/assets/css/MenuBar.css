@@ -8,7 +8,7 @@
  * File: \src\assets\css\NavBar.css
  * Created: Monday, 20th April 2026 11:37:05 am
  * -----
- * Last Modified: Friday, 24th April 2026 10:57:31 pm
+ * Last Modified: Saturday, 25th April 2026 7:43:04 pm
  * Modified By: tutosrive (tutosriveorg@gmail.com)
  * -----
  */
@@ -25,7 +25,9 @@
 }
 
 .item-menubar {
-  margin: 0 var(--menubar-item-x-margin);
+  width: fit-content;
+  margin: 0;
+  margin-inline-start: 2px;
   padding: 0 var(--menubar-item-x-padding);
 }
 
@@ -34,7 +36,27 @@
 }
 
 .menubar-dropdown {
-  top: var(--menubar-dropdown-top);
+  background-color: var(--menubar-bg);
+  padding: calc(var(--spacing) * (2));
+  margin: 0;
+  margin-inline-start: calc(var(--spacing) * (1));
+  color: var(--menubar-text-color);
+  border-radius: 0 0 8px 8px;
+  top: 30px;
+  width: 250px;
+}
+
+.menubar-dropdown-item {
+  display: flex;
+  align-items: center;
+  padding: 0 calc(var(--spacing) * 2);
+}
+
+.menubar-dropdown-item span {
+  opacity: 30%;
+  text-align: right;
+  font-size: 12px;
+  line-height: calc(1 / 0.75);
 }
 
 .menubar-dropdown-item * {
@@ -44,4 +66,16 @@
 .menubar-dropdown-item:hover,
 .item-menubar:hover {
   background-color: var(--menubar-hover-bg);
+}
+
+.fileoptions {
+  left: 0;
+}
+
+.settingsoptions {
+  left: calc(var(--spacing) * 50);
+}
+
+.helpoptions {
+  left: calc(var(--spacing) * 115);
 }
