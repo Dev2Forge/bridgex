@@ -1,0 +1,65 @@
+import { Button, VerticalBox } from "std-widgets.slint";
+
+export component AppWindow inherits Window {
+    in-out property <int> counter: 42;
+    in-out property <string> filename;
+    callback request-increase-value();
+    callback request-file-open();
+
+    width: 500px;
+    height: 500px;
+
+    MenuBar {
+        Menu {
+            title: @tr("MenuBar" => "File");
+            MenuItem {
+                title: @tr("MenuBar" => "Open");
+                shortcut: @keys(Control+O);
+                activated => {
+                    request-file-open();
+                    debug("Open File");
+                }
+            }
+        }
+
+        Menu {
+            title: @tr("MenuBar" => "Settings");
+            MenuItem {
+                title: @tr("MenuBar" => "Theme");
+                shortcut: @keys(Control+T);
+                activated => {
+                    debug("Theme")
+                }
+            }
+        }
+
+        Menu {
+            title: @tr("MenuBar" => "Help");
+            MenuItem {
+                title: @tr("MenuBar" => "About");
+                shortcut: @keys(Control+Shift+A);
+                activated => {
+                    debug("About")
+                }
+            }
+        }
+    }
+
+    VerticalBox {
+        Text {
+            text: "Counter: \{root.counter}";
+        }
+
+        Text {
+            text: "Filename: \{root.filename}";
+        }
+
+        Button {
+            height: 20px;
+            text: "Increase value";
+            clicked => {
+                root.request-increase-value();
+            }
+        }
+    }
+}

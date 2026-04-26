@@ -11,3 +11,4 @@ tests/
 **/build/
 **/*.egg-info
 node_modules
+/bridgex/target
