@@ -14,6 +14,7 @@
  */
 
 use markitdown::MarkItDown;
+use tauri::Manager;
 
 // Learn more about Tauri commands at https://tauri.app/develop/calling-rust/
 #[tauri::command]
@@ -37,6 +38,10 @@ fn convert_from_path(filename: &str) -> String {
 pub fn run() {
     tauri::Builder
         ::default()
+        .setup(|app| {
+            let _window = app.get_webview_window("main").unwrap();
+            Ok(())
+        })
         .plugin(tauri_plugin_dialog::init())
         .plugin(tauri_plugin_opener::init())
         .invoke_handler(tauri::generate_handler![greet, convert_from_path])
