@@ -4,11 +4,11 @@
  * Licence: GPL-3
  * More information: https://github.com/Dev2Forge/bridgex/blob/main/LICENSE
  * Author: tutosrive (tutosriveorg@gmail.com)
- * 
+ *
  * File: \main.rs
  * Created: Saturday, 25th April 2026 11:34:53 pm
  * -----
- * Last Modified: Sunday, 26th April 2026 12:53:32 pm
+ * Last Modified: Monday, 27th April 2026 12:47:09 am
  * Modified By: tutosrive (tutosriveorg@gmail.com)
  * -----
  */
@@ -21,7 +21,6 @@ use rfd::FileDialog;
 use slint::{ SharedString, ToSharedString };
 
 slint::include_modules!();
-
 fn main() -> Result<(), Box<dyn Error>> {
     let ui = AppWindow::new()?;
 
@@ -39,6 +38,13 @@ fn main() -> Result<(), Box<dyn Error>> {
             ui.set_filename(ui.get_filename() + filename.as_str())
         }
     });
+
+    ui.as_weak();
+
+    let mut content = SharedString::new();
+    content = "Test Content".to_shared_string();
+    ui.global::<LicenseDialogData>().set_content(Into::into(content));
+    // ui.set_license_content(ui.get_license_content() + &"tesst");
 
     ui.run()?;
 

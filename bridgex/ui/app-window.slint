@@ -8,7 +8,7 @@
  * File: \app-window.slint
  * Created: Saturday, 25th April 2026 11:34:53 pm
  * -----
- * Last Modified: Sunday, 26th April 2026 9:50:26 pm
+ * Last Modified: Monday, 27th April 2026 12:40:37 am
  * Modified By: tutosrive (tutosriveorg@gmail.com)
  * -----
  */
@@ -17,6 +17,9 @@ import { Button, VerticalBox } from "std-widgets.slint";
 import { About } from "popups/about.slint";
 import { LicenseDialog } from "dialogs/license.slint";
 import { RootSizes, PopupSizes } from "values/constants.slint";
+import { LicenseDialogData } from "values/globals_variables.slint";
+
+export { LicenseDialogData }
 
 export component AppWindow inherits Window {
     in-out property <string> filename;

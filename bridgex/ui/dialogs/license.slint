@@ -8,12 +8,18 @@
  * File: \license.slint
  * Created: Sunday, 26th April 2026 7:00:59 pm
  * -----
- * Last Modified: Sunday, 26th April 2026 10:33:37 pm
+ * Last Modified: Monday, 27th April 2026 12:22:47 am
  * Modified By: tutosrive (tutosriveorg@gmail.com)
  * -----
  */
 
-import { Button, GridBox, StandardButton } from "std-widgets.slint";
+import {
+    Button,
+    GridBox,
+    StandardButton,
+    ScrollView,
+    TextEdit,
+} from "std-widgets.slint";
 import { H1 } from "../components/h1.slint";
 import {
     LibrariesData,
@@ -22,9 +28,9 @@ import {
     RootSizes,
     PopupSizes,
 } from "../values/constants.slint";
+import { LicenseDialogData } from "../values/globals_variables.slint";
 
 export component LicenseDialog inherits PopupWindow {
-    in-out property <string> content;
     callback hide_callback();
 
     width: PopupSizes.big_popup.width;
@@ -50,7 +56,7 @@ export component LicenseDialog inherits PopupWindow {
 
                 Row {
                     StyledText {
-                        text: @markdown("[Link]({LibrariesData.library_url})");
+                        text: @markdown("\{LibrariesData.library_url}");
 
                         link-clicked(link) => {
                             Platform.open-url(link)
@@ -60,7 +66,7 @@ export component LicenseDialog inherits PopupWindow {
 
                 Row {
                     Rectangle {
-                        background: red;
+                        background: Colours.dark_bg;
                         height: 70%;
                         border-radius: Constants.preferred_border_radius;
 
@@ -69,9 +75,17 @@ export component LicenseDialog inherits PopupWindow {
                             alignment: center;
 
                             width: 100%;
-                            Text {
-                                text: "TETSTTTSTEETTETSTTTSTEETTETSTTTSTEETTETSTTTSTEETTETSTTTSTEETTETSTTTSTEETTETSTTTSTEETTETSTTTSTEETTETSTTTSTEETTETSTTTSTEET"; //content;
-                            wrap: word-wrap;
+                            height: 100%;
+
+                            TextEdit {
+                                placeholder-text: "This is a LICENSE text";
+                                width: 100%;
+                                read-only: true;
+                                accessible-item-selectable: false;
+                                enabled: false;
+                                font-family: "Consolas";
+                                text: LicenseDialogData.content;
+                                wrap: word-wrap;
                             }
                         }
                     }
