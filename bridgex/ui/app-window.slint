@@ -8,34 +8,51 @@
  * File: \app-window.slint
  * Created: Saturday, 25th April 2026 11:34:53 pm
  * -----
- * Last Modified: Sunday, 26th April 2026 7:10:24 pm
+ * Last Modified: Sunday, 26th April 2026 9:50:26 pm
  * Modified By: tutosrive (tutosriveorg@gmail.com)
  * -----
  */
 
 import { Button, VerticalBox } from "std-widgets.slint";
 import { About } from "popups/about.slint";
+import { LicenseDialog } from "dialogs/license.slint";
+import { RootSizes, PopupSizes } from "values/constants.slint";
 
 export component AppWindow inherits Window {
     in-out property <string> filename;
     callback request-increase-value();
     callback request-file-open();
 
-    in-out property <bool> is_about_popup_visible: false;
-    in-out property <length> root_width;
+    callback show_dialog_license();
+    callback hide_dialog_license();
+    in-out property <string> lib_name;
+    in-out property <string> lib_url;
 
     min-height: 500px;
     min-width: 500px;
 
     about_popup := PopupWindow {
-        close-policy: PopupClosePolicy.no-auto-close;
-        width: 500px;
-        height: 600px;
+        close-policy: PopupClosePolicy.close-on-click-outside;
+        width: PopupSizes.big_popup.width;
+        height: PopupSizes.big_popup.height;
 
         About {
-            x: (root_width / 2) - self.width / 2;
-            y: (root_width / 2) - self.height / 2;
+            x: (RootSizes.width / 2) - self.width / 2;
+            y: (RootSizes.height / 2) - self.height / 2;
+            callback_show_licence_dialog => show_dialog_license();
         }
+    }
+
+    license_dialog := LicenseDialog {
+        hide_callback => hide_dialog_license();
+    }
+
+    show_dialog_license => {
+        license_dialog.show();
+    }
+
+    hide_dialog_license => {
+        license_dialog.close();
     }
 
     MenuBar {
@@ -68,7 +85,8 @@ export component AppWindow inherits Window {
                 title: @tr("MenuBar" => "About");
                 shortcut: @keys(Control+Shift+A);
                 activated => {
-                    root_width = root.width;
+                    RootSizes.width = root.width;
+                    RootSizes.height = root.height;
                     about_popup.show();
                     debug("About");
                 }

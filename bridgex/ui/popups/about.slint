@@ -8,7 +8,7 @@
  * File: \about.slint
  * Created: Sunday, 26th April 2026 12:15:42 pm
  * -----
- * Last Modified: Sunday, 26th April 2026 7:18:23 pm
+ * Last Modified: Sunday, 26th April 2026 9:57:17 pm
  * Modified By: tutosrive (tutosriveorg@gmail.com)
  * -----
  */
@@ -21,7 +21,7 @@ import {
     GridBox,
     AboutSlint,
 } from "std-widgets.slint";
-import { Constants } from "../constants.slint";
+import { Constants, LibrariesData, Colours } from "../values/constants.slint";
 import { H1 } from "../components/h1.slint";
 import { H2 } from "../components/h2.slint";
 import { LicenseDialog } from "../dialogs/license.slint";
@@ -29,17 +29,13 @@ import { LicenseDialog } from "../dialogs/license.slint";
 export component About inherits VerticalLayout {
     padding: 20px;
 
-    in property <string> licences: "";
-    in property <[{ name: string, url: string}]> name: [
-        { name: "Bridgex", url: "https://github.com/Dev2Forge/bridgex" },
-        { name: "Markitdown-rs", url: "https://github.com/uhobnil/markitdown-rs" },
-        { name: "Slint", url: "https://slint.dev" }
-    ];
-
-    license_dialog := LicenseDialog { }
+    in-out property <bool> is_hour_to_show_licence_dialog;
+    callback callback_show_licence_dialog();
 
     Rectangle {
-        background: red;
+        background: Colours.dark_bg;
+        border-radius: Constants.border_radius_popup;
+
         GridBox {
             H1 {
                 text: "About Bridgex";
@@ -71,12 +67,14 @@ export component About inherits VerticalLayout {
                     col: 0;
                     colspan: 1;
 
-                    for library in name: Rectangle {
+                    for library in LibrariesData.libraries: Rectangle {
                         Button {
                             icon: @image-url("../images/icons/os.svg");
                             text: library.name;
                             clicked => {
-                                license_dialog.show();
+                                LibrariesData.library_name = library.name;
+                                LibrariesData.library_url = library.url;
+                                callback_show_licence_dialog()
                             }
                         }
                     }
@@ -90,7 +88,9 @@ export component About inherits VerticalLayout {
             }
 
             Row {
-                AboutSlint { }
+                AboutSlint {
+                    height: 100px;
+                }
             }
         }
     }

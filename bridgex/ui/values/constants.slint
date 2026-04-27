@@ -1,0 +1,47 @@
+/*
+ * ui - Graphical interface for converting files to Markdown
+ * Copyright 2026 - 2026 Dev2Forge
+ * Licence: GPL-3
+ * More information: https://github.com/Dev2Forge/bridgex/blob/main/LICENSE
+ * Author: tutosrive (tutosriveorg@gmail.com)
+ * 
+ * File: \constants.slint
+ * Created: Sunday, 26th April 2026 5:33:43 pm
+ * -----
+ * Last Modified: Sunday, 26th April 2026 10:04:28 pm
+ * Modified By: tutosrive (tutosriveorg@gmail.com)
+ * -----
+ */
+
+ export global Constants {
+    out property <{ size: length, weight: float, family: string}> h1: { size: 20px, weight: 900, family: "monospace" };
+    out property <{ size: length, weight: float, family: string}> h2: { size: 17px, weight: 700, family: "monospace" };
+    out property <{ size: length, weight: float, family: string}> h3: { size: 14px, weight: 600, family: "monospace" };
+    out property <length> border_radius_popup: 20px;
+    out property <length> preferred_border_radius: 10px;
+    out property <length> preferred_padding: 12px;
+}
+
+export global Colours {
+    out property <color> dark_bg: #0e0e0edd;
+}
+
+export global LibrariesData {
+    out property <[{ name: string, url: string}]> libraries: [
+        { name: "Bridgex", url: "https://github.com/Dev2Forge/bridgex" },
+        { name: "Markitdown-rs", url: "https://github.com/uhobnil/markitdown-rs" },
+        { name: "Slint", url: "https://slint.dev" }
+    ];
+
+    in-out property <string> library_name;
+    in-out property <string> library_url;
+}
+
+export global RootSizes {
+    in-out property <length> width;
+    in-out property <length> height;
+}
+
+export global PopupSizes {
+    out property <{ width: length, height: length}> big_popup: { width: 500px, height: 600px };
+}

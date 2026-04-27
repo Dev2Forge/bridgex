@@ -8,37 +8,87 @@
  * File: \license.slint
  * Created: Sunday, 26th April 2026 7:00:59 pm
  * -----
- * Last Modified: Sunday, 26th April 2026 7:25:24 pm
+ * Last Modified: Sunday, 26th April 2026 10:33:37 pm
  * Modified By: tutosrive (tutosriveorg@gmail.com)
  * -----
  */
 
 import { Button, GridBox, StandardButton } from "std-widgets.slint";
+import { H1 } from "../components/h1.slint";
+import {
+    LibrariesData,
+    Constants,
+    Colours,
+    RootSizes,
+    PopupSizes,
+} from "../values/constants.slint";
 
 export component LicenseDialog inherits PopupWindow {
-    in-out property <string> name;
-    in-out property <string> url;
     in-out property <string> content;
+    callback hide_callback();
 
-    width: 400px;
-    height: 550px;
+    width: PopupSizes.big_popup.width;
+    height: PopupSizes.big_popup.height;
 
     close-policy: PopupClosePolicy.no-auto-close;
 
-    GridBox {
-        Row {
-            Text {
-                text: content;
-            }
-        }
+    VerticalLayout {
+        padding: Constants.preferred_padding;
+        x: (RootSizes.width / 2) - self.width / 2;
+        y: (RootSizes.height / 2) - self.height / 2;
 
-        Row {
-            Button {
-                width: 90px;
-                height: 30px;
-                text: @tr("PopupWindow" => "Close");
-                clicked => {
-                    root.close();
+        Rectangle {
+            background: Colours.dark_bg;
+            border-radius: Constants.border_radius_popup;
+
+            GridBox {
+                Row {
+                    H1 {
+                        text: LibrariesData.library_name;
+                    }
+                }
+
+                Row {
+                    StyledText {
+                        text: @markdown("[Link]({LibrariesData.library_url})");
+
+                        link-clicked(link) => {
+                            Platform.open-url(link)
+                        }
+                    }
+                }
+
+                Row {
+                    Rectangle {
+                        background: red;
+                        height: 70%;
+                        border-radius: Constants.preferred_border_radius;
+
+                        HorizontalLayout {
+                            padding: Constants.preferred_padding;
+                            alignment: center;
+
+                            width: 100%;
+                            Text {
+                                text: "TETSTTTSTEETTETSTTTSTEETTETSTTTSTEETTETSTTTSTEETTETSTTTSTEETTETSTTTSTEETTETSTTTSTEETTETSTTTSTEETTETSTTTSTEETTETSTTTSTEET"; //content;
+                            wrap: word-wrap;
+                            }
+                        }
+                    }
+                }
+
+                Row {
+                    HorizontalLayout {
+                        alignment: center;
+                        Button {
+                            width: 90px;
+                            height: 30px;
+                            text: @tr("PopupWindow" => "Close");
+                            clicked => {
+                                hide_callback();
+                            }
+                        }
+                    }
                 }
             }
         }
