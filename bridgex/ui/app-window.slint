@@ -8,7 +8,7 @@
  * File: \app-window.slint
  * Created: Saturday, 25th April 2026 11:34:53 pm
  * -----
- * Last Modified: Monday, 27th April 2026 3:19:06 pm
+ * Last Modified: Monday, 27th April 2026 3:56:59 pm
  * Modified By: tutosrive (tutosriveorg@gmail.com)
  * -----
  */
@@ -23,6 +23,7 @@ export { LibrariesData }
 export { LicenseDialogData }
 
 export component AppWindow inherits Window {
+    in-out property <bool> is_maximized: false;
     in-out property <string> filename;
     callback request-increase-value();
     callback request-file-open();
@@ -33,7 +34,21 @@ export component AppWindow inherits Window {
     in-out property <string> lib_name;
     in-out property <string> lib_url;
 
-    min-height: 500px;
+    init => {
+        RootSizes.width = self.width;
+        RootSizes.height = self.height;
+    }
+
+    changed width => {
+        RootSizes.width = self.width;
+        debug("Changed Width: \{self.width / 1px}")
+    }
+    changed height => {
+        RootSizes.height = self.height;
+        debug("Changed Height: \{self.height / 1px}")
+    }
+
+    min-height: 600px;
     min-width: 900px;
 
     about_popup := PopupWindow {
@@ -42,8 +57,8 @@ export component AppWindow inherits Window {
         height: PopupSizes.big_popup.height;
 
         About {
-            // x: (RootSizes.width / 2) - self.width / 2;
-            // y: (RootSizes.height / 2) - self.height / 2;
+            x: (RootSizes.width / 2) - self.width / 2;
+            y: (RootSizes.height / 2) - self.height / 2;
             callback_show_licence_dialog => show_dialog_license();
         }
     }
@@ -91,23 +106,10 @@ export component AppWindow inherits Window {
                 title: @tr("MenuBar" => "About");
                 shortcut: @keys(Control+Shift+A);
                 activated => {
-                    RootSizes.width = root.width;
-                    RootSizes.height = root.height;
                     about_popup.show();
                     debug("About");
                 }
             }
-        }
-    }
-
-    VerticalBox {
-        padding: 0;
-        spacing: 0;
-        height: 100px;
-        y: 0;
-
-        Text {
-            text: "Filename: \{root.filename}";
         }
     }
 }
