@@ -88,7 +88,7 @@ export default function Navbar() {
   return (
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <Marquee className="marquee-top">
-        This program is being refactored to improve performance and reduce its size as much as possible. It will be rewritten using <a href="https://tauri.app"> Tauri</a>.
+        This program is being refactored to improve performance and reduce its size as much as possible. It will be rewritten using <a href="https://slint.dev"> Slint</a> and <a href="https://rust-lang.org/">Rust</a>.
       </Marquee>
       <div className="navbar-container">
         <NavLink to="/" className="navbar-brand">
