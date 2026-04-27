@@ -8,7 +8,7 @@
  * File: \app-window.slint
  * Created: Saturday, 25th April 2026 11:34:53 pm
  * -----
- * Last Modified: Monday, 27th April 2026 12:40:37 am
+ * Last Modified: Monday, 27th April 2026 3:19:06 pm
  * Modified By: tutosrive (tutosriveorg@gmail.com)
  * -----
  */
@@ -16,15 +16,17 @@
 import { Button, VerticalBox } from "std-widgets.slint";
 import { About } from "popups/about.slint";
 import { LicenseDialog } from "dialogs/license.slint";
-import { RootSizes, PopupSizes } from "values/constants.slint";
+import { RootSizes, PopupSizes, LibrariesData } from "values/constants.slint";
 import { LicenseDialogData } from "values/globals_variables.slint";
 
+export { LibrariesData }
 export { LicenseDialogData }
 
 export component AppWindow inherits Window {
     in-out property <string> filename;
     callback request-increase-value();
     callback request-file-open();
+    callback request-license-content();
 
     callback show_dialog_license();
     callback hide_dialog_license();
@@ -32,7 +34,7 @@ export component AppWindow inherits Window {
     in-out property <string> lib_url;
 
     min-height: 500px;
-    min-width: 500px;
+    min-width: 900px;
 
     about_popup := PopupWindow {
         close-policy: PopupClosePolicy.close-on-click-outside;
@@ -40,8 +42,8 @@ export component AppWindow inherits Window {
         height: PopupSizes.big_popup.height;
 
         About {
-            x: (RootSizes.width / 2) - self.width / 2;
-            y: (RootSizes.height / 2) - self.height / 2;
+            // x: (RootSizes.width / 2) - self.width / 2;
+            // y: (RootSizes.height / 2) - self.height / 2;
             callback_show_licence_dialog => show_dialog_license();
         }
     }
@@ -51,6 +53,7 @@ export component AppWindow inherits Window {
     }
 
     show_dialog_license => {
+        request-license-content();
         license_dialog.show();
     }
 

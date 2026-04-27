@@ -3,7 +3,8 @@ name = "bridgex"
 version = "0.2.0"
 edition = "2021"
 authors = ["tutosrive"]
-description = "Testing Slint"
+description = "An open-source graphical interface for converting files to Markdown, built in Python with PySide6. Simplify your workflow with the power of Markitdown."
+# include = ["src/assets/**"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
