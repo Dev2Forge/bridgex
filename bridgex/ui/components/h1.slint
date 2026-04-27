@@ -1,0 +1,25 @@
+/*
+ * components - Graphical interface for converting files to Markdown
+ * Copyright 2026 - 2026 Dev2Forge
+ * Licence: GPL-3
+ * More information: https://github.com/Dev2Forge/bridgex/blob/main/LICENSE
+ * Author: tutosrive (tutosriveorg@gmail.com)
+ * 
+ * File: \h1.slint
+ * Created: Sunday, 26th April 2026 5:37:59 pm
+ * -----
+ * Last Modified: Sunday, 26th April 2026 5:56:56 pm
+ * Modified By: tutosrive (tutosriveorg@gmail.com)
+ * -----
+ */
+
+import { Constants } from "../constants.slint";
+
+export component H1 inherits Text {
+    font-size: Constants.h1.size;
+    font-weight: Constants.h1.weight;
+    font-italic: true;
+
+    horizontal-alignment: TextHorizontalAlignment.center;
+    vertical-alignment: TextVerticalAlignment.center;
+}

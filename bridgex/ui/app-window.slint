@@ -1,13 +1,42 @@
+/*
+ * ui - Graphical interface for converting files to Markdown
+ * Copyright 2026 - 2026 Dev2Forge
+ * Licence: GPL-3
+ * More information: https://github.com/Dev2Forge/bridgex/blob/main/LICENSE
+ * Author: tutosrive (tutosriveorg@gmail.com)
+ * 
+ * File: \app-window.slint
+ * Created: Saturday, 25th April 2026 11:34:53 pm
+ * -----
+ * Last Modified: Sunday, 26th April 2026 7:10:24 pm
+ * Modified By: tutosrive (tutosriveorg@gmail.com)
+ * -----
+ */
+
 import { Button, VerticalBox } from "std-widgets.slint";
+import { About } from "popups/about.slint";
 
 export component AppWindow inherits Window {
-    in-out property <int> counter: 42;
     in-out property <string> filename;
     callback request-increase-value();
     callback request-file-open();
 
-    width: 500px;
-    height: 500px;
+    in-out property <bool> is_about_popup_visible: false;
+    in-out property <length> root_width;
+
+    min-height: 500px;
+    min-width: 500px;
+
+    about_popup := PopupWindow {
+        close-policy: PopupClosePolicy.no-auto-close;
+        width: 500px;
+        height: 600px;
+
+        About {
+            x: (root_width / 2) - self.width / 2;
+            y: (root_width / 2) - self.height / 2;
+        }
+    }
 
     MenuBar {
         Menu {
@@ -39,27 +68,22 @@ export component AppWindow inherits Window {
                 title: @tr("MenuBar" => "About");
                 shortcut: @keys(Control+Shift+A);
                 activated => {
-                    debug("About")
+                    root_width = root.width;
+                    about_popup.show();
+                    debug("About");
                 }
             }
         }
     }
 
     VerticalBox {
-        Text {
-            text: "Counter: \{root.counter}";
-        }
+        padding: 0;
+        spacing: 0;
+        height: 100px;
+        y: 0;
 
         Text {
             text: "Filename: \{root.filename}";
-        }
-
-        Button {
-            height: 20px;
-            text: "Increase value";
-            clicked => {
-                root.request-increase-value();
-            }
         }
     }
 }

@@ -1,0 +1,46 @@
+/*
+ * dialogs - Graphical interface for converting files to Markdown
+ * Copyright 2026 - 2026 Dev2Forge
+ * Licence: GPL-3
+ * More information: https://github.com/Dev2Forge/bridgex/blob/main/LICENSE
+ * Author: tutosrive (tutosriveorg@gmail.com)
+ * 
+ * File: \license.slint
+ * Created: Sunday, 26th April 2026 7:00:59 pm
+ * -----
+ * Last Modified: Sunday, 26th April 2026 7:25:24 pm
+ * Modified By: tutosrive (tutosriveorg@gmail.com)
+ * -----
+ */
+
+import { Button, GridBox, StandardButton } from "std-widgets.slint";
+
+export component LicenseDialog inherits PopupWindow {
+    in-out property <string> name;
+    in-out property <string> url;
+    in-out property <string> content;
+
+    width: 400px;
+    height: 550px;
+
+    close-policy: PopupClosePolicy.no-auto-close;
+
+    GridBox {
+        Row {
+            Text {
+                text: content;
+            }
+        }
+
+        Row {
+            Button {
+                width: 90px;
+                height: 30px;
+                text: @tr("PopupWindow" => "Close");
+                clicked => {
+                    root.close();
+                }
+            }
+        }
+    }
+}
