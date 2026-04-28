@@ -8,7 +8,7 @@
  * File: \license.slint
  * Created: Sunday, 26th April 2026 7:00:59 pm
  * -----
- * Last Modified: Monday, 27th April 2026 12:22:47 am
+ * Last Modified: Monday, 27th April 2026 11:53:33 pm
  * Modified By: tutosrive (tutosriveorg@gmail.com)
  * -----
  */
@@ -18,7 +18,7 @@ import {
     GridBox,
     StandardButton,
     ScrollView,
-    TextEdit,
+    ListView,
 } from "std-widgets.slint";
 import { H1 } from "../components/h1.slint";
 import {
@@ -35,34 +35,39 @@ export component LicenseDialog inherits PopupWindow {
 
     width: PopupSizes.big_popup.width;
     height: PopupSizes.big_popup.height;
+    x: (RootSizes.width / 2) - self.width / 2;
+    y: (RootSizes.height / 2) - self.height / 2;
 
     close-policy: PopupClosePolicy.no-auto-close;
 
     VerticalLayout {
         padding: Constants.preferred_padding;
-        x: (RootSizes.width / 2) - self.width / 2;
-        y: (RootSizes.height / 2) - self.height / 2;
 
         Rectangle {
             background: Colours.dark_bg;
             border-radius: Constants.border_radius_popup;
 
-            GridBox {
+            Button {
+                y: ((RootSizes.height / 2) - (a.height / 2)) + 50px;
+                opacity: 40%;
+                x: ((RootSizes.width / 2) + (root.width / 14)) - 100px;
+                z: 1;
+                height: 30px;
+                icon: @image-url("../images/icons/os.svg");
+
+                clicked => {
+                    Platform.open-url(LibrariesData.library_url)
+                }
+            }
+
+            a := GridBox {
                 Row {
                     H1 {
                         text: LibrariesData.library_name;
                     }
                 }
 
-                Row {
-                    StyledText {
-                        text: @markdown("\{LibrariesData.library_url}");
-
-                        link-clicked(link) => {
-                            Platform.open-url(link)
-                        }
-                    }
-                }
+                Row { }
 
                 Row {
                     Rectangle {
@@ -70,22 +75,20 @@ export component LicenseDialog inherits PopupWindow {
                         height: 70%;
                         border-radius: Constants.preferred_border_radius;
 
-                        HorizontalLayout {
+                        VerticalLayout {
                             padding: Constants.preferred_padding;
-                            alignment: center;
 
-                            width: 100%;
-                            height: 100%;
+                            ListView {
+                                horizontal-scrollbar-policy: ScrollBarPolicy.always-off;
+                                mouse-drag-pan-enabled: false;
 
-                            TextEdit {
-                                placeholder-text: "This is a LICENSE text";
-                                width: 100%;
-                                read-only: true;
-                                accessible-item-selectable: false;
-                                enabled: false;
-                                font-family: "Consolas";
-                                text: LicenseDialogData.content;
-                                wrap: word-wrap;
+                                for line in LicenseDialogData.content_lines: Rectangle {
+                                    height: line_text.preferred_height;
+                                    line_text := Text {
+                                        text: line;
+                                        wrap: word-wrap;
+                                    }
+                                }
                             }
                         }
                     }

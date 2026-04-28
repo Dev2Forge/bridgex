@@ -8,10 +8,12 @@
  * File: \constants.slint
  * Created: Sunday, 26th April 2026 5:33:43 pm
  * -----
- * Last Modified: Sunday, 26th April 2026 10:04:28 pm
+ * Last Modified: Monday, 27th April 2026 11:50:58 pm
  * Modified By: tutosrive (tutosriveorg@gmail.com)
  * -----
  */
+
+ import { Palette } from "std-widgets.slint";
 
  export global Constants {
     out property <{ size: length, weight: float, family: string}> h1: { size: 20px, weight: 900, family: "monospace" };
@@ -23,14 +25,21 @@
 }
 
 export global Colours {
-    out property <color> dark_bg: #0e0e0edd;
+    out property <color> dark_bg: Palette.alternate-background;
+    // #0e0e0edd;
 }
 
 export global LibrariesData {
     out property <[{ name: string, url: string}]> libraries: [
-        { name: "Bridgex", url: "https://github.com/Dev2Forge/bridgex" },
-        { name: "Markitdown-rs", url: "https://github.com/uhobnil/markitdown-rs" },
-        { name: "Slint", url: "https://slint.dev" }
+        { name: "Bridgex", url: "https://github.com/Dev2Forge/bridgex/blob/main/LICENSE" },
+        {
+            name: "Markitdown-rs",
+            url: "https://github.com/uhobnil/markitdown-rs/blob/master/LICENSE"
+        },
+        {
+            name: "Slint",
+            url: "https://github.com/slint-ui/slint/blob/master/LICENSES/GPL-3.0-only.txt"
+        }
     ];
 
     in-out property <string> library_name;

@@ -8,7 +8,7 @@
  * File: \about.slint
  * Created: Sunday, 26th April 2026 12:15:42 pm
  * -----
- * Last Modified: Monday, 27th April 2026 3:03:12 pm
+ * Last Modified: Monday, 27th April 2026 11:50:09 pm
  * Modified By: tutosrive (tutosriveorg@gmail.com)
  * -----
  */
@@ -21,75 +21,91 @@ import {
     GridBox,
     AboutSlint,
 } from "std-widgets.slint";
-import { Constants, LibrariesData, Colours } from "../values/constants.slint";
+import {
+    Constants,
+    LibrariesData,
+    Colours,
+    PopupSizes,
+    RootSizes,
+} from "../values/constants.slint";
 import { H1 } from "../components/h1.slint";
 import { H2 } from "../components/h2.slint";
 import { LicenseDialog } from "../dialogs/license.slint";
 
-export component About inherits VerticalLayout {
-    padding: 20px;
-
+export component About inherits PopupWindow {
     in-out property <bool> is_hour_to_show_licence_dialog;
     callback callback_show_licence_dialog();
 
-    Rectangle {
-        background: Colours.dark_bg;
-        border-radius: Constants.border_radius_popup;
+    close-policy: PopupClosePolicy.close-on-click-outside;
+    x: (RootSizes.width / 2) - self.width / 2;
+    y: (RootSizes.height / 2) - self.height / 2;
 
-        GridBox {
-            H1 {
-                text: "About Bridgex";
-            }
+    width: PopupSizes.big_popup.width;
+    height: PopupSizes.big_popup.height;
 
-            Row {
-                Image {
-                    height: 30%;
-                    source: @image-url("../images/icons/logo-bridgex-2.png");
-                }
-            }
+    VerticalLayout {
+        padding: 50px;
 
-            Row {
-                Text {
-                    wrap: TextWrap.word-wrap;
-                    text: "Bridgex is an open-source graphical interface that simplifies file-to-Markdown conversion. Built on top of Microsoft's Markitdown library, it provides an intuitive visual experience for users who prefer not to use the command line.";
-                }
-            }
+        Rectangle {
+            background: Colours.dark_bg;
+            border-radius: Constants.border_radius_popup;
+            height: 100%;
 
-            Row {
+            GridBox {
                 H1 {
-                    text: "Open Source Licences";
+                    text: "About Bridgex";
                 }
-            }
 
-            Row {
-                GridLayout {
-                    spacing: 10px;
-                    col: 0;
-                    colspan: 1;
+                Row {
+                    Image {
+                        height: 20%;
+                        source: @image-url("../images/icons/logo-bridgex-2.png");
+                    }
+                }
 
-                    for library in LibrariesData.libraries: Rectangle {
-                        Button {
-                            icon: @image-url("../images/icons/os.svg");
-                            text: library.name;
-                            clicked => {
-                                LibrariesData.library_name = library.name;
-                                LibrariesData.library_url = library.url;
-                                callback_show_licence_dialog()
+                Row {
+                    Text {
+                        wrap: TextWrap.word-wrap;
+                        text: "Bridgex is an open-source graphical interface that simplifies file-to-Markdown conversion. Built on top of Microsoft's Markitdown library, it provides an intuitive visual experience for users who prefer not to use the command line.";
+                    }
+                }
+
+                Row {
+                    H1 {
+                        text: "Open Source Licences";
+                    }
+                }
+
+                Row {
+                    GridLayout {
+                        spacing-horizontal: 10px;
+                        col: 0;
+                        colspan: 1;
+
+                        for library in LibrariesData.libraries: Rectangle {
+                            Button {
+                                icon: @image-url("../images/icons/os.svg");
+                                text: library.name;
+                                clicked => {
+                                    LibrariesData.library_name = library.name;
+                                    LibrariesData.library_url = library.url;
+                                    callback_show_licence_dialog()
+                                }
                             }
                         }
                     }
                 }
-            }
 
-            Row {
-                H2 {
-                    text: "Build With";
+                Row {
+                    H2 {
+                        text: "Build With";
+                    }
                 }
-            }
 
-            Row {
-                AboutSlint {
-                    height: 100px;
+                Row {
+                    AboutSlint {
+                        height: 100px;
+                    }
                 }
             }
         }

@@ -8,7 +8,7 @@
  * File: \app-window.slint
  * Created: Saturday, 25th April 2026 11:34:53 pm
  * -----
- * Last Modified: Monday, 27th April 2026 3:56:59 pm
+ * Last Modified: Monday, 27th April 2026 10:59:22 pm
  * Modified By: tutosrive (tutosriveorg@gmail.com)
  * -----
  */
@@ -51,16 +51,9 @@ export component AppWindow inherits Window {
     min-height: 600px;
     min-width: 900px;
 
-    about_popup := PopupWindow {
-        close-policy: PopupClosePolicy.close-on-click-outside;
-        width: PopupSizes.big_popup.width;
-        height: PopupSizes.big_popup.height;
-
-        About {
-            x: (RootSizes.width / 2) - self.width / 2;
-            y: (RootSizes.height / 2) - self.height / 2;
-            callback_show_licence_dialog => show_dialog_license();
-        }
+    about_popup := About {
+        is-hour-to-show-licence-dialog: false;
+        callback_show_licence_dialog => show_dialog_license();
     }
 
     license_dialog := LicenseDialog {

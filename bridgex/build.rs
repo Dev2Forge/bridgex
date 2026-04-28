@@ -8,11 +8,13 @@
  * File: \build.rs
  * Created: Saturday, 25th April 2026 11:34:53 pm
  * -----
- * Last Modified: Monday, 27th April 2026 12:02:07 am
+ * Last Modified: Monday, 27th April 2026 10:05:40 pm
  * Modified By: tutosrive (tutosriveorg@gmail.com)
  * -----
  */
 
 fn main() {
-    slint_build::compile("ui/app-window.slint").expect("Slint build failed");
+    let config = slint_build::CompilerConfiguration::new().with_style("material".into());
+
+    slint_build::compile_with_config("ui/app-window.slint", config).expect("Slint build failed");
 }
