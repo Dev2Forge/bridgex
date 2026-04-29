@@ -8,7 +8,7 @@
  * File: \main.rs
  * Created: Saturday, 25th April 2026 11:34:53 pm
  * -----
- * Last Modified: Tuesday, 28th April 2026 10:40:40 pm
+ * Last Modified: Tuesday, 28th April 2026 11:05:57 pm
  * Modified By: tutosrive (tutosriveorg@gmail.com)
  * -----
  */
@@ -50,27 +50,6 @@ fn main() -> Result<(), Box<dyn Error>> {
             let license_name = ui.global::<LibrariesData>().get_library_name();
             let content = load_license_file(license_name.as_str()).unwrap();
             ui.global::<LicenseDialogData>().set_content(content);
-        }
-    });
-
-    ui.on_request_update_optimized_content({
-        let weak = ui_weak.clone();
-
-        move || {
-            let ui = weak.upgrade().unwrap();
-            let mut current_start_char = ui.global::<LicenseDialogData>().get_current_start_char_parcial_content() as usize;
-            let mut current_end_char = ui.global::<LicenseDialogData>().get_current_end_char_parcial_content() as usize;
-            let complete_content = ui.global::<LicenseDialogData>().get_content();
-            let parcial_content_global = ui.global::<LicenseDialogData>().get_content_optimized();
-
-            let parcial_content: String = complete_content.chars().skip(current_start_char).take(current_end_char).collect();
-            ui.global::<LicenseDialogData>().set_content_optimized(parcial_content_global + &parcial_content);
-
-            current_start_char = current_end_char;
-            current_end_char += 1100;
-
-            ui.global::<LicenseDialogData>().set_current_start_char_parcial_content(current_start_char as i32);
-            ui.global::<LicenseDialogData>().set_current_end_char_parcial_content(current_end_char as i32);
         }
     });
 

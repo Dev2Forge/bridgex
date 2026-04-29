@@ -8,7 +8,7 @@
  * File: \license.slint
  * Created: Sunday, 26th April 2026 7:00:59 pm
  * -----
- * Last Modified: Tuesday, 28th April 2026 10:55:58 pm
+ * Last Modified: Tuesday, 28th April 2026 11:06:16 pm
  * Modified By: tutosrive (tutosriveorg@gmail.com)
  * -----
  */
@@ -31,7 +31,6 @@ import {
 import { LicenseDialogData } from "../values/globals_variables.slint";
 
 export component LicenseDialog inherits PopupWindow {
-    callback update_content();
     callback hide_callback();
 
     width: PopupSizes.big_popup.width;
@@ -40,10 +39,6 @@ export component LicenseDialog inherits PopupWindow {
     y: (RootSizes.height / 2) - self.height / 2;
 
     close-policy: PopupClosePolicy.no-auto-close;
-
-    // init => {
-    //     update_content();
-    // }
 
     VerticalLayout {
         padding: Constants.preferred_padding;
@@ -82,18 +77,6 @@ export component LicenseDialog inherits PopupWindow {
 
                             license_scroller_container := Flickable {
                                 viewport-height: txt.height;
-                                // viewport-height: license_container.height;
-                                // property <length> previous_viewport_y: 0px;
-
-                                // flicked => {
-                                //     if (self.viewport-y < self.previous_viewport_y) {
-                                //         update_content();
-                                //         if (self.viewport-height < txt.height) {
-                                //             self.viewport-height += 200px;
-                                //         }
-                                //     }
-                                //     self.previous_viewport_y = self.viewport-y;
-                                // }
 
                                 txt := Text {
                                     x: 0;

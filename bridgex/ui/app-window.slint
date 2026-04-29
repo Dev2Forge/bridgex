@@ -8,7 +8,7 @@
  * File: \app-window.slint
  * Created: Saturday, 25th April 2026 11:34:53 pm
  * -----
- * Last Modified: Tuesday, 28th April 2026 10:16:00 pm
+ * Last Modified: Tuesday, 28th April 2026 11:06:11 pm
  * Modified By: tutosrive (tutosriveorg@gmail.com)
  * -----
  */
@@ -28,7 +28,6 @@ export component AppWindow inherits Window {
     callback request-increase-value();
     callback request-file-open();
     callback request-license-content();
-    callback request_update_optimized_content();
 
     callback show_dialog_license();
     callback hide_dialog_license();
@@ -56,7 +55,6 @@ export component AppWindow inherits Window {
     }
 
     license_dialog := LicenseDialog {
-        update_content => request_update_optimized_content();
         hide_callback => hide_dialog_license();
     }
 
