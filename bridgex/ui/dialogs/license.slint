@@ -8,7 +8,7 @@
  * File: \license.slint
  * Created: Sunday, 26th April 2026 7:00:59 pm
  * -----
- * Last Modified: Monday, 27th April 2026 11:53:33 pm
+ * Last Modified: Tuesday, 28th April 2026 10:55:58 pm
  * Modified By: tutosrive (tutosriveorg@gmail.com)
  * -----
  */
@@ -31,6 +31,7 @@ import {
 import { LicenseDialogData } from "../values/globals_variables.slint";
 
 export component LicenseDialog inherits PopupWindow {
+    callback update_content();
     callback hide_callback();
 
     width: PopupSizes.big_popup.width;
@@ -40,6 +41,10 @@ export component LicenseDialog inherits PopupWindow {
 
     close-policy: PopupClosePolicy.no-auto-close;
 
+    // init => {
+    //     update_content();
+    // }
+
     VerticalLayout {
         padding: Constants.preferred_padding;
 
@@ -48,7 +53,7 @@ export component LicenseDialog inherits PopupWindow {
             border-radius: Constants.border_radius_popup;
 
             Button {
-                y: ((RootSizes.height / 2) - (a.height / 2)) + 50px;
+                y: ((RootSizes.height / 2) - (layout_main.height / 2)) + 50px;
                 opacity: 40%;
                 x: ((RootSizes.width / 2) + (root.width / 14)) - 100px;
                 z: 1;
@@ -60,34 +65,43 @@ export component LicenseDialog inherits PopupWindow {
                 }
             }
 
-            a := GridBox {
+            layout_main := GridBox {
                 Row {
                     H1 {
                         text: LibrariesData.library_name;
                     }
                 }
 
-                Row { }
-
                 Row {
-                    Rectangle {
-                        background: Colours.dark_bg;
+                    license_container := Rectangle {
                         height: 70%;
                         border-radius: Constants.preferred_border_radius;
 
                         VerticalLayout {
                             padding: Constants.preferred_padding;
 
-                            ListView {
-                                horizontal-scrollbar-policy: ScrollBarPolicy.always-off;
-                                mouse-drag-pan-enabled: false;
+                            license_scroller_container := Flickable {
+                                viewport-height: txt.height;
+                                // viewport-height: license_container.height;
+                                // property <length> previous_viewport_y: 0px;
 
-                                for line in LicenseDialogData.content_lines: Rectangle {
-                                    height: line_text.preferred_height;
-                                    line_text := Text {
-                                        text: line;
-                                        wrap: word-wrap;
-                                    }
+                                // flicked => {
+                                //     if (self.viewport-y < self.previous_viewport_y) {
+                                //         update_content();
+                                //         if (self.viewport-height < txt.height) {
+                                //             self.viewport-height += 200px;
+                                //         }
+                                //     }
+                                //     self.previous_viewport_y = self.viewport-y;
+                                // }
+
+                                txt := Text {
+                                    x: 0;
+                                    y: 0;
+                                    wrap: word-wrap;
+                                    width: 100%;
+                                    text: LicenseDialogData.content;
+                                    font-family: "Consolas";
                                 }
                             }
                         }

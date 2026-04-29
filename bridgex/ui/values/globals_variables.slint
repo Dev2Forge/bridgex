@@ -8,7 +8,7 @@
  * File: \globals_variables.slint
  * Created: Monday, 27th April 2026 12:22:13 am
  * -----
- * Last Modified: Monday, 27th April 2026 8:58:25 pm
+ * Last Modified: Tuesday, 28th April 2026 10:40:53 pm
  * Modified By: tutosrive (tutosriveorg@gmail.com)
  * -----
  */
@@ -16,4 +16,7 @@
 export global LicenseDialogData {
     in-out property <string> content;
     in-out property <[string]> content_lines;
+    in-out property <string> content_optimized;
+    in-out property <int> current_start_char_parcial_content: 0;
+    in-out property <int> current_end_char_parcial_content: 1100;
 }
