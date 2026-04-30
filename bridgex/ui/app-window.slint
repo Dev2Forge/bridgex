@@ -8,16 +8,24 @@
  * File: \app-window.slint
  * Created: Saturday, 25th April 2026 11:34:53 pm
  * -----
- * Last Modified: Tuesday, 28th April 2026 11:06:11 pm
+ * Last Modified: Wednesday, 29th April 2026 3:06:17 pm
  * Modified By: tutosrive (tutosriveorg@gmail.com)
  * -----
  */
 
-import { Button, VerticalBox } from "std-widgets.slint";
+import { Button, VerticalBox, GridBox, TextEdit } from "std-widgets.slint";
 import { About } from "popups/about.slint";
 import { LicenseDialog } from "dialogs/license.slint";
-import { RootSizes, PopupSizes, LibrariesData } from "values/constants.slint";
-import { LicenseDialogData } from "values/globals_variables.slint";
+import {
+    RootSizes,
+    PopupSizes,
+    LibrariesData,
+    Constants,
+} from "values/constants.slint";
+import {
+    LicenseDialogData,
+    FileConverted,
+} from "values/globals_variables.slint";
 
 export { LibrariesData }
 export { LicenseDialogData }
@@ -99,6 +107,31 @@ export component AppWindow inherits Window {
                 activated => {
                     about_popup.show();
                     debug("About");
+                }
+            }
+        }
+    }
+
+    GridBox {
+        HorizontalLayout {
+            TextEdit {
+                width: 50%;
+                placeholder-text: "Will be the markdown content";
+                text: FileConverted.markdown;
+
+                changed text => {
+                    FileConverted.markdown = self.text;
+                }
+            }
+
+            VerticalBox {
+                Flickable {
+                    viewport-height: preview_markdown.height;
+
+                    preview_markdown := StyledText {
+                        width: 100%;
+                        text: @markdown("\{FileConverted.markdown}");
+                    }
                 }
             }
         }

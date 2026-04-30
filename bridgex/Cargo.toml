@@ -11,6 +11,7 @@ description = "An open-source graphical interface for converting files to Markdo
 [dependencies]
 rfd = "0.17.2"
 slint = "1.16.1"
+markitdown = "0.1.11"
 
 [build-dependencies]
 slint-build = "1.16.1"

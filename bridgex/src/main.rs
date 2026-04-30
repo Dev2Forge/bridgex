@@ -48,7 +48,8 @@ fn main() -> Result<(), Box<dyn Error>> {
         move || {
             let ui = weak.upgrade().unwrap();
             let license_name = ui.global::<LibrariesData>().get_library_name();
-            let content = load_license_file(license_name.as_str()).unwrap();
+            //let content = load_license_file(license_name.as_str()).unwrap();
+            let content = get_embedded_license(license_name.as_str()).to_shared_string();
             ui.global::<LicenseDialogData>().set_content(content);
         }
     });
@@ -58,10 +59,19 @@ fn main() -> Result<(), Box<dyn Error>> {
     Ok(())
 }
 
-fn load_license_file(name: &str) -> Result<SharedString, Box<dyn Error>> {
-    let real_name = if name == "Bridgex" { "gnu3".to_string() } else { name.to_lowercase() };
-    let path: PathBuf = PathBuf::from(env!("CARGO_MANIFEST_DIR")).join("src").join("assets").join("licenses").join(format!("license_{}.txt", real_name));
+//fn load_license_file(name: &str) -> Result<SharedString, Box<dyn Error>> {
+//    let real_name = if name == "Bridgex" { "gnu3".to_string() } else { name.to_lowercase() };
+//    let path: PathBuf = PathBuf::from(env!("CARGO_MANIFEST_DIR")).join("src").join("assets").join("licenses").join(format!("license_{}.txt", real_name));
+//
+//    let readed = fs::read_to_string(path)?;
+//    Ok(readed.to_shared_string())
+//}
 
-    let readed = fs::read_to_string(path)?;
-    Ok(readed.to_shared_string())
+fn get_embedded_license(name: &str) -> &'static str {
+    match name {
+        "Bridgex" => include_str!("assets/licenses/license_gnu3.txt"),
+        "Markitdown-rs" => include_str!("assets/licenses/license_markitdown-rs.txt"),
+        "Slint" => include_str!("assets/licenses/license_slint.txt"),
+        _ => "License Not Found!",
+    }
 }
