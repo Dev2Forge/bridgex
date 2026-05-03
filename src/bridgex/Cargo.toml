@@ -1,0 +1,17 @@
+[package]
+name = "bridgex"
+version = "0.2.0"
+edition = "2024"
+
+[dependencies]
+egui_commonmark = "0.23.0"
+egui = "0.34.1"
+eframe = "0.34.1"
+image = { version = "0.25", default-features = false, features = ["png"] }
+markitdown = "0.1.11"
+
+[profile.release]
+opt-level = "z"
+lto = true
+strip = true
+debug = false
