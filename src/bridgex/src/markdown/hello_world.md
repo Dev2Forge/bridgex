@@ -3,7 +3,7 @@
 A *bunch* ~~of~~ __different__ `text` styles.
 
 
- ![Ferris](egui_commonmark/examples/cuddlyferris.png)
+ ![Ferris](cuddlyferris.png)
 
 | __A table!__ |
 | ------------ |

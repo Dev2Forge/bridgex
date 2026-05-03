@@ -599,7 +599,6 @@ dependencies = [
  "eframe",
  "egui",
  "egui_commonmark",
- "image",
  "markitdown",
 ]
 

@@ -4,14 +4,62 @@ version = "0.2.0"
 edition = "2024"
 
 [dependencies]
-egui_commonmark = "0.23.0"
+egui_commonmark = { version = "0.23.0", features = [
+    # "macros",
+    # "embedded_image",
+    # "better_syntax_highlighting",
+    # "svg",
+    # "fetch",
+] }
+
 egui = "0.34.1"
 eframe = "0.34.1"
-image = { version = "0.25", default-features = false, features = ["png"] }
+# image = { version = "0.25", default-features = false, features = ["png"] }
 markitdown = "0.1.11"
 
 [profile.release]
-opt-level = "z"
+codegen-units = 1
 lto = true
+opt-level = "z"
+panic = "unwind"
 strip = true
 debug = false
+overflow-checks = false
+debug-assertions = false
+incremental = false
+
+[[bin]]
+name = "egui-book"
+path = "src/book.rs"
+
+[[bin]]
+name = "egui-hello-world"
+path = "src/hello_world.rs"
+
+[[bin]]
+name = "egui-html"
+path = "src/html.rs"
+
+[[bin]]
+name = "egui-interactive"
+path = "src/interactive.rs"
+
+[[bin]]
+name = "egui-link_hooks"
+path = "src/link_hooks.rs"
+
+[[bin]]
+name = "egui-macros"
+path = "src/macros.rs"
+
+[[bin]]
+name = "egui-mixing"
+path = "src/mixing.rs"
+
+[[bin]]
+name = "egui-mut"
+path = "src/show_mut.rs"
+
+[[bin]]
+name = "file-converter"
+path = "src/fileconverter.rs"

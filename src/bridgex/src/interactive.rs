@@ -3,6 +3,9 @@
 //! `cargo r --features better_syntax_highlighting,svg,fetch`
 //! Add `light` or `dark` to the end of the command to specify theme. Default
 //! is system theme. `cargo r --features better_syntax_highlighting,svg,fetch -- dark`
+//!
+//! An easy way to visualize rendered markdown interactively
+
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
 use eframe::egui;
@@ -10,16 +13,16 @@ use egui_commonmark::*;
 
 struct App {
     cache: CommonMarkCache,
+    markdown: String,
 }
 
 impl eframe::App for App {
     fn ui(&mut self, ui: &mut egui::Ui, _frame: &mut eframe::Frame) {
-        let text = include_str!("markdown/blockquotes.md");
+        egui::Panel::left("left_panel")
+            .show_inside(ui, |ui| ui.text_edit_multiline(&mut self.markdown));
         egui::CentralPanel::default().show_inside(ui, |ui| {
             egui::ScrollArea::vertical().show(ui, |ui| {
-                CommonMarkViewer::new()
-                    .max_image_width(Some(512))
-                    .show(ui, &mut self.cache, text);
+                CommonMarkViewer::new().show(ui, &mut self.cache, &self.markdown);
             });
         });
     }
@@ -30,7 +33,7 @@ fn main() -> eframe::Result {
     args.next();
 
     eframe::run_native(
-        "Markdown viewer",
+        "Interactive markdown viewer",
         eframe::NativeOptions::default(),
         Box::new(move |cc| {
             if let Some(theme) = args.next() {
@@ -47,6 +50,20 @@ fn main() -> eframe::Result {
             });
 
             Ok(Box::new(App {
+                markdown: r#"# Heading
+
+text with a \
+break
+
+text with a large
+
+separator
+
+```python
+if __name__ == "__main__":
+    pass
+```"#
+                    .to_owned(),
                 cache: CommonMarkCache::default(),
             }))
         }),
