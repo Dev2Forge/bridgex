@@ -11,5 +11,5 @@ pub fn dir_root() -> PathBuf {
 }
 
 pub fn dir_root_images() -> PathBuf {
-    dir_root().join("/files").join("assets").join("images")
+    dir_root().join("files").join("assets").join("images")
 }
