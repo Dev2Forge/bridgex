@@ -1,47 +1,13 @@
-#![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
+// #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
+
+mod components;
+mod logic;
+mod utils;
 
 use freya::{ code_editor::{ CodeEditor, CodeEditorData }, prelude::*, text_edit::Rope };
-use markitdown::MarkItDown;
 use rfd::FileDialog;
-
-fn popup(mut show_popup: State<bool>) -> impl IntoElement {
-    let img_source: ImageSource = (
-        "Bridgex Logo",
-        include_bytes!("assets/images/logo-bridgex-2.webp"),
-    ).into();
-
-    Popup::new()
-        .show(show_popup)
-        .width(Size::px(400.0))
-        .on_close_request(move |_| {
-            show_popup.toggle();
-        })
-        .child(PopupTitle::new("Licenses".to_string()))
-        .child(
-            PopupContent::new()
-                .child("This is a simple POP!!!!")
-                .child(ImageViewer::new(img_source).width(Size::px(100.0)))
-                .child(
-                    ScrollView::new()
-                        .child(include_str!("assets/licenses/license_gnu3.txt"))
-                        .show_scrollbar(false)
-                )
-        )
-        .child(
-            rect()
-                .child(
-                    PopupButtons::new().child(
-                        Button::new()
-                            .on_press(move |_| {
-                                show_popup.toggle();
-                            })
-                            .child("Close")
-                    )
-                )
-                .horizontal()
-                .width(Size::fill())
-        )
-}
+use crate::components::{ popup::PopupOwn };
+use crate::logic::{ converter };
 
 fn app() -> impl IntoElement {
     use_init_theme(dark_theme);
@@ -60,19 +26,11 @@ fn app() -> impl IntoElement {
 
     let focus = use_focus();
 
-    // let mut content_file = use_state(|| String::new());
-
     let mut editor = use_state(|| {
         let mut editor = CodeEditorData::new("".into(), freya::code_editor::LanguageId::Markdown);
         editor.parse();
         editor
     });
-
-    // editor.write().rope = Rope::from_str(&content_file.read());
-    // editor.write().parse();
-
-    // *content_file.write() = editor.read().to_string();
-    // editor.write().rope = Rope::from_str(&content_file.read().as_str());
 
     let mut menu_item_clicked = use_state(|| false);
     let mut current_menu = use_state(|| String::new());
@@ -129,21 +87,11 @@ fn app() -> impl IntoElement {
                                                             .to_string();
                                                     }
 
-                                                    // *content_file.write() = convert_from_path(
-                                                    //     filename.as_str()
-                                                    // );
-
-                                                    // *content_file.write() = convert_from_path(
-                                                    //     filename.as_str()
-                                                    // ).to_string();
-
                                                     editor.write().rope = Rope::from_str(
-                                                        convert_from_path(
-                                                            filename.as_str()
-                                                        ).as_str()
+                                                        &converter
+                                                            ::convert_from_path(filename.as_str())
+                                                            .as_str()
                                                     );
-
-                                                    // dbg!(content_file.read().clone());
                                                 })
                                         )
                                         .on_close(move |_| {
@@ -192,7 +140,21 @@ fn app() -> impl IntoElement {
 
     rect()
         .child(menu_ctn)
-        .child(rect().child(popup(showpopup)).max_height(Size::px(400.0)))
+        .child(
+            rect()
+                .child(
+                    PopupOwn::new(
+                        showpopup,
+                        "Licenses".to_string(),
+                        true,
+                        "This is a FUCK example trying refactoring usin modular files"
+                    )
+                        .show_img_after_header("icon.png".to_string())
+                        .make()
+                        .popup.unwrap()
+                )
+                .max_height(Size::px(400.0))
+        )
         .width(Size::fill())
         .child(
             rect()
@@ -201,7 +163,7 @@ fn app() -> impl IntoElement {
                         .child(
                             rect()
                                 .child(
-                                    CodeEditor::new(editor, focus.a11y_id())
+                                    CodeEditor::new(editor.into_writable(), focus.a11y_id())
                                         .a11y_auto_focus(true)
                                         .font_family("Consolas")
                                         .gutter(false)
@@ -223,20 +185,6 @@ fn app() -> impl IntoElement {
                 .padding(Gaps::new_all(10.0))
         )
         .expanded()
-}
-
-fn convert_from_path(filename: &str) -> String {
-    let mark = MarkItDown::new();
-    let res = mark.convert(filename, None);
-    dbg!(filename);
-
-    if let Ok(Some(conversion_result)) = res {
-        dbg!(&conversion_result.text_content);
-        conversion_result.text_content
-    } else {
-        dbg!("Dentro de else");
-        "Try open the file again".to_string()
-    }
 }
 
 fn main() {
