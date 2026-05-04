@@ -23,21 +23,23 @@ fn popup(mut show_popup: State<bool>) -> impl IntoElement {
                 .child(ImageViewer::new(img_source).width(Size::px(100.0)))
                 .child(
                     ScrollView::new()
-                        .child(
-                            MarkdownViewer::new(include_str!("assets/licenses/license_gnu3.txt"))
-                        )
-                        .height(Size::px(200.0))
-                        .direction(Direction::Vertical)
+                        .child(include_str!("assets/licenses/license_gnu3.txt"))
+                        .show_scrollbar(false)
                 )
         )
         .child(
-            PopupButtons::new().child(
-                Button::new()
-                    .on_press(move |_| {
-                        show_popup.toggle();
-                    })
-                    .child("Close")
-            )
+            rect()
+                .child(
+                    PopupButtons::new().child(
+                        Button::new()
+                            .on_press(move |_| {
+                                show_popup.toggle();
+                            })
+                            .child("Close")
+                    )
+                )
+                .horizontal()
+                .width(Size::fill())
         )
 }
 
@@ -56,21 +58,24 @@ fn app() -> impl IntoElement {
         .top(MENU_HEIGHT + 1.0)
         .left(10.0);
 
-    let mut content_file = use_state(|| String::new());
-
     let focus = use_focus();
+
+    // let mut content_file = use_state(|| String::new());
+
     let mut editor = use_state(|| {
         let mut editor = CodeEditorData::new("".into(), freya::code_editor::LanguageId::Markdown);
         editor.parse();
         editor
     });
 
-    *content_file.write() = editor.read().to_string();
+    // editor.write().rope = Rope::from_str(&content_file.read());
+    // editor.write().parse();
+
+    // *content_file.write() = editor.read().to_string();
+    // editor.write().rope = Rope::from_str(&content_file.read().as_str());
 
     let mut menu_item_clicked = use_state(|| false);
     let mut current_menu = use_state(|| String::new());
-
-    let mut msg = use_state(|| "Will contain click messages");
 
     let menu_ctn = rect()
         .horizontal()
@@ -83,7 +88,6 @@ fn app() -> impl IntoElement {
                     Button::new()
                         .on_press(move |_| {
                             *menu_item_clicked.write() = true;
-                            *msg.write() = "File";
                         })
                         .flat()
                         .with_corner_radius(0.0)
@@ -127,6 +131,10 @@ fn app() -> impl IntoElement {
 
                                                     // *content_file.write() = convert_from_path(
                                                     //     filename.as_str()
+                                                    // );
+
+                                                    // *content_file.write() = convert_from_path(
+                                                    //     filename.as_str()
                                                     // ).to_string();
 
                                                     editor.write().rope = Rope::from_str(
@@ -135,7 +143,7 @@ fn app() -> impl IntoElement {
                                                         ).as_str()
                                                     );
 
-                                                    dbg!(content_file.read().clone());
+                                                    // dbg!(content_file.read().clone());
                                                 })
                                         )
                                         .on_close(move |_| {
@@ -153,7 +161,6 @@ fn app() -> impl IntoElement {
                     Button::new()
                         .on_press(move |_| {
                             *menu_item_clicked.write() = true;
-                            *msg.write() = "Help";
                         })
                         .flat()
                         .with_corner_radius(0.0)
@@ -185,23 +192,30 @@ fn app() -> impl IntoElement {
 
     rect()
         .child(menu_ctn)
-        .child(popup(showpopup))
+        .child(rect().child(popup(showpopup)).max_height(Size::px(400.0)))
         .width(Size::fill())
         .child(
             rect()
-                .child(MarkdownViewer::new(msg()))
                 .child(
                     rect()
-                        // .child(Input::new(content_file).placeholder("Type here ...").filled().width(Size::Pixels(100.)))
                         .child(
                             rect()
-                                .child(CodeEditor::new(editor, focus.a11y_id()))
-                                .width(Size::px(300.0))
+                                .child(
+                                    CodeEditor::new(editor, focus.a11y_id())
+                                        .a11y_auto_focus(true)
+                                        .font_family("Consolas")
+                                        .gutter(false)
+                                )
+                                .width(Size::percent(50.0))
                         )
                         .child(
                             ScrollView::new()
-                                .width(Size::fill())
-                                .child(MarkdownViewer::new(content_file.read().clone()))
+                                .child(
+                                    MarkdownViewer::new(editor.read().rope.to_string()).padding(
+                                        Gaps::new_all(10.0)
+                                    )
+                                )
+                                .width(Size::percent(50.0))
                         )
                         .horizontal()
                         .width(Size::fill())
