@@ -1,12 +1,12 @@
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
-mod components;
+mod ui;
 mod logic;
 mod utils;
 
 use freya::{ code_editor::{ CodeEditor, CodeEditorData }, prelude::*, text_edit::Rope };
 use rfd::FileDialog;
-use crate::components::{ popup::PopupOwn };
+use crate::ui::{ popup::PopupOwn };
 use crate::logic::{ converter };
 
 fn app() -> impl IntoElement {
