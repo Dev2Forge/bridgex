@@ -210,7 +210,16 @@ fn close_menu(mut menu_item_clicked: State<bool>, mut current_menu: State<String
 
 fn open_file() -> Option<FileOwn> {
     let filters = vec![
-        Filter::new("Documents", &["pdf", "pptx", "xlsx", "csv", "docx"]),
+        Filter::new("Excel", &["xlsx"]),
+        Filter::new("Word", &["docx"]),
+        Filter::new("PowerPoint", &["pptx"]),
+        Filter::new("PDF", &["pdf"]),
+        Filter::new("Images", &["png", "jpg", "jpeg", "gif", "webp", "svg", "bmp"]),
+        Filter::new("Audio", &["mp3", "wav", "flac", "ogg", "m4a", "aac"]),
+        Filter::new("HTML", &["html", "htm"]),
+        Filter::new("CSV (UTF-8)", &["csv"]),
+        Filter::new("Text-based formats", &["xml", "rss", "atom", "txt"]),
+        Filter::new("ZIP", &["zip"]),
         Filter::new("Markdown", &["md", "markdown"])
     ];
 

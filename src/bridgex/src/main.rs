@@ -5,7 +5,7 @@ mod logic;
 mod utils;
 
 use freya::{ code_editor::{ CodeEditor, CodeEditorData }, prelude::*, text_edit::Rope };
-use crate::ui::{ menu::MenuBarOwn, popup::PopupOwn };
+use crate::ui::{ about::AboutPopup, menu::MenuBarOwn, popup::PopupOwn };
 use crate::utils::files::FileOwn;
 
 fn app() -> impl IntoElement {
@@ -21,16 +21,9 @@ fn app() -> impl IntoElement {
         "Third-party licences and acknowledgements will appear here."
     ).make();
 
-    let mut popup_about = PopupOwn::new(
-        "About".to_string(),
-        true,
-        "This is a FUCK example trying refactoring usin modular files"
-    )
-        .show_img_after_header("icon.png".to_string())
-        .make();
-
+    let mut about_popup = AboutPopup::new(popup_licenses.show_popup.clone());
     let show_licenses = popup_licenses.show_popup.clone();
-    let show_about = popup_about.show_popup.clone();
+    let show_about = about_popup.show_popup.clone();
 
     let mut editor = use_state(|| {
         let mut editor = CodeEditorData::new("".into(), freya::code_editor::LanguageId::Markdown);
@@ -60,7 +53,7 @@ fn app() -> impl IntoElement {
         .child(
             rect()
                 .child(popup_licenses.popup.take().unwrap())
-                .child(popup_about.popup.take().unwrap())
+                .child(about_popup.popup.take().unwrap())
                 .max_height(Size::px(400.0))
         )
         .width(Size::fill())
