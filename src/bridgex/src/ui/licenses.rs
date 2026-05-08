@@ -1,8 +1,10 @@
-use std::fs;
 use freya::{ elements::rect::rect, prelude::* };
 use crate::ui::popup::PopupOwn;
-use crate::utils::constants::dir_root;
 use crate::utils::helpers::open_url;
+
+const LICENSE_BRIDGEX: &str = include_str!("../assets/licenses/license_bridgex.txt");
+const LICENSE_MARKITDOWN_RS: &str = include_str!("../assets/licenses/license_markitdown-rs.txt");
+const LICENSE_FREYA: &str = include_str!("../assets/licenses/license_freya.txt");
 
 pub struct LicencesPopup {
     pub show_popup: State<bool>,
@@ -12,8 +14,10 @@ pub struct LicencesPopup {
 impl LicencesPopup {
     pub fn new() -> Self {
         let show_popup = use_state(|| false);
-        let current_license = use_state(|| String::from("Select a licence to view."));
-        let mut current_license_url = use_state(|| String::from("https://opensource.org/licenses"));
+        let current_license = use_state(|| String::from(LICENSE_BRIDGEX));
+        let mut current_license_url = use_state(||
+            String::from("https://github.com/Dev2Forge/bridgex/blob/main/LICENSE")
+        );
 
         let current_license_url_button = current_license_url.clone();
         let mut bridgex_license = current_license.clone();
@@ -38,7 +42,7 @@ impl LicencesPopup {
                                 open_url(&current_license_url_button.read());
                             })
                             .child(
-                                ImageViewer::new(("os", include_bytes!("../assets/images/os.svg")))
+                                ImageViewer::new(("os", include_bytes!("../assets/images/os.webp")))
                                     .width(Size::px(28.0))
                                     .height(Size::px(28.0))
                             )
@@ -55,7 +59,7 @@ impl LicencesPopup {
                             .flat()
                             .with_corner_radius(6.0)
                             .on_press(move |_| {
-                                bridgex_license.set(load_license("licence_bridgex.txt"));
+                                bridgex_license.set(load_license("license_bridgex.txt"));
                                 current_license_url.set(
                                     String::from(
                                         "https://github.com/Dev2Forge/bridgex/blob/main/LICENSE"
@@ -106,7 +110,7 @@ impl LicencesPopup {
                     )
             );
 
-        let mut popup_own = PopupOwn::new_with_state(
+        let popup_own = PopupOwn::new_with_state(
             show_popup.clone(),
             "Licences".to_string(),
             true,
@@ -121,10 +125,11 @@ impl LicencesPopup {
 }
 
 fn load_license(file_name: &str) -> String {
-    let file_path = dir_root().join(file_name);
-    match fs::read_to_string(file_path) {
-        Ok(text) if !text.is_empty() => text,
-        Ok(_) => String::from("The licence file is empty."),
-        Err(err) => format!("Could not load licence: {}", err),
-    }
+    let license_text = match file_name {
+        "license_bridgex.txt" => LICENSE_BRIDGEX,
+        "license_markitdown-rs.txt" => LICENSE_MARKITDOWN_RS,
+        "license_freya.txt" => LICENSE_FREYA,
+        _ => "Embedded licence not found.",
+    };
+    license_text.to_string()
 }

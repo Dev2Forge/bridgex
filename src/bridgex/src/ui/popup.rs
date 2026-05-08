@@ -42,7 +42,7 @@ impl<T: IntoElement> PopupOwn<T> {
             .show(show_popup.clone())
             .width(Size::px(500.0))
             .on_close_request(move |_| {
-                close_popup.toggle();
+                close_popup.set(false);
             })
             .child(PopupTitle::new(self.title.clone().unwrap()))
             .child(
@@ -75,7 +75,7 @@ impl<T: IntoElement> PopupOwn<T> {
                         PopupButtons::new().child(
                             Button::new()
                                 .on_press(move |_| {
-                                    close_button_popup.toggle();
+                                    close_button_popup.set(false);
                                 })
                                 .child("Close")
                         )
