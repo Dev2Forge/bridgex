@@ -11,8 +11,6 @@ pub struct Filter {
 #[derive(Clone)]
 pub struct FileOwn {
     path: PathBuf,
-    base_name: String,
-    extension: String,
 }
 
 impl Filter {
@@ -25,8 +23,8 @@ impl Filter {
 }
 
 impl FileOwn {
-    pub fn new(path: PathBuf, name: String, ext: String) -> Self {
-        Self { path: path, base_name: name, extension: ext }
+    pub fn new(path: PathBuf) -> Self {
+        Self { path: path }
     }
 
     pub fn path(&self) -> &PathBuf {
@@ -47,34 +45,31 @@ impl FileOwn {
     ///
     /// ## Returns
     ///
-    /// `FileOwn`: An struct with the `path`, `basename` and it `extension`
+    /// `Option<FileOwn>` if a file was selected.
     ///
-    ///
-    pub fn open_file_dialog(filters: Vec<Filter>) -> Self {
-        let dialog = FileDialog::new();
-        Self::set_filters(filters, dialog.clone());
-        Self::construct_paths(dialog)
-    }
-
-    fn set_filters(mut filters: Vec<Filter>, dialog: FileDialog) {
-        if filters.len() == 0 {
+    pub fn open_file_dialog(mut filters: Vec<Filter>) -> Option<Self> {
+        if filters.is_empty() {
             filters.push(Filter::new("Documents", &DOCUMENT_EXTENSIONS));
         }
 
-        for filter in filters {
-            dialog.clone().add_filter(filter.name, &filter.extensions);
-        }
+        let all_allowed_extensions: Vec<&'static str> = filters
+            .iter()
+            .flat_map(|filter| filter.extensions.iter().copied())
+            .collect();
+
+        let dialog = FileDialog::new().add_filter("All allowed files", &all_allowed_extensions);
+        let dialog = Self::set_filters(filters, dialog);
+        Self::construct_paths(dialog)
     }
 
-    fn construct_paths(dialog: FileDialog) -> Self {
-        let path = dialog.clone().pick_file().unwrap();
-        let name = String::from(path.file_name().unwrap().to_str().unwrap());
-        let ext = String::from(path.extension().unwrap().to_str().unwrap());
-
-        Self::new(path, name, ext)
+    fn set_filters(filters: Vec<Filter>, dialog: FileDialog) -> FileDialog {
+        filters
+            .into_iter()
+            .fold(dialog, |dialog, filter| { dialog.add_filter(filter.name, &filter.extensions) })
     }
 
-    pub fn exists(filename: String) -> bool {
-        PathBuf::from(filename).exists()
+    fn construct_paths(dialog: FileDialog) -> Option<Self> {
+        let path = dialog.pick_file()?;
+        Some(Self::new(path))
     }
 }

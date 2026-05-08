@@ -214,5 +214,5 @@ fn open_file() -> Option<FileOwn> {
         Filter::new("Markdown", &["md", "markdown"])
     ];
 
-    Some(FileOwn::open_file_dialog(filters))
+    FileOwn::open_file_dialog(filters)
 }
