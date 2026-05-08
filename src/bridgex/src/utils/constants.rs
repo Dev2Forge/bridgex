@@ -10,7 +10,3 @@ pub fn dir_root() -> PathBuf {
         .and_then(|p| p.parent().map(|p| p.to_path_buf()))
         .unwrap()
 }
-
-pub fn dir_root_images() -> PathBuf {
-    dir_root().join("files").join("assets").join("images")
-}
