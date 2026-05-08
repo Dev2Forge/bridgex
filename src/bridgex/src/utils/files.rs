@@ -29,6 +29,10 @@ impl FileOwn {
         Self { path: path, base_name: name, extension: ext }
     }
 
+    pub fn path(&self) -> &PathBuf {
+        &self.path
+    }
+
     /// Open a Dialog to get a file
     ///
     /// ## Example

@@ -4,24 +4,16 @@ mod ui;
 mod logic;
 mod utils;
 
-use freya::{ code_editor::{ CodeEditor, CodeEditorData }, prelude::* };
+use freya::{ code_editor::{ CodeEditor, CodeEditorData }, prelude::*, text_edit::Rope };
 use crate::ui::{ menu::MenuBarOwn, popup::PopupOwn };
-use crate::logic::{ converter };
+use crate::utils::files::FileOwn;
 
 fn app() -> impl IntoElement {
     use_init_theme(dark_theme);
 
-    // const MENU_HEIGHT: f32 = 30.0;
-    let menu_bg: Color = Color::from_hex("#000000").unwrap();
-
-    let mut showpopup = use_state(|| false);
-
-    let submenu_position_file: Position = Position::new_absolute()
-        .top(MENU_HEIGHT + 1.0)
-        .left(2.0);
-    let submenu_position_help: Position = Position::new_absolute()
-        .top(MENU_HEIGHT + 1.0)
-        .left(10.0);
+    let show_about = use_state(|| false);
+    let show_licenses = use_state(|| false);
+    let mut open_file_state = use_state(|| Option::<FileOwn>::None);
 
     let focus = use_focus();
 
@@ -31,10 +23,22 @@ fn app() -> impl IntoElement {
         editor
     });
 
-    let mut menu_item_clicked = use_state(|| false);
-    let mut current_menu = use_state(|| String::new());
+    let menu_ctn = MenuBarOwn::new(
+        open_file_state.clone(),
+        show_about.clone(),
+        show_licenses.clone(),
+        None
+    );
+    let menu_ctn = menu_ctn.menu_bar();
 
-    let menu_ctn = menu_bar();
+    let opened_file = open_file_state.read().clone();
+    if let Some(file) = opened_file {
+        let file_path = file.path().to_str().unwrap_or_default();
+        let converted = crate::logic::converter::convert_from_path(file_path);
+        editor.write().rope = Rope::from_str(converted.as_str());
+        editor.write().parse();
+        *open_file_state.write() = None;
+    }
 
     rect()
         .child(menu_ctn)
@@ -42,8 +46,18 @@ fn app() -> impl IntoElement {
             rect()
                 .child(
                     PopupOwn::new(
-                        showpopup,
-                        "Licenses".to_string(),
+                        show_licenses,
+                        "Licences".to_string(),
+                        true,
+                        "Third-party licences and acknowledgements will appear here."
+                    )
+                        .make()
+                        .popup.unwrap()
+                )
+                .child(
+                    PopupOwn::new(
+                        show_about,
+                        "About".to_string(),
                         true,
                         "This is a FUCK example trying refactoring usin modular files"
                     )
@@ -87,6 +101,11 @@ fn app() -> impl IntoElement {
 
 fn main() {
     launch(
-        LaunchConfig::new().with_window(WindowConfig::new(app).with_title("Bridgex - Rust + Freya"))
+        LaunchConfig::new().with_window(
+            WindowConfig::new(app)
+                .with_title("Bridgex - Rust + Freya")
+                .with_background(DARK_COLORS.background)
+                .with_min_size(700.0, 600.0)
+        )
     )
 }

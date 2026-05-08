@@ -1,6 +1,6 @@
 use std::path::PathBuf;
 
-pub const DOCUMENT_EXTENSIONS: [&str; 5] = ["pdf", "pptx", "xlsx", "csv", "docx"];
+pub const DOCUMENT_EXTENSIONS: [&str; 2] = ["pdf", "docx"];
 pub const MENU_HEIGHT: f32 = 30.0;
 
 pub fn dir_root() -> PathBuf {

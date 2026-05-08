@@ -33,6 +33,16 @@ impl<T: IntoElement + ToString> PopupOwn<T> {
     }
 
     pub fn make(mut self) -> Self {
+        let image_child = if self.show_img_after_header.unwrap_or(false) {
+            self.img_name
+                .as_ref()
+                .map(|img_name| {
+                    ImageViewer::new(create_img_source(img_name.as_str())).width(Size::px(100.0))
+                })
+        } else {
+            None
+        };
+
         self.popup = Some(
             Popup::new()
                 .show(self.show_popup.unwrap())
@@ -43,11 +53,7 @@ impl<T: IntoElement + ToString> PopupOwn<T> {
                 .child(PopupTitle::new(self.title.clone().unwrap()))
                 .child(
                     PopupContent::new()
-                        .child(
-                            ImageViewer::new(
-                                create_img_source(self.img_name.clone().unwrap().as_str())
-                            ).width(Size::px(100.0))
-                        )
+                        .maybe_child(image_child)
                         .child(
                             rect()
                                 .max_height(Size::px(400.0))
