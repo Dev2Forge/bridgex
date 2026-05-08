@@ -1,6 +1,4 @@
-use freya::components::ImageSource;
 use std::process::Command;
-use crate::utils::constants::{ dir_root_images };
 
 pub fn open_url(url: &str) {
     #[cfg(target_os = "windows")]
