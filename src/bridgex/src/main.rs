@@ -11,11 +11,26 @@ use crate::utils::files::FileOwn;
 fn app() -> impl IntoElement {
     use_init_theme(dark_theme);
 
-    let show_about = use_state(|| false);
-    let show_licenses = use_state(|| false);
     let mut open_file_state = use_state(|| Option::<FileOwn>::None);
 
     let focus = use_focus();
+
+    let mut popup_licenses = PopupOwn::new(
+        "Licences".to_string(),
+        true,
+        "Third-party licences and acknowledgements will appear here."
+    ).make();
+
+    let mut popup_about = PopupOwn::new(
+        "About".to_string(),
+        true,
+        "This is a FUCK example trying refactoring usin modular files"
+    )
+        .show_img_after_header("icon.png".to_string())
+        .make();
+
+    let show_licenses = popup_licenses.show_popup.clone();
+    let show_about = popup_about.show_popup.clone();
 
     let mut editor = use_state(|| {
         let mut editor = CodeEditorData::new("".into(), freya::code_editor::LanguageId::Markdown);
@@ -44,27 +59,8 @@ fn app() -> impl IntoElement {
         .child(menu_ctn)
         .child(
             rect()
-                .child(
-                    PopupOwn::new(
-                        show_licenses,
-                        "Licences".to_string(),
-                        true,
-                        "Third-party licences and acknowledgements will appear here."
-                    )
-                        .make()
-                        .popup.unwrap()
-                )
-                .child(
-                    PopupOwn::new(
-                        show_about,
-                        "About".to_string(),
-                        true,
-                        "This is a FUCK example trying refactoring usin modular files"
-                    )
-                        .show_img_after_header("icon.png".to_string())
-                        .make()
-                        .popup.unwrap()
-                )
+                .child(popup_licenses.popup.take().unwrap())
+                .child(popup_about.popup.take().unwrap())
                 .max_height(Size::px(400.0))
         )
         .width(Size::fill())
@@ -105,7 +101,7 @@ fn main() {
             WindowConfig::new(app)
                 .with_title("Bridgex - Rust + Freya")
                 .with_background(DARK_COLORS.background)
-                .with_min_size(700.0, 600.0)
+                .with_min_size(900.0, 700.0)
         )
     )
 }
