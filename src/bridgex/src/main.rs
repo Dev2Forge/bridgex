@@ -5,7 +5,7 @@ mod logic;
 mod utils;
 
 use freya::{ code_editor::{ CodeEditor, CodeEditorData }, prelude::*, text_edit::Rope };
-use crate::ui::{ about::AboutPopup, menu::MenuBarOwn, popup::PopupOwn };
+use crate::ui::{ about::AboutPopup, licenses::LicencesPopup, menu::MenuBarOwn };
 use crate::utils::files::FileOwn;
 
 fn app() -> impl IntoElement {
@@ -15,11 +15,7 @@ fn app() -> impl IntoElement {
 
     let focus = use_focus();
 
-    let mut popup_licenses = PopupOwn::new(
-        "Licences".to_string(),
-        true,
-        "Third-party licences and acknowledgements will appear here."
-    ).make();
+    let mut popup_licenses = LicencesPopup::new();
 
     let mut about_popup = AboutPopup::new(popup_licenses.show_popup.clone());
     let show_licenses = popup_licenses.show_popup.clone();

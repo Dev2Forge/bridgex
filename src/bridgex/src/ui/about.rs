@@ -1,6 +1,6 @@
-use std::process::Command;
 use freya::{ elements::rect::rect, prelude::* };
 use crate::ui::popup::PopupOwn;
+use crate::utils::helpers::open_url;
 
 const VERSION: &str = env!("CARGO_PKG_VERSION");
 const COPYRIGHT: &str = "Dev2Forge © 2026";
@@ -95,22 +95,5 @@ impl AboutPopup {
             show_popup,
             popup: popup_own.popup,
         }
-    }
-}
-
-fn open_url(url: &str) {
-    #[cfg(target_os = "windows")]
-    {
-        let _ = Command::new("cmd").args(["/C", "start", "", url]).spawn();
-    }
-
-    #[cfg(target_os = "macos")]
-    {
-        let _ = Command::new("open").arg(url).spawn();
-    }
-
-    #[cfg(all(unix, not(target_os = "macos")))]
-    {
-        let _ = Command::new("xdg-open").arg(url).spawn();
     }
 }
