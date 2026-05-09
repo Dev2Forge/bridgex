@@ -32,7 +32,7 @@ pub fn app() -> impl IntoElement {
         open_file_state.clone(),
         show_about.clone(),
         show_licenses.clone(),
-        Some("#161b22".to_string())
+        Some("#00000000".to_string())
     );
     let menu = menu_ctn.menu_bar();
 
@@ -82,7 +82,7 @@ fn build_editor(
 
 fn build_preview(markdown: String, theme_colors: ColorsSheet) -> impl IntoElement {
     rect()
-        .background(theme_colors.surface_primary)
+        .background(Color::from_rgb(151, 166, 197))
         .border(Border::new().width(1.0).fill(theme_colors.border))
         .corner_radius(12.0)
         .padding(Gaps::new_all(14.0))
@@ -92,6 +92,11 @@ fn build_preview(markdown: String, theme_colors: ColorsSheet) -> impl IntoElemen
                 MarkdownViewer::new(markdown)
                     .padding(Gaps::new_all(8.0))
                     .color(theme_colors.text_primary)
+                    .background_code(Color::from_rgb(30, 34, 45))
+                    .color_code(Color::from_rgb(225, 230, 240))
+                    .background_blockquote(Color::from_rgb(36, 42, 55))
+                    .border_blockquote(Color::from_rgb(72, 83, 101))
+                    .background_divider(Color::from_rgb(85, 95, 112))
             )
         )
 }
