@@ -9,16 +9,6 @@ pub struct PopupOwn<T: IntoElement> {
 }
 
 impl<T: IntoElement> PopupOwn<T> {
-    pub fn new(title: String, show_close: bool, content: T) -> Self {
-        Self {
-            content: Some(content),
-            title: Some(title),
-            show_btn_close: show_close,
-            show_popup: use_state(|| false),
-            popup: None,
-        }
-    }
-
     pub fn new_with_state(
         show_popup: State<bool>,
         title: String,
