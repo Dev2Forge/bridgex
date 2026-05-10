@@ -9,6 +9,8 @@ pub struct MenuBarOwn {
     menu_item_clicked: State<bool>,
     current_menu: State<String>,
     open_file_state: State<Option<FileOwn>>,
+    save_requested: State<bool>,
+    exit_requested: State<bool>,
     show_about: State<bool>,
     show_licenses: State<bool>,
     submenu_file_position: Position,
@@ -18,6 +20,8 @@ pub struct MenuBarOwn {
 impl MenuBarOwn {
     pub fn new(
         open_file_state: State<Option<FileOwn>>,
+        save_requested: State<bool>,
+        exit_requested: State<bool>,
         show_about: State<bool>,
         show_licenses: State<bool>,
         background: Option<String>
@@ -29,6 +33,8 @@ impl MenuBarOwn {
             menu_item_clicked: use_state(|| false),
             current_menu: use_state(|| String::new()),
             open_file_state,
+            save_requested,
+            exit_requested,
             show_about,
             show_licenses,
             submenu_file_position: Position::new_absolute()
@@ -105,6 +111,8 @@ impl MenuBarOwn {
 
     fn submenu_file(&self, submenu_file_position: Position) -> impl IntoElement {
         let mut open_file_state = self.open_file_state.clone();
+        let mut save_requested = self.save_requested.clone();
+        let mut exit_requested = self.exit_requested.clone();
         let menu_item_clicked = self.menu_item_clicked.clone();
         let current_menu = self.current_menu.clone();
 
@@ -114,14 +122,15 @@ impl MenuBarOwn {
                 Menu::new()
                     .child(
                         MenuButton::new()
-                            .child("Save")
+                            .child("Save  Ctrl+S")
                             .on_press(move |_| {
+                                *save_requested.write() = true;
                                 close_menu(menu_item_clicked.clone(), current_menu.clone());
                             })
                     )
                     .child(
                         MenuButton::new()
-                            .child("Open")
+                            .child("Open  Ctrl+O")
                             .on_press(move |_| {
                                 if let Some(file) = open_file() {
                                     *open_file_state.write() = Some(file);
@@ -131,8 +140,9 @@ impl MenuBarOwn {
                     )
                     .child(
                         MenuButton::new()
-                            .child("Exit")
+                            .child("Exit  Ctrl+Q")
                             .on_press(move |_| {
+                                *exit_requested.write() = true;
                                 close_menu(menu_item_clicked.clone(), current_menu.clone());
                             })
                     )
@@ -154,7 +164,7 @@ impl MenuBarOwn {
                 Menu::new()
                     .child(
                         MenuButton::new()
-                            .child("About")
+                            .child("About  Ctrl+I")
                             .on_press(move |_| {
                                 show_about.toggle();
                                 close_menu(menu_item_clicked.clone(), current_menu.clone());
@@ -162,7 +172,7 @@ impl MenuBarOwn {
                     )
                     .child(
                         MenuButton::new()
-                            .child("Licenses")
+                            .child("Licenses  Ctrl+L")
                             .on_press(move |_| {
                                 show_licenses.toggle();
                                 close_menu(menu_item_clicked.clone(), current_menu.clone());
@@ -208,19 +218,16 @@ fn close_menu(mut menu_item_clicked: State<bool>, mut current_menu: State<String
     *current_menu.write() = String::new();
 }
 
-fn open_file() -> Option<FileOwn> {
+pub(crate) fn open_file() -> Option<FileOwn> {
     let filters = vec![
         Filter::new("Excel", &["xlsx"]),
         Filter::new("Word", &["docx"]),
         Filter::new("PowerPoint", &["pptx"]),
         Filter::new("PDF", &["pdf"]),
-        Filter::new("Images", &["png", "jpg", "jpeg", "gif", "webp", "svg", "bmp"]),
-        Filter::new("Audio", &["mp3", "wav", "flac", "ogg", "m4a", "aac"]),
         Filter::new("HTML", &["html", "htm"]),
         Filter::new("CSV (UTF-8)", &["csv"]),
         Filter::new("Text-based formats", &["xml", "rss", "atom", "txt"]),
-        Filter::new("ZIP", &["zip"]),
-        Filter::new("Markdown", &["md", "markdown"])
+        Filter::new("ZIP", &["zip"])
     ];
 
     FileOwn::open_file_dialog(filters)
