@@ -1,4 +1,4 @@
-use std::{ path::PathBuf };
+use std::{ fs, path::{ Path, PathBuf } };
 use rfd::FileDialog;
 use crate::utils::constants::DOCUMENT_EXTENSIONS;
 
@@ -71,5 +71,26 @@ impl FileOwn {
     fn construct_paths(dialog: FileDialog) -> Option<Self> {
         let path = dialog.pick_file()?;
         Some(Self::new(path))
+    }
+
+    pub fn save_file_dialog(default_name: &str, mut filters: Vec<Filter>) -> Option<PathBuf> {
+        if filters.is_empty() {
+            filters.push(Filter::new("Markdown", &["md"]));
+        }
+
+        let all_allowed_extensions: Vec<&'static str> = filters
+            .iter()
+            .flat_map(|filter| filter.extensions.iter().copied())
+            .collect();
+
+        let dialog = FileDialog::new()
+            .set_file_name(default_name)
+            .add_filter("All allowed files", &all_allowed_extensions);
+        let dialog = Self::set_filters(filters, dialog);
+        dialog.save_file()
+    }
+
+    pub fn write_text_file(path: impl AsRef<Path>, contents: &str) -> std::io::Result<()> {
+        fs::write(path, contents)
     }
 }

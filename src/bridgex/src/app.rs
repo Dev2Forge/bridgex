@@ -3,21 +3,25 @@ use freya::{
     prelude::*,
     text_edit::Rope,
 };
+use std::path::PathBuf;
 use crate::theme::{ github_app_theme, github_editor_theme, GITHUB_COLORS };
-use crate::ui::{ about::AboutPopup, licenses::LicencesPopup, menu::MenuBarOwn };
-use crate::utils::files::FileOwn;
+use crate::ui::{ about::AboutPopup, licenses::LicencesPopup, menu::{ open_file, MenuBarOwn } };
+use crate::utils::files::{ FileOwn, Filter };
 
 pub fn app() -> impl IntoElement {
     use_init_theme(github_app_theme);
     let theme_colors = GITHUB_COLORS;
 
     let mut open_file_state = use_state(|| Option::<FileOwn>::None);
+    let mut save_requested = use_state(|| false);
+    let mut exit_requested = use_state(|| false);
+    let mut current_file_path = use_state(|| Option::<PathBuf>::None);
     let focus = use_focus();
 
     let mut popup_licenses = LicencesPopup::new();
     let mut about_popup = AboutPopup::new(popup_licenses.show_popup.clone());
-    let show_licenses = popup_licenses.show_popup.clone();
-    let show_about = about_popup.show_popup.clone();
+    let mut show_licenses = popup_licenses.show_popup.clone();
+    let mut show_about = about_popup.show_popup.clone();
 
     let mut editor = use_state(|| {
         let mut editor = CodeEditorData::new("".into(), LanguageId::Markdown);
@@ -30,6 +34,8 @@ pub fn app() -> impl IntoElement {
 
     let menu_ctn = MenuBarOwn::new(
         open_file_state.clone(),
+        save_requested.clone(),
+        exit_requested.clone(),
         show_about.clone(),
         show_licenses.clone(),
         Some("#00000000".to_string())
@@ -42,11 +48,66 @@ pub fn app() -> impl IntoElement {
         let converted = crate::logic::converter::convert_from_path(file_path);
         editor.write().rope = Rope::from_str(converted.as_str());
         editor.write().parse();
+        *current_file_path.write() = Some(file.path().clone());
         *open_file_state.write() = None;
+    }
+
+    if *save_requested.read() {
+        let default_name = current_file_path
+            .read()
+            .as_ref()
+            .and_then(|path|
+                path
+                    .file_name()
+                    .and_then(|name| name.to_str())
+                    .map(|s| s.to_string())
+            )
+            .unwrap_or_else(|| "document.md".to_string());
+
+        if
+            let Some(save_path) = FileOwn::save_file_dialog(
+                &default_name,
+                vec![Filter::new("Markdown", &["md"])]
+            )
+        {
+            if FileOwn::write_text_file(&save_path, &editor.read().rope.to_string()).is_ok() {
+                *current_file_path.write() = Some(save_path);
+            }
+        }
+
+        *save_requested.write() = false;
+    }
+
+    if *exit_requested.read() {
+        std::process::exit(0);
     }
 
     rect()
         .background(theme_colors.background)
+        .on_global_key_down(move |event: Event<KeyboardEventData>| {
+            if event.modifiers.ctrl() || event.modifiers.meta() {
+                match event.code {
+                    Code::KeyO => {
+                        if let Some(file) = open_file() {
+                            *open_file_state.write() = Some(file);
+                        }
+                    }
+                    Code::KeyS => {
+                        *save_requested.write() = true;
+                    }
+                    Code::KeyQ => {
+                        *exit_requested.write() = true;
+                    }
+                    Code::KeyI => {
+                        show_about.toggle();
+                    }
+                    Code::KeyL => {
+                        show_licenses.toggle();
+                    }
+                    _ => {}
+                }
+            }
+        })
         .child(menu)
         .child(build_popups(&mut popup_licenses, &mut about_popup))
         .child(

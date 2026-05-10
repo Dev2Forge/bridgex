@@ -14,6 +14,9 @@ fn main() {
         LaunchConfig::new().with_window(
             WindowConfig::new(app)
                 .with_title("Bridgex - Rust + Freya")
+                .with_icon(
+                    LaunchConfig::window_icon(include_bytes!("assets/images/logo-bridgex-2.webp"))
+                )
                 .with_background(theme::GITHUB_COLORS.background)
                 .with_min_size(900.0, 700.0)
         )
