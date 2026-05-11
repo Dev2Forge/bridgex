@@ -13,6 +13,7 @@ pub struct MenuBarOwn {
     exit_requested: State<bool>,
     show_about: State<bool>,
     show_licenses: State<bool>,
+    show_llm_settings: State<bool>,
     submenu_file_position: Position,
     submenu_help_position: Position,
 }
@@ -24,6 +25,7 @@ impl MenuBarOwn {
         exit_requested: State<bool>,
         show_about: State<bool>,
         show_licenses: State<bool>,
+        show_llm_settings: State<bool>,
         background: Option<String>
     ) -> Self {
         let bg = background.unwrap_or_else(|| String::from("#000000"));
@@ -37,6 +39,7 @@ impl MenuBarOwn {
             exit_requested,
             show_about,
             show_licenses,
+            show_llm_settings,
             submenu_file_position: Position::new_absolute()
                 .top(MENU_HEIGHT + 1.0)
                 .left(2.0),
@@ -155,6 +158,7 @@ impl MenuBarOwn {
     fn submenu_help(&self, submenu_help_position: Position) -> impl IntoElement {
         let mut show_about = self.show_about.clone();
         let mut show_licenses = self.show_licenses.clone();
+        let mut show_llm_settings = self.show_llm_settings.clone();
         let menu_item_clicked = self.menu_item_clicked.clone();
         let current_menu = self.current_menu.clone();
 
@@ -175,6 +179,14 @@ impl MenuBarOwn {
                             .child("Licenses  Ctrl+L")
                             .on_press(move |_| {
                                 show_licenses.toggle();
+                                close_menu(menu_item_clicked.clone(), current_menu.clone());
+                            })
+                    )
+                    .child(
+                        MenuButton::new()
+                            .child("LLM API Key  Ctrl+K")
+                            .on_press(move |_| {
+                                show_llm_settings.toggle();
                                 close_menu(menu_item_clicked.clone(), current_menu.clone());
                             })
                     )
@@ -220,13 +232,14 @@ fn close_menu(mut menu_item_clicked: State<bool>, mut current_menu: State<String
 
 pub(crate) fn open_file() -> Option<FileOwn> {
     let filters = vec![
-        Filter::new("Excel", &["xlsx"]),
+        Filter::new("Excel", &["xlsx", "xls"]),
         Filter::new("Word", &["docx"]),
         Filter::new("PowerPoint", &["pptx"]),
         Filter::new("PDF", &["pdf"]),
         Filter::new("HTML", &["html", "htm"]),
-        Filter::new("CSV (UTF-8)", &["csv"]),
-        Filter::new("Text-based formats", &["xml", "rss", "atom", "txt"]),
+        Filter::new("Images", &["jpg", "jpeg"]),
+        Filter::new("CSV", &["csv"]),
+        Filter::new("RSS / XML", &["xml", "rss", "atom"]),
         Filter::new("ZIP", &["zip"])
     ];
 
