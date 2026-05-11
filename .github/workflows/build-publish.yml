@@ -37,7 +37,8 @@ jobs:
         uses: Swatinem/rust-cache@c19371144df3bb44fab255c43d04cbc2ab54d1c4
         with:
           shared-key: "rust-${{ matrix.os }}"
-          save-if: ${{ github.ref == 'refs/heads/main' }}
+          workspaces: "src/bridgex -> src/bridgex/target"
+          save-if: ${{ github.event_name == 'workflow_dispatch' }}
 
       - name: Install linux dependencies
         if: runner.os == 'Linux'
@@ -67,6 +68,9 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+          cache: 'pip'
+          cache-dependency-path: |
+            pyproject.toml
 
       - name: Install Python build tools
         run: python -m pip install --upgrade pip build
@@ -159,7 +163,7 @@ jobs:
         run: python -m pip install --upgrade pip twine
 
       - name: Download Python artifacts
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           path: dist-artifacts
 
