@@ -3,11 +3,7 @@
 > [!IMPORTANT]
 > The `pip install bridgex` command is only supported on Windows and macOS. Linux users should use the SourceForge binary at https://sourceforge.net/projects/bridgex/ instead.
 
-[![Read in Spanish](https://img.shields.io/badge/read%20in-ES-red?logo=github)](https://github.com/Dev2Forge/bridgex/blob/main/translations/README_ES.md) [![GPLv3 License](https://img.shields.io/badge/license-GPLv3-blue.svg)](./LICENSE) [![Issues](https://img.shields.io/github/issues/Dev2Forge/bridgex)](https://github.com/Dev2Forge/bridgex/issues)
-
-[![PyPI downloads](https://img.shields.io/pepy/dt/bridgex?label=pypi)](https://pepy.tech/project/bridgex) [![SourceForge downloads](https://img.shields.io/sourceforge/dt/bridgex?label=sourceforge-downloads)](https://sourceforge.net/projects/bridgex/)
-
-[![crates.io downloads](https://img.shields.io/crates/d/bridgex?label=crates.io)](https://crates.io/crates/bridgex)
+[![Read in Spanish](https://img.shields.io/badge/read%20in-ES-red?logo=github)](https://github.com/Dev2Forge/bridgex/blob/main/translations/README_ES.md) [![GPLv3 License](https://img.shields.io/badge/license-GPLv3-blue.svg)](./LICENSE) [![Issues](https://img.shields.io/github/issues/Dev2Forge/bridgex)](https://github.com/Dev2Forge/bridgex/issues)[![PyPI downloads](https://img.shields.io/pepy/dt/bridgex?label=pypi)](https://pepy.tech/project/bridgex) [![SourceForge downloads](https://img.shields.io/sourceforge/dt/bridgex?label=sourceforge-downloads)](https://sourceforge.net/projects/bridgex/)[![crates.io downloads](https://img.shields.io/crates/d/bridgex?label=crates.io)](https://crates.io/crates/bridgex)
 
 Bridgex is an open‑source desktop application for converting files to Markdown, built in Rust with [Freya](https://freyaui.dev/) and the [Markitdown](https://github.com/microsoft/markitdown) crate. It provides a lightweight graphical interface for editing converted Markdown content and saving it locally.
 
