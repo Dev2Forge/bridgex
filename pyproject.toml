@@ -8,8 +8,8 @@ version = "0.2.0"
 description = "Open-source desktop app for converting files to Markdown, built in Rust with Freya and Markitdown."
 readme = { file = "README.md", content-type = "text/markdown", charset = "utf-8" }
 license = "GPL-3.0-only"
-authors = [{ name = "dev2forge", email = "bridgex@dev2forge.software" }]
-maintainers = [{ name = "tutosrive", email = "tutosrive@dev2forge.software" }]
+authors = [{ name = "dev2forge", email = "dev2forge@gmail.com" }]
+maintainers = [{ name = "tutosrive", email = "tutosriveorg@gmail.com" }]
 
 keywords = [
     "markdown",
@@ -41,7 +41,6 @@ classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: End Users/Desktop",
     "Intended Audience :: Developers",
-    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
     "Topic :: Utilities",
     "Topic :: Text Processing :: Markup",
     "Programming Language :: Python :: 3",
