@@ -1,5 +1,7 @@
 # Bridgex 🌉<img width="64" src="https://cdn.jsdelivr.net/gh/tutosrive/images-projects-srm-trg@main/dev2forge/logos/bridgex-v0.1.0.webp">
 
+[!IMPORTANT] The `pip install bridgex` command is only supported on Windows and macOS. Linux users should use the SourceForge binary at https://sourceforge.net/projects/bridgex/ instead.
+
 [![Read in Spanish](https://img.shields.io/badge/read%20in-ES-red?logo=github)](https://github.com/Dev2Forge/bridgex/blob/main/translations/README_ES.md) [![GPLv3 License](https://img.shields.io/badge/license-GPLv3-blue.svg)](./LICENSE) [![Issues](https://img.shields.io/github/issues/Dev2Forge/bridgex)](https://github.com/Dev2Forge/bridgex/issues)
 
 [![PyPI downloads](https://img.shields.io/pepy/dt/bridgex?label=pypi)](https://pepy.tech/project/bridgex) [![SourceForge downloads](https://img.shields.io/sourceforge/dt/bridgex?label=sourceforge-downloads)](https://sourceforge.net/projects/bridgex/)
@@ -78,13 +80,13 @@ cargo build --release
 
 ### Python / PyPI installation
 
-Install the compatible PyPI distribution with:
+On Windows and macOS, install the compatible PyPI wheel:
 
 ```sh
 pip install bridgex
 ```
 
-Run the installed package with:
+Run the installed command:
 
 ```sh
 bridgex
@@ -92,7 +94,11 @@ bridgex
 
 (If needed, you can also run it with `python -m bridgex`.)
 
-Although Bridgex is implemented in Rust, the repository also includes Python packaging metadata to preserve compatibility with `pypi.org` as a secondary distribution target.
+On Linux, use the prebuilt Linux binary from SourceForge instead of PyPI:
+
+https://sourceforge.net/projects/bridgex/
+
+Although Bridgex is implemented in Rust, the repository also includes Python packaging metadata to preserve compatibility with `pypi.org` as a secondary distribution target for Windows and macOS wheels.
 
 ---
 
