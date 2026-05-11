@@ -9,7 +9,7 @@ homepage = "https://bridgex.pages.dev/"
 documentation = "https://bridgex.pages.dev/"
 readme = "README.md"
 authors = ["tutosrive <tutosriveorg@gmail.com>", "dev2forge <dev2forge@gmail.com>"]
-keywords = ["markdown", "freya", "converter", "gui", "editor", "viewer", "rust", "pdf", "docx", "pptx", "xls", "xlsx", "csv", "txt", "html", "htm", "file converter", "markdown converter", "markitdown", "dev2forge", "bridgex"]
+keywords = ["markdown", "freya", "converter", "gui", "office"]
 categories = ["utilities", "text-processing", "markup"]
 
 [dependencies]  
