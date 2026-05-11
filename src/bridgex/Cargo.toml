@@ -1,6 +1,6 @@
 [package]
 name = "bridgex"
-version = "0.2.0"
+version = "0.2.1"
 edition = "2024"
 description = "Open-source desktop app for converting files to Markdown, built in Rust with Freya and Markitdown."
 license = "GPL-3.0-only"
