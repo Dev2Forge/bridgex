@@ -55,8 +55,8 @@ jobs:
           New-Item -ItemType Directory -Force -Path python\bridgex\bin | Out-Null
           Copy-Item -Force src\bridgex\target\release\bridgex.exe python\bridgex\bin\bridgex.exe
 
-      - name: Stage binary for wheel (macOS/Linux)
-        if: runner.os != 'Windows'
+      - name: Stage binary for wheel (macOS)
+        if: runner.os == 'macOS'
         shell: bash
         run: |
           mkdir -p python/bridgex/bin
@@ -71,10 +71,53 @@ jobs:
       - name: Install Python build tools
         run: python -m pip install --upgrade pip build
 
-      - name: Build Python wheels
-        run: python -m build --wheel --outdir dist
+      - name: Build Python wheel (Windows)
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: python -m build --wheel --outdir dist --config-settings=--build-option=--plat-name=win_amd64
+
+      - name: Verify wheel tag (Windows)
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          $wheel = Get-ChildItem -Path dist -Filter *.whl | Where-Object { $_.Name -match 'win_amd64' } | Select-Object -First 1
+          if (-not $wheel) {
+            Get-ChildItem -Path dist -Filter *.whl | ForEach-Object { $_.Name }
+            throw "Expected a win_amd64 wheel in dist/."
+          }
+
+      - name: Build Python wheel (macOS)
+        if: runner.os == 'macOS'
+        shell: bash
+        run: |
+          arch=$(uname -m)
+          if [ "$arch" = "arm64" ]; then
+            plat="macosx_11_0_arm64"
+          else
+            plat="macosx_10_9_x86_64"
+          fi
+          python -m build --wheel --outdir dist --config-settings=--build-option=--plat-name=$plat
+
+      - name: Verify wheel tag (macOS)
+        if: runner.os == 'macOS'
+        shell: bash
+        run: |
+          ls -la dist || true
+          if ! ls dist/*.whl >/dev/null 2>&1; then
+            echo "No wheels found in dist/."
+            exit 1
+          fi
+          if ! ls dist/*macosx*.whl >/dev/null 2>&1; then
+            echo "Expected a macosx wheel in dist/."
+            exit 1
+          fi
+
+      - name: Skip Python wheel build (Linux)
+        if: runner.os == 'Linux'
+        run: echo "Skipping Python wheel build on Linux."
 
       - name: Upload Python artifacts
+        if: runner.os != 'Linux'
         uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f
         with:
           name: dist-${{ matrix.os }}
@@ -102,7 +145,7 @@ jobs:
           cargo publish --dry-run --manifest-path src/bridgex/Cargo.toml
 
       - name: Publish crate to crates.io
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        if: github.event_name == 'workflow_dispatch'
         run: cargo publish --token "${{ secrets.CRATES_IO_TOKEN }}" --manifest-path src/bridgex/Cargo.toml
         env:
           CARGO_REGISTRIES_CRATES_IO_TOKEN: ${{ secrets.CRATES_IO_TOKEN }}
@@ -125,9 +168,7 @@ jobs:
           find dist-artifacts -type f \( -name '*.whl' -o -name '*.tar.gz' \) | sort
 
       - name: Publish package to PyPI
-        if: >-
-          github.event_name == 'push' && github.ref == 'refs/heads/main'
-          || github.event_name == 'workflow_dispatch' && github.event.inputs.publish-target == 'pypi'
+        if: github.event_name == 'workflow_dispatch' && github.event.inputs.publish-target == 'pypi'
         run: |
           set -e
           files=$(find dist-artifacts -type f \( -iname '*win32*.whl' -o -iname '*win_amd64*.whl' -o -iname '*win_arm64*.whl' -o -iname '*macosx*.whl' \) | tr '\n' ' ')
