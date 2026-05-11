@@ -14,6 +14,7 @@ on:
 
 env:
   CARGO_TERM_COLOR: always
+  RUSTC_WRAPPER: ""
 
 jobs:
   build:
@@ -47,6 +48,21 @@ jobs:
       - name: Build Rust binary
         run: cargo build --release --manifest-path src/bridgex/Cargo.toml
 
+      - name: Stage binary for wheel (Windows)
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force -Path python\bridgex\bin | Out-Null
+          Copy-Item -Force src\bridgex\target\release\bridgex.exe python\bridgex\bin\bridgex.exe
+
+      - name: Stage binary for wheel (macOS/Linux)
+        if: runner.os != 'Windows'
+        shell: bash
+        run: |
+          mkdir -p python/bridgex/bin
+          cp src/bridgex/target/release/bridgex python/bridgex/bin/bridgex
+          chmod +x python/bridgex/bin/bridgex
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
@@ -77,17 +93,17 @@ jobs:
         uses: actions-rust-lang/setup-rust-toolchain@2b1f5e9b395427c92ee4e3331786ca3c37afe2d7
 
       - name: Verify crate packaging
-        run: cargo package --allow-dirty
+        run: cargo package --allow-dirty --manifest-path src/bridgex/Cargo.toml
 
       - name: Crates.io dry-run
         run: |
           # No public crates.io test registry exists.
           # Use this dry run to validate the package without uploading.
-          cargo publish --dry-run
+          cargo publish --dry-run --manifest-path src/bridgex/Cargo.toml
 
       - name: Publish crate to crates.io
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-        run: cargo publish --token "${{ secrets.CRATES_IO_TOKEN }}"
+        run: cargo publish --token "${{ secrets.CRATES_IO_TOKEN }}" --manifest-path src/bridgex/Cargo.toml
         env:
           CARGO_REGISTRIES_CRATES_IO_TOKEN: ${{ secrets.CRATES_IO_TOKEN }}
 
