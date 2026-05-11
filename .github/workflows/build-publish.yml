@@ -74,7 +74,7 @@ jobs:
       - name: Build Python wheel (Windows)
         if: runner.os == 'Windows'
         shell: pwsh
-        run: python -m build --wheel --outdir dist --config-settings=--build-option=--plat-name=win_amd64
+        run: python -m build --wheel --outdir dist -C--build-option=bdist_wheel -C--build-option=--plat-name=win_amd64
 
       - name: Verify wheel tag (Windows)
         if: runner.os == 'Windows'
@@ -96,7 +96,7 @@ jobs:
           else
             plat="macosx_10_9_x86_64"
           fi
-          python -m build --wheel --outdir dist --config-settings=--build-option=--plat-name=$plat
+          python -m build --wheel --outdir dist -C--build-option=bdist_wheel -C--build-option=--plat-name=$plat
 
       - name: Verify wheel tag (macOS)
         if: runner.os == 'macOS'
