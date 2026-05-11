@@ -9,7 +9,7 @@
   "hero": {
     "title": "Bridgex",
     "subtitle": "جسرك إلى <0>markitdown</0>",
-    "description": "واجهة رسومية مفتوحة المصدر لتحويل الملفات إلى Markdown، مبنية ببايثون و PySide6. بسِّط سير عملك بقوة Markitdown.",
+    "description": "تطبيق سطح مكتب مفتوح المصدر لتحويل الملفات إلى Markdown، مبني بـ Rust وواجهة Freya UI. يُستخدم Python فقط للتوزيع عبر PyPI.",
     "cta": {
       "download": "تنزيل الآن",
       "documentation": "عرض التوثيق"
@@ -27,7 +27,7 @@
     },
     "openSource": {
       "title": "مفتوح المصدر",
-      "description": "مفتوح تمامًا بترخيص MIT. افحص، عدّل، ووزّع بحرية."
+      "description": "مفتوح المصدر بالكامل تحت ترخيص GPL-3.0. افحص وعدّل ووزّع بحرية."
     },
     "lightEditor": {
       "title": "محرر خفيف",
@@ -39,7 +39,7 @@
     },
     "modular": {
       "title": "تصميم معياري",
-      "description": "سهل التكييف والتوسعة. الواجهة مبنية بملفات Qt Designer."
+      "description": "سهل التكييف والتوسعة. الواجهة مبنية بمكوّنات Freya في Rust."
     }
   },
   "downloads": {
@@ -52,19 +52,19 @@
       "note": "يتطلب Windows 10/11 بنظام 64-بت. غير موصى به للأنظمة 32-بت."
     },
     "linux": {
-      "title": "Linux / macOS",
-      "description": "ثبّت عبر pip من PyPI. يتطلب Python 3.9-3.13.",
+      "title": "Windows / macOS (PyPI)",
+      "description": "ثبّت عبر pip من PyPI على Windows/macOS. يُستخدم Python فقط للتوزيع.",
       "button": "pip install bridgex",
-      "note": "يُفضّل استخدام بيئة افتراضية لتحقيق أفضل النتائج."
+      "note": "على مستخدمي Linux استخدام binary من SourceForge."
     },
     "sourceforge": {
       "title": "SourceForge",
-      "description": "تنزيل بديل من SourceForge.",
+      "description": "تنزيل binary لـ Linux من SourceForge.",
       "button": "تنزيل من SourceForge"
     },
     "requirements": {
       "title": "متطلبات النظام",
-      "python": "Python 3.9 - 3.13",
+      "python": "Python 3.8+ (فقط لتثبيت PyPI على Windows/macOS)",
       "os": "Windows 10/11 وmacOS وLinux",
       "memory": "2 جيجابايت RAM كحد أدنى",
       "disk": "500 ميجابايت مساحة قرص حرة"
@@ -76,8 +76,8 @@
     "installation": {
       "title": "التثبيت",
       "pip": {
-        "title": "التثبيت عبر pip",
-        "step1": "تأكّد من تثبيت Python 3.9-3.13",
+        "title": "التثبيت عبر pip (Windows/macOS)",
+        "step1": "تأكد من تثبيت Python 3.8+ (مطلوب فقط لتوزيع PyPI)",
         "step2": "أنشئ وفعّل بيئة افتراضية (موصى بها):",
         "step3": "ثبّت Bridgex:",
         "step4": "شغّل Bridgex:"
@@ -101,8 +101,8 @@
         "description": "شغّل المُثبّت والتطبيق كمسؤول. يحتاج البرنامج صلاحية كتابة لبعض المجلدات."
       },
       "pyside": {
-        "title": "مشاكل تثبيت PySide6 (Linux)",
-        "description": "في بعض توزيعات Linux قد تحتاج لتثبيت اعتمادات Qt إضافية. نفّذ: sudo apt-get install libxcb-xinerama0 libxcb-cursor0"
+        "title": "مشاكل التثبيت عبر PyPI (Windows/macOS)",
+        "description": "إذا فشل pip install، حدّث pip ثم حاول مجددًا:"
       },
       "display": {
         "title": "مشاكل العرض (Linux)",
@@ -140,7 +140,7 @@
   "about": {
     "title": "حول Bridgex",
     "subtitle": "جسر بصري للتحويل إلى Markdown",
-    "description": "Bridgex هو واجهة رسومية مفتوحة المصدر تُبسط تحويل الملفات إلى Markdown. مبني على مكتبة Markitdown من Microsoft ويقدم تجربة بصرية بديهية لمن لا يفضّلون سطر الأوامر.",
+    "description": "Bridgex تطبيق سطح مكتب مفتوح المصدر يبسّط تحويل الملفات إلى Markdown. مبني بـ Rust وFreya UI فوق crate Markitdown، ويُستخدم Python فقط للتوزيع عبر PyPI.",
     "whatItDoes": {
       "title": "ما يفعله Bridgex",
       "items": [
@@ -165,9 +165,9 @@
       "title": "لماذا حجم Bridgex كبير؟",
       "description": "يبلغ حجم Bridgex (90-120 ميجابايت للمُثبّت) لأنه يضم:",
       "items": [
-        "PySide6 (Qt for Python) - إطار GUI كامل",
-        "Markitdown مع إضافات الصيغ - تحليل المستندات",
-        "مكتبات تشغيل بايثون - مطلوبة للتنفيذ",
+        "Freya UI (Skia) - إطار GUI أصلي كامل",
+        "Markitdown-rs مع إضافات الصيغ - تحليل المستندات",
+        "ثنائيات Rust والموارد - مجمّعة للاستخدام دون اتصال",
         "VC++ Runtime (Windows) - الاعتمادات المطلوبة"
       ]
     },
@@ -185,46 +185,14 @@
   "licenses": {
     "title": "تراخيص الجهات الأخرى",
     "subtitle": "Bridgex يستخدم المكتبات مفتوحة المصدر التالية",
-    "intro": "Bridgex هو برنامج مفتوح المصدر يتم توزيعه تحت ترخيص MIT. يعتمد على عدة مكتبات خارجية لكل منها شروط الترخيص الخاصة بها. تسرد هذه الصفحة أهم الاعتمادات وتراخيصها المقابلة.",
-    "bridgex": {
-      "title": "Bridgex",
-      "license": "ترخيص MIT",
-      "copyright": "© 2025 Dev2Forge"
-    },
-    "markitdown": {
-      "title": "Markitdown",
-      "description": "مكتبة من Microsoft لتحويل المستندات إلى Markdown",
-      "license": "ترخيص MIT",
-      "copyright": "© Microsoft Corporation"
-    },
-    "pyside6": {
-      "title": "PySide6",
-      "description": "Qt for Python - إطار عمل GUI",
-      "license": "LGPL-3.0-only",
-      "copyright": "© The Qt Company"
-    },
-    "chromologger": {
-      "title": "ChromoLogger",
-      "description": "تسجيل ملوّن لبايثون",
-      "license": "ترخيص MIT"
-    },
-    "sqlazo": {
-      "title": "Sqlazo",
-      "description": "أدوات قاعدة بيانات SQLite",
-      "license": "ترخيص MIT"
-    },
-    "chromolog": {
-      "title": "ChromoLog",
-      "description": "تسجيل بأسلوب Chrome",
-      "license": "ترخيص MIT"
-    }
+    "intro": "Bridgex برنامج مفتوح المصدر موزّع تحت ترخيص GPL-3.0. يعتمد على عدة مكتبات خارجية لكل منها شروط الترخيص الخاصة بها. تسرد هذه الصفحة أهم الاعتمادات وتراخيصها."
   },
   "footer": {
     "description": "جسرك إلى Markitdown",
     "navigation": "التنقل",
     "resources": "الموارد",
     "copyright": "© 2025 Dev2Forge. جميع الحقوق محفوظة.",
-    "license": "ترخيص MIT",
+    "license": "ترخيص GPL-3.0",
     "madeWith": "صُنع بـ",
     "and": "و",
     "links": {

@@ -4,24 +4,16 @@ import './ScreenshotsSection.css';
 
 const screenshots = [
   {
-    url: 'https://cdn.jsdelivr.net/gh/tutosrive/images-projects-srm-trg@main/dev2forge/pymd/bridgex/preview-1-main.png',
-    title: 'Main Window'
+    url: 'https://cdn.jsdelivr.net/gh/tutosrive/images-projects-srm-trg@main/dev2forge/bridgex/1-main-screen.png',
+    title: 'Main Screen'
   },
   {
-    url: 'https://cdn.jsdelivr.net/gh/tutosrive/images-projects-srm-trg@main/dev2forge/pymd/bridgex/preview-2-openfile.png',
-    title: 'Open File'
+    url: 'https://cdn.jsdelivr.net/gh/tutosrive/images-projects-srm-trg@main/dev2forge/bridgex/2-llm-config.png',
+    title: 'LLM Config'
   },
   {
-    url: 'https://cdn.jsdelivr.net/gh/tutosrive/images-projects-srm-trg@main/dev2forge/pymd/bridgex/preview-3-minieditor.png',
-    title: 'Mini Editor'
-  },
-  {
-    url: 'https://cdn.jsdelivr.net/gh/tutosrive/images-projects-srm-trg@main/dev2forge/pymd/bridgex/preview-4-convert.png',
-    title: 'Convert'
-  },
-  {
-    url: 'https://cdn.jsdelivr.net/gh/tutosrive/images-projects-srm-trg@main/dev2forge/pymd/bridgex/preview-5-languagechange.png',
-    title: 'Change Language'
+    url: 'https://cdn.jsdelivr.net/gh/tutosrive/images-projects-srm-trg@main/dev2forge/bridgex/3-markdown-render.png',
+    title: 'Markdown Render'
   }
 ];
 

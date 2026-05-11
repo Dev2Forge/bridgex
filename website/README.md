@@ -16,7 +16,7 @@ The official website for Bridgex - an open-source graphical interface for conver
 - **Downloads**: Platform-specific download options (Windows .exe, pip install)
 - **Documentation**: Installation guides, usage instructions, troubleshooting
 - **About**: Project information, what Bridgex does and doesn't do
-- **Licenses**: Third-party license information (Markitdown, PySide6, etc.)
+- **Licenses**: Third-party license information (Freya, Markitdown, etc.)
 
 ## Tech Stack
 

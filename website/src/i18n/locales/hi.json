@@ -9,7 +9,7 @@
   "hero": {
     "title": "Bridgex",
     "subtitle": "<0>markitdown</0> तक आपका पुल",
-    "description": "फाइलों को Markdown में बदलने के लिए एक ओपन-सोर्स ग्राफ़िकल इंटरफ़ेस, Python और PySide6 पर बना। Markitdown की शक्ति से अपना वर्कफ़्लो सरल करें।",
+    "description": "Markdown में फाइलें बदलने के लिए एक ओपन-सोर्स डेस्कटॉप ऐप, जो Rust और Freya UI में बनाया गया है। Python का उपयोग केवल PyPI वितरण के लिए होता है।",
     "cta": {
       "download": "अभी डाउनलोड करें",
       "documentation": "दस्तावेज़ देखें"
@@ -27,7 +27,7 @@
     },
     "openSource": {
       "title": "ओपन सोर्स",
-      "description": "MIT लाइसेंस के तहत पूर्ण ओपन सोर्स। जाँचें, संशोधित करें, और स्वतंत्र रूप से वितरित करें।"
+      "description": "GPL-3.0 लाइसेंस के तहत पूरी तरह ओपन सोर्स। जाँचें, संशोधित करें और स्वतंत्र रूप से वितरित करें।"
     },
     "lightEditor": {
       "title": "हल्का संपादक",
@@ -39,7 +39,7 @@
     },
     "modular": {
       "title": "मॉड्यूलर डिज़ाइन",
-      "description": "अनुकूलित और विस्तारित करना आसान। पूरी UI Qt Designer फ़ाइलों से बनी है।"
+      "description": "अनुकूलित और विस्तारित करना आसान। UI Rust में Freya कंपोनेंट्स से बनी है।"
     }
   },
   "downloads": {
@@ -52,19 +52,19 @@
       "note": "Windows 10/11 64-बिट आवश्यक। 32-बिट सिस्टम के लिए अनुशंसित नहीं।"
     },
     "linux": {
-      "title": "Linux / macOS",
-      "description": "PyPI से pip द्वारा इंस्टॉल करें। Python 3.9-3.13 आवश्यक।",
+      "title": "Windows / macOS (PyPI)",
+      "description": "Windows/macOS पर PyPI से pip द्वारा इंस्टॉल करें। Python केवल वितरण के लिए उपयोग होता है।",
       "button": "pip install bridgex",
-      "note": "बेहतर परिणाम के लिए वर्चुअल एन्वायरनमेंट का उपयोग करें।"
+      "note": "Linux उपयोगकर्ताओं को SourceForge बाइनरी का उपयोग करना चाहिए।"
     },
     "sourceforge": {
       "title": "SourceForge",
-      "description": "SourceForge से वैकल्पिक डाउनलोड।",
+      "description": "SourceForge से Linux बाइनरी डाउनलोड।",
       "button": "SourceForge से डाउनलोड करें"
     },
     "requirements": {
       "title": "सिस्टम आवश्यकताएँ",
-      "python": "Python 3.9 - 3.13",
+      "python": "Python 3.8+ (केवल Windows/macOS पर PyPI इंस्टॉल के लिए)",
       "os": "Windows 10/11, macOS, Linux",
       "memory": "न्यूनतम 2GB RAM",
       "disk": "500MB खाली डिस्क स्थान"
@@ -76,8 +76,8 @@
     "installation": {
       "title": "इंस्टॉलेशन",
       "pip": {
-        "title": "pip के माध्यम से इंस्टॉलेशन",
-        "step1": "सुनिश्चित करें कि Python 3.9-3.13 स्थापित है",
+        "title": "pip के माध्यम से इंस्टॉलेशन (Windows/macOS)",
+        "step1": "सुनिश्चित करें कि Python 3.8+ इंस्टॉल है (केवल PyPI वितरण के लिए आवश्यक)",
         "step2": "एक वर्चुअल एन्वायरनमेंट बनाएं और सक्रिय करें (अनुशंसित):",
         "step3": "Bridgex इंस्टॉल करें:",
         "step4": "Bridgex चलाएँ:"
@@ -101,8 +101,8 @@
         "description": "इंस्टॉलर और एप्लिकेशन को व्यवस्थापक के रूप में चलाएँ। प्रोग्राम को कुछ फ़ोल्डर्स में लिखने की अनुमति चाहिए।"
       },
       "pyside": {
-        "title": "PySide6 इंस्टॉलेशन समस्याएँ (Linux)",
-        "description": "कुछ Linux वितरणों में अतिरिक्त Qt डिपेंडेंसी इंस्टॉल करनी पड़ सकती हैं। चलाएँ: sudo apt-get install libxcb-xinerama0 libxcb-cursor0"
+        "title": "PyPI इंस्टॉलेशन समस्याएँ (Windows/macOS)",
+        "description": "यदि pip install विफल हो, तो pip अपडेट करके फिर कोशिश करें:"
       },
       "display": {
         "title": "डिस्प्ले समस्याएँ (Linux)",
@@ -140,7 +140,7 @@
   "about": {
     "title": "Bridgex के बारे में",
     "subtitle": "Markdown रूपांतरण के लिए एक दृश्य पुल",
-    "description": "Bridgex एक ओपन-सोर्स ग्राफ़िकल इंटरफ़ेस है जो फ़ाइलों को Markdown में बदलना आसान बनाता है। Microsoft की Markitdown लाइब्रेरी पर आधारित, यह उन उपयोगकर्ताओं के लिए सहज दृश्य अनुभव देता है जो कमांड लाइन पसंद नहीं करते।",
+    "description": "Bridgex एक ओपन-सोर्स डेस्कटॉप ऐप है जो फ़ाइलों को Markdown में बदलना सरल बनाता है। यह Rust और Freya UI पर आधारित है, Markitdown crate का उपयोग करता है, और Python केवल PyPI वितरण के लिए इस्तेमाल होता है।",
     "whatItDoes": {
       "title": "Bridgex क्या करता है",
       "items": [
@@ -165,9 +165,9 @@
       "title": "Bridgex बड़ा क्यों है?",
       "description": "Bridgex का आकार (इंस्टॉलर 90-120MB) बड़ा है क्योंकि इसमें शामिल हैं:",
       "items": [
-        "PySide6 (Qt for Python) - पूर्ण GUI फ़्रेमवर्क",
-        "Markitdown फॉर्मेट प्लगइन्स के साथ - दस्तावेज़ पार्सिंग",
-        "Python रनटाइम लाइब्रेरीज़ - निष्पादन के लिए आवश्यक",
+        "Freya UI (Skia) - पूर्ण नेटिव GUI फ्रेमवर्क",
+        "Markitdown-rs और फ़ॉर्मेट प्लगइन्स - दस्तावेज़ विश्लेषण",
+        "Rust बाइनरी और संसाधन - ऑफ़लाइन उपयोग के लिए पैक किए गए",
         "VC++ Runtime (Windows) - आवश्यक डिपेंडेंसी"
       ]
     },
@@ -185,46 +185,14 @@
   "licenses": {
     "title": "थर्ड-पार्टी लाइसेंस",
     "subtitle": "Bridgex निम्नलिखित ओपन-सोर्स लाइब्रेरीज़ उपयोग करता है",
-    "intro": "ब्रिजेक्स एक ओपन सोर्स सॉफ़्टवेयर है जो MIT लाइसेंस के तहत वितरित किया गया है। यह कई तृतीय-पक्ष लाइब्रेरी पर निर्भर करता है, जिनमें से प्रत्येक के अपने लाइसेंसिंग नियम हैं। यह पृष्ठ सभी प्रमुख निर्भरताओं और उनके संबंधित लाइसेंसों को सूचीबद्ध करता है।",
-    "bridgex": {
-      "title": "Bridgex",
-      "license": "MIT लाइसेंस",
-      "copyright": "© 2025 Dev2Forge"
-    },
-    "markitdown": {
-      "title": "Markitdown",
-      "description": "Microsoft द्वारा दस्तावेज़ से Markdown कनवर्ज़न लाइब्रेरी",
-      "license": "MIT लाइसेंस",
-      "copyright": "© Microsoft Corporation"
-    },
-    "pyside6": {
-      "title": "PySide6",
-      "description": "Qt for Python - GUI फ़्रेमवर्क",
-      "license": "LGPL-3.0-only",
-      "copyright": "© The Qt Company"
-    },
-    "chromologger": {
-      "title": "ChromoLogger",
-      "description": "Python के लिए रंगीन लॉगिंग",
-      "license": "MIT लाइसेंस"
-    },
-    "sqlazo": {
-      "title": "Sqlazo",
-      "description": "SQLite डेटाबेस यूटिलिटीज",
-      "license": "MIT लाइसेंस"
-    },
-    "chromolog": {
-      "title": "ChromoLog",
-      "description": "Chrome-स्टाइल लॉगिंग",
-      "license": "MIT लाइसेंस"
-    }
+    "intro": "Bridgex एक ओपन सोर्स सॉफ़्टवेयर है जो GPL-3.0 लाइसेंस के तहत वितरित किया गया है। यह कई तृतीय-पक्ष लाइब्रेरी पर निर्भर करता है, जिनमें से प्रत्येक के अपने लाइसेंसिंग नियम हैं। यह पृष्ठ सभी प्रमुख निर्भरताओं और उनके संबंधित लाइसेंसों को सूचीबद्ध करता है।"
   },
   "footer": {
     "description": "Markitdown के लिए आपका पुल",
     "navigation": "नेविगेशन",
     "resources": "संसाधन",
     "copyright": "© 2025 Dev2Forge. सर्वाधिकार सुरक्षित.",
-    "license": "MIT लाइसेंस",
+    "license": "GPL-3.0 लाइसेंस",
     "madeWith": "इसके साथ बनाया",
     "and": "और",
     "links": {

@@ -60,48 +60,43 @@ export default function LicensesPage() {
           </div>
 
           <div className="mit-license-section">
-            <h2>MIT License</h2>
+            <h2>GPL-3.0 License</h2>
             <div className="mit-license-text code-block">
-              <pre>{`MIT License
+              <pre>{`GNU GENERAL PUBLIC LICENSE
+Version 3, 29 June 2007
 
-Copyright (c) 2025 Dev2Forge
+Copyright (C) 2007 Free Software Foundation, Inc.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, version 3 only.
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.`}</pre>
+See https://www.gnu.org/licenses/gpl-3.0.en.html for the full license text.`}</pre>
             </div>
           </div>
 
           <div className="lgpl-notice glass-card">
-            <h3>LGPL-3.0 Notice (PySide6)</h3>
+            <h3>Dependency License Notice</h3>
             <p>
-              PySide6 is distributed under the LGPL-3.0-only license. This means that you can use 
-              PySide6 in your applications without making your application open source, as long as 
-              you dynamically link to the PySide6 libraries and provide a way for users to use 
-              their own versions of PySide6.
+              Some dependencies are dual-licensed under MIT OR Apache-2.0. Please review each
+              dependency's license terms before redistribution.
             </p>
             <p>
-              For more information about the LGPL license and your rights, please visit the 
+              Full texts:
               <a 
-                href="https://www.gnu.org/licenses/lgpl-3.0.en.html" 
+                href="https://www.apache.org/licenses/LICENSE-2.0" 
                 target="_blank" 
                 rel="noopener noreferrer"
               >
-                GNU LGPL-3.0 License page
+                Apache-2.0
+              </a>
+              {' '}and{' '}
+              <a 
+                href="https://opensource.org/licenses/MIT" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                MIT
               </a>.
             </p>
           </div>

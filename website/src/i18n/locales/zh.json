@@ -9,7 +9,7 @@
   "hero": {
     "title": "Bridgex",
     "subtitle": "通往 <0>markitdown</0> 的桥梁",
-    "description": "一个开源的图形界面，用于将文件转换为 Markdown，基于 Python 与 PySide6 构建。借助 Markitdown 的能力简化你的工作流程。",
+    "description": "一个开源桌面应用，用于将文件转换为 Markdown，基于 Rust 与 Freya UI 构建。Python 仅用于 PyPI 分发。",
     "cta": {
       "download": "立即下载",
       "documentation": "查看文档"
@@ -27,7 +27,7 @@
     },
     "openSource": {
       "title": "开源",
-      "description": "完全开源，遵循 MIT 许可。自由查看、修改与分发。"
+      "description": "完全开源，遵循 GPL-3.0 许可证。自由查看、修改与分发。"
     },
     "lightEditor": {
       "title": "轻量编辑器",
@@ -39,7 +39,7 @@
     },
     "modular": {
       "title": "模块化设计",
-      "description": "易于适配与扩展。整个 UI 基于 Qt Designer 文件。"
+      "description": "易于适配与扩展。UI 使用 Rust 的 Freya 组件构建。"
     }
   },
   "downloads": {
@@ -52,19 +52,19 @@
       "note": "需要 Windows 10/11 64 位。不建议 32 位系统使用。"
     },
     "linux": {
-      "title": "Linux / macOS",
-      "description": "通过 pip 从 PyPI 安装。需要 Python 3.9-3.13。",
+      "title": "Windows / macOS（PyPI）",
+      "description": "在 Windows/macOS 上通过 PyPI 的 pip 安装。Python 仅用于分发。",
       "button": "pip install bridgex",
-      "note": "建议使用虚拟环境以获得最佳效果。"
+      "note": "Linux 用户应改用 SourceForge 二进制包。"
     },
     "sourceforge": {
       "title": "SourceForge",
-      "description": "来自 SourceForge 的备用下载。",
+      "description": "从 SourceForge 下载 Linux 二进制包。",
       "button": "从 SourceForge 下载"
     },
     "requirements": {
       "title": "系统要求",
-      "python": "Python 3.9 - 3.13",
+      "python": "Python 3.8+（仅用于 Windows/macOS 的 PyPI 安装）",
       "os": "Windows 10/11，macOS，Linux",
       "memory": "至少 2GB 内存",
       "disk": "500MB 可用磁盘空间"
@@ -76,8 +76,8 @@
     "installation": {
       "title": "安装",
       "pip": {
-        "title": "通过 pip 安装",
-        "step1": "确保已安装 Python 3.9-3.13",
+        "title": "通过 pip 安装（Windows/macOS）",
+        "step1": "确保已安装 Python 3.8+（仅用于 PyPI 分发）",
         "step2": "创建并激活虚拟环境（推荐）：",
         "step3": "安装 Bridgex：",
         "step4": "运行 Bridgex："
@@ -101,8 +101,8 @@
         "description": "请以管理员身份运行安装程序和应用。程序需要对某些文件夹的写入权限。"
       },
       "pyside": {
-        "title": "PySide6 安装问题（Linux）",
-        "description": "部分 Linux 发行版可能需要额外的 Qt 依赖。执行：sudo apt-get install libxcb-xinerama0 libxcb-cursor0"
+        "title": "PyPI 安装问题（Windows/macOS）",
+        "description": "如果 pip install 失败，请更新 pip 后重试："
       },
       "display": {
         "title": "显示问题（Linux）",
@@ -129,7 +129,6 @@
         "Markdown (.md, .markdown)",
         "JSON (.json, .jsonl)",
         "XML (.xml)",
-       
         "HTML/MHTML (.html, .htm, .mhtml)",
         "ePub (.epub)",
         "压缩文件 (.zip)",
@@ -140,7 +139,7 @@
   "about": {
     "title": "关于 Bridgex",
     "subtitle": "通往 Markdown 转换的可视化桥梁",
-    "description": "Bridgex 是一个开源图形界面，简化了文件到 Markdown 的转换。基于微软的 Markitdown 库，为不想使用命令行的用户提供直观的视觉体验。",
+    "description": "Bridgex 是一个开源桌面应用，简化文件到 Markdown 的转换。基于 Rust 与 Freya UI，并使用 Markitdown crate；Python 仅用于 PyPI 分发。",
     "whatItDoes": {
       "title": "Bridgex 能做什么",
       "items": [
@@ -165,10 +164,10 @@
       "title": "Bridgex 为什么体积大？",
       "description": "Bridgex 体积较大（安装包 90-120MB），因为包含：",
       "items": [
-        "PySide6 (Qt for Python) - 完整 GUI 框架",
-        "带格式插件的 Markitdown - 文档解析",
-        "Python 运行时库 - 运行所需",
-        "VC++ Runtime (Windows) - 必需依赖"
+        "Freya UI（Skia）- 完整原生 GUI 框架",
+        "带格式插件的 Markitdown-rs - 文档解析",
+        "Rust 二进制与资源 - 为离线使用打包",
+        "VC++ Runtime（Windows）- 必需依赖"
       ]
     },
     "team": {
@@ -185,46 +184,14 @@
   "licenses": {
     "title": "第三方许可证",
     "subtitle": "Bridgex 使用以下开源库",
-    "intro": "Bridgex 是一个开源软件，按照 MIT 许可证分发。它依赖于几个第三方库，每个库都有自己的许可条款。本页面列出了所有主要依赖项及其各自的许可证。",
-    "bridgex": {
-      "title": "Bridgex",
-      "license": "MIT 许可证",
-      "copyright": "© 2025 Dev2Forge"
-    },
-    "markitdown": {
-      "title": "Markitdown",
-      "description": "微软的文档转 Markdown 库",
-      "license": "MIT 许可证",
-      "copyright": "© Microsoft Corporation"
-    },
-    "pyside6": {
-      "title": "PySide6",
-      "description": "Qt for Python - 图形界面框架",
-      "license": "LGPL-3.0-only",
-      "copyright": "© The Qt Company"
-    },
-    "chromologger": {
-      "title": "ChromoLogger",
-      "description": "Python 彩色日志",
-      "license": "MIT 许可证"
-    },
-    "sqlazo": {
-      "title": "Sqlazo",
-      "description": "SQLite 数据库工具",
-      "license": "MIT 许可证"
-    },
-    "chromolog": {
-      "title": "ChromoLog",
-      "description": "Chrome 风格日志",
-      "license": "MIT 许可证"
-    }
+    "intro": "Bridgex 是遵循 GPL-3.0 许可证的开源软件。它依赖于多个第三方库，每个库都有自己的许可条款。本页面列出所有主要依赖项及其许可证。"
   },
   "footer": {
     "description": "通往 Markitdown 的桥梁",
     "navigation": "导航",
     "resources": "资源",
     "copyright": "© 2025 Dev2Forge. 保留所有权利。",
-    "license": "MIT 许可证",
+    "license": "GPL-3.0 许可证",
     "madeWith": "基于",
     "and": "和",
     "links": {

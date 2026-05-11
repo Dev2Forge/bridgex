@@ -9,7 +9,7 @@
   "hero": {
     "title": "Bridgex",
     "subtitle": "Votre pont vers <0>markitdown</0>",
-    "description": "Une interface graphique open source pour convertir des fichiers en Markdown, construite en Python avec PySide6. Simplifiez votre flux de travail grâce à la puissance de Markitdown.",
+    "description": "Une application de bureau open source pour convertir des fichiers en Markdown, construite en Rust avec Freya UI. Python est utilisé uniquement pour la distribution via PyPI.",
     "cta": {
       "download": "Télécharger maintenant",
       "documentation": "Voir la documentation"
@@ -27,7 +27,7 @@
     },
     "openSource": {
       "title": "Open source",
-      "description": "Entièrement open source sous licence MIT. Inspectez, modifiez et redistribuez librement."
+      "description": "Entièrement open source sous licence GPL-3.0. Inspectez, modifiez et redistribuez librement."
     },
     "lightEditor": {
       "title": "Éditeur léger",
@@ -39,7 +39,7 @@
     },
     "modular": {
       "title": "Conception modulaire",
-      "description": "Facile à adapter et à étendre. Toute l'UI est construite avec des fichiers Qt Designer."
+      "description": "Facile à adapter et à étendre. L'UI est construite avec des composants Freya en Rust."
     }
   },
   "downloads": {
@@ -52,19 +52,19 @@
       "note": "Windows 10/11 64 bits requis. Non recommandé pour les systèmes 32 bits."
     },
     "linux": {
-      "title": "Linux / macOS",
-      "description": "Installez via pip depuis PyPI. Python 3.9-3.13 requis.",
+      "title": "Windows / macOS (PyPI)",
+      "description": "Installez via pip depuis PyPI sur Windows/macOS. Python est utilisé uniquement pour la distribution.",
       "button": "pip install bridgex",
-      "note": "Utilisez un environnement virtuel pour de meilleurs résultats."
+      "note": "Les utilisateurs Linux doivent utiliser le binaire SourceForge."
     },
     "sourceforge": {
       "title": "SourceForge",
-      "description": "Téléchargement alternatif depuis SourceForge.",
+      "description": "Téléchargement du binaire Linux depuis SourceForge.",
       "button": "Télécharger depuis SourceForge"
     },
     "requirements": {
       "title": "Configuration requise",
-      "python": "Python 3.9 - 3.13",
+      "python": "Python 3.8+ (uniquement pour les installations PyPI sur Windows/macOS)",
       "os": "Windows 10/11, macOS, Linux",
       "memory": "2 Go de RAM minimum",
       "disk": "500 Mo d'espace disque libre"
@@ -76,8 +76,8 @@
     "installation": {
       "title": "Installation",
       "pip": {
-        "title": "Installation via pip",
-        "step1": "Assurez-vous d'avoir Python 3.9-3.13 installé",
+        "title": "Installation via pip (Windows/macOS)",
+        "step1": "Assurez-vous d'avoir Python 3.8+ installé (requis uniquement pour la distribution PyPI)",
         "step2": "Créez et activez un environnement virtuel (recommandé) :",
         "step3": "Installez Bridgex :",
         "step4": "Exécutez Bridgex :"
@@ -101,8 +101,8 @@
         "description": "Exécutez l'installateur et l'application en tant qu'administrateur. Le programme a besoin d'un accès en écriture à certains dossiers."
       },
       "pyside": {
-        "title": "Problèmes d'installation de PySide6 (Linux)",
-        "description": "Sur certaines distributions Linux, vous devrez peut-être installer des dépendances Qt supplémentaires. Exécutez : sudo apt-get install libxcb-xinerama0 libxcb-cursor0"
+        "title": "Problèmes d'installation PyPI (Windows/macOS)",
+        "description": "Si pip install échoue, mettez pip à jour et réessayez :"
       },
       "display": {
         "title": "Problèmes d'affichage (Linux)",
@@ -140,7 +140,7 @@
   "about": {
     "title": "À propos de Bridgex",
     "subtitle": "Un pont visuel vers la conversion Markdown",
-    "description": "Bridgex est une interface graphique open source qui simplifie la conversion de fichiers en Markdown. Construite sur la bibliothèque Markitdown de Microsoft, elle offre une expérience visuelle intuitive pour ceux qui préfèrent éviter la ligne de commande.",
+    "description": "Bridgex est une application de bureau open source qui simplifie la conversion de fichiers en Markdown. Construite en Rust avec Freya UI sur le crate Markitdown, Python est utilisé uniquement pour la distribution via PyPI.",
     "whatItDoes": {
       "title": "Ce que fait Bridgex",
       "items": [
@@ -165,10 +165,10 @@
       "title": "Pourquoi Bridgex est-il volumineux ?",
       "description": "Bridgex a une taille importante (90-120 Mo pour l'installateur) car il inclut :",
       "items": [
-        "PySide6 (Qt for Python) - Framework GUI complet",
-        "Markitdown avec plugins de format - Analyse de documents",
-        "Bibliothèques runtime Python - Nécessaires à l'exécution",
-        "VC++ Runtime (Windows) - Dépendances requises"
+        "Freya UI (Skia) - framework GUI natif complet",
+        "Markitdown-rs avec plugins de format - analyse de documents",
+        "Binaires et ressources Rust - empaquetés pour un usage hors ligne",
+        "VC++ Runtime (Windows) - dépendances requises"
       ]
     },
     "team": {
@@ -185,46 +185,14 @@
   "licenses": {
     "title": "Licences tierces",
     "subtitle": "Bridgex utilise les bibliothèques open source suivantes",
-    "intro": "Bridgex est un logiciel open source distribué sous la licence MIT. Il dépend de plusieurs bibliothèques tierces, chacune avec ses propres conditions de licence. Cette page répertorie toutes les principales dépendances et leurs licences respectives.",
-    "bridgex": {
-      "title": "Bridgex",
-      "license": "Licence MIT",
-      "copyright": "© 2025 Dev2Forge"
-    },
-    "markitdown": {
-      "title": "Markitdown",
-      "description": "Bibliothèque de conversion de documents en Markdown par Microsoft",
-      "license": "Licence MIT",
-      "copyright": "© Microsoft Corporation"
-    },
-    "pyside6": {
-      "title": "PySide6",
-      "description": "Qt for Python - Framework GUI",
-      "license": "LGPL-3.0-only",
-      "copyright": "© The Qt Company"
-    },
-    "chromologger": {
-      "title": "ChromoLogger",
-      "description": "Journalisation colorée pour Python",
-      "license": "Licence MIT"
-    },
-    "sqlazo": {
-      "title": "Sqlazo",
-      "description": "Utilitaires de base de données SQLite",
-      "license": "Licence MIT"
-    },
-    "chromolog": {
-      "title": "ChromoLog",
-      "description": "Journalisation style Chrome",
-      "license": "Licence MIT"
-    }
+    "intro": "Bridgex est un logiciel open source distribué sous la licence GPL-3.0. Il dépend de plusieurs bibliothèques tierces, chacune avec ses propres conditions de licence. Cette page répertorie toutes les principales dépendances et leurs licences respectives."
   },
   "footer": {
     "description": "Votre pont vers Markitdown",
     "navigation": "Navigation",
     "resources": "Ressources",
     "copyright": "© 2025 Dev2Forge. Tous droits réservés.",
-    "license": "Licence MIT",
+    "license": "Licence GPL-3.0",
     "madeWith": "Fait avec",
     "and": "et",
     "links": {

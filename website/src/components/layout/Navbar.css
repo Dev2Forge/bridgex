@@ -9,7 +9,7 @@
 }
 
 .marquee-top {
-  background-color: var(--color-secondary-dark);
+  background-color: #16a34a;
   margin-bottom: 10px;
 }
 
@@ -31,7 +31,7 @@
 }
 
 .marquee-top a {
-  color: #ff0000;
+  color: #2563eb;
   padding: 10px;
 }
 

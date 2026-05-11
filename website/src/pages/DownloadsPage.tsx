@@ -105,7 +105,7 @@ export default function DownloadsPage() {
               <div className="requirement-item">
                 <Cpu size={24} />
                 <div>
-                  <h4>Python</h4>
+                  <h4>Python (PyPI only)</h4>
                   <p>{t('downloads.requirements.python')}</p>
                 </div>
               </div>
@@ -139,15 +139,15 @@ export default function DownloadsPage() {
             <div className="included-list">
               <div className="included-item">
                 <CheckCircle2 size={20} className="check-icon" />
-                <span>PySide6 (Qt for Python) GUI Framework</span>
+                <span>Freya UI (Rust, Skia-powered) interface</span>
               </div>
               <div className="included-item">
                 <CheckCircle2 size={20} className="check-icon" />
-                <span>Markitdown by Microsoft with all format plugins</span>
+                <span>Markitdown-rs with format plugins</span>
               </div>
               <div className="included-item">
                 <CheckCircle2 size={20} className="check-icon" />
-                <span>Bundled Python runtime (Windows installer)</span>
+                <span>Native Rust binary (Python only for PyPI distribution)</span>
               </div>
               <div className="included-item">
                 <CheckCircle2 size={20} className="check-icon" />

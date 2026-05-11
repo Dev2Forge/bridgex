@@ -17,52 +17,66 @@ export const licenses: License[] = [
   {
     key: 'bridgex',
     name: 'Bridgex',
-    version: '0.1.0',
-    license: 'MIT License',
-    copyright: '© 2025 Dev2Forge',
+    version: '0.2.1',
+    license: 'GPL-3.0-only',
+    copyright: '© 2025-2026 Dev2Forge',
     url: 'https://github.com/Dev2Forge/bridgex',
-    description: 'Graphical interface for converting files to Markdown'
+    description: 'Open-source desktop app for converting files to Markdown'
+  },
+  {
+    key: 'freya',
+    name: 'Freya',
+    version: '0.4.0-rc.19',
+    license: 'MIT License',
+    url: 'https://crates.io/crates/freya',
+    description: 'Rust GUI framework powered by Skia'
   },
   {
     key: 'markitdown',
-    name: 'Markitdown',
-    version: '0.1.1',
+    name: 'markitdown-rs',
+    version: '0.1.11',
     license: 'MIT License',
-    copyright: '© Microsoft Corporation',
-    url: 'https://github.com/microsoft/markitdown',
-    description: 'Document to Markdown conversion library by Microsoft'
+    url: 'https://crates.io/crates/markitdown',
+    description: 'Rust implementation of Microsoft Markitdown'
   },
   {
-    key: 'pyside6',
-    name: 'PySide6-Essentials',
-    version: '6.9.0',
-    license: 'LGPL-3.0-only',
-    copyright: '© The Qt Company',
-    url: 'https://doc.qt.io/qtforpython-6/',
-    description: 'Qt for Python - GUI framework'
+    key: 'rfd',
+    name: 'rfd',
+    version: '0.17.2',
+    license: 'MIT License',
+    url: 'https://crates.io/crates/rfd',
+    description: 'Native file dialog library for Rust'
   },
   {
-    key: 'chromologger',
-    name: 'ChromoLogger',
-    version: '0.1.8',
+    key: 'tokio',
+    name: 'Tokio',
+    version: '1.x',
     license: 'MIT License',
-    url: 'https://pypi.org/project/chromologger/',
-    description: 'Colorful logging for Python'
+    url: 'https://crates.io/crates/tokio',
+    description: 'Async runtime for Rust'
   },
   {
-    key: 'sqlazo',
-    name: 'Sqlazo',
-    version: '0.1.5',
-    license: 'MIT License',
-    url: 'https://pypi.org/project/sqlazo/',
-    description: 'SQLite database utilities'
+    key: 'serde',
+    name: 'Serde',
+    version: '1.x',
+    license: 'MIT OR Apache-2.0',
+    url: 'https://crates.io/crates/serde',
+    description: 'Serialization framework for Rust'
   },
   {
-    key: 'chromolog',
-    name: 'ChromoLog',
-    version: '0.2.4',
-    license: 'MIT License',
-    url: 'https://pypi.org/project/chromolog/',
-    description: 'Chrome-style logging'
+    key: 'serde_json',
+    name: 'serde_json',
+    version: '1.x',
+    license: 'MIT OR Apache-2.0',
+    url: 'https://crates.io/crates/serde_json',
+    description: 'JSON serialization for Rust'
+  },
+  {
+    key: 'webbrowser',
+    name: 'webbrowser',
+    version: '1.2.1',
+    license: 'MIT OR Apache-2.0',
+    url: 'https://crates.io/crates/webbrowser',
+    description: 'Open URLs in system web browsers'
   }
 ];

@@ -9,7 +9,7 @@
   "hero": {
     "title": "Bridgex",
     "subtitle": "<0>markitdown</0> への架け橋",
-    "description": "ファイルを Markdown に変換するためのオープンソース GUI。Python と PySide6 で構築され、Markitdown の力でワークフローをシンプルにします。",
+    "description": "ファイルを Markdown に変換するオープンソースのデスクトップアプリ。Rust と Freya UI で構築され、Python は PyPI 配布のためにのみ使用されます。",
     "cta": {
       "download": "今すぐダウンロード",
       "documentation": "ドキュメントを見る"
@@ -27,7 +27,7 @@
     },
     "openSource": {
       "title": "オープンソース",
-      "description": "MIT ライセンスの完全なオープンソース。自由に確認・改変・再配布できます。"
+      "description": "GPL-3.0 ライセンスの完全なオープンソース。自由に確認・改変・再配布できます。"
     },
     "lightEditor": {
       "title": "軽量エディタ",
@@ -39,7 +39,7 @@
     },
     "modular": {
       "title": "モジュール設計",
-      "description": "柔軟に拡張・適応可能。UI は Qt Designer ファイルで構成。"
+      "description": "柔軟に拡張・適応可能。UI は Rust の Freya コンポーネントで構成。"
     }
   },
   "downloads": {
@@ -52,19 +52,19 @@
       "note": "Windows 10/11 64bit が必要です。32bit 環境は推奨しません。"
     },
     "linux": {
-      "title": "Linux / macOS",
-      "description": "PyPI から pip でインストール。Python 3.9-3.13 が必要です。",
+      "title": "Windows / macOS (PyPI)",
+      "description": "Windows/macOS では PyPI から pip でインストール。Python は配布のためにのみ使用されます。",
       "button": "pip install bridgex",
-      "note": "仮想環境での利用を推奨します。"
+      "note": "Linux ユーザーは SourceForge のバイナリを使用してください。"
     },
     "sourceforge": {
       "title": "SourceForge",
-      "description": "SourceForge からの代替ダウンロード。",
+      "description": "SourceForge から Linux バイナリをダウンロード。",
       "button": "SourceForge でダウンロード"
     },
     "requirements": {
       "title": "動作環境",
-      "python": "Python 3.9 - 3.13",
+      "python": "Python 3.8+（Windows/macOS の PyPI インストールのみ）",
       "os": "Windows 10/11、macOS、Linux",
       "memory": "最低 2GB RAM",
       "disk": "500MB 以上の空きディスク"
@@ -76,8 +76,8 @@
     "installation": {
       "title": "インストール",
       "pip": {
-        "title": "pip でのインストール",
-        "step1": "Python 3.9-3.13 がインストールされていることを確認",
+        "title": "pip でのインストール (Windows/macOS)",
+        "step1": "Python 3.8+ がインストールされていることを確認（PyPI 配布にのみ必要）",
         "step2": "仮想環境を作成し有効化（推奨）：",
         "step3": "Bridgex をインストール：",
         "step4": "Bridgex を起動："
@@ -101,8 +101,8 @@
         "description": "インストーラーとアプリは管理者権限で実行してください。特定フォルダーへの書き込みが必要です。"
       },
       "pyside": {
-        "title": "PySide6 インストール問題 (Linux)",
-        "description": "一部ディストリで追加の Qt 依存が必要な場合があります。sudo apt-get install libxcb-xinerama0 libxcb-cursor0 を実行してください。"
+        "title": "PyPI インストール問題 (Windows/macOS)",
+        "description": "pip install が失敗する場合は、pip を更新して再試行してください："
       },
       "display": {
         "title": "表示の問題 (Linux)",
@@ -140,7 +140,7 @@
   "about": {
     "title": "Bridgex について",
     "subtitle": "Markdown 変換へのビジュアルブリッジ",
-    "description": "Bridgex はファイルを Markdown に変換するオープンソースの GUI です。Microsoft の Markitdown ライブラリを基盤に、コマンドラインを使いたくないユーザーにも直感的な体験を提供します。",
+    "description": "Bridgex はファイルを Markdown に変換するオープンソースのデスクトップアプリです。Rust と Freya UI を用い、Markitdown crate 上に構築されており、Python は PyPI 配布のためにのみ使用されます。",
     "whatItDoes": {
       "title": "Bridgex ができること",
       "items": [
@@ -165,9 +165,9 @@
       "title": "Bridgex のサイズが大きい理由",
       "description": "Bridgex のインストーラーが大きい（90–120MB）理由は、以下を同梱しているためです：",
       "items": [
-        "PySide6 (Qt for Python) - フル機能の GUI フレームワーク",
-        "形式プラグイン付き Markitdown - ドキュメント解析",
-        "Python ランタイムライブラリ - 実行に必須",
+        "Freya UI (Skia) - フル機能のネイティブ GUI フレームワーク",
+        "形式プラグイン付き Markitdown-rs - ドキュメント解析",
+        "Rust バイナリとアセット - オフライン用にパッケージ",
         "VC++ Runtime (Windows) - 必要な依存関係"
       ]
     },
@@ -185,46 +185,14 @@
   "licenses": {
     "title": "サードパーティライセンス",
     "subtitle": "Bridgex は以下のオープンソースライブラリを使用しています",
-    "intro": "BridgexはMITライセンスの下で配布されているオープンソースソフトウェアです。いくつかのサードパーティライブラリに依存しており、それぞれ独自のライセンス条件があります。このページでは、すべての主要な依存関係とそれぞれのライセンスを一覧表示します。",
-    "bridgex": {
-      "title": "Bridgex",
-      "license": "MIT ライセンス",
-      "copyright": "© 2025 Dev2Forge"
-    },
-    "markitdown": {
-      "title": "Markitdown",
-      "description": "Microsoft によるドキュメント→Markdown 変換ライブラリ",
-      "license": "MIT ライセンス",
-      "copyright": "© Microsoft Corporation"
-    },
-    "pyside6": {
-      "title": "PySide6",
-      "description": "Qt for Python - GUI フレームワーク",
-      "license": "LGPL-3.0-only",
-      "copyright": "© The Qt Company"
-    },
-    "chromologger": {
-      "title": "ChromoLogger",
-      "description": "Python 用カラーログ",
-      "license": "MIT ライセンス"
-    },
-    "sqlazo": {
-      "title": "Sqlazo",
-      "description": "SQLite データベースユーティリティ",
-      "license": "MIT ライセンス"
-    },
-    "chromolog": {
-      "title": "ChromoLog",
-      "description": "Chrome スタイルのログ",
-      "license": "MIT ライセンス"
-    }
+    "intro": "Bridgex は GPL-3.0 ライセンスで配布されるオープンソースソフトウェアです。複数のサードパーティライブラリに依存しており、それぞれ独自のライセンス条件があります。このページでは主要な依存関係とライセンスを一覧表示します。"
   },
   "footer": {
     "description": "Markitdown への架け橋",
     "navigation": "ナビゲーション",
     "resources": "リソース",
     "copyright": "© 2025 Dev2Forge. 無断転載を禁じます。",
-    "license": "MIT ライセンス",
+    "license": "GPL-3.0 ライセンス",
     "madeWith": "使用技術",
     "and": "と",
     "links": {

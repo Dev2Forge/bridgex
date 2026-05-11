@@ -88,7 +88,7 @@ export default function Navbar() {
   return (
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <Marquee className="marquee-top">
-        This program is being refactored to improve performance and reduce its size as much as possible. It will be rewritten using <a href="https://freyaui.dev/"> FreyaUI</a> and <a href="https://rust-lang.org/">Rust</a>.
+        Bridgex is now rewritten in <a href="https://freyaui.dev/">Freya UI</a> and <a href="https://rust-lang.org/">Rust</a>. Python is used only for PyPI distribution (Windows/macOS).
       </Marquee>
       <div className="navbar-container">
         <NavLink to="/" className="navbar-brand">

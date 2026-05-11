@@ -43,10 +43,6 @@ export default function DocumentationPage() {
                   <FileType size={18} />
                   {t('documentation.formats.title')}
                 </a>
-                <a href="#troubleshooting" className="docs-nav-link">
-                  <Wrench size={18} />
-                  {t('documentation.troubleshooting.title')}
-                </a>
               </nav>
             </aside>
 
@@ -204,51 +200,6 @@ export default function DocumentationPage() {
                 </div>
               </section>
 
-              {/* Troubleshooting Section */}
-              <section id="troubleshooting" className="docs-section">
-                <h2>
-                  <Wrench size={24} />
-                  {t('documentation.troubleshooting.title')}
-                </h2>
-
-                <div className="troubleshooting-card">
-                  <div className="trouble-header">
-                    <AlertTriangle size={20} className="warning-icon" />
-                    <h4>{t('documentation.troubleshooting.vcredist.title')}</h4>
-                  </div>
-                  <p>{t('documentation.troubleshooting.vcredist.description')}</p>
-                  <div className="code-block">
-                    <code>https://aka.ms/vs/17/release/vc_redist.x64.exe</code>
-                  </div>
-                </div>
-
-                <div className="troubleshooting-card">
-                  <div className="trouble-header">
-                    <AlertTriangle size={20} className="warning-icon" />
-                    <h4>{t('documentation.troubleshooting.permissions.title')}</h4>
-                  </div>
-                  <p>{t('documentation.troubleshooting.permissions.description')}</p>
-                </div>
-
-                <div className="troubleshooting-card">
-                  <div className="trouble-header">
-                    <AlertTriangle size={20} className="warning-icon" />
-                    <h4>{t('documentation.troubleshooting.pyside.title')}</h4>
-                  </div>
-                  <p>{t('documentation.troubleshooting.pyside.description')}</p>
-                  <div className="code-block">
-                    <code>sudo apt-get install libxcb-xinerama0 libxcb-cursor0</code>
-                  </div>
-                </div>
-
-                <div className="troubleshooting-card">
-                  <div className="trouble-header">
-                    <AlertTriangle size={20} className="warning-icon" />
-                    <h4>{t('documentation.troubleshooting.display.title')}</h4>
-                  </div>
-                  <p>{t('documentation.troubleshooting.display.description')}</p>
-                </div>
-              </section>
             </main>
           </div>
         </div>

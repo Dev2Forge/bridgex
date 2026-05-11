@@ -7,17 +7,17 @@ const LOGO_URL = 'https://cdn.jsdelivr.net/gh/tutosrive/images-projects-srm-trg@
 
 const MarkitdownPreview = (
   <a 
-    href="https://github.com/microsoft/markitdown" 
+    href="https://crates.io/crates/markitdown" 
     target="_blank" 
     rel="noopener noreferrer" 
     className="preview-link"
   >
-    markitdown
+    markitdown-rs
     <span className="preview-tooltip">
       <span className="tooltip-content">
-        <span className="tooltip-title">microsoft/markitdown</span>
-        <span className="tooltip-desc">Python tool for converting various files to Markdown (e.g., for LLM use)</span>
-        <span className="tooltip-url">github.com/microsoft/markitdown</span>
+        <span className="tooltip-title">markitdown-rs</span>
+        <span className="tooltip-desc">Rust crate for converting various files to Markdown (e.g., for LLM use)</span>
+        <span className="tooltip-url">crates.io/crates/markitdown</span>
       </span>
     </span>
   </a>
@@ -37,7 +37,7 @@ export default function HeroSection() {
         <div className="hero-content">
           <div className="hero-badge">
             <span className="badge badge-primary">Open Source</span>
-            <span className="badge badge-secondary">v0.1.0</span>
+            <span className="badge badge-secondary">v0.2.1</span>
           </div>
           
           <h1 className="hero-title">
@@ -69,7 +69,7 @@ export default function HeroSection() {
             </div>
             <div className="stat-divider" />
             <div className="stat-item">
-              <span className="stat-value">MIT</span>
+              <span className="stat-value">GPLv3</span>
               <span className="stat-label">License</span>
             </div>
             <div className="stat-divider" />
