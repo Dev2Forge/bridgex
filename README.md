@@ -1,6 +1,7 @@
 # Bridgex 🌉<img width="64" src="https://cdn.jsdelivr.net/gh/tutosrive/images-projects-srm-trg@main/dev2forge/logos/bridgex-v0.1.0.webp">
 
-[!IMPORTANT] The `pip install bridgex` command is only supported on Windows and macOS. Linux users should use the SourceForge binary at https://sourceforge.net/projects/bridgex/ instead.
+> [!IMPORTANT]
+> The `pip install bridgex` command is only supported on Windows and macOS. Linux users should use the SourceForge binary at https://sourceforge.net/projects/bridgex/ instead.
 
 [![Read in Spanish](https://img.shields.io/badge/read%20in-ES-red?logo=github)](https://github.com/Dev2Forge/bridgex/blob/main/translations/README_ES.md) [![GPLv3 License](https://img.shields.io/badge/license-GPLv3-blue.svg)](./LICENSE) [![Issues](https://img.shields.io/github/issues/Dev2Forge/bridgex)](https://github.com/Dev2Forge/bridgex/issues)
 
