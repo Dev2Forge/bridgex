@@ -2,6 +2,15 @@
 name = "bridgex"
 version = "0.2.0"
 edition = "2024"
+description = "Open-source desktop app for converting files to Markdown, built in Rust with Freya and Markitdown."
+license = "GPL-3.0-only"
+repository = "https://github.com/Dev2Forge/bridgex"
+homepage = "https://bridgex.pages.dev/"
+documentation = "https://bridgex.pages.dev/"
+readme = "README.md"
+authors = ["tutosrive <tutosriveorg@gmail.com>", "dev2forge <dev2forge@gmail.com>"]
+keywords = ["markdown", "freya", "converter", "gui", "editor", "viewer", "rust", "pdf", "docx", "pptx", "xls", "xlsx", "csv", "txt", "html", "htm", "file converter", "markdown converter", "markitdown", "dev2forge", "bridgex"]
+categories = ["utilities", "text-processing", "markup"]
 
 [dependencies]  
 freya = { version = "=0.4.0-rc.19", features = ["markdown", "code-editor", "skia-engine"], default-features = false}  
