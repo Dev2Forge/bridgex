@@ -1,10 +1,10 @@
 import { useTranslation } from 'react-i18next';
 import { 
   Download,
-  AlertTriangle,
+  // AlertTriangle,
   CheckCircle2,
   FileType,
-  Wrench,
+  // Wrench,
   Book
 } from 'lucide-react';
 import './DocumentationPage.css';
