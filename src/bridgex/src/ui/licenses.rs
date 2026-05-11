@@ -8,7 +8,7 @@ const LICENSE_FREYA: &str = include_str!("../assets/licenses/license_freya.txt")
 
 pub struct LicencesPopup {
     pub show_popup: State<bool>,
-    pub popup: Option<Popup>,
+    pub popup: Popup,
 }
 
 impl LicencesPopup {
@@ -114,7 +114,8 @@ impl LicencesPopup {
             show_popup.clone(),
             "Licences".to_string(),
             true,
-            content
+            content,
+            None
         ).make();
 
         Self {

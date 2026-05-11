@@ -8,7 +8,7 @@ const BUY_ME_A_COFFEE_URL: &str = "https://buymeacoffee.com/tutosrive";
 
 pub struct AboutPopup {
     pub show_popup: State<bool>,
-    pub popup: Option<Popup>,
+    pub popup: Popup,
 }
 
 impl AboutPopup {
@@ -89,7 +89,8 @@ impl AboutPopup {
             show_popup.clone(),
             "About".to_string(),
             false,
-            content
+            content,
+            None
         ).make();
         Self {
             show_popup,

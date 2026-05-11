@@ -1,17 +1,20 @@
 # Bridgex 🌉<img width="64" src="https://cdn.jsdelivr.net/gh/tutosrive/images-projects-srm-trg@main/dev2forge/logos/bridgex-v0.1.0.webp">
 
-[![Read inglés](https://img.shields.io/badge/read%20in-EN-red?logo=github)](https://github.com/Dev2Forge/bridgex/blob/main/README.md) [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
-[![PyPI version](https://img.shields.io/pypi/v/bridgex)](https://pypi.org/project/bridgex/)
-[![Python Version](https://img.shields.io/pypi/pyversions/bridgex)](https://www.python.org/downloads/)
-[![Issues](https://img.shields.io/github/issues/Dev2Forge/bridgex)](https://github.com/Dev2Forge/bridgex/issues)
+[!IMPORTANT] El comando `pip install bridgex` solo es compatible con Windows y macOS. Los usuarios de Linux deben usar el binario de SourceForge en https://sourceforge.net/projects/bridgex/.
 
-Bridgex es una interfaz gráfica de código abierto para la conversión de archivos a formato Markdown, construida en Python y basada en [Pyside6 (Qt for Python)](https://doc.qt.io/qtforpython-6/). Su objetivo es facilitar el acceso a la biblioteca [Markitdown](https://github.com/microsoft/markitdown) mediante una experiencia visual sencilla y modular.
+[![Read inglés](https://img.shields.io/badge/read%20in-EN-red?logo=github)](https://github.com/Dev2Forge/bridgex/blob/main/README.md) [![GPLv3 License](https://img.shields.io/badge/license-GPLv3-blue.svg)](./LICENSE) [![Issues](https://img.shields.io/github/issues/Dev2Forge/bridgex)](https://github.com/Dev2Forge/bridgex/issues)
+
+[![PyPI downloads](https://img.shields.io/pepy/dt/bridgex?label=pypi)](https://pepy.tech/project/bridgex) [![SourceForge downloads](https://img.shields.io/sourceforge/dt/bridgex?label=sourceforge-downloads)](https://sourceforge.net/projects/bridgex/)
+
+[![crates.io downloads](https://img.shields.io/crates/d/bridgex?label=crates.io)](https://crates.io/crates/bridgex)
+
+Bridgex es una aplicación de escritorio de código abierto para convertir archivos a Markdown, construida en Rust con [Freya](https://freyaui.dev/) y el crate [Markitdown](https://github.com/microsoft/markitdown). Ofrece una interfaz gráfica ligera para editar el Markdown convertido y guardarlo localmente.
 
 ---
 
 ## Tabla de Contenidos
 
-- [Bridgex 🌉🐍](#bridgex-)
+- [Bridgex 🌉](#bridgex-)
   - [Tabla de Contenidos](#tabla-de-contenidos)
   - [Características ✨](#características-)
   - [Capturas de Pantalla 🖼️](#capturas-de-pantalla-️)
@@ -39,7 +42,7 @@ Bridgex es una interfaz gráfica de código abierto para la conversión de archi
 
 ## Capturas de Pantalla 🖼️
 
-![img](https://cdn.jsdelivr.net/gh/tutosrive/images-projects-srm-trg@main/dev2forge/pymd/bridgex/preview-1-main.png)
+![img](https://cdn.jsdelivr.net/gh/tutosrive/images-projects-srm-trg@main/dev2forge/bridgex/1-main-screen.png)
 _Ejemplo de la ventana principal de Bridgex._
 
 <details>
@@ -49,10 +52,9 @@ _Ejemplo de la ventana principal de Bridgex._
 
 |      Nombre    |     Vista Previa      |
 |:----------------:|:---------------------:|
-| Abrir Archivo | ![img](https://cdn.jsdelivr.net/gh/tutosrive/images-projects-srm-trg@main/dev2forge/pymd/bridgex/preview-2-openfile.png) |
-| Mini Editor | ![img](https://cdn.jsdelivr.net/gh/tutosrive/images-projects-srm-trg@main/dev2forge/pymd/bridgex/preview-3-minieditor.png) |
-| Convertir | ![img](https://cdn.jsdelivr.net/gh/tutosrive/images-projects-srm-trg@main/dev2forge/pymd/bridgex/preview-4-convert.png) |
-| Cambiar Idioma | ![img](https://cdn.jsdelivr.net/gh/tutosrive/images-projects-srm-trg@main/dev2forge/pymd/bridgex/preview-5-languagechange.png) |
+| Pantalla Principal | ![img](https://cdn.jsdelivr.net/gh/tutosrive/images-projects-srm-trg@main/dev2forge/bridgex/1-main-screen.png) |
+| Configuración LLM | ![img](https://cdn.jsdelivr.net/gh/tutosrive/images-projects-srm-trg@main/dev2forge/bridgex/2-llm-config.png) |
+| Render Markdown | ![img](https://cdn.jsdelivr.net/gh/tutosrive/images-projects-srm-trg@main/dev2forge/bridgex/3-markdown-render.png) |
 
 </details>
 
@@ -65,14 +67,59 @@ _Ejemplo de la ventana principal de Bridgex._
 ## Instalación 📦
 
 Requisitos:
-- Python >= **3.9** Y <= **3.13** 
-Instalación vía pip:
+
+- Toolchain de Rust con `cargo`
+- Versión estable recomendada de Rust
+
+### Rust / instalación desde crates.io
+
+Requisitos:
+
+- Toolchain de Rust con `cargo`
+- Versión estable recomendada de Rust
+
+Construir e instalar localmente:
+
+```sh
+cargo install --path .
+```
+
+Instalar el crate publicado desde crates.io:
+
+```sh
+cargo install bridgex
+```
+
+Ejecutar directamente desde el código fuente:
+
+```sh
+cargo run --release
+```
+
+Para un build de lanzamiento:
+
+```sh
+cargo build --release
+./target/release/bridgex
+```
+
+### Python / instalación desde PyPI
+
+Instala la distribución compatible de PyPI con:
 
 ```sh
 pip install bridgex
 ```
 
-Se recomienda el uso de un entorno virtual. Para personalizar los formatos soportados, edite el archivo [`requirements.txt`](https://github.com/Dev2Forge/bridgex/blob/main/requirements.txt) según sus necesidades.
+Ejecuta el paquete instalado con:
+
+```sh
+bridgex
+```
+
+(Si es necesario, también puedes ejecutarlo con `python -m bridgex`.)
+
+Aunque Bridgex se implementa en Rust, el repositorio mantiene metadatos de empaquetado Python para preservar compatibilidad con `pypi.org` como destino de distribución secundaria.
 
 ---
 
@@ -86,36 +133,22 @@ Clona el repositorio y ejecuta Bridgex localmente:
 git clone https://github.com/Dev2Forge/bridgex.git
 ```
 
-2. Navega al directorio del proyecto y configura un entorno virtual.
+2. Navega al directorio del proyecto.
 
 ```sh
-cd bridgex
+cd bridgex/src/bridgex
 ```
 
-3. Crea un entorno virtual.
+3. Construye y ejecuta la aplicación.
 
 ```sh
-python -m venv .venv
+cargo run --release
 ```
 
-4. Activa el entorno virtual.
+4. Para instalar el binario localmente:
 
 ```sh
-# En Windows
-.venv\Scripts\activate
-# source .venv/bin/activate  # En Linux/MacOS
-```
-
-5. Instala las dependencias requeridas.
-
-```sh
-pip install -r requirements.txt
-```
-
-6. Ejecuta la aplicación.
-
-```sh
-python -m src.bridgex
+cargo install --path .
 ```
 
 ---
@@ -131,23 +164,17 @@ python -m src.bridgex
 
 ## Formatos Soportados 📂
 
-Bridgex admite la conversión de los siguientes formatos de archivo:
+Bridgex admite actualmente la apertura y conversión de los siguientes formatos:
 
-- PDF (`.pdf`)
+- Excel (`.xlsx`, `.xls`)
 - Word (`.docx`)
 - PowerPoint (`.pptx`)
-- Excel (`.xlsx`, `.xls`, `.csv`)
-- Mensajes Outlook (`.msg`)
-- Texto (`.txt`, `.text`)
-- Markdown (`.md`, `.markdown`)
-- JSON (`.json`, `.jsonl`)
-- XML (`.xml`)
-- RSS/Atom (`.rss`, `.atom`)
-- HTML/MHTML (`.html`, `.htm`, `.mhtml`)
-- ePub (`.epub`)
-- Archivos comprimidos (`.zip`)
-- Jupyter Notebooks (`.ipynb`)
-- Otros formatos compatibles con Markitdown
+- PDF (`.pdf`)
+- HTML (`.html`, `.htm`)
+- Imágenes (`.jpg`, `.jpeg`)
+- CSV (`.csv`)
+- RSS / XML (`.xml`, `.rss`, `.atom`)
+- Archivos ZIP (`.zip`)
 
 ---
 
@@ -177,6 +204,6 @@ Las contribuciones son bienvenidas. Por favor, abra un issue o pull request sigu
 
 ## Licencia 📄
 
-Distribuido bajo la [Licencia MIT](https://github.com/Dev2Forge/bridgex/blob/main/LICENSE).
+Distribuido bajo la [Licencia GPLv3](https://github.com/Dev2Forge/bridgex/blob/main/LICENSE).
 
 ©2025 Dev2Forge

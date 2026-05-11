@@ -5,8 +5,13 @@ use freya::{
 };
 use std::path::PathBuf;
 use crate::theme::{ github_app_theme, github_editor_theme, GITHUB_COLORS };
-use crate::ui::{ about::AboutPopup, licenses::LicencesPopup, menu::{ open_file, MenuBarOwn } };
-use crate::utils::files::{ FileOwn, Filter };
+use crate::ui::{
+    about::AboutPopup,
+    licenses::LicencesPopup,
+    llm::LLMApiKeyPopup,
+    menu::{ open_file, MenuBarOwn },
+};
+use crate::utils::{ files::{ FileOwn, Filter }, llm_config::LLMConfig };
 
 pub fn app() -> impl IntoElement {
     use_init_theme(github_app_theme);
@@ -18,10 +23,37 @@ pub fn app() -> impl IntoElement {
     let mut current_file_path = use_state(|| Option::<PathBuf>::None);
     let focus = use_focus();
 
-    let mut popup_licenses = LicencesPopup::new();
-    let mut about_popup = AboutPopup::new(popup_licenses.show_popup.clone());
+    let popup_licenses = LicencesPopup::new();
+    let about_popup = AboutPopup::new(popup_licenses.show_popup.clone());
     let mut show_licenses = popup_licenses.show_popup.clone();
     let mut show_about = about_popup.show_popup.clone();
+
+    let llm_config = LLMConfig::load();
+    let llm_api_key = use_state(|| llm_config.llm_api_key.clone());
+    let llm_client = use_state(|| llm_config.llm_client.clone());
+    let llm_model = use_state(|| llm_config.llm_model.clone());
+
+    let save_llm_config = {
+        let llm_api_key = llm_api_key.clone();
+        let llm_client = llm_client.clone();
+        let llm_model = llm_model.clone();
+        move || {
+            let config = LLMConfig {
+                llm_api_key: llm_api_key.read().clone(),
+                llm_client: llm_client.read().clone(),
+                llm_model: llm_model.read().clone(),
+            };
+            let _ = config.save();
+        }
+    };
+
+    let llm_popup = LLMApiKeyPopup::new(
+        llm_api_key.clone(),
+        llm_client.clone(),
+        llm_model.clone(),
+        std::rc::Rc::new(save_llm_config)
+    );
+    let mut show_llm_settings = llm_popup.show_popup.clone();
 
     let mut editor = use_state(|| {
         let mut editor = CodeEditorData::new("".into(), LanguageId::Markdown);
@@ -31,13 +63,13 @@ pub fn app() -> impl IntoElement {
     });
 
     let editor_theme = github_editor_theme();
-
     let menu_ctn = MenuBarOwn::new(
         open_file_state.clone(),
         save_requested.clone(),
         exit_requested.clone(),
         show_about.clone(),
         show_licenses.clone(),
+        show_llm_settings.clone(),
         Some("#00000000".to_string())
     );
     let menu = menu_ctn.menu_bar();
@@ -45,7 +77,12 @@ pub fn app() -> impl IntoElement {
     let opened_file = open_file_state.read().clone();
     if let Some(file) = opened_file {
         let file_path = file.path().to_str().unwrap_or_default();
-        let converted = crate::logic::converter::convert_from_path(file_path);
+        let converted = crate::logic::converter::convert_from_path(
+            file_path,
+            Some(llm_api_key.read().clone()),
+            Some(llm_client.read().clone()),
+            Some(llm_model.read().clone())
+        );
         editor.write().rope = Rope::from_str(converted.as_str());
         editor.write().parse();
         *current_file_path.write() = Some(file.path().clone());
@@ -104,12 +141,19 @@ pub fn app() -> impl IntoElement {
                     Code::KeyL => {
                         show_licenses.toggle();
                     }
+                    Code::KeyK => {
+                        if *show_llm_settings.read() {
+                            *show_llm_settings.write() = false;
+                        } else {
+                            *show_llm_settings.write() = true;
+                        }
+                    }
                     _ => {}
                 }
             }
         })
         .child(menu)
-        .child(build_popups(&mut popup_licenses, &mut about_popup))
+        .child(build_popups(popup_licenses, about_popup, llm_popup))
         .child(
             rect()
                 .horizontal()
@@ -163,11 +207,13 @@ fn build_preview(markdown: String, theme_colors: ColorsSheet) -> impl IntoElemen
 }
 
 fn build_popups(
-    popup_licenses: &mut LicencesPopup,
-    about_popup: &mut AboutPopup
+    popup_licenses: LicencesPopup,
+    about_popup: AboutPopup,
+    llm_popup: LLMApiKeyPopup
 ) -> impl IntoElement {
     rect()
-        .child(popup_licenses.popup.take().unwrap())
-        .child(about_popup.popup.take().unwrap())
+        .child(popup_licenses.popup)
+        .child(about_popup.popup)
+        .child(llm_popup.popup)
         .max_height(Size::px(400.0))
 }
