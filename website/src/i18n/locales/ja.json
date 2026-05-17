@@ -9,7 +9,7 @@
   "hero": {
     "title": "Bridgex",
     "subtitle": "<0>markitdown</0> への架け橋",
-    "description": "ファイルを Markdown に変換するオープンソースのデスクトップアプリ。Rust と Freya UI で構築され、Python は PyPI 配布のためにのみ使用されます。",
+    "description": "Rust と Freya UI で構築された、ファイルを Markdown に変換するためのオープンソースのデスクトップアプリ。Python は PyPI 配布目的のみに使用されています。",
     "cta": {
       "download": "今すぐダウンロード",
       "documentation": "ドキュメントを見る"
@@ -19,74 +19,80 @@
     "title": "機能",
     "crossPlatform": {
       "title": "クロスプラットフォーム",
-      "description": "Windows、macOS、Linux で動作。どの環境でも GUI を利用できます。"
+      "description": "Windows、macOS、Linux で動作します。どのシステムでも GUI を使用できます。"
     },
     "multiFormat": {
-      "title": "多形式サポート",
-      "description": "PDF、DOCX、PPTX、XLSX、HTML、ePub など多くの形式を Markdown に変換。"
+      "title": "マルチフォーマット対応",
+      "description": "PDF、DOCX、PPTX、XLSX、HTML、ePub など、多くのフォーマットを Markdown に変換します。"
     },
     "openSource": {
       "title": "オープンソース",
-      "description": "GPL-3.0 ライセンスの完全なオープンソース。自由に確認・改変・再配布できます。"
+      "description": "GPL-3.0 ライセンスの下で完全にオープンソース化されています。自由に検査、変更、再配布が可能です。"
     },
     "lightEditor": {
       "title": "軽量エディタ",
-      "description": "保存前に変換後の Markdown を確認・微調整できる内蔵の軽量エディタ。"
+      "description": "保存する前に、変換された Markdown を確認して微調整できる軽量な内蔵エディタ。"
     },
     "multilingual": {
-      "title": "多言語",
-      "description": "英語・スペイン語ほか複数言語で利用可能なインターフェース。"
+      "title": "多言語対応",
+      "description": "インターフェースは、英語、スペイン語など複数の言語で利用可能です。"
     },
     "modular": {
       "title": "モジュール設計",
-      "description": "柔軟に拡張・適応可能。UI は Rust の Freya コンポーネントで構成。"
+      "description": "適応と拡張が容易です。UI は Rust の Freya コンポーネントで構築されています。"
     }
   },
   "downloads": {
     "title": "ダウンロード",
-    "subtitle": "お使いのプラットフォーム向け Bridgex を入手",
+    "subtitle": "お使いのプラットフォーム用の Bridgex を入手",
     "windows": {
       "title": "Windows",
-      "description": "Windows 64bit 用インストーラー (.exe) をダウンロード。依存関係をすべて含みます。",
+      "description": "Windows 64ビット用のインストーラー（.exe）をダウンロードします。すべての依存関係が含まれています。",
       "button": "Windows 版をダウンロード",
-      "note": "Windows 10/11 64bit が必要です。32bit 環境は推奨しません。"
+      "note": "Windows 10/11 64ビットが必要です。32ビットシステムには推奨されません。"
     },
     "linux": {
       "title": "Windows / macOS (PyPI)",
-      "description": "Windows/macOS では PyPI から pip でインストール。Python は配布のためにのみ使用されます。",
+      "description": "Windows/macOS 上で PyPI から pip 経由でインストールします。Python は配布のみに使用されます。",
       "button": "pip install bridgex",
-      "note": "Linux ユーザーは SourceForge のバイナリを使用してください。"
+      "note": "Linux および macOS のインストールには SourceForge のバイナリを使用してください。"
     },
     "sourceforge": {
       "title": "SourceForge",
-      "description": "SourceForge から Linux バイナリをダウンロード。",
-      "button": "SourceForge でダウンロード"
+      "description": "SourceForge からの Linux および macOS バイナリのダウンロード。",
+      "button": "SourceForge からダウンロード"
     },
     "requirements": {
-      "title": "動作環境",
-      "python": "Python 3.8+（Windows/macOS の PyPI インストールのみ）",
-      "os": "Windows 10/11、macOS、Linux",
-      "memory": "最低 2GB RAM",
-      "disk": "500MB 以上の空きディスク"
+      "title": "システム要件",
+      "python": "Python 3.8+（Windows/macOS での PyPI インストールのみ必要）",
+      "os": "Windows 10/11, macOS, Linux",
+      "memory": "最低 80MB の RAM",
+      "disk": "40MB の空きディスク容量"
     }
   },
   "documentation": {
     "title": "ドキュメント",
-    "subtitle": "Bridgex の使い方",
+    "subtitle": "Bridgex の使い方を学ぶ",
     "installation": {
       "title": "インストール",
       "pip": {
-        "title": "pip でのインストール (Windows/macOS)",
-        "step1": "Python 3.8+ がインストールされていることを確認（PyPI 配布にのみ必要）",
-        "step2": "仮想環境を作成し有効化（推奨）：",
-        "step3": "Bridgex をインストール：",
-        "step4": "Bridgex を起動："
+        "title": "pip によるインストール (Windows/macOS)",
+        "step1": "Python 3.8+ がインストールされていることを確認してください（PyPI 配布にのみ必要）",
+        "step2": "仮想環境を作成して有効化する（推奨）：",
+        "step3": "Bridgex をインストールする：",
+        "step4": "Bridgex を実行する："
+      },
+      "crates": {
+        "title": "crates によるインストール (Rust)",
+        "step1": "rustup で Rust ツールチェーンがインストールされていることを確認してください。",
+        "step2": "crates.io から Markitdown クレートをインストールします：",
+        "step3": "インストールされた Markitdown コマンドを実行してファイルを変換します。"
       },
       "windows": {
         "title": "Windows でのインストール",
-        "step1": "ダウンロードページからインストーラーを取得",
-        "step2": "管理者としてインストーラーを実行",
-        "step3": "セットアップウィザードに従う",
+        "step1": "ダウンロードページからインストーラーをダウンロードします",
+        "step2": "インストーラーを管理者として実行します",
+        "step3": "インストールウィザードに従います",
         "step4": "Bridgex は Program Files にインストールされます"
       }
     },
@@ -94,28 +100,28 @@
       "title": "トラブルシューティング",
       "vcredist": {
         "title": "VC++ ランタイムエラー (Windows)",
-        "description": "Visual C++ Runtime が無いと表示された場合、インストーラーが VC_Redist x64 を自動で導入します。解決しない場合は Microsoft から手動で入手してください。"
+        "description": "Visual C++ ランタイムの不足に関するエラーが表示された場合、インストーラーは自動的に VC_Redist x64 をインストールします。問題が解決しない場合は、Microsoft から手動でダウンロードしてください。"
       },
       "permissions": {
         "title": "アクセス拒否 (Windows)",
-        "description": "インストーラーとアプリは管理者権限で実行してください。特定フォルダーへの書き込みが必要です。"
+        "description": "インストーラーとアプリケーションを管理者として実行してください。プログラムには特定のフォルダへの書き込み権限が必要です。"
       },
       "pyside": {
-        "title": "PyPI インストール問題 (Windows/macOS)",
+        "title": "PyPI インストールの問題 (Windows/macOS)",
         "description": "pip install が失敗する場合は、pip を更新して再試行してください："
       },
       "display": {
         "title": "表示の問題 (Linux)",
-        "description": "GUI が表示されない/崩れる場合、X11 または Wayland のディスプレイサーバーが動作しているか確認。WSL では VcXsrv などの X サーバーをインストールしてください。"
+        "description": "GUI が表示されない、または壊れて見える場合は、ディスプレイサーバー（X11 または Wayland）が動作していることを確認してください。WSL の場合は、VcXsrv などの X サーバーをインストールしてください。"
       }
     },
     "usage": {
       "title": "基本的な使い方",
-      "step1": "ターミナルまたはショートカットから Bridgex を起動",
-      "step2": "アップロードボタンで変換するファイルを選択",
-      "step3": "ファイルは自動で Markdown に変換されます",
-      "step4": "内蔵エディタで結果を確認・編集",
-      "step5": "保存を押して Markdown ファイルを書き出し"
+      "step1": "ターミナルまたはインストールされたショートカットから Bridgex を起動します",
+      "step2": "アップロードボタンをクリックして、変換するファイルを選択します",
+      "step3": "ファイルは自動的に Markdown に変換されます",
+      "step4": "内蔵エディタで結果を確認および編集します",
+      "step5": "保存をクリックして Markdown ファイルをエクスポートします"
     },
     "formats": {
       "title": "対応フォーマット",
@@ -124,7 +130,7 @@
         "Word (.docx)",
         "PowerPoint (.pptx)",
         "Excel (.xlsx, .xls, .csv)",
-        "Outlook メール (.msg)",
+        "Outlook メッセージ (.msg)",
         "テキスト (.txt, .text)",
         "Markdown (.md, .markdown)",
         "JSON (.json, .jsonl)",
@@ -139,42 +145,42 @@
   },
   "about": {
     "title": "Bridgex について",
-    "subtitle": "Markdown 変換へのビジュアルブリッジ",
-    "description": "Bridgex はファイルを Markdown に変換するオープンソースのデスクトップアプリです。Rust と Freya UI を用い、Markitdown crate 上に構築されており、Python は PyPI 配布のためにのみ使用されます。",
+    "subtitle": "Markdown 変換への視覚的な架け橋",
+    "description": "Bridgex は、ファイルから Markdown への変換を簡素化するオープンソースのデスクトップアプリです。Markitdown クレートの上に Rust と Freya UI で構築されており、Python は PyPI 配布のみに使用されます。",
     "whatItDoes": {
-      "title": "Bridgex ができること",
+      "title": "Bridgex が行うこと",
       "items": [
-        "さまざまな形式のファイルをクリーンな Markdown に変換",
-        "Markitdown 用のグラフィカルインターフェースを提供",
-        "素早い編集に便利な軽量エディタを搭載",
-        "インターフェースで複数言語をサポート",
-        "Windows・macOS・Linux で動作"
+        "さまざまなファイルフォーマットをクリーンな Markdown に変換します",
+        "Markitdown のグラフィカルインターフェースを提供します",
+        "すばやい編集のための軽量エディタを提供します",
+        "大規模言語モデル（LLM）のワークフローをサポートします",
+        "インターフェースで複数の言語をサポートします",
+        "Windows、macOS、Linux で動作します"
       ]
     },
     "whatItDoesNot": {
-      "title": "Bridgex がしないこと",
+      "title": "Bridgex が行わないこと",
       "items": [
-        "IDE や高機能テキストエディタではない",
-        "ライブプレビュー付きの Markdown エディタではない",
-        "ドキュメント/PDF ビューアではない",
-        "画像ベース PDF の OCR はしない",
-        "重い文書編集向けには設計されていない"
+        "IDE や高度なテキストエディタではありません",
+        "ライブプレビュー付きの Markdown エディタではありません",
+        "ドキュメントビューアや PDF リーダーではありません",
+        "画像ベースの PDF に対する OCR（光学文字認識）は行いません",
+        "高度なドキュメント編集用には設計されていません"
       ]
     },
     "whyLarge": {
-      "title": "Bridgex のサイズが大きい理由",
-      "description": "Bridgex のインストーラーが大きい（90–120MB）理由は、以下を同梱しているためです：",
+      "title": "なぜ Bridgex は軽量なのですか？",
+      "description": "Bridgex は、以下を含むコンパクトなネイティブアプリ（単一バイナリで約 30MB）です：",
       "items": [
-        "Freya UI (Skia) - フル機能のネイティブ GUI フレームワーク",
-        "形式プラグイン付き Markitdown-rs - ドキュメント解析",
-        "Rust バイナリとアセット - オフライン用にパッケージ",
-        "VC++ Runtime (Windows) - 必要な依存関係"
+        "Freya UI (Skia) - 完全なネイティブ GUI フレームワーク",
+        "フォーマットプラグイン付きの Markitdown-rs - ドキュメントのパース",
+        "単一の Rust バイナリ - コンパクトなネイティブパッケージ"
       ]
     },
     "team": {
       "title": "チーム",
-      "developer": "Dev2Forge により開発",
-      "maintained": "tutosrive によりメンテナンス"
+      "developer": "Dev2Forge によって開発",
+      "maintained": "tutosrive によってメンテナンス"
     },
     "links": {
       "github": "GitHub リポジトリ",
@@ -185,16 +191,16 @@
   "licenses": {
     "title": "サードパーティライセンス",
     "subtitle": "Bridgex は以下のオープンソースライブラリを使用しています",
-    "intro": "Bridgex は GPL-3.0 ライセンスで配布されるオープンソースソフトウェアです。複数のサードパーティライブラリに依存しており、それぞれ独自のライセンス条件があります。このページでは主要な依存関係とライセンスを一覧表示します。"
+    "intro": "Bridgex は GPL-3.0 ライセンスの下で配布されるオープンソースソフトウェアです。複数のサードパーティライブラリに依存しており、それぞれに独自のライセンス条項があります。このページでは、すべての主要な依存関係とそのライセンスをリストしています。"
   },
   "footer": {
     "description": "Markitdown への架け橋",
     "navigation": "ナビゲーション",
     "resources": "リソース",
-    "copyright": "© 2025 Dev2Forge. 無断転載を禁じます。",
+    "copyright": "© 2025 Dev2Forge. All rights reserved.",
     "license": "GPL-3.0 ライセンス",
-    "madeWith": "使用技術",
-    "and": "と",
+    "madeWith": "Made with",
+    "and": "and",
     "links": {
       "github": "GitHub",
       "pypi": "PyPI",
@@ -210,7 +216,7 @@
     "en": "英語",
     "es": "スペイン語",
     "pt": "ポルトガル語",
-    "zh": "中国語（標準語）",
+    "zh": "中国語（北京語）",
     "hi": "ヒンディー語",
     "fr": "フランス語",
     "ar": "アラビア語",

@@ -8,66 +8,66 @@
   },
   "hero": {
     "title": "Bridgex",
-    "subtitle": "Sua Ponte para <0>markitdown</0>",
-    "description": "Um aplicativo desktop open source para converter arquivos para Markdown, construído em Rust com Freya UI. Python é usado apenas para distribuição via PyPI.",
+    "subtitle": "Sua ponte para o <0>markitdown</0>",
+    "description": "Um aplicativo de desktop de código aberto para converter arquivos em Markdown, desenvolvido em Rust com Freya UI. O Python é usado apenas para a distribuição no PyPI.",
     "cta": {
-      "download": "Baixar Agora",
-      "documentation": "Ver Documentação"
+      "download": "Baixar agora",
+      "documentation": "Ver documentação"
     }
   },
   "features": {
     "title": "Recursos",
     "crossPlatform": {
       "title": "Multiplataforma",
-      "description": "Funciona em Windows, macOS e Linux. Use a interface gráfica em qualquer sistema."
+      "description": "Funciona em Windows, macOS e Linux. Use a GUI em qualquer sistema."
     },
     "multiFormat": {
-      "title": "Suporte Multi-Formato",
+      "title": "Suporte multiformato",
       "description": "Converta PDF, DOCX, PPTX, XLSX, HTML, ePub e muitos outros formatos para Markdown."
     },
     "openSource": {
-      "title": "Código Aberto",
-      "description": "Totalmente open source sob a licença GPL-3.0. Inspecione, modifique e redistribua livremente."
+      "title": "Código aberto",
+      "description": "Totalmente de código aberto sob a licença GPL-3.0. Inspecione, modifique e redistribua livremente."
     },
     "lightEditor": {
-      "title": "Editor Leve",
-      "description": "Editor integrado para revisar e ajustar seu Markdown convertido antes de salvar."
+      "title": "Editor leve",
+      "description": "Editor leve integrado para revisar e ajustar seu Markdown convertido antes de salvar."
     },
     "multilingual": {
       "title": "Multilíngue",
-      "description": "Interface disponível em vários idiomas: Inglês, Espanhol, Português e mais."
+      "description": "Interface disponível em vários idiomas: inglês, espanhol e mais."
     },
     "modular": {
-      "title": "Design Modular",
+      "title": "Design modular",
       "description": "Fácil de adaptar e estender. A UI é construída com componentes Freya em Rust."
     }
   },
   "downloads": {
     "title": "Downloads",
-    "subtitle": "Obtenha o Bridgex para sua plataforma",
+    "subtitle": "Obtenha o Bridgex para a sua plataforma",
     "windows": {
       "title": "Windows",
-      "description": "Baixe o instalador (.exe) para Windows 64-bit. Inclui todas as dependências.",
+      "description": "Baixe o instalador (.exe) para Windows de 64 bits. Inclui todas as dependências.",
       "button": "Baixar para Windows",
-      "note": "Requer Windows 10/11 64-bit. Não recomendado para sistemas 32-bit."
+      "note": "Necessário Windows 10/11 de 64 bits. Não recomendado para sistemas de 32 bits."
     },
     "linux": {
       "title": "Windows / macOS (PyPI)",
-      "description": "Instale via pip pelo PyPI no Windows/macOS. Python é usado apenas para distribuição.",
+      "description": "Instale via pip a partir do PyPI no Windows/macOS. O Python é usado apenas para distribuição.",
       "button": "pip install bridgex",
-      "note": "Usuários de Linux devem usar o binário do SourceForge."
+      "note": "Use o binário do SourceForge para instalações no Linux e macOS."
     },
     "sourceforge": {
       "title": "SourceForge",
-      "description": "Download do binário Linux pelo SourceForge.",
+      "description": "Download do binário para Linux e macOS no SourceForge.",
       "button": "Baixar do SourceForge"
     },
     "requirements": {
-      "title": "Requisitos do Sistema",
+      "title": "Requisitos do sistema",
       "python": "Python 3.8+ (apenas para instalações via PyPI no Windows/macOS)",
       "os": "Windows 10/11, macOS, Linux",
-      "memory": "2GB RAM mínimo",
-      "disk": "500MB de espaço livre"
+      "memory": "Mínimo de 80MB de RAM",
+      "disk": "40MB de espaço livre em disco"
     }
   },
   "documentation": {
@@ -82,43 +82,49 @@
         "step3": "Instale o Bridgex:",
         "step4": "Execute o Bridgex:"
       },
+      "crates": {
+        "title": "Instalação via crates (Rust)",
+        "step1": "Certifique-se de ter o toolchain do Rust instalado com o rustup.",
+        "step2": "Instale a crate Markitdown a partir do crates.io:",
+        "step3": "Execute o comando Markitdown instalado para converter arquivos."
+      },
       "windows": {
         "title": "Instalação no Windows",
-        "step1": "Baixe o instalador da página de Downloads",
+        "step1": "Baixe o instalador a partir da página de Downloads",
         "step2": "Execute o instalador como Administrador",
         "step3": "Siga o assistente de instalação",
-        "step4": "O Bridgex será instalado em Arquivos de Programas"
+        "step4": "O Bridgex será instalado em Arquivos de Programas (Program Files)"
       }
     },
     "troubleshooting": {
-      "title": "Solução de Problemas",
+      "title": "Solução de problemas",
       "vcredist": {
-        "title": "Erro de VC++ Runtime (Windows)",
-        "description": "Se você vir um erro sobre Visual C++ Runtime faltando, o instalador instalará automaticamente o VC_Redist x64. Se os problemas persistirem, baixe manualmente da Microsoft."
+        "title": "Erro de runtime do VC++ (Windows)",
+        "description": "Se você encontrar um erro sobre a ausência do Visual C++ Runtime, o instalador instalará automaticamente o VC_Redist x64. Se os problemas persistirem, baixe-o manualmente no site da Microsoft."
       },
       "permissions": {
-        "title": "Permissão Negada (Windows)",
-        "description": "Execute o instalador e o aplicativo como Administrador. O programa precisa de acesso de escrita a certas pastas."
+        "title": "Permissão negada (Windows)",
+        "description": "Execute o instalador e o aplicativo como Administrador. O programa precisa de acesso de gravação em pastas específicas."
       },
       "pyside": {
-        "title": "Problemas de instalação no PyPI (Windows/macOS)",
-        "description": "Se o pip install falhar, atualize o pip e tente novamente:"
+        "title": "Problemas de instalação via PyPI (Windows/macOS)",
+        "description": "Se o comando pip install falhar, atualize o pip e tente novamente:"
       },
       "display": {
-        "title": "Problemas de Exibição (Linux)",
-        "description": "Se a interface não aparecer ou parecer quebrada, certifique-se de ter um servidor de display rodando (X11 ou Wayland). Para WSL, instale um servidor X como VcXsrv."
+        "title": "Problemas de exibição (Linux)",
+        "description": "Se a GUI não aparecer ou parecer quebrada, certifique-se de ter um servidor de exibição em execução (X11 ou Wayland). Para o WSL, instale um servidor X como o VcXsrv."
       }
     },
     "usage": {
-      "title": "Uso Básico",
-      "step1": "Inicie o Bridgex do terminal ou do atalho instalado",
-      "step2": "Clique no botão de upload para selecionar um arquivo",
-      "step3": "O arquivo será automaticamente convertido para Markdown",
+      "title": "Uso básico",
+      "step1": "Inicie o Bridgex pelo terminal ou pelo atalho instalado",
+      "step2": "Clique no botão de upload para selecionar um arquivo para converter",
+      "step3": "O arquivo será convertido automaticamente para Markdown",
       "step4": "Revise e edite o resultado no editor integrado",
       "step5": "Clique em salvar para exportar seu arquivo Markdown"
     },
     "formats": {
-      "title": "Formatos Suportados",
+      "title": "Formatos suportados",
       "list": [
         "PDF (.pdf) - Extração de texto simples",
         "Word (.docx)",
@@ -139,36 +145,36 @@
   },
   "about": {
     "title": "Sobre o Bridgex",
-    "subtitle": "Uma ponte visual para conversão de Markdown",
-    "description": "Bridgex é um aplicativo desktop open source que simplifica a conversão de arquivos para Markdown. Construído em Rust com Freya UI sobre o crate Markitdown, com Python usado apenas para distribuição via PyPI.",
+    "subtitle": "Uma ponte visual para a conversão em Markdown",
+    "description": "O Bridgex é um aplicativo de desktop de código aberto que simplifica a conversão de arquivos para Markdown. Construído em Rust com Freya UI sobre a crate Markitdown, com o Python sendo utilizado apenas para a distribuição no PyPI.",
     "whatItDoes": {
-      "title": "O Que o Bridgex Faz",
+      "title": "O que o Bridgex faz",
       "items": [
-        "Converte vários formatos de arquivo para Markdown limpo",
+        "Converte vários formatos de arquivo em um Markdown limpo",
         "Fornece uma interface gráfica para o Markitdown",
         "Oferece um editor leve para edições rápidas",
-        "Suporta múltiplos idiomas na interface",
-        "Funciona em Windows, macOS e Linux"
+        "Suporta fluxos de trabalho de Modelos de Linguagem de Grande Porte (LLM)",
+        "Suporta vários idiomas na interface",
+        "Funciona no Windows, macOS e Linux"
       ]
     },
     "whatItDoesNot": {
-      "title": "O Que o Bridgex NÃO Faz",
+      "title": "O que o Bridgex NÃO faz",
       "items": [
-        "Não é uma IDE ou editor de texto avançado",
-        "Não é um editor de Markdown com pré-visualização",
-        "Não é um visualizador de documentos ou leitor PDF",
+        "Não é uma IDE ou um editor de texto avançado",
+        "Não é um editor de Markdown com visualização ao vivo",
+        "Não é um visualizador de documentos ou leitor de PDF",
         "Não realiza OCR em PDFs baseados em imagens",
         "Não foi projetado para edição pesada de documentos"
       ]
     },
     "whyLarge": {
-      "title": "Por Que o Bridgex é Grande?",
-      "description": "O Bridgex tem um tamanho significativo (90-120MB para o instalador) porque inclui:",
+      "title": "Por que o Bridgex é leve?",
+      "description": "O Bridgex é um aplicativo nativo compacto (binário único de ~30MB) que inclui:",
       "items": [
-        "Freya UI (Skia) - framework GUI nativo completo",
-        "Markitdown-rs com plugins de formato - análise de documentos",
-        "Binários e recursos Rust - empacotados para uso offline",
-        "VC++ Runtime (Windows) - dependências necessárias"
+        "Freya UI (Skia) - Framework de GUI totalmente nativo",
+        "Markitdown-rs com plugins de formato - Análise de documentos",
+        "Binário único em Rust - Pacote nativo compacto"
       ]
     },
     "team": {
@@ -177,15 +183,15 @@
       "maintained": "Mantido por tutosrive"
     },
     "links": {
-      "github": "Repositório GitHub",
-      "pypi": "Pacote PyPI",
+      "github": "Repositório no GitHub",
+      "pypi": "Pacote no PyPI",
       "sourceforge": "SourceForge"
     }
   },
   "licenses": {
-    "title": "Licenças de Terceiros",
-    "subtitle": "O Bridgex usa as seguintes bibliotecas de código aberto",
-    "intro": "Bridgex é um software open source distribuído sob a licença GPL-3.0. Ele depende de várias bibliotecas de terceiros, cada uma com seus próprios termos de licença. Esta página lista todas as principais dependências e suas respectivas licenças."
+    "title": "Licenças de terceiros",
+    "subtitle": "O Bridgex utiliza as seguintes bibliotecas de código aberto",
+    "intro": "O Bridgex é um software de código aberto distribuído sob a licença GPL-3.0. Ele depende de várias bibliotecas de terceiros, cada uma com seus próprios termos de licenciamento. Esta página lista todas as principais dependências e suas respectivas licenças."
   },
   "footer": {
     "description": "Sua ponte para o Markitdown",
@@ -207,8 +213,8 @@
     "system": "Sistema"
   },
   "language": {
-    "en": "English",
-    "es": "Español",
+    "en": "Inglês",
+    "es": "Espanhol",
     "pt": "Português",
     "zh": "Chinês (Mandarim)",
     "hi": "Hindi",

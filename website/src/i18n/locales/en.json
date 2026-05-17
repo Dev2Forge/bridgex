@@ -82,6 +82,12 @@
         "step3": "Install Bridgex:",
         "step4": "Run Bridgex:"
       },
+      "crates": {
+        "title": "Installation via crates (Rust)",
+        "step1": "Ensure you have the Rust toolchain installed with rustup.",
+        "step2": "Install the Markitdown crate from crates.io:",
+        "step3": "Run the installed Markitdown command to convert files."
+      },
       "windows": {
         "title": "Windows Installation",
         "step1": "Download the installer from the Downloads page",
@@ -168,8 +174,7 @@
       "items": [
         "Freya UI (Skia) - Full native GUI framework",
         "Markitdown-rs with format plugins - Document parsing",
-        "Single Rust binary - Compact native package",
-        "VC++ Runtime (Windows) - Required dependencies"
+        "Single Rust binary - Compact native package"
       ]
     },
     "team": {

@@ -4,118 +4,124 @@
     "downloads": "下载",
     "documentation": "文档",
     "about": "关于",
-    "licenses": "许可"
+    "licenses": "许可证"
   },
   "hero": {
     "title": "Bridgex",
-    "subtitle": "通往 <0>markitdown</0> 的桥梁",
-    "description": "一个开源桌面应用，用于将文件转换为 Markdown，基于 Rust 与 Freya UI 构建。Python 仅用于 PyPI 分发。",
+    "subtitle": "您通往 <0>markitdown</0> 的桥梁",
+    "description": "一款开源的桌面应用程序，用于 stroke 文件转换为 Markdown。基于 Rust 与 Freya UI 构建。Python 仅用于 PyPI 分发。",
     "cta": {
       "download": "立即下载",
       "documentation": "查看文档"
     }
   },
   "features": {
-    "title": "功能",
+    "title": "功能特性",
     "crossPlatform": {
       "title": "跨平台",
-      "description": "可在 Windows、macOS、Linux 上运行。在任何系统上都能使用 GUI。"
+      "description": "支持 Windows、macOS 和 Linux。可在任何系统上使用图形用户界面（GUI）。"
     },
     "multiFormat": {
       "title": "多格式支持",
-      "description": "将 PDF、DOCX、PPTX、XLSX、HTML、ePub 等更多格式转换为 Markdown。"
+      "description": "支持将 PDF、DOCX、PPTX、XLSX、HTML、ePub 等多种格式转换为 Markdown。"
     },
     "openSource": {
       "title": "开源",
-      "description": "完全开源，遵循 GPL-3.0 许可证。自由查看、修改与分发。"
+      "description": "基于 GPL-3.0 许可证完全开源。可自由检查、修改和重新分发。"
     },
     "lightEditor": {
-      "title": "轻量编辑器",
-      "description": "内置轻量编辑器，可在保存前审阅并微调转换后的 Markdown。"
+      "title": "轻量级编辑器",
+      "description": "内置轻量级编辑器，可在保存前预览并微调转换后的 Markdown 内容。"
     },
     "multilingual": {
-      "title": "多语言",
+      "title": "多语言支持",
       "description": "界面提供多种语言：英语、西班牙语等。"
     },
     "modular": {
       "title": "模块化设计",
-      "description": "易于适配与扩展。UI 使用 Rust 的 Freya 组件构建。"
+      "description": "易于适配和扩展。界面采用 Rust 编写的 Freya 组件构建。"
     }
   },
   "downloads": {
     "title": "下载",
-    "subtitle": "为你的平台获取 Bridgex",
+    "subtitle": "获取适合您平台的 Bridgex",
     "windows": {
       "title": "Windows",
-      "description": "下载适用于 Windows 64 位的安装程序 (.exe)，包含所有依赖。",
-      "button": "下载 Windows 版本",
-      "note": "需要 Windows 10/11 64 位。不建议 32 位系统使用。"
+      "description": "下载适用于 Windows 64 位的安装程序（.exe）。已包含所有依赖项。",
+      "button": "下载 Windows 版",
+      "note": "需要 Windows 10/11 64 位系统。不推荐在 32 位系统上使用。"
     },
     "linux": {
-      "title": "Windows / macOS（PyPI）",
-      "description": "在 Windows/macOS 上通过 PyPI 的 pip 安装。Python 仅用于分发。",
+      "title": "Windows / macOS (PyPI)",
+      "description": "在 Windows/macOS 上通过 PyPI 的 pip 进行安装。Python 仅用于分发。",
       "button": "pip install bridgex",
-      "note": "Linux 用户应改用 SourceForge 二进制包。"
+      "note": "Linux 和 macOS 安装请使用 SourceForge 的二进制文件。"
     },
     "sourceforge": {
       "title": "SourceForge",
-      "description": "从 SourceForge 下载 Linux 二进制包。",
+      "description": "从 SourceForge 下载 Linux 和 macOS 的二进制文件。",
       "button": "从 SourceForge 下载"
     },
     "requirements": {
       "title": "系统要求",
-      "python": "Python 3.8+（仅用于 Windows/macOS 的 PyPI 安装）",
-      "os": "Windows 10/11，macOS，Linux",
-      "memory": "至少 2GB 内存",
-      "disk": "500MB 可用磁盘空间"
+      "python": "Python 3.8+（仅在 Windows/macOS 上通过 PyPI 安装时需要）",
+      "os": "Windows 10/11, macOS, Linux",
+      "memory": "最低 80MB RAM",
+      "disk": "40MB 可用磁盘空间"
     }
   },
   "documentation": {
     "title": "文档",
     "subtitle": "了解如何使用 Bridgex",
     "installation": {
-      "title": "安装",
+      "title": "安装指南",
       "pip": {
-        "title": "通过 pip 安装（Windows/macOS）",
-        "step1": "确保已安装 Python 3.8+（仅用于 PyPI 分发）",
+        "title": "通过 pip 安装 (Windows/macOS)",
+        "step1": "确保已安装 Python 3.8+（仅在 PyPI 分发渠道需要）",
         "step2": "创建并激活虚拟环境（推荐）：",
         "step3": "安装 Bridgex：",
         "step4": "运行 Bridgex："
       },
+      "crates": {
+        "title": "通过 crates 安装 (Rust)",
+        "step1": "确保已通过 rustup 安装 Rust 工具链。",
+        "step2": "从 crates.io 安装 Markitdown crate：",
+        "step3": "运行已安装的 Markitdown 命令来转换文件。"
+      },
       "windows": {
         "title": "Windows 安装",
-        "step1": "从下载页获取安装程序",
+        "step1": "从下载页面下载安装程序",
         "step2": "以管理员身份运行安装程序",
-        "step3": "按照安装向导完成步骤",
-        "step4": "Bridgex 将安装在 Program Files"
+        "step3": "按照安装向导进行操作",
+        "step4": "Bridgex 将被安装到 Program Files 目录中"
       }
     },
     "troubleshooting": {
       "title": "故障排除",
       "vcredist": {
-        "title": "VC++ 运行库错误（Windows）",
-        "description": "如果提示缺少 Visual C++ 运行库，安装程序会自动安装 VC_Redist x64。若仍有问题，请从微软手动下载。"
+        "title": "VC++ 运行库错误 (Windows)",
+        "description": "如果遇到提示缺少 Visual C++ 运行库的错误，安装程序会自动安装 VC_Redist x64。如果问题依旧存在，请前往微软官网手动下载。"
       },
       "permissions": {
-        "title": "权限被拒绝（Windows）",
-        "description": "请以管理员身份运行安装程序和应用。程序需要对某些文件夹的写入权限。"
+        "title": "权限被拒绝 (Windows)",
+        "description": "请以管理员身份运行安装程序和应用程序。该程序需要对特定文件夹的写入权限。"
       },
       "pyside": {
-        "title": "PyPI 安装问题（Windows/macOS）",
-        "description": "如果 pip install 失败，请更新 pip 后重试："
+        "title": "PyPI 安装问题 (Windows/macOS)",
+        "description": "如果 pip install 失败，请更新 pip 并重试："
       },
       "display": {
-        "title": "显示问题（Linux）",
-        "description": "如果界面未出现或显示异常，请确保有显示服务器（X11 或 Wayland）在运行。WSL 用户可安装 VcXsrv 等 X 服务器。"
+        "title": "显示问题 (Linux)",
+        "description": "如果图形界面没有出现或显示异常，请确保有正在运行的显示服务器（X11 或 Wayland）。对于 WSL，请安装 X 服务器（如 VcXsrv）。"
       }
     },
     "usage": {
-      "title": "基础用法",
-      "step1": "从终端或快捷方式启动 Bridgex",
+      "title": "基本用法",
+      "step1": "从终端或已安装的快捷方式启动 Bridgex",
       "step2": "点击上传按钮选择要转换的文件",
-      "step3": "文件将自动转换为 Markdown",
-      "step4": "在内置编辑器中审阅并编辑结果",
-      "step5": "点击保存以导出 Markdown 文件"
+      "step3": "文件将自动转换为 Markdown 格式",
+      "step4": "在内置编辑器中预览和修改转换结果",
+      "step5": "点击保存以导出您的 Markdown 文件"
     },
     "formats": {
       "title": "支持的格式",
@@ -129,6 +135,7 @@
         "Markdown (.md, .markdown)",
         "JSON (.json, .jsonl)",
         "XML (.xml)",
+        "RSS/Atom (.rss, .atom)",
         "HTML/MHTML (.html, .htm, .mhtml)",
         "ePub (.epub)",
         "压缩文件 (.zip)",
@@ -138,36 +145,36 @@
   },
   "about": {
     "title": "关于 Bridgex",
-    "subtitle": "通往 Markdown 转换的可视化桥梁",
-    "description": "Bridgex 是一个开源桌面应用，简化文件到 Markdown 的转换。基于 Rust 与 Freya UI，并使用 Markitdown crate；Python 仅用于 PyPI 分发。",
+    "subtitle": "Markdown 转换 transition 的视觉桥梁",
+    "description": "Bridgex 是一款简化文件到 Markdown 转换流程的开源桌面应用。基于 Rust 和 Freya UI 构建在 Markitdown crate 之上，Python 仅用于 PyPI 渠道的分发。",
     "whatItDoes": {
       "title": "Bridgex 能做什么",
       "items": [
-        "将多种文件格式转换为干净的 Markdown",
-        "提供 Markitdown 的图形界面",
-        "提供轻量编辑器进行快速修改",
-        "界面支持多语言",
-        "跨 Windows、macOS 与 Linux 运行"
+        "将各种文件格式转换为干净的 Markdown",
+        "为 Markitdown 提供图形化操作界面",
+        "提供轻量级编辑器以便进行快速编辑",
+        "支持大语言模型（LLM）的工作流搭建",
+        "界面支持多种语言切换",
+        "跨平台运行于 Windows、macOS 和 Linux"
       ]
     },
     "whatItDoesNot": {
       "title": "Bridgex 不能做什么",
       "items": [
-        "不是 IDE 或高级文本编辑器",
-        "不是带实时预览的 Markdown 编辑器",
-        "不是文档或 PDF 查看器",
-        "不对图片型 PDF 做 OCR",
-        "不适合重度文档编辑"
+        "它不是 IDE 或高级文本编辑器",
+        "它不是带有实时预览功能的 Markdown 编辑器",
+        "它不是文档查看器或 PDF 阅读器",
+        "它不对基于图像的 PDF 进行 OCR（光学字符识别）",
+        "它并非专为重度文档编辑而设计"
       ]
     },
     "whyLarge": {
-      "title": "Bridgex 为什么体积大？",
-      "description": "Bridgex 体积较大（安装包 90-120MB），因为包含：",
+      "title": "为什么 Bridgex 如此轻量？",
+      "description": "Bridgex 是一款紧凑的原生应用（约 30MB 的单一二进制文件），其中包含：",
       "items": [
-        "Freya UI（Skia）- 完整原生 GUI 框架",
-        "带格式插件的 Markitdown-rs - 文档解析",
-        "Rust 二进制与资源 - 为离线使用打包",
-        "VC++ Runtime（Windows）- 必需依赖"
+        "Freya UI (Skia) - 完全原生的 GUI 框架",
+        "带有格式插件的 Markitdown-rs - 负责文档解析",
+        "单一 Rust 二进制文件 - 紧凑的原生包"
       ]
     },
     "team": {
@@ -177,23 +184,23 @@
     },
     "links": {
       "github": "GitHub 仓库",
-      "pypi": "PyPI 包",
+      "pypi": "PyPI 软件包",
       "sourceforge": "SourceForge"
     }
   },
   "licenses": {
     "title": "第三方许可证",
-    "subtitle": "Bridgex 使用以下开源库",
-    "intro": "Bridgex 是遵循 GPL-3.0 许可证的开源软件。它依赖于多个第三方库，每个库都有自己的许可条款。本页面列出所有主要依赖项及其许可证。"
+    "subtitle": "Bridgex 使用了以下开源库",
+    "intro": "Bridgex 是在 GPL-3.0 许可证下分发的开源软件。它依赖于多个第三方开源库，每个库都有其各自的许可条款。本页面列出了所有主要的依赖项及其相应的许可证。"
   },
   "footer": {
-    "description": "通往 Markitdown 的桥梁",
+    "description": "您通往 Markitdown 的桥梁",
     "navigation": "导航",
     "resources": "资源",
     "copyright": "© 2025 Dev2Forge. 保留所有权利。",
     "license": "GPL-3.0 许可证",
-    "madeWith": "基于",
-    "and": "和",
+    "madeWith": "构建自",
+    "and": "与",
     "links": {
       "github": "GitHub",
       "pypi": "PyPI",
@@ -203,13 +210,13 @@
   "theme": {
     "light": "浅色",
     "dark": "深色",
-    "system": "系统"
+    "system": "跟随系统"
   },
   "language": {
     "en": "英语",
     "es": "西班牙语",
-    "pt": "葡萄牙语",
-    "zh": "中文（普通话）",
+    "pt": "超级葡萄牙语",
+    "zh": "中文 (简体)",
     "hi": "印地语",
     "fr": "法语",
     "ar": "阿拉伯语",

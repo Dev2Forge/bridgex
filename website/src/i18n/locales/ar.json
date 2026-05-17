@@ -8,38 +8,38 @@
   },
   "hero": {
     "title": "Bridgex",
-    "subtitle": "جسرك إلى <0>markitdown</0>",
-    "description": "تطبيق سطح مكتب مفتوح المصدر لتحويل الملفات إلى Markdown، مبني بـ Rust وواجهة Freya UI. يُستخدم Python فقط للتوزيع عبر PyPI.",
+    "subtitle": "جسركم إلى <0>markitdown</0>",
+    "description": "تطبيق سطح مكتب مفتوح المصدر لتحويل الملفات إلى Markdown، تم بناؤه بلغة Rust وباستخدام Freya UI. يُستخدم Python فقط للتوزيع عبر PyPI.",
     "cta": {
-      "download": "تنزيل الآن",
+      "download": "نزّل الآن",
       "documentation": "عرض التوثيق"
     }
   },
   "features": {
-    "title": "الميزات",
+    "title": "المميزات",
     "crossPlatform": {
       "title": "متعدد المنصات",
-      "description": "يعمل على Windows وmacOS وLinux. استخدم الواجهة الرسومية على أي نظام."
+      "description": "يعمل على أنظمة التشغيل Windows و macOS و Linux. استخدم واجهة المستخدم الرسومية (GUI) على أي نظام."
     },
     "multiFormat": {
-      "title": "دعم متعدد الصيغ",
-      "description": "حوِّل PDF وDOCX وPPTX وXLSX وHTML وePub والعديد من الصيغ الأخرى إلى Markdown."
+      "title": "دعم صيغ متعددة",
+      "description": "تحويل ملفات PDF و DOCX و PPTX و XLSX و HTML و ePub والعديد من الصيغ الأخرى إلى Markdown."
     },
     "openSource": {
       "title": "مفتوح المصدر",
-      "description": "مفتوح المصدر بالكامل تحت ترخيص GPL-3.0. افحص وعدّل ووزّع بحرية."
+      "description": "مفتوح المصدر بالكامل تحت رخصة GPL-3.0. افحص الكود، وعدله، وأعد توزيعه بحرية."
     },
     "lightEditor": {
       "title": "محرر خفيف",
-      "description": "محرر مدمج وخفيف لمراجعة Markdown المعدَّل قبل الحفظ."
+      "description": "محرر خفيف مدمج لمراجعة وتعديل ملف Markdown المحول قبل حفظه."
     },
     "multilingual": {
       "title": "متعدد اللغات",
-      "description": "واجهة متاحة بعدة لغات: الإنجليزية، الإسبانية، وغيرها."
+      "description": "الواجهة متاحة بلغات متعددة: الإنجليزية، الإسبانية، والمزيد."
     },
     "modular": {
       "title": "تصميم معياري",
-      "description": "سهل التكييف والتوسعة. الواجهة مبنية بمكوّنات Freya في Rust."
+      "description": "سهل التكيف والتوسيع. تم بناء واجهة المستخدم باستخدام مكونات Freya بلغة Rust."
     }
   },
   "downloads": {
@@ -47,80 +47,86 @@
     "subtitle": "احصل على Bridgex لمنصتك",
     "windows": {
       "title": "Windows",
-      "description": "نزّل المُثبّت (.exe) لـ Windows 64-بت. يشمل جميع الاعتمادات.",
-      "button": "تنزيل لـ Windows",
-      "note": "يتطلب Windows 10/11 بنظام 64-بت. غير موصى به للأنظمة 32-بت."
+      "description": "قم بتنزيل برنامج التثبيت (.exe) لنظام التشغيل Windows بنواة 64 بت. يتضمن جميع الاعتماديات.",
+      "button": "تنزيل لنظام Windows",
+      "note": "يتطلب نظام التشغيل Windows 10/11 بنواة 64 بت. لا يُوصى به للأنظمة بنواة 32 بت."
     },
     "linux": {
       "title": "Windows / macOS (PyPI)",
-      "description": "ثبّت عبر pip من PyPI على Windows/macOS. يُستخدم Python فقط للتوزيع.",
+      "description": "التثبيت عبر pip من PyPI على أنظمة Windows/macOS. يُستخدم Python فقط للتوزيع.",
       "button": "pip install bridgex",
-      "note": "على مستخدمي Linux استخدام binary من SourceForge."
+      "note": "استخدم ملف SourceForge الثنائي (binary) للتثبيت على أنظمة Linux و macOS."
     },
     "sourceforge": {
       "title": "SourceForge",
-      "description": "تنزيل binary لـ Linux من SourceForge.",
+      "description": "تنزيل الملف الثنائي (binary) لأنظمة Linux و macOS من SourceForge.",
       "button": "تنزيل من SourceForge"
     },
     "requirements": {
       "title": "متطلبات النظام",
-      "python": "Python 3.8+ (فقط لتثبيت PyPI على Windows/macOS)",
-      "os": "Windows 10/11 وmacOS وLinux",
-      "memory": "2 جيجابايت RAM كحد أدنى",
-      "disk": "500 ميجابايت مساحة قرص حرة"
+      "python": "Python 3.8+ (فقط للتثبيت عبر PyPI على أنظمة Windows/macOS)",
+      "os": "Windows 10/11, macOS, Linux",
+      "memory": "الحد الأدنى 80 ميجابايت رام (RAM)",
+      "disk": "40 ميجابايت مساحة قرص فارغة"
     }
   },
   "documentation": {
     "title": "التوثيق",
-    "subtitle": "تعلّم كيفية استخدام Bridgex",
+    "subtitle": "تعلم كيفية استخدام Bridgex",
     "installation": {
       "title": "التثبيت",
       "pip": {
         "title": "التثبيت عبر pip (Windows/macOS)",
-        "step1": "تأكد من تثبيت Python 3.8+ (مطلوب فقط لتوزيع PyPI)",
-        "step2": "أنشئ وفعّل بيئة افتراضية (موصى بها):",
-        "step3": "ثبّت Bridgex:",
-        "step4": "شغّل Bridgex:"
+        "step1": "تأكد من تثبيت Python 3.8+ (مطلوب فقط للتوزيع عبر PyPI)",
+        "step2": "إنشاء بيئة افتراضية وتفعيلها (موصى به):",
+        "step3": "تثبيت Bridgex:",
+        "step4": "تشغيل Bridgex:"
+      },
+      "crates": {
+        "title": "التثبيت عبر crates (Rust)",
+        "step1": "تأكد من تثبيت حزمة أدوات (toolchain) Rust باستخدام rustup.",
+        "step2": "قم بتثبيت حزمة (crate) Markitdown من crates.io:",
+        "step3": "قم بتشغيل أمر Markitdown المثبت لتحويل الملفات."
       },
       "windows": {
         "title": "التثبيت على Windows",
-        "step1": "نزّل المُثبّت من صفحة التنزيلات",
-        "step2": "شغّل المُثبّت كمسؤول",
+        "step1": "قم بتنزيل برنامج التثبيت من صفحة التنزيلات",
+        "step2": "قم بتشغيل برنامج التثبيت كمسؤول (Administrator)",
         "step3": "اتبع معالج التثبيت",
         "step4": "سيتم تثبيت Bridgex في Program Files"
       }
     },
     "troubleshooting": {
-      "title": "استكشاف الأخطاء",
+      "title": "استكشاف الأخطاء وإصلاحها",
       "vcredist": {
-        "title": "خطأ VC++ Runtime (Windows)",
-        "description": "إذا رأيت خطأ حول نقص Visual C++ Runtime، سيقوم المُثبّت بتثبيت VC_Redist x64 تلقائيًا. إن استمرّت المشكلة، نزّله يدويًا من Microsoft."
+        "title": "خطأ في بيئة تشغيل VC++ (Windows)",
+        "description": "إذا ظهر لك خطأ يفيد بفقدان Visual C++ Runtime، فسيقوم برنامج التثبيت تلقائيًا بتثبيت VC_Redist x64. إذا استمرت المشكلة، فقم بتنزيلها يدويًا من Microsoft."
       },
       "permissions": {
         "title": "تم رفض الإذن (Windows)",
-        "description": "شغّل المُثبّت والتطبيق كمسؤول. يحتاج البرنامج صلاحية كتابة لبعض المجلدات."
+        "description": "قم بتشغيل برنامج التثبيت والتطبيق كمسؤول (Administrator). يحتاج البرنامج إلى صلاحية الكتابة في مجلدات معينة."
       },
       "pyside": {
         "title": "مشاكل التثبيت عبر PyPI (Windows/macOS)",
-        "description": "إذا فشل pip install، حدّث pip ثم حاول مجددًا:"
+        "description": "إذا فشل أمر pip install، فقم بتحديث pip وحاول مجددًا:"
       },
       "display": {
-        "title": "مشاكل العرض (Linux)",
-        "description": "إذا لم تظهر الواجهة أو كانت مكسورة، تأكّد من وجود خادم عرض (X11 أو Wayland). في WSL ثبّت خادم X مثل VcXsrv."
+        "title": "مشاكل في العرض (Linux)",
+        "description": "إذا لم تظهر واجهة المستخدم الرسومية أو بدت تالفة، فتأكد من تشغيل خادم عرض (X11 أو Wayland). بالنسبة لـ WSL، قم بتثبيت خادم X مثل VcXsrv."
       }
     },
     "usage": {
       "title": "الاستخدام الأساسي",
-      "step1": "شغّل Bridgex من الطرفية أو الاختصار المثبّت",
-      "step2": "انقر زر الرفع لاختيار ملف للتحويل",
+      "step1": "قم بتشغيل Bridgex من الطرفية (terminal) أو من الاختصار المثبت",
+      "step2": "انقر فوق زر الرفع لاختيار ملف لتحويله",
       "step3": "سيتم تحويل الملف تلقائيًا إلى Markdown",
-      "step4": "راجع النتيجة وعدّلها في المحرر المدمج",
-      "step5": "انقر حفظ لتصدير ملف Markdown"
+      "step4": "راجع النتيجة وعدلها في المحرر المدمج",
+      "step5": "انقر فوق حفظ لتصدير ملف Markdown الخاص بك"
     },
     "formats": {
       "title": "الصيغ المدعومة",
       "list": [
-        "PDF (.pdf) - استخراج نص عادي",
+        "PDF (.pdf) - استخراج النص العادي",
         "Word (.docx)",
         "PowerPoint (.pptx)",
         "Excel (.xlsx, .xls, .csv)",
@@ -132,49 +138,49 @@
         "RSS/Atom (.rss, .atom)",
         "HTML/MHTML (.html, .htm, .mhtml)",
         "ePub (.epub)",
-        "ملفات مضغوطة (.zip)",
+        "الملفات المضغوطة (.zip)",
         "Jupyter Notebooks (.ipynb)"
       ]
     }
   },
   "about": {
     "title": "حول Bridgex",
-    "subtitle": "جسر بصري للتحويل إلى Markdown",
-    "description": "Bridgex تطبيق سطح مكتب مفتوح المصدر يبسّط تحويل الملفات إلى Markdown. مبني بـ Rust وFreya UI فوق crate Markitdown، ويُستخدم Python فقط للتوزيع عبر PyPI.",
+    "subtitle": "جسر مرئي للتحويل إلى Markdown",
+    "description": "Bridgex هو تطبيق سطح مكتب مفتوح المصدر يسهل عملية تحويل الملفات إلى Markdown. تم بناؤه بلغة Rust وباستخدام Freya UI كطبقة فوق حزمة (crate) Markitdown، ويُستخدم Python فقط للتوزيع عبر PyPI.",
     "whatItDoes": {
-      "title": "ما يفعله Bridgex",
+      "title": "ماذا يقدم Bridgex",
       "items": [
-        "يحوّل صيغ ملفات مختلفة إلى Markdown نظيف",
+        "يحول صيغ الملفات المختلفة إلى Markdown نظيف",
         "يوفر واجهة رسومية لـ Markitdown",
-        "يقدم محررًا خفيفًا لتعديلات سريعة",
-        "يدعم عدة لغات في الواجهة",
-        "يعمل على Windows وmacOS وLinux"
+        "يقدم محررًا خفيفًا للتعديلات السريعة",
+        "يدعم سير عمل نماذج اللغات الكبيرة (LLM)",
+        "يدعم لغات متعددة في الواجهة",
+        "يعمل عبر أنظمة Windows و macOS و Linux"
       ]
     },
     "whatItDoesNot": {
       "title": "ما لا يفعله Bridgex",
       "items": [
-        "ليس IDE أو محرر نصوص متقدم",
+        "ليس بيئة تطوير متكاملة (IDE) أو محرر نصوص متقدم",
         "ليس محرر Markdown مع معاينة حية",
         "ليس عارض مستندات أو قارئ PDF",
-        "لا يجري OCR على ملفات PDF الصورية",
-        "غير مخصص لتحرير المستندات الثقيلة"
+        "لا يقوم بالتعرف الضوئي على الحروف (OCR) في ملفات PDF القائمة على الصور",
+        "غير مصمم للتحرير الكثيف للمستندات"
       ]
     },
     "whyLarge": {
-      "title": "لماذا حجم Bridgex كبير؟",
-      "description": "يبلغ حجم Bridgex (90-120 ميجابايت للمُثبّت) لأنه يضم:",
+      "title": "لماذا يعتبر Bridgex خفيف الوزن؟",
+      "description": "Bridgex هو تطبيق أصيل (native) مدمج (~30 ميجابايت لملف ثنائي واحد) يتضمن:",
       "items": [
-        "Freya UI (Skia) - إطار GUI أصلي كامل",
+        "Freya UI (Skia) - إطار عمل واجهة مستخدم رسومية أصيل بالكامل",
         "Markitdown-rs مع إضافات الصيغ - تحليل المستندات",
-        "ثنائيات Rust والموارد - مجمّعة للاستخدام دون اتصال",
-        "VC++ Runtime (Windows) - الاعتمادات المطلوبة"
+        "ملف ثنائي واحد بلغة Rust - حزمة أصيلة مدمجة"
       ]
     },
     "team": {
       "title": "الفريق",
-      "developer": "مطوَّر بواسطة Dev2Forge",
-      "maintained": "يُصان بواسطة tutosrive"
+      "developer": "تم التطوير بواسطة Dev2Forge",
+      "maintained": "تتم الصيانة بواسطة tutosrive"
     },
     "links": {
       "github": "مستودع GitHub",
@@ -183,16 +189,16 @@
     }
   },
   "licenses": {
-    "title": "تراخيص الجهات الأخرى",
-    "subtitle": "Bridgex يستخدم المكتبات مفتوحة المصدر التالية",
-    "intro": "Bridgex برنامج مفتوح المصدر موزّع تحت ترخيص GPL-3.0. يعتمد على عدة مكتبات خارجية لكل منها شروط الترخيص الخاصة بها. تسرد هذه الصفحة أهم الاعتمادات وتراخيصها."
+    "title": "تراخيص الطرف الثالث",
+    "subtitle": "يستخدم Bridgex المكتبات مفتوحة المصدر التالية",
+    "intro": "Bridgex هو برنامج مفتوح المصدر يتم توزيعه تحت رخصة GPL-3.0. وهو يعتمد على عدة مكتبات من طرف ثالث، ولكل منها شروط الترخيص الخاصة بها. تسرد هذه الصفحة جميع الاعتماديات الرئيسية وتراخيصها الخاصة."
   },
   "footer": {
-    "description": "جسرك إلى Markitdown",
+    "description": "جسركم إلى Markitdown",
     "navigation": "التنقل",
-    "resources": "الموارد",
+    "resources": "المصادر",
     "copyright": "© 2025 Dev2Forge. جميع الحقوق محفوظة.",
-    "license": "ترخيص GPL-3.0",
+    "license": "رخصة GPL-3.0",
     "madeWith": "صُنع بـ",
     "and": "و",
     "links": {

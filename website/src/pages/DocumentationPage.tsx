@@ -1,10 +1,8 @@
 import { useTranslation } from 'react-i18next';
 import { 
   Download,
-  // AlertTriangle,
   CheckCircle2,
   FileType,
-  // Wrench,
   Book
 } from 'lucide-react';
 import './DocumentationPage.css';
@@ -117,8 +115,36 @@ export default function DocumentationPage() {
                   </ol>
                 </div>
 
-                <div className="docs-card">
-                  <h3>{t('documentation.installation.windows.title')}</h3>
+                <div className="docs-card">                  <h3>{t('documentation.installation.crates.title')}</h3>
+                  <ol className="docs-steps">
+                    <li>
+                      <span className="step-number">1</span>
+                      <div className="step-content">
+                        <p>{t('documentation.installation.crates.step1')}</p>
+                      </div>
+                    </li>
+                    <li>
+                      <span className="step-number">2</span>
+                      <div className="step-content">
+                        <p>{t('documentation.installation.crates.step2')}</p>
+                        <div className="code-block">
+                          <code>cargo install markitdown</code>
+                          <button className="copy-button" onClick={() => navigator.clipboard.writeText('cargo install markitdown')}>
+                            Copy
+                          </button>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <span className="step-number">3</span>
+                      <div className="step-content">
+                        <p>{t('documentation.installation.crates.step3')}</p>
+                      </div>
+                    </li>
+                  </ol>
+                </div>
+
+                <div className="docs-card">                  <h3>{t('documentation.installation.windows.title')}</h3>
                   <ol className="docs-steps">
                     <li>
                       <span className="step-number">1</span>

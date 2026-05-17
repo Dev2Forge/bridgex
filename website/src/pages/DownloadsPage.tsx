@@ -149,14 +149,6 @@ export default function DownloadsPage() {
                 <CheckCircle2 size={20} className="check-icon" />
                 <span>Native Rust binary (Python only for PyPI distribution)</span>
               </div>
-              <div className="included-item">
-                <CheckCircle2 size={20} className="check-icon" />
-                <span>VC++ Redistributable (Windows installer)</span>
-              </div>
-              <div className="included-item">
-                <CheckCircle2 size={20} className="check-icon" />
-                <span>Multi-language interface support</span>
-              </div>
             </div>
           </div>
         </div>
