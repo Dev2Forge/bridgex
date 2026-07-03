@@ -10,6 +10,12 @@ Bridgex is an open‑source desktop application for converting files to Markdown
 This repository maintains Rust packaging for `crates.io`, and also keeps Python packaging metadata so a compatible distribution can be published to `pypi.org` for interoperability.
 
 ---
+Check This:
+
+<a href="https://mintlify.wiki/dev2forge/bridgex">
+  <img height="250" alt="image" src="https://github.com/user-attachments/assets/7a74e6a5-026c-44bb-8086-31bba011ada4" />
+</a>
+---
 
 ## Features ✨
 
